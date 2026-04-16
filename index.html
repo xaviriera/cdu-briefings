@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRIEFING OPERACIONES · COTE IA · 16 abril 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #FDFBF7;
+  color: #163D60;
+  padding: 40px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #163D60;
+  padding-bottom: 16px;
+  margin-bottom: 30px;
+}
+
+.header-left h1 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #163D60;
+  letter-spacing: -0.5px;
+}
+
+.header-left p {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.header-right {
+  text-align: right;
+}
+
+.header-right .brand {
+  font-size: 16px;
+  font-weight: 700;
+  color: #E29F34;
+}
+
+.header-right .sub {
+  font-size: 11px;
+  color: #999;
+}
+
+.op-card {
+  background: #fff;
+  border-left: 5px solid #163D60;
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  page-break-inside: avoid;
+}
+
+.op-card.green { border-left-color: #27ae60; }
+.op-card.yellow { border-left-color: #E29F34; }
+.op-card.blue { border-left-color: #3498db; }
+.op-card.gray { border-left-color: #bdc3c7; }
+.op-card.red { border-left-color: #e74c3c; }
+
+.op-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.op-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #163D60;
+}
+
+.op-status {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-active { background: #d4efdf; color: #1e8449; }
+.status-waiting { background: #fdebd0; color: #b7950b; }
+.status-paused { background: #e8e8e8; color: #666; }
+.status-new { background: #d6eaf8; color: #2471a3; }
+
+.op-summary {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.section-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #E29F34;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  font-size: 12px;
+  padding: 2px 0;
+  padding-left: 18px;
+  position: relative;
+}
+
+.task-list li::before {
+  content: '☐';
+  position: absolute;
+  left: 0;
+  color: #E29F34;
+  font-size: 13px;
+}
+
+.task-list li.done::before {
+  content: '✓';
+  color: #27ae60;
+  font-weight: 700;
+}
+
+.task-list li.done {
+  color: #999;
+  text-decoration: line-through;
+}
+
+.who {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  background: #163D60;
+  color: #fff;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 4px;
+}
+
+.who.dani { background: #e74c3c; }
+.who.paco { background: #2471a3; }
+.who.xavi { background: #27ae60; }
+.who.esther { background: #8e44ad; }
+.who.sabater { background: #d35400; }
+
+.key-data {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 8px 0;
+}
+
+.key-data .kd {
+  font-size: 11px;
+}
+
+.key-data .kd strong {
+  color: #E29F34;
+}
+
+.footer {
+  margin-top: 30px;
+  padding-top: 16px;
+  border-top: 2px solid #163D60;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #999;
+}
+
+.footer .cote {
+  font-weight: 700;
+  color: #E29F34;
+}
+
+.note {
+  background: #f0f4f8;
+  border-radius: 4px;
+  padding: 10px 14px;
+  font-size: 11px;
+  color: #555;
+  margin-top: 8px;
+}
+
+@media print {
+  body { padding: 20px; font-size: 11px; }
+  .op-card { box-shadow: none; border: 1px solid #ddd; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>BRIEFING OPERACIONES</h1>
+    <p>Estado consolidado al 16 de abril de 2026 &middot; Documento interno del equipo</p>
+  </div>
+  <div class="header-right">
+    <div class="brand">COTE IA</div>
+    <div class="sub">CdU de 0 a EXITO &middot; Asistente de Gestion</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ CREVILLENTE ═══════════════════════ -->
+<div class="op-card green">
+  <div class="op-header">
+    <span class="op-name">CREVILLENTE (ESTHER) &mdash; PISO SEGREGACION</span>
+    <span class="op-status status-active">En movimiento</span>
+  </div>
+  <div class="op-summary">Local + entreplanta &rarr; 4 viviendas &middot; Asking price 180K &middot; Objetivo 170K condicionado</div>
+
+  <div class="key-data">
+    <div class="kd"><strong>Inversora-gestora:</strong> Esther (Fase 3, % a definir)</div>
+    <div class="kd"><strong>Reserva:</strong> 3.000 EUR (pone Esther)</div>
+    <div class="kd"><strong>Ruta tecnica:</strong> Segregar &rarr; ECUV + proyecto visado</div>
+  </div>
+
+  <div class="section-title">Hecho</div>
+  <ul class="task-list">
+    <li class="done">Solicitar DH (Normas Comunitarias)</li>
+    <li class="done">Plano cotas (pilares, bajantes, perimetro, ventanas, patios)</li>
+    <li class="done">DH revisada: subdivisible SIN consentimiento CCPP (epigrafe DH: acceso zaguan + ascensor + escalera)</li>
+  </ul>
+
+  <div class="section-title">Pendiente</div>
+  <ul class="task-list">
+    <li>Dani y Paco preparan argumentos para la oferta <span class="who dani">DANI</span><span class="who paco">PACO</span></li>
+    <li>Xavi redacta oferta argumentada condicionada a 170K <span class="who xavi">XAVI</span></li>
+    <li>Con oferta lista &rarr; Esther negocia directamente con la propiedad (ella lleva la negociacion, acompanada de David) <span class="who esther">ESTHER</span></li>
+    <li>Reserva 3.000 EUR condicionada (tras aceptacion) <span class="who esther">ESTHER</span></li>
+    <li>Tratar con comunidad: arreglo fachada &rarr; abrir/cerrar huecos entresuelo para 4V (unanime) <span class="who">EQUIPO CDU</span></li>
+    <li>Si positivo huecos &rarr; tomar cotas y medidas correctas <span class="who">EQUIPO CDU</span></li>
+    <li>Ir a urbanismo Crevillente con Antonio a medir <span class="who">EQUIPO CDU</span></li>
+    <li>Preparar numeros escenario 4 viviendas <span class="who paco">PACO</span></li>
+    <li>Definir figura Esther como gestora Fase 3 + porcentajes <span class="who">EQUIPO CDU</span></li>
+    <li>Contrato deposito condicionado con plazos + epigrafe formalizacion a terceros <span class="who">EQUIPO CDU</span></li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════ ELCHE ═══════════════════════ -->
+<div class="op-card yellow">
+  <div class="op-header">
+    <span class="op-name">ELCHE &mdash; JUAN ESPUCHE 1</span>
+    <span class="op-status status-waiting">Tanteo comunidad</span>
+  </div>
+  <div class="op-summary">Local &rarr; 3 viviendas &middot; 135 m2 registrales &middot; C/AV/V &middot; Inversion 246.850 EUR &middot; Beneficio 33,7%&ndash;45,8%</div>
+
+  <div class="key-data">
+    <div class="kd"><strong>Originador:</strong> Jose (Sabater)</div>
+    <div class="kd"><strong>Comunidad:</strong> 12 vec. &middot; Admin desde hace 1 ano</div>
+    <div class="kd"><strong>Mayoria:</strong> 3/5 = 8 de 12 votos</div>
+  </div>
+
+  <div class="section-title">Avances recientes</div>
+  <ul class="task-list">
+    <li class="done">Informe COTE IA v3 publicado (tarjeta #41)</li>
+    <li class="done">Defecto cabida descartado (143/135 = 5,9% &lt; 10%)</li>
+    <li class="done">Vendedoras siguen interesadas (Sabater confirma 16/04)</li>
+    <li class="done">Tanteo comunidad iniciado: Sabater contactando vecinos + admin</li>
+  </ul>
+
+  <div class="section-title">Condicionantes criticos</div>
+  <ul class="task-list">
+    <li>Aprobacion comunidad para division <span class="who">EQUIPO CDU</span></li>
+    <li>Aprobacion comunidad para humos <span class="who">EQUIPO CDU</span></li>
+    <li>Confirmacion registrador Elche n2 (finca 34695) <span class="who">EQUIPO CDU</span></li>
+    <li>Encaje real 3 viviendas (esquina doble fachada) <span class="who">EQUIPO CDU</span></li>
+    <li>Limite viviendas por edificio en Elche <span class="who">EQUIPO CDU</span></li>
+    <li>Redistribucion cuota participacion (17%)</li>
+  </ul>
+
+  <div class="section-title">Tareas pendientes</div>
+  <ul class="task-list">
+    <li>Seguimiento tanteo comunidad (plazo 2-3 meses hasta firmeza) <span class="who">EQUIPO CDU</span></li>
+    <li>Redactar deposito + plazo de viabilidad (cuando comunidad resuelta) <span class="who paco">PACO</span></li>
+    <li>Contactar presidente comunidad &middot; preparar propuesta asamblea <span class="who">EQUIPO CDU</span></li>
+    <li>Conseguir ultima acta + estatutos comunidad <span class="who">EQUIPO CDU</span></li>
+    <li>Consulta registrador Elche n2 (finca 34695) <span class="who">EQUIPO CDU</span></li>
+    <li>Consulta tecnico municipal Altabix &middot; limite viv + CdU <span class="who">EQUIPO CDU</span></li>
+    <li>Validar encaje 3 viv con arquitecto (doble fachada esquina) <span class="who">EQUIPO CDU</span></li>
+    <li>Acordar con Jose &middot; estructura compra (Via A servicios vs Via B cesion) + fee <span class="who">EQUIPO CDU</span></li>
+    <li>Certificado ATV afecciones Sucesiones (prescriben 06/2027) <span class="who paco">PACO</span></li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════ CASTELLON ═══════════════════════ -->
+<div class="op-card yellow">
+  <div class="op-header">
+    <span class="op-name">CASTELLON &mdash; C/ MARTINEZ TENA</span>
+    <span class="op-status status-paused">Pausa &mdash; Rene vacaciones</span>
+  </div>
+  <div class="op-summary">Local &rarr; 4 viviendas &middot; Op 001 servicio CdU &middot; Cliente: Pablo Benitez &middot; Originador: Rene Campillo</div>
+
+  <div class="key-data">
+    <div class="kd"><strong>Fase 1 GO:</strong> Diagnostico en curso</div>
+    <div class="kd"><strong>Pago:</strong> 289 EUR &middot; YA RECIBIDO</div>
+    <div class="kd"><strong>Contrato Signwell:</strong> Enviado, accedido pero NO firmado</div>
+  </div>
+
+  <div class="section-title">Hecho</div>
+  <ul class="task-list">
+    <li class="done">Pago Fase 1 recibido</li>
+    <li class="done">Email consulta urbanismo Castellon enviado</li>
+    <li class="done">Resumen reunion PDF entregado (v7)</li>
+    <li class="done">Contrato Signwell enviado</li>
+  </ul>
+
+  <div class="section-title">Pendiente</div>
+  <ul class="task-list">
+    <li>Rene firme contrato Signwell (recordatorio semana que viene) <span class="who xavi">XAVI</span></li>
+    <li>Respuesta ayuntamiento Castellon al email urbanismo <span class="who">ESPERA</span></li>
+    <li>Obtener nota simple + DH <span class="who">RENE</span></li>
+    <li>Sacar precios (comparables zona) <span class="who">EQUIPO CDU</span></li>
+    <li>CdU Fase 1 completa <span class="who">EQUIPO CDU</span></li>
+  </ul>
+
+  <div class="note">Rene de vacaciones esta semana. No molestar. Recordatorio semana que viene.</div>
+</div>
+
+<!-- ═══════════════════════ TORRES DE COTILLAS ═══════════════════════ -->
+<div class="op-card red">
+  <div class="op-header">
+    <span class="op-name">TORRES DE COTILLAS (TDC) &mdash; C/ D'ESTOUP 17</span>
+    <span class="op-status status-waiting">Pendiente Vivienda</span>
+  </div>
+  <div class="op-summary">Local 110 m2 &rarr; viviendas &middot; Op propia equipo CdU &middot; Precio 37.000 EUR + impuestos &middot; Deposito 3.000 EUR</div>
+
+  <div class="key-data">
+    <div class="kd"><strong>VPO:</strong> CRT/000241/2026 &middot; Plazo ~24 abril</div>
+    <div class="kd"><strong>Solicitante:</strong> CDU DE 0 A EXITO, S.L.</div>
+  </div>
+
+  <div class="section-title">Hecho</div>
+  <ul class="task-list">
+    <li class="done">Autorizacion VPO presentada en CARM</li>
+    <li class="done">Viabilidad tecnica completada</li>
+    <li class="done">Viabilidad administrativa completada</li>
+    <li class="done">Respuesta de Vivienda recibida</li>
+    <li class="done">Ultima acta comunidad solicitada</li>
+    <li class="done">Visita local con tecnicos</li>
+  </ul>
+
+  <div class="section-title">Pendiente &mdash; General</div>
+  <ul class="task-list">
+    <li>Contactar Carmen manana 17/04 &rarr; punto con Vivienda (DG Vivienda CARM) <span class="who">EQUIPO CDU</span></li>
+    <li>Si no hay respuesta Vivienda &rarr; clausula suspensiva en arras <span class="who paco">PACO</span></li>
+    <li>Contactos con Registro: requisitos inscripcion unidades resultantes <span class="who">EQUIPO CDU</span></li>
+    <li>Viabilidad juridica <span class="who dani">DANI</span></li>
+    <li>Viabilidad economica <span class="who paco">PACO</span></li>
+    <li>Manual buen vecino: necesidades comunidad <span class="who">EQUIPO CDU</span></li>
+    <li>Reunion extraordinaria: autorizacion CdU + segregacion <span class="who">EQUIPO CDU</span></li>
+  </ul>
+
+  <div class="section-title">Pendiente &mdash; Paco</div>
+  <ul class="task-list">
+    <li>Cumplimentar plantilla Excel <span class="who paco">PACO</span></li>
+    <li>Firma inbruto <span class="who paco">PACO</span></li>
+    <li>Gestion de aguas <span class="who paco">PACO</span></li>
+    <li>Paso 4 rapido <span class="who paco">PACO</span></li>
+  </ul>
+
+  <div class="section-title">Pendiente &mdash; Dani</div>
+  <ul class="task-list">
+    <li>Gestion con Iberdrola <span class="who dani">DANI</span></li>
+    <li>Coste baterias nuevas (CGP / suministro) <span class="who dani">DANI</span></li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════ QUEVEDO LA TORRE ═══════════════════════ -->
+<div class="op-card green">
+  <div class="op-header">
+    <span class="op-name">QUEVEDO &mdash; LA TORRE</span>
+    <span class="op-status status-new">Nueva</span>
+  </div>
+  <div class="op-summary">Local visitado 15/04 &middot; Muy buenas posibilidades y margen &middot; Cabida estimada ~6 viviendas (3 lofts + 3 apts 2 hab)</div>
+
+  <div class="section-title">Pendiente</div>
+  <ul class="task-list">
+    <li>Paco contactar a Joaquin &rarr; solicitar documentacion para avanzar <span class="who paco">PACO</span></li>
+    <li>Analisis economico (por hacer) <span class="who paco">PACO</span></li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════ ASPE ═══════════════════════ -->
+<div class="op-card blue">
+  <div class="op-header">
+    <span class="op-name">ASPE &mdash; AVDA JUAN CARLOS I</span>
+    <span class="op-status status-waiting">Espera admin</span>
+  </div>
+  <div class="op-summary">Pendiente autorizacion comunitaria</div>
+
+  <div class="section-title">Pendiente</div>
+  <ul class="task-list">
+    <li>Autorizacion comunitaria ampliar de garaje <span class="who">EQUIPO CDU</span></li>
+    <li>Dani hablar con Fran &rarr; novedades administrador <span class="who dani">DANI</span></li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════ CAMPELLO ═══════════════════════ -->
+<div class="op-card gray">
+  <div class="op-header">
+    <span class="op-name">CAMPELLO &mdash; C/ SANT PERE 43</span>
+    <span class="op-status status-paused">Sin novedades</span>
+  </div>
+  <div class="op-summary">2 viviendas (DCH + IZQ) &middot; Suministros en proceso &middot; 10 tareas pendientes</div>
+
+  <div class="section-title">Pendiente &mdash; Ruta principal</div>
+  <ul class="task-list">
+    <li>Compra + ITP</li>
+    <li>Deudas pendientes (IBI, CCPP, suministros)</li>
+    <li>Licencia 2a ocupacion (DR + certificado tecnico habitabilidad + tasas)</li>
+    <li>Certificado eficiencia energetica</li>
+    <li>Alta de suministros</li>
+    <li>Tanteo y retracto</li>
+    <li>Venta (planos + renders + paralelo)</li>
+  </ul>
+
+  <div class="section-title">Pendiente &mdash; Ruta tecnica</div>
+  <ul class="task-list">
+    <li>Opcion A (a definir)</li>
+    <li>Declaracion responsable</li>
+    <li>Ejecucion de obras</li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<div class="footer">
+  <div>
+    <span class="cote">COTE IA</span> &middot; Asistente de Gestion Interno &middot; CdU de 0 a EXITO
+    <br>Documento generado automaticamente &middot; Fase de testeo
+  </div>
+  <div style="text-align:right;">
+    16 abril 2026
+    <br>Equipo: Xavi (Espiritu) &middot; Paco (Mente) &middot; Dani (Corazon)
+  </div>
+</div>
+
+</body>
+</html>
