@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis preliminar · Virgen del Pilar 6 · CdU de 0 a ÉXITO</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #FDFBF7;
+  color: #163D60;
+  line-height: 1.5;
+  padding: 24px 16px;
+}
+.wrap { max-width: 720px; margin: 0 auto; }
+
+.brand {
+  text-align: center;
+  padding-bottom: 18px;
+  margin-bottom: 22px;
+  border-bottom: 2px solid #E29F34;
+}
+.brand img { max-width: 190px; height: auto; display: inline-block; }
+.brand .sub {
+  font-size: 10px;
+  color: #E29F34;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #163D60;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.title span { color: #E29F34; }
+.lead {
+  font-size: 14px;
+  color: #163D60;
+  opacity: 0.85;
+  margin-bottom: 28px;
+}
+
+.section-label {
+  font-size: 10px;
+  font-weight: 800;
+  color: #E29F34;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-top: 28px;
+}
+
+.inmueble {
+  background: #fff;
+  border-left: 4px solid #E29F34;
+  border-radius: 0 8px 8px 0;
+  padding: 16px 20px;
+  margin-bottom: 8px;
+}
+.inmueble .row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-size: 13px;
+  border-bottom: 1px dashed rgba(22,61,96,0.15);
+}
+.inmueble .row:last-child { border-bottom: none; }
+.inmueble .row .k { color: #163D60; opacity: 0.7; font-weight: 500; }
+.inmueble .row .v { color: #163D60; font-weight: 700; }
+
+.scenario {
+  background: #fff;
+  border-radius: 12px;
+  padding: 22px 22px 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 14px rgba(22, 61, 96, 0.06);
+  border: 1.5px solid transparent;
+}
+.scenario.bad { border-color: #ebc9c9; }
+.scenario.good { border-color: #E29F34; }
+.scenario .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(22,61,96,0.1);
+}
+.scenario .head h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #163D60;
+  letter-spacing: -0.2px;
+}
+.scenario .head .verdict {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-left: 12px;
+}
+.scenario.bad .verdict { background: #fdecea; color: #9b3333; }
+.scenario.good .verdict { background: #E29F34; color: #fff; }
+
+table.nums {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+table.nums td {
+  padding: 7px 0;
+  border-bottom: 1px dashed rgba(22,61,96,0.12);
+}
+table.nums td:first-child { color: #163D60; opacity: 0.75; }
+table.nums td:last-child { text-align: right; font-weight: 700; color: #163D60; }
+table.nums tr.total td {
+  border-top: 1.5px solid #163D60;
+  border-bottom: none;
+  padding-top: 10px;
+  font-weight: 800;
+  font-size: 14.5px;
+}
+table.nums tr.margin td {
+  padding-top: 10px;
+  border-bottom: none;
+}
+table.nums tr.margin td:last-child { font-size: 16px; font-weight: 900; }
+table.nums tr.margin.pos td:last-child { color: #2e7a4d; }
+table.nums tr.margin.neg td:last-child { color: #9b3333; }
+
+.note {
+  background: #fff8ea;
+  border: 1px dashed #E29F34;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 12.5px;
+  color: #7d6608;
+  line-height: 1.5;
+  margin-top: 14px;
+}
+.note strong { color: #163D60; }
+
+.conclusion {
+  background: #163D60;
+  color: #FDFBF7;
+  border-radius: 12px;
+  padding: 24px 22px;
+  margin-top: 28px;
+  text-align: center;
+}
+.conclusion .label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #E29F34;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.conclusion .big {
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+.conclusion .big span { color: #E29F34; }
+.conclusion .small {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  opacity: 0.92;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(22,61,96,0.12);
+  font-size: 12px;
+  color: #163D60;
+}
+.footer strong { color: #E29F34; }
+.footer .team {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #E29F34;
+  font-weight: 700;
+  margin-top: 4px;
+}
+.footer a { color: #163D60; text-decoration: none; }
+
+.disclaimer {
+  font-size: 10.5px;
+  color: #163D60;
+  opacity: 0.6;
+  text-align: center;
+  margin-top: 16px;
+  line-height: 1.5;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand">
+    <img src="https://xaviriera.github.io/cdu-briefings/assets/logos/LOGO-FINAL-PNG-MEDIANO.png" alt="CdU de 0 a ÉXITO">
+    <div class="sub">Análisis preliminar de viabilidad</div>
+  </div>
+
+  <div class="title">Virgen del Pilar 6 · <span>Crevillent</span></div>
+  <div class="lead">
+    Planteamiento aproximado de cómo quedarían los números de la operación. Son cifras <strong>a grosso modo, no finas</strong> — aún no hay firmeza en el punto en el que está la operación — pero es lo que nos sirve para enmarcar la decisión.
+  </div>
+
+  <div class="section-label">📍 El inmueble</div>
+  <div class="inmueble">
+    <div class="row"><span class="k">Dirección</span><span class="v">C/ Virgen del Pilar 6, Crevillent</span></div>
+    <div class="row"><span class="k">Superficie registral</span><span class="v">252,50 m²</span></div>
+    <div class="row"><span class="k">Planta</span><span class="v">Entresuelo</span></div>
+    <div class="row"><span class="k">Uso actual</span><span class="v">Local · Cambio de Uso a viviendas</span></div>
+    <div class="row"><span class="k">Precio de compra</span><span class="v">180.000 €</span></div>
+  </div>
+
+  <div class="section-label">📊 Supuestos del análisis</div>
+  <div class="inmueble">
+    <div class="row"><span class="k">Coste de reforma</span><span class="v">~ 600 €/m²</span></div>
+    <div class="row"><span class="k">Impuestos compra (ITP 10%)</span><span class="v">18.000 €</span></div>
+    <div class="row"><span class="k">Proyecto + licencia + gestión</span><span class="v">~ 15.000 €</span></div>
+    <div class="row"><span class="k">Otros por vivienda (notaría / registro venta)</span><span class="v">~ 2.000 €/ud</span></div>
+    <div class="row"><span class="k">Precio venta estimado por vivienda</span><span class="v">120.000 – 130.000 €</span></div>
+  </div>
+
+  <div class="section-label">🧮 Escenario A · 3 viviendas de ~84 m²</div>
+  <div class="scenario bad">
+    <div class="head">
+      <h3>Si solo salen 3 viviendas</h3>
+      <div class="verdict">Margen muy justo</div>
+    </div>
+    <table class="nums">
+      <tr><td>Compra por vivienda</td><td>60.000 €</td></tr>
+      <tr><td>Reforma (84 m² × 600 €)</td><td>50.400 €</td></tr>
+      <tr><td>Otros (impuestos + gestión)</td><td>~ 15.000 €</td></tr>
+      <tr class="total"><td>Coste por vivienda</td><td>~ 125.400 €</td></tr>
+      <tr class="margin neg"><td>Margen si vende a 120.000 €</td><td>– 5.400 €</td></tr>
+      <tr class="margin neg"><td>Margen si vende a 125.000 €</td><td>– 400 €</td></tr>
+      <tr class="margin pos"><td>Margen si vende a 130.000 €</td><td>+ 4.600 €</td></tr>
+    </table>
+    <div class="note">
+      <strong>Conclusión A:</strong> con 3 viviendas, el margen depende enteramente del precio final de venta. Cualquier desvío en obra o retraso se come la rentabilidad.
+    </div>
+  </div>
+
+  <div class="section-label">🧮 Escenario B · 4 viviendas de ~63 m²</div>
+  <div class="scenario good">
+    <div class="head">
+      <h3>Si logramos 4 viviendas</h3>
+      <div class="verdict">Viable</div>
+    </div>
+    <table class="nums">
+      <tr><td>Compra por vivienda</td><td>45.000 €</td></tr>
+      <tr><td>Reforma (63 m² × 600 €)</td><td>37.800 €</td></tr>
+      <tr><td>Otros (impuestos + gestión)</td><td>~ 15.000 €</td></tr>
+      <tr class="total"><td>Coste por vivienda</td><td>~ 97.800 €</td></tr>
+      <tr class="margin pos"><td>Margen si vende a 120.000 €</td><td>+ 22.200 €</td></tr>
+      <tr class="margin pos"><td>Margen si vende a 125.000 €</td><td>+ 27.200 €</td></tr>
+      <tr class="margin pos"><td>Margen si vende a 130.000 €</td><td>+ 32.200 €</td></tr>
+    </table>
+    <div class="note">
+      <strong>Conclusión B:</strong> con 4 viviendas, los números respiran. El margen cubre imprevistos y la operación tiene sentido.
+    </div>
+  </div>
+
+  <div class="conclusion">
+    <div class="label">Síntesis · cómo lo vemos</div>
+    <div class="big">La operación depende de sacar <span>4 viviendas</span>, no 3.</div>
+    <div class="small">
+      Con 3 viviendas los números no cuadran: el margen se queda en 5.000 – 15.000 € por vivienda, repartir eso entre 3 socios para una operación tan larga y compleja no tiene sentido desde el punto de vista riesgo/beneficio. Con 4 viviendas la operación respira.
+      <br><br>
+      <strong style="color:#E29F34;">Por eso, tal como está ahora, nosotros no la ejecutaríamos como equipo.</strong> El esfuerzo y el riesgo superan el retorno.
+      <br><br>
+      Lo que sí vemos posible es buscar un encaje para que pueda hacerse <strong style="color:#E29F34;">bajo figura de gestora propia</strong>: validar los 4 pisos con técnicos, levantar el capital necesario y coordinar la ejecución. Ese es el camino en el que nos gustaría ayudar a pensar.
+    </div>
+  </div>
+
+  <div class="footer">
+    <strong>CdU de 0 a ÉXITO</strong> · tucambiodeuso.com<br>
+    <span class="team">Xavi Riera · Dani Moreno · Paco Collado</span>
+  </div>
+
+  <div class="disclaimer">
+    Los números presentados son aproximaciones a nivel informativo. La viabilidad definitiva requiere<br>
+    validación técnica de la cabida (4 viviendas) y licencia municipal.
+  </div>
+
+</div>
+</body>
+</html>
