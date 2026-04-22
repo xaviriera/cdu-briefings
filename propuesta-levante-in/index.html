@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta · Acción Marketing Levante IN · CdU de 0 a ÉXITO</title>
+<meta name="description" content="Propuesta de acción de marketing para Levante IN · 25-26 abril 2026">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #FDFBF7;
+  color: #163D60;
+  line-height: 1.6;
+  padding: 0;
+}
+
+.wrap { max-width: 820px; margin: 0 auto; padding: 40px 24px; }
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #163D60 0%, #0e2a44 100%);
+  color: #FDFBF7;
+  padding: 60px 30px;
+  border-radius: 14px;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: #E29F34; opacity: 0.12; border-radius: 50%; }
+.hero::after { content: ''; position: absolute; bottom: -150px; left: -100px; width: 250px; height: 250px; background: #E29F34; opacity: 0.06; border-radius: 50%; }
+.hero .tag { font-size: 11px; font-weight: 700; color: #E29F34; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; position: relative; z-index: 2; }
+.hero h1 { font-size: 40px; font-weight: 900; letter-spacing: -1px; line-height: 1.1; margin-bottom: 14px; position: relative; z-index: 2; }
+.hero h1 span { color: #E29F34; }
+.hero .sub { font-size: 16px; opacity: 0.9; position: relative; z-index: 2; max-width: 560px; margin: 0 auto; }
+.hero .meta { font-size: 12px; color: #E29F34; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-top: 24px; position: relative; z-index: 2; }
+
+/* SECCIONES */
+h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #163D60;
+  letter-spacing: -0.5px;
+  margin: 48px 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #E29F34;
+}
+h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #163D60;
+  margin: 24px 0 10px;
+}
+p { margin-bottom: 14px; color: #163D60; font-size: 15px; }
+strong { color: #E29F34; font-weight: 800; }
+
+ul { margin: 10px 0 18px 20px; }
+ul li { margin-bottom: 8px; font-size: 15px; }
+
+/* BLOQUES EXPLICATIVOS */
+.step-box {
+  background: #fff;
+  border-left: 5px solid #E29F34;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 8px rgba(22, 61, 96, 0.05);
+}
+.step-box .num {
+  display: inline-block;
+  background: #163D60;
+  color: #FDFBF7;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  font-weight: 800;
+  font-size: 14px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.step-box .title { display: inline-block; font-weight: 800; font-size: 16px; color: #163D60; vertical-align: middle; }
+.step-box .desc { font-size: 14px; color: #555; margin-top: 8px; padding-left: 40px; }
+
+/* MOCKUPS */
+.mockup-wrap {
+  margin: 28px 0;
+  padding: 24px;
+  background: #f8f4eb;
+  border-radius: 14px;
+  text-align: center;
+}
+.mockup-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #E29F34;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+/* Mockup pegatina */
+.mockup-pegatina {
+  background: #FDFBF7;
+  border: 2px solid #163D60;
+  border-radius: 8px;
+  padding: 14px 18px;
+  display: inline-grid;
+  grid-template-columns: 1fr 80px;
+  grid-template-rows: auto 1fr auto;
+  gap: 6px;
+  width: 300px;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+.mockup-pegatina .brand { grid-column: 1/3; display: flex; justify-content: space-between; border-bottom: 1px solid #E29F34; padding-bottom: 4px; font-size: 10px; font-weight: 800; }
+.mockup-pegatina .brand .cdu { color: #163D60; }
+.mockup-pegatina .brand .cdu span { color: #E29F34; }
+.mockup-pegatina .brand .who { color: #E29F34; text-transform: uppercase; letter-spacing: 1px; font-size: 9px; }
+.mockup-pegatina .hook { font-size: 15px; font-weight: 800; color: #163D60; line-height: 1.1; }
+.mockup-pegatina .hook strong { color: #E29F34; }
+.mockup-pegatina .prize { font-size: 9px; color: #163D60; margin-top: 4px; }
+.mockup-pegatina .prize .chip { background: #E29F34; color: #fff; padding: 1px 5px; border-radius: 2px; font-size: 8px; font-weight: 700; }
+.mockup-pegatina .qr { background: #163D60; color: #FDFBF7; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; font-size: 8px; text-align: center; font-weight: 700; }
+.mockup-pegatina .foot { grid-column: 1/3; display: flex; justify-content: space-between; border-top: 1px solid rgba(22,61,96,0.15); padding-top: 4px; font-size: 9px; font-weight: 700; }
+.mockup-pegatina .foot .time { color: #E29F34; letter-spacing: 1px; }
+
+/* Mockup pantalla móvil */
+.mockup-phone {
+  display: inline-block;
+  width: 280px;
+  background: #222;
+  border-radius: 24px;
+  padding: 14px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+  margin: 6px;
+  vertical-align: top;
+}
+.mockup-phone .screen {
+  background: #FDFBF7;
+  border-radius: 14px;
+  padding: 20px 16px;
+  min-height: 340px;
+  text-align: left;
+}
+.mockup-phone .progress { font-size: 9px; font-weight: 700; color: #E29F34; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 4px; }
+.mockup-phone .progress-bar { height: 4px; background: #f0e8d8; border-radius: 2px; margin-bottom: 14px; overflow: hidden; }
+.mockup-phone .progress-bar div { height: 100%; background: #E29F34; }
+.mockup-phone h4 { font-size: 16px; font-weight: 800; color: #163D60; line-height: 1.2; margin-bottom: 14px; }
+.mockup-phone .opt { background: #fff; border: 1.5px solid #e5dfcf; border-radius: 7px; padding: 9px 12px; margin-bottom: 6px; font-size: 11px; color: #163D60; font-weight: 500; }
+.mockup-phone .opt.active { border-color: #E29F34; background: #fff8ea; }
+
+.mockup-phone .ticket-box { background: #163D60; color: #FDFBF7; border-radius: 10px; padding: 22px 16px; text-align: center; margin-bottom: 14px; }
+.mockup-phone .ticket-box .lab { font-size: 9px; font-weight: 700; color: #E29F34; letter-spacing: 2px; text-transform: uppercase; }
+.mockup-phone .ticket-box .num-lab { font-size: 9px; opacity: 0.7; letter-spacing: 2px; text-transform: uppercase; margin-top: 8px; }
+.mockup-phone .ticket-box .num { font-size: 48px; font-weight: 900; color: #E29F34; line-height: 1; letter-spacing: -1px; margin: 2px 0 8px; }
+.mockup-phone .ticket-box .arq { font-size: 11px; }
+.mockup-phone .ticket-box .arq strong { color: #E29F34; }
+.mockup-phone .memo { background: #fff; border-left: 3px solid #E29F34; padding: 10px 12px; font-size: 11px; color: #163D60; border-radius: 0 6px 6px 0; }
+
+.phones-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+
+/* Arquetipos grid */
+.arq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+.arq-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  border-top: 4px solid #E29F34;
+  box-shadow: 0 2px 8px rgba(22, 61, 96, 0.06);
+}
+.arq-card .emoji { font-size: 44px; line-height: 1; }
+.arq-card .n { font-size: 11px; font-weight: 700; color: #E29F34; letter-spacing: 2px; text-transform: uppercase; margin-top: 6px; }
+.arq-card .name { font-size: 22px; font-weight: 900; color: #163D60; letter-spacing: -0.5px; margin-bottom: 6px; }
+.arq-card .tag { font-size: 13px; font-style: italic; color: #163D60; margin-bottom: 10px; opacity: 0.85; }
+.arq-card .phrase { font-size: 13px; font-weight: 700; color: #E29F34; padding: 8px; background: rgba(226, 159, 52, 0.08); border-radius: 6px; text-align: center; }
+
+/* Email mockup */
+.email-mockup {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  margin: 18px auto;
+  max-width: 480px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: left;
+}
+.email-mockup .email-header { font-size: 11px; color: #888; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 14px; }
+.email-mockup .email-header strong { color: #163D60; }
+.email-mockup .email-subject { font-size: 15px; font-weight: 800; color: #163D60; margin-bottom: 14px; }
+.email-mockup .email-ticket { background: #E29F34; color: #163D60; padding: 12px; text-align: center; border-radius: 6px; margin-bottom: 12px; }
+.email-mockup .email-ticket .t1 { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+.email-mockup .email-ticket .t2 { font-size: 32px; font-weight: 900; line-height: 1; }
+.email-mockup .email-body { font-size: 13px; line-height: 1.5; color: #163D60; }
+.email-mockup .email-body p { margin-bottom: 8px; font-size: 13px; }
+
+/* Lo que queda */
+.benefit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+.benefit-card { background: #163D60; color: #FDFBF7; padding: 18px; border-radius: 10px; }
+.benefit-card .icon { font-size: 28px; margin-bottom: 6px; }
+.benefit-card .t { font-weight: 800; font-size: 14px; margin-bottom: 4px; color: #E29F34; }
+.benefit-card .d { font-size: 12px; line-height: 1.4; }
+
+/* Timeline */
+.timeline { margin: 20px 0; }
+.timeline-item { display: grid; grid-template-columns: 140px 1fr; gap: 16px; margin-bottom: 14px; padding: 14px 16px; background: #fff; border-radius: 8px; border-left: 4px solid #E29F34; }
+.timeline-when { font-weight: 800; color: #E29F34; font-size: 13px; letter-spacing: 0.5px; }
+.timeline-what { font-size: 13px; color: #163D60; line-height: 1.5; }
+.timeline-what strong { color: #E29F34; }
+
+/* Equipo roles */
+.roles { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 20px 0; }
+.role-card { background: #fff8ea; border: 1px dashed #E29F34; padding: 16px; border-radius: 10px; text-align: center; }
+.role-card .n { font-size: 16px; font-weight: 800; color: #163D60; margin-bottom: 4px; }
+.role-card .d { font-size: 12px; color: #555; line-height: 1.4; }
+
+/* Footer */
+.footer {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 2px solid #E29F34;
+  text-align: center;
+  color: #888;
+  font-size: 12px;
+}
+.footer strong { color: #E29F34; }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .wrap { padding: 20px 16px; }
+  .hero { padding: 40px 20px; }
+  .hero h1 { font-size: 28px; }
+  h2 { font-size: 20px; }
+  .arq-grid, .benefit-grid, .roles { grid-template-columns: 1fr; }
+  .timeline-item { grid-template-columns: 1fr; }
+  .mockup-phone { width: 100%; max-width: 260px; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="tag">🎯 Propuesta estratégica · interno</div>
+  <h1>Acción Marketing<br>Levante <span>IN</span></h1>
+  <p class="sub">Test de arquetipos · sorteo Fase 1 GO · posicionamiento del equipo como referente CdU en el evento presencial del sábado.</p>
+  <div class="meta">25-26 abril 2026 · Equipo CdU</div>
+</div>
+
+<!-- RESUMEN -->
+<h2>La idea en 3 frases</h2>
+<p>Montamos un test corto y divertido: <strong>"¿Qué tipo de inversor CdU eres?"</strong>. Los 3 llevamos una pegatina en el lanyard con QR; al despedirnos de cada conversación lo enseñamos. Quien lo hace descubre su arquetipo, recibe una tarjeta personalizada, y queda automáticamente inscrito al sorteo de una <strong>Fase 1 GO (289 €)</strong> que anunciamos el domingo 20:30 en el grupo <strong>Levante IN</strong>.</p>
+
+<!-- FLUJO COMPLETO -->
+<h2>La jugada · paso a paso</h2>
+
+<div class="step-box">
+  <span class="num">1</span><span class="title">Los 3 llevamos pegatina en el lanyard</span>
+  <div class="desc">Cada uno con su nombre. Mismo diseño. Sin stand, sin banners — elegante, al estilo CdU.</div>
+</div>
+
+<div class="step-box">
+  <span class="num">2</span><span class="title">En networking, al despedirnos → enseñamos el QR</span>
+  <div class="desc">Frase unificada: "Te reto a un test, 60 segundos. El que lo hace entra al sorteo de una Fase 1 GO, 289 €. Escanea esto".</div>
+</div>
+
+<div class="step-box">
+  <span class="num">3</span><span class="title">La persona escanea → hace el quiz</span>
+  <div class="desc">5 preguntas rápidas en móvil. Al terminar descubre su arquetipo con frase propia y recibe su número de ticket.</div>
+</div>
+
+<div class="step-box">
+  <span class="num">4</span><span class="title">Recibe email con su arquetipo + número</span>
+  <div class="desc">Mensaje brandeado CdU que le queda guardado. Con su frase, su consejo personalizado, y su número para el sorteo.</div>
+</div>
+
+<div class="step-box">
+  <span class="num">5</span><span class="title">Domingo 20:30 → sorteo en grupo Levante IN</span>
+  <div class="desc">Vídeo corto de los 3 sacando el número ganador en directo con random.org. Al ganador le pedimos un audio espontáneo para el grupo → validación real de la comunidad.</div>
+</div>
+
+<div class="step-box">
+  <span class="num">6</span><span class="title">Follow-up personalizado a cada participante</span>
+  <div class="desc">Según el arquetipo que le ha salido y lo que ha respondido, sabemos exactamente qué decir a cada uno después del evento.</div>
+</div>
+
+<!-- QUÉ VE LA GENTE -->
+<h2>Lo que verán los asistentes</h2>
+
+<h3>La pegatina que llevamos en el lanyard</h3>
+<div class="mockup-wrap">
+  <div class="mockup-label">🏷️ Pegatina lanyard (90×60 mm)</div>
+  <div class="mockup-pegatina">
+    <div class="brand">
+      <div class="cdu">CdU de 0 a <span>ÉXITO</span></div>
+      <div class="who">XAVI</div>
+    </div>
+    <div class="hook">¿Qué tipo de inversor <strong>CdU</strong> eres?
+      <div class="prize"><span class="chip">SORTEO</span> Fase 1 GO · 289 €</div>
+    </div>
+    <div class="qr">[QR]</div>
+    <div class="foot">
+      <span>Escanea · 60 seg</span>
+      <span class="time">Sorteo dom 20:30</span>
+    </div>
+  </div>
+</div>
+
+<h3>El quiz al escanear</h3>
+<div class="mockup-wrap">
+  <div class="mockup-label">📱 Lo que ven en el móvil</div>
+  <div class="phones-row">
+    <div class="mockup-phone">
+      <div class="screen">
+        <div style="text-align:center; font-size:11px; font-weight:800; color:#163D60;">CdU de 0 a <span style="color:#E29F34">ÉXITO</span></div>
+        <hr style="margin:10px 0 14px; border:0; border-top:1px solid #163D60;">
+        <div style="text-align:center; background:#fff8ea; border:1px dashed #E29F34; padding:12px; border-radius:8px; margin-bottom:14px;">
+          <div style="font-size:9px; font-weight:700; color:#E29F34; letter-spacing:1.5px; text-transform:uppercase;">🎁 Sorteo</div>
+          <div style="font-size:15px; font-weight:800; color:#163D60;">Fase 1 GO · 289 €</div>
+        </div>
+        <h4>¿Qué tipo de inversor CdU eres?</h4>
+        <div style="font-size:11px; color:#555; margin-bottom:12px;">5 preguntas rápidas. 60 segundos.</div>
+        <div style="background:#E29F34; color:#163D60; padding:10px; text-align:center; border-radius:6px; font-size:11px; font-weight:700;">Empezar test →</div>
+      </div>
+    </div>
+    <div class="mockup-phone">
+      <div class="screen">
+        <div class="progress">Pregunta 3 de 5</div>
+        <div class="progress-bar"><div style="width:60%"></div></div>
+        <h4>En Cambio de Uso específicamente, ¿en qué punto estás?</h4>
+        <div class="opt">Ya hago operaciones de CdU</div>
+        <div class="opt active">Estoy mirando mi primera operación</div>
+        <div class="opt">Me interesa pero no sé por dónde empezar</div>
+        <div class="opt">Me da respeto hacerlo solo</div>
+        <div class="opt">No me lo había planteado</div>
+      </div>
+    </div>
+    <div class="mockup-phone">
+      <div class="screen">
+        <div class="ticket-box">
+          <div class="lab">🎟️ Ticket activado</div>
+          <div class="num-lab">Tu número</div>
+          <div class="num">037</div>
+          <div class="arq">Arquetipo: <strong>Transformador</strong></div>
+        </div>
+        <div class="memo">📸 <strong>Haz captura de pantalla</strong> o memoriza tu número. También te llega por email ahora mismo.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ARQUETIPOS -->
+<h2>Los 4 arquetipos</h2>
+<p>Basados en los perfiles <strong>reales</strong> detectados por la encuesta de Rafa a 115 inversores de Levante IN. Cada arquetipo recibe un mensaje personalizado que mezcla reconocimiento + consejo de amigo + posicionamiento sutil de nuestro servicio.</p>
+
+<div class="arq-grid">
+  <div class="arq-card">
+    <div class="emoji">🎯</div>
+    <div class="n">arquetipo</div>
+    <div class="name">Cazador</div>
+    <div class="tag">"Hueles la oportunidad antes de que aparezca en Idealista"</div>
+    <div class="phrase">"Cazo rápido porque valido antes"</div>
+  </div>
+  <div class="arq-card">
+    <div class="emoji">🏛️</div>
+    <div class="n">arquetipo · target CdU</div>
+    <div class="name">Transformador</div>
+    <div class="tag">"No compras lo que ves. Compras lo que podría ser"</div>
+    <div class="phrase">"Transformo con cabeza, no con corazonadas"</div>
+  </div>
+  <div class="arq-card">
+    <div class="emoji">🌾</div>
+    <div class="n">arquetipo</div>
+    <div class="name">Rentista</div>
+    <div class="tag">"Plantas árboles que darán fruto cuando tú ya ni te acuerdes"</div>
+    <div class="phrase">"Riego lento porque riego para siempre"</div>
+  </div>
+  <div class="arq-card">
+    <div class="emoji">🤝</div>
+    <div class="n">arquetipo</div>
+    <div class="name">Aliado</div>
+    <div class="tag">"Sabes que el juego no se gana solo"</div>
+    <div class="phrase">"Juego en equipo porque sé dónde entrar"</div>
+  </div>
+</div>
+
+<!-- EJEMPLO TEXTO QUE RECIBEN -->
+<h2>Ejemplo de texto que recibe un Transformador</h2>
+
+<div class="step-box" style="border-left-color:#163D60;">
+  <h3 style="margin-top:0;">💡 Qué te hace único</h3>
+  <ul>
+    <li>El plano te emociona más que la foto</li>
+    <li>Te gustan los rompecabezas urbanísticos</li>
+    <li>Piensas en m² útiles, no en m² construidos</li>
+  </ul>
+
+  <h3>🏛️ Cómo te defiendes</h3>
+  <p style="font-size:14px;">Tu visión es tu superpoder — y tu talón de Aquiles. Porque la normativa, la comunidad y el registrador pueden tumbar una idea perfecta.</p>
+  <p style="font-size:14px;">El transformador más rentable no es el más audaz: es el que se rodea de <strong>quien valida antes de firmar</strong>.</p>
+  <p style="font-size:14px;"><strong>Cuando veas ese local que otros no saben leer y quieras asegurarte antes de meter el primer euro, aquí estamos.</strong></p>
+
+  <div style="background:#163D60; color:#FDFBF7; padding:14px; border-radius:6px; text-align:center; margin-top:14px;">
+    <div style="font-size:10px; font-weight:700; color:#E29F34; letter-spacing:2px; text-transform:uppercase;">⭐ Tu frase</div>
+    <div style="font-size:17px; font-weight:800; margin-top:4px;">"Transformo con cabeza, no con corazonadas"</div>
+  </div>
+</div>
+
+<p>La voz es de mentor, no de comercial. Nunca hay venta directa. El call to action al servicio queda <strong>acoplado al consejo</strong>: *"cuando lo necesites, aquí estamos"*. Sin presión.</p>
+
+<!-- EMAIL -->
+<h2>El email que les llega</h2>
+
+<div class="email-mockup">
+  <div class="email-header">
+    📧 <strong>De:</strong> Equipo CdU &lt;tucambiodeuso@gmail.com&gt;<br>
+    <strong>Para:</strong> maria@ejemplo.com
+  </div>
+  <div class="email-subject">🏛️ Eres un Transformador · Ticket #037 · Sorteo mañana 20:30</div>
+  <div class="email-ticket">
+    <div class="t1">🎟️ Tu ticket</div>
+    <div class="t2">Nº 037</div>
+  </div>
+  <div class="email-body">
+    <p>Hola María,</p>
+    <p>Tu arquetipo CdU es <strong style="color:#E29F34">EL TRANSFORMADOR</strong>.</p>
+    <p style="font-style:italic;">"No compras lo que ves. Compras lo que podría ser"</p>
+    <p>Si sale tu número mañana a las 20:30, te llamamos al momento para coordinar tu Fase 1 GO.</p>
+    <p>Ver tu arquetipo completo: <span style="color:#E29F34">tucambiodeuso.com/resultado/transformador</span></p>
+    <p style="margin-top:16px; padding-top:12px; border-top:1px solid #eee;"><strong style="color:#163D60">Equipo CdU</strong> · Dani · Paco · Xavi · 📱 694 26 40 27</p>
+  </div>
+</div>
+
+<!-- POR QUÉ FUNCIONA -->
+<h2>Por qué esta acción marca la diferencia</h2>
+
+<div class="benefit-grid">
+  <div class="benefit-card">
+    <div class="icon">🎭</div>
+    <div class="t">Es divertido, no comercial</div>
+    <div class="d">La gente lo ENSEÑA. "¿Y a ti qué te ha salido?". Corre solo en la sala.</div>
+  </div>
+  <div class="benefit-card">
+    <div class="icon">💡</div>
+    <div class="t">Crea consciencia sutil</div>
+    <div class="d">Las preguntas hacen pensar: "yo esto no lo tengo resuelto... ¿quién me ayuda?" — Y al final aparecemos nosotros.</div>
+  </div>
+  <div class="benefit-card">
+    <div class="icon">🎯</div>
+    <div class="t">Posiciona al equipo como referente</div>
+    <div class="d">Un test profesional dice "estos saben de qué hablan". Los 3 aparecemos juntos en el vídeo del sorteo.</div>
+  </div>
+  <div class="benefit-card">
+    <div class="icon">🌱</div>
+    <div class="t">Detecta gemas escondidas</div>
+    <div class="d">Personas interesadas en CdU pero que no se atreven solas. Con nosotros darían el paso.</div>
+  </div>
+  <div class="benefit-card">
+    <div class="icon">🎙️</div>
+    <div class="t">Validación real del ganador</div>
+    <div class="d">El audio del ganador en el grupo es prueba social que no podemos fabricar.</div>
+  </div>
+  <div class="benefit-card">
+    <div class="icon">📇</div>
+    <div class="t">Follow-up segmentado</div>
+    <div class="d">Sabemos qué decir a cada persona después. Al Transformador caliente vs al Aliado que quiere JV — mensajes distintos, cada uno en su momento.</div>
+  </div>
+</div>
+
+<!-- POSICIONAMIENTO -->
+<h2>Cómo nos posicionamos</h2>
+<p>La acción transmite 4 cosas sin decirlas:</p>
+<ul>
+  <li><strong>Somos equipo real</strong> — 3 personas con roles claros (Dani técnico · Paco números · Xavi estrategia/marketing)</li>
+  <li><strong>Profesionales del nicho</strong> — un test con arquetipos reales demuestra que entendemos el mercado</li>
+  <li><strong>Aportamos valor antes de vender</strong> — regalamos 289 € y consejos útiles sin pedir nada a cambio</li>
+  <li><strong>Tecnología con alma</strong> — sistema automatizado pero con voz humana en cada mensaje</li>
+</ul>
+<p>Cuando un asistente reciba en las próximas semanas un mensaje nuestro adaptado a su perfil, la respuesta natural es: <em>"estos tíos me conocen"</em>. Y eso es imposible de conseguir con una tarjeta de visita clásica.</p>
+
+<!-- EQUIPO -->
+<h2>Qué hace cada uno</h2>
+
+<div class="roles">
+  <div class="role-card">
+    <div class="n">🧠 Xavi</div>
+    <div class="d">Monta la parte técnica (sistema automático).<br>Sábado en evento.<br>Coordinación.</div>
+  </div>
+  <div class="role-card">
+    <div class="n">🛠 Dani</div>
+    <div class="d">Sábado en evento + pegatina.<br>Cara visible del servicio.<br>Vídeo sorteo domingo.</div>
+  </div>
+  <div class="role-card">
+    <div class="n">📊 Paco</div>
+    <div class="d">Sábado en evento + pegatina.<br>Vídeo sorteo domingo.<br>Refuerzo operativo.</div>
+  </div>
+</div>
+
+<p style="text-align:center; background:#fff8ea; padding:14px; border-radius:8px; border:1px dashed #E29F34; font-size:14px;">
+  <strong>Todo lo técnico lo dejo listo Xavi.</strong> Vosotros solo llevar la pegatina y aparecer en el vídeo (10 min el domingo).
+</p>
+
+<!-- TIMELINE -->
+<h2>Calendario de la acción</h2>
+
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-when">Viernes 24 · 18:00</div>
+    <div class="timeline-what">Xavi publica mensaje expectativa en el grupo Levante IN. Expectativa plantada sin spoilers.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-when">Sábado 25 · evento</div>
+    <div class="timeline-what"><strong>Los 3 con pegatina</strong>. Networking normal. Al despedirnos → enseñamos QR con la frase unificada.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-when">Sábado 25 · 22:00</div>
+    <div class="timeline-what">Xavi manda recordatorio al grupo Levante IN. "Aún podéis activar ticket hasta mañana".</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-when">Domingo 26 · 20:30</div>
+    <div class="timeline-what"><strong>Grabamos vídeo los 3</strong> (10 min). Random.org en directo → número ganador. Publicamos en grupo Levante IN.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-when">Lunes 27 · AM</div>
+    <div class="timeline-what">Llamada al ganador. Le pedimos audio espontáneo para el grupo. Coordinamos su Fase 1 GO.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-when">Lunes 27 · PM</div>
+    <div class="timeline-what">Audio del ganador publicado en el grupo. Mensajes segmentados a los demás participantes según arquetipo.</div>
+  </div>
+</div>
+
+<!-- CIERRE -->
+<h2>Lo que nos deja esta acción</h2>
+
+<p>Si va según el plan conservador:</p>
+<ul>
+  <li><strong>60-90 personas</strong> haciendo el test (de 130 asistentes)</li>
+  <li><strong>20-35 contactos calientes</strong> con alto interés real en CdU</li>
+  <li><strong>10-25 aliados</strong> potenciales (JV o gestores que pueden traer ops)</li>
+  <li><strong>1-5 Fases 1 GO</strong> cerradas en los 60 días siguientes</li>
+  <li><strong>Posicionamiento del equipo</strong> como referente CdU del grupo</li>
+  <li><strong>Audio del ganador</strong> como testimonio real</li>
+  <li><strong>Contenido para publicar después</strong> ("el 31 % del grupo es Transformador · ¿y tú?")</li>
+</ul>
+
+<p>Total coste: 5-10 € (3 pegatinas impresas).</p>
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong>CdU de 0 a ÉXITO</strong> · Dani · Paco · Xavi<br>
+  📱 694 26 40 27 · 🌐 <a href="https://tucambiodeuso.com" style="color:#E29F34;">tucambiodeuso.com</a><br><br>
+  Propuesta · abril 2026
+</div>
+
+</div>
+
+</body>
+</html>
