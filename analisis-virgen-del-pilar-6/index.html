@@ -3,23 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Análisis preliminar · Virgen del Pilar 6 · CdU de 0 a ÉXITO</title>
+<title>Análisis de viabilidad · Virgen del Pilar 6 · Crevillent</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Montserrat', Arial, sans-serif; background: #FDFBF7; color: #163D60; line-height: 1.5; padding: 24px 16px; }
-.wrap { max-width: 800px; margin: 0 auto; }
+body { font-family: 'Montserrat', Arial, sans-serif; background: #FDFBF7; color: #163D60; line-height: 1.55; padding: 24px 16px; }
+.wrap { max-width: 820px; margin: 0 auto; }
 
 .brand { text-align: center; padding-bottom: 18px; margin-bottom: 22px; border-bottom: 2px solid #E29F34; }
-.brand img { max-width: 190px; height: auto; display: inline-block; }
+.brand img { max-width: 200px; height: auto; display: inline-block; }
 .brand .sub { font-size: 10px; color: #E29F34; letter-spacing: 3px; text-transform: uppercase; margin-top: 10px; font-weight: 700; }
 
 .title { font-size: 26px; font-weight: 800; color: #163D60; letter-spacing: -0.6px; line-height: 1.2; margin-bottom: 8px; }
 .title span { color: #E29F34; }
-.lead { font-size: 14px; color: #163D60; opacity: 0.85; margin-bottom: 28px; }
-.lead strong { color: #E29F34; font-weight: 800; opacity: 1; }
+.subtitle { font-size: 14px; color: #163D60; opacity: 0.7; font-weight: 500; margin-bottom: 18px; }
+.lead { font-size: 14px; color: #163D60; line-height: 1.6; margin-bottom: 20px; }
+.lead strong { color: #E29F34; font-weight: 800; }
 
-.section-label { font-size: 10px; font-weight: 800; color: #E29F34; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; margin-top: 32px; }
+.toc { background: #fff8ea; border-radius: 10px; padding: 16px 20px; margin-bottom: 28px; font-size: 13px; }
+.toc .t { font-size: 10px; font-weight: 800; color: #E29F34; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+.toc ol { margin: 0; padding-left: 18px; color: #163D60; }
+.toc ol li { padding: 2px 0; font-weight: 500; }
+
+.section-label { font-size: 11px; font-weight: 800; color: #E29F34; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; margin-top: 36px; padding-bottom: 4px; border-bottom: 2px solid rgba(226, 159, 52, 0.25); }
+.section-label .n { background: #E29F34; color: #fff; display: inline-block; width: 20px; height: 20px; border-radius: 50%; text-align: center; line-height: 20px; margin-right: 8px; font-size: 11px; font-weight: 800; }
+
+.intro-text { font-size: 13.5px; color: #163D60; line-height: 1.6; margin-bottom: 14px; opacity: 0.9; }
 
 .inmueble { background: #fff; border-left: 4px solid #E29F34; border-radius: 0 8px 8px 0; padding: 16px 20px; margin-bottom: 8px; }
 .inmueble .row { display: flex; justify-content: space-between; padding: 5px 0; font-size: 13px; border-bottom: 1px dashed rgba(22,61,96,0.15); }
@@ -47,7 +56,7 @@ table th { background: #163D60; color: #FDFBF7; padding: 9px 8px; text-align: ce
 table th:first-child { text-align: left; border-radius: 6px 0 0 0; }
 table th:last-child { border-radius: 0 6px 0 0; }
 table td { padding: 8px; border-bottom: 1px dashed rgba(22,61,96,0.12); }
-table td:first-child { color: #163D60; opacity: 0.8; font-weight: 500; }
+table td:first-child { color: #163D60; opacity: 0.85; font-weight: 500; }
 table td:not(:first-child) { text-align: center; font-weight: 700; color: #163D60; }
 table tr.total td { border-top: 1.5px solid #163D60; font-weight: 800; padding-top: 10px; background: #fdfbf7; opacity: 1; }
 table tr.margin td { font-size: 14px; font-weight: 900; padding: 10px 8px; }
@@ -56,33 +65,44 @@ table tr.margin td.neg { color: #9b3333; }
 table tr.margin td.mid-val { color: #8a6a1f; }
 table tr.roi td { font-size: 12px; opacity: 0.85; }
 table tr.highlight td { background: #fff8ea; }
-
 table.nums td { padding: 7px 0; }
 table.nums td:last-child { text-align: right; }
 table.nums tr.total td { background: transparent; }
 
-.note { background: #fff8ea; border: 1px dashed #E29F34; border-radius: 8px; padding: 12px 14px; font-size: 12.5px; color: #7d6608; line-height: 1.5; margin-top: 14px; }
+.note { background: #fff8ea; border: 1px dashed #E29F34; border-radius: 8px; padding: 12px 14px; font-size: 12.5px; color: #7d6608; line-height: 1.55; margin-top: 14px; }
 .note strong { color: #163D60; }
 
 .callout { background: #163D60; color: #FDFBF7; padding: 18px 22px; border-radius: 10px; margin: 12px 0 18px; }
 .callout .lab { font-size: 10px; color: #E29F34; letter-spacing: 2px; font-weight: 800; text-transform: uppercase; margin-bottom: 6px; }
-.callout .big { font-size: 15px; font-weight: 700; line-height: 1.4; }
-.callout .big span { color: #E29F34; }
+.callout .big { font-size: 15px; font-weight: 600; line-height: 1.5; }
+.callout .big strong { color: #E29F34; font-weight: 800; }
 
-.conclusion { background: #163D60; color: #FDFBF7; border-radius: 12px; padding: 24px 22px; margin-top: 28px; }
+.kpi { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+.kpi .card { background: #fff; border-radius: 10px; padding: 16px; text-align: center; border: 1.5px solid #E29F34; }
+.kpi .card .lab { font-size: 10px; color: #E29F34; letter-spacing: 2px; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; }
+.kpi .card .val { font-size: 24px; color: #163D60; font-weight: 900; line-height: 1; letter-spacing: -0.5px; }
+.kpi .card .hint { font-size: 11px; color: #163D60; opacity: 0.7; margin-top: 4px; }
+
+.conclusion { background: #163D60; color: #FDFBF7; border-radius: 12px; padding: 26px 24px; margin-top: 28px; }
 .conclusion .label { font-size: 10px; font-weight: 700; color: #E29F34; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; text-align: center; }
-.conclusion .big { font-size: 19px; font-weight: 800; line-height: 1.35; margin-bottom: 14px; text-align: center; }
+.conclusion .big { font-size: 19px; font-weight: 800; line-height: 1.35; margin-bottom: 16px; text-align: center; }
 .conclusion .big span { color: #E29F34; }
-.conclusion .small { font-size: 13px; font-weight: 500; line-height: 1.55; opacity: 0.92; }
-.conclusion .small strong { color: #E29F34; font-weight: 700; }
-.conclusion .rec { background: rgba(226, 159, 52, 0.1); border: 1px solid rgba(226, 159, 52, 0.3); border-radius: 8px; padding: 14px 16px; margin-top: 14px; font-size: 13px; }
-.conclusion .rec strong { color: #E29F34; }
+.conclusion .two-ways { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+.conclusion .way { background: rgba(253, 251, 247, 0.07); border: 1px solid rgba(226, 159, 52, 0.35); border-radius: 10px; padding: 16px; font-size: 13px; line-height: 1.55; }
+.conclusion .way .tit { font-size: 12px; color: #E29F34; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 8px; }
+.conclusion .way strong { color: #E29F34; }
 
-.footer { text-align: center; margin-top: 32px; padding-top: 22px; border-top: 1px solid rgba(22,61,96,0.12); font-size: 12px; color: #163D60; }
+.footer { text-align: center; margin-top: 36px; padding-top: 22px; border-top: 1px solid rgba(22,61,96,0.12); font-size: 12px; color: #163D60; }
 .footer strong { color: #E29F34; }
 .footer .team { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #E29F34; font-weight: 700; margin-top: 4px; }
 
 .disclaimer { font-size: 10.5px; color: #163D60; opacity: 0.6; text-align: center; margin-top: 16px; line-height: 1.5; font-style: italic; }
+
+@media (max-width: 600px) {
+  .kpi { grid-template-columns: 1fr; }
+  .conclusion .two-ways { grid-template-columns: 1fr; }
+  .title { font-size: 22px; }
+}
 </style>
 </head>
 <body>
@@ -90,15 +110,35 @@ table.nums tr.total td { background: transparent; }
 
   <div class="brand">
     <img src="https://xaviriera.github.io/cdu-briefings/assets/logos/LOGO-FINAL-PNG-MEDIANO.png" alt="CdU de 0 a ÉXITO">
-    <div class="sub">Análisis preliminar de viabilidad</div>
+    <div class="sub">Análisis profesional de viabilidad</div>
   </div>
 
   <div class="title">Virgen del Pilar 6 · <span>Crevillent</span></div>
+  <div class="subtitle">Propuesta de operación · dos vías posibles de ejecución</div>
+
   <div class="lead">
-    Análisis completo de viabilidad: escenarios de venta, estructura de capital (compra directa vs aplazada) y reparto de beneficio en Joint Venture. Son cifras <strong>a grosso modo, no finas</strong> — pendientes de cierre de operación y validación técnica — pero enmarcan la decisión.
+    Este documento analiza la operación de Cambio de Uso del inmueble de la C/ Virgen del Pilar 6. Proponemos <strong>dos vías de ejecución</strong>, con sus escenarios y condiciones. El objetivo es que, con los números sobre la mesa, podamos decidir juntos la mejor manera de hacerla viable. Cifras a grosso modo, pendientes de cierre de operación y validación técnica final.
   </div>
 
-  <div class="section-label">📍 El inmueble</div>
+  <div class="toc">
+    <div class="t">En este documento</div>
+    <ol>
+      <li>El inmueble y supuestos de coste</li>
+      <li>Escenarios de venta — 3 viviendas vs 4 viviendas</li>
+      <li>Estructura de capital — compra directa vs aplazada</li>
+      <li>Vía A · Joint Venture con equipo CdU</li>
+      <li>Vía B · Esther gestora principal + CdU apoyo externo</li>
+      <li>Conclusión y recomendación</li>
+    </ol>
+  </div>
+
+  <!-- ==================== 1 ==================== -->
+  <div class="section-label"><span class="n">1</span>El inmueble y supuestos</div>
+
+  <div class="intro-text">
+    Punto de partida de todos los números. Son los datos sobre los que se construyen los escenarios que vienen a continuación.
+  </div>
+
   <div class="inmueble">
     <div class="row"><span class="k">Dirección</span><span class="v">C/ Virgen del Pilar 6, Crevillent</span></div>
     <div class="row"><span class="k">Superficie registral</span><span class="v">252,50 m²</span></div>
@@ -107,259 +147,253 @@ table.nums tr.total td { background: transparent; }
     <div class="row"><span class="k">Precio de compra negociado</span><span class="v">180.000 €</span></div>
   </div>
 
-  <div class="section-label">📊 Supuestos base</div>
-  <div class="inmueble">
-    <div class="row"><span class="k">Coste de reforma</span><span class="v">~ 600 €/m²</span></div>
-    <div class="row"><span class="k">Reforma total (252,50 m² × 600)</span><span class="v">151.500 €</span></div>
+  <div class="inmueble" style="margin-top:12px;">
+    <div class="row"><span class="k">Coste de reforma estimado</span><span class="v">600 €/m² · total 151.500 €</span></div>
     <div class="row"><span class="k">Impuestos compra (ITP 10%)</span><span class="v">18.000 €</span></div>
     <div class="row"><span class="k">Proyecto + licencia + gestión</span><span class="v">~ 15.000 €</span></div>
-    <div class="row"><span class="k">Gastos de venta por vivienda</span><span class="v">~ 2.000 €</span></div>
+    <div class="row"><span class="k">Gastos venta por vivienda</span><span class="v">~ 2.000 €</span></div>
   </div>
 
-  <div class="section-label">🧮 Bloque 1 · Escenarios de venta</div>
+  <!-- ==================== 2 ==================== -->
+  <div class="section-label"><span class="n">2</span>Escenarios de venta</div>
+
+  <div class="intro-text">
+    Lo primero que hay que decidir es cuántas viviendas salen y a qué precio pueden venderse. De esto depende la ganancia bruta de toda la operación.
+  </div>
 
   <div class="scenario mid">
     <div class="head">
-      <h3>Escenario A · 3 viviendas de ~84 m²<span class="sub">Pisos más grandes · precio objetivo más alto</span></h3>
+      <h3>Escenario A · 3 viviendas de ~84 m²<span class="sub">Viviendas más grandes — precio objetivo más alto</span></h3>
       <div class="verdict">Margen justo</div>
     </div>
     <table class="nums">
-      <tr><td>Coste base proyecto</td><td>364.500 €</td></tr>
-      <tr><td>Gastos venta (3 × 2.000 €)</td><td>6.000 €</td></tr>
-      <tr class="total"><td>Coste total del proyecto</td><td>370.500 €</td></tr>
+      <tr><td>Coste total del proyecto</td><td>370.500 €</td></tr>
     </table>
-    <table style="margin-top:16px;">
+    <table style="margin-top:14px;">
       <tr><th>Precio venta / vivienda</th><th>120.000 €</th><th>130.000 €</th><th>140.000 €</th></tr>
       <tr><td>Ingresos totales (×3)</td><td>360.000 €</td><td>390.000 €</td><td>420.000 €</td></tr>
       <tr class="margin"><td>Ganancia bruta</td><td class="neg">− 10.500 €</td><td class="mid-val">+ 19.500 €</td><td class="pos">+ 49.500 €</td></tr>
-      <tr><td>Por vivienda</td><td>− 3.500 €</td><td>+ 6.500 €</td><td>+ 16.500 €</td></tr>
       <tr class="roi"><td>Rentabilidad sobre coste</td><td>− 2,8 %</td><td>+ 5,3 %</td><td>+ 13,4 %</td></tr>
     </table>
-    <div class="note">Con 3 viviendas hay que vender mínimo a 130k para cubrir gastos. Cualquier desvío en obra se come el margen.</div>
+    <div class="note">Con 3 viviendas hay que vender como mínimo a 130.000 € para cubrir costes. Cualquier desvío en obra se come el margen. Depende del techo real de precios de esa zona.</div>
   </div>
 
   <div class="scenario good">
     <div class="head">
-      <h3>Escenario B · 4 viviendas de ~63 m²<span class="sub">Pisos más pequeños · precios más accesibles</span></h3>
-      <div class="verdict">Viable bruto</div>
+      <h3>Escenario B · 4 viviendas de ~63 m²<span class="sub">Viviendas más pequeñas — precios más accesibles</span></h3>
+      <div class="verdict">Viable</div>
     </div>
     <table class="nums">
-      <tr><td>Coste base proyecto</td><td>364.500 €</td></tr>
-      <tr><td>Gastos venta (4 × 2.000 €)</td><td>8.000 €</td></tr>
-      <tr class="total"><td>Coste total del proyecto</td><td>372.500 €</td></tr>
+      <tr><td>Coste total del proyecto</td><td>372.500 €</td></tr>
     </table>
-    <table style="margin-top:16px;">
+    <table style="margin-top:14px;">
       <tr><th>Precio venta / vivienda</th><th>110.000 €</th><th>115.000 €</th><th>120.000 €</th></tr>
       <tr><td>Ingresos totales (×4)</td><td>440.000 €</td><td>460.000 €</td><td>480.000 €</td></tr>
       <tr class="margin"><td>Ganancia bruta</td><td class="pos">+ 67.500 €</td><td class="pos">+ 87.500 €</td><td class="pos">+ 107.500 €</td></tr>
-      <tr><td>Por vivienda</td><td>+ 16.875 €</td><td>+ 21.875 €</td><td>+ 26.875 €</td></tr>
       <tr class="roi"><td>Rentabilidad sobre coste</td><td>+ 18,1 %</td><td>+ 23,5 %</td><td>+ 28,9 %</td></tr>
     </table>
-    <div class="note">La ganancia bruta solo es el 1er filtro. Falta descontar pago a inversores y reparto entre partes (siguiente bloque).</div>
+    <div class="note">Con 4 viviendas los precios pueden ser más asequibles y el margen respira. Es el escenario que da sentido a la operación. <strong>Desde aquí construimos el resto del análisis asumiendo 4 viviendas @ 115.000 € de media.</strong></div>
   </div>
 
-  <div class="callout">
-    <div class="lab">Dato clave</div>
-    <div class="big">La ganancia bruta <span>NO es el beneficio del equipo</span>. Hay que pagar al capital que financia la operación y repartir con todas las partes (Esther + CdU).</div>
-  </div>
+  <!-- ==================== 3 ==================== -->
+  <div class="section-label"><span class="n">3</span>Estructura de capital</div>
 
-  <div class="section-label">💰 Bloque 2 · Estructura de capital</div>
+  <div class="intro-text">
+    La ganancia bruta solo es el primer filtro. El siguiente paso es ver cómo se financia la operación, porque eso determina si hace falta un inversor externo que comparta beneficio.
+  </div>
 
   <div class="scenario mid">
     <div class="head">
-      <h3>Modalidad 1 · Compra directa 180.000 € ahora<span class="sub">El equipo debe levantar los 180k desde el inicio</span></h3>
+      <h3>Modalidad 1 · Compra directa hoy<span class="sub">Pagar 180.000 € al firmar la compraventa</span></h3>
       <div class="verdict">Capital alto</div>
     </div>
     <table class="nums">
-      <tr><td>Capital inmediato (compra + ITP)</td><td>198.000 €</td></tr>
-      <tr><td>Capital obra + licencia (primeros meses)</td><td>166.500 €</td></tr>
-      <tr class="total"><td>Capital total a aportar</td><td>364.500 €</td></tr>
+      <tr><td>Compra + ITP (inmediato)</td><td>198.000 €</td></tr>
+      <tr><td>Reforma + licencia (primeros meses)</td><td>166.500 €</td></tr>
+      <tr class="total"><td>Capital total a levantar</td><td>~ 364.500 €</td></tr>
     </table>
-    <div class="note">El equipo (Esther + CdU) no dispone de 365k. <strong>Se necesita un inversor externo</strong> que financie al menos la parte de compra. Ese inversor cobra un retorno del beneficio.</div>
+    <div class="note">Con esta modalidad <strong>se necesita un inversor externo que financie la compra</strong>. A cambio, cobra un porcentaje del beneficio (habitualmente 20-25 %).</div>
   </div>
 
   <div class="scenario best">
     <div class="head">
-      <h3>Modalidad 2 · Compra aplazada 180.000 € a 10 meses<span class="sub">Pagamos la compra al terminar la obra con las ventas</span></h3>
+      <h3>Modalidad 2 · Compra aplazada a 10 meses<span class="sub">Pagar los 180.000 € al final, con las ventas</span></h3>
       <div class="verdict">Óptima</div>
     </div>
     <table class="nums">
-      <tr><td>Capital inmediato compra</td><td>0 €</td></tr>
-      <tr><td>ITP + licencia + proyecto</td><td>33.000 €</td></tr>
-      <tr><td>Reforma (financiable por fases con señales de compradores)</td><td>151.500 €</td></tr>
-      <tr class="total"><td>Capital total a aportar (escenario sin preventas)</td><td>~ 184.500 €</td></tr>
+      <tr><td>Compra (se paga al cerrar ventas)</td><td>0 € upfront</td></tr>
+      <tr><td>ITP + licencia + proyecto</td><td>~ 33.000 €</td></tr>
+      <tr><td>Reforma (151.500 €, financiable por fases)</td><td>~ 151.500 €</td></tr>
+      <tr class="total"><td>Capital total a levantar (sin preventas)</td><td>~ 184.500 €</td></tr>
     </table>
-    <div class="note"><strong>Capital necesario baja un 50 %.</strong> Con preventas (renders + 4 señales × ~10k = 40k antes de acabar), el capital externo puede ser mínimo o incluso cero.</div>
+    <div class="note">El capital necesario baja un 50 %. Con <strong>preventas sobre plano + renders</strong> durante los 10 meses, las señales de compradores (4 × ~10.000 € = 40.000 €) cubren parte de la reforma. Así, <strong>el inversor externo puede ser pequeño o incluso innecesario</strong>.</div>
   </div>
 
-  <div class="section-label">🤝 Bloque 3 · Reparto Joint Venture</div>
-  <div style="font-size:13px; margin-bottom:12px; opacity:0.85;">
-    Estructura de reparto asumida (sobre la ganancia bruta, escenario 4 viv @ 115k = 87.500 €):
+  <div class="callout">
+    <div class="lab">Clave del análisis</div>
+    <div class="big">Con compra aplazada + preventas, la operación <strong>casi no necesita capital externo</strong>. Eso cambia radicalmente el reparto del beneficio.</div>
   </div>
-  <div class="inmueble">
-    <div class="row"><span class="k">1º · Inversor capital (si hace falta)</span><span class="v">20 – 25 % de la ganancia bruta</span></div>
-    <div class="row"><span class="k">2º · Beneficio restante · Esther</span><span class="v">50 %</span></div>
-    <div class="row"><span class="k">2º · Beneficio restante · CdU equipo</span><span class="v">50 %</span></div>
-    <div class="row"><span class="k">Dentro de CdU · Xavi / Dani / Paco</span><span class="v">a partes iguales (33,3 % c/u del 50 % de CdU)</span></div>
+
+  <!-- ==================== 4 ==================== -->
+  <div class="section-label"><span class="n">4</span>Vía A · Joint Venture con CdU</div>
+
+  <div class="intro-text">
+    Si Esther y el equipo CdU ejecutamos la operación juntos, la propuesta de reparto sería: primero paga el inversor (si lo hay), y el beneficio restante se reparte <strong>50 % Esther · 50 % equipo CdU</strong>. Todos los escenarios se calculan sobre la ganancia bruta de 4 viviendas @ 115.000 € = 87.500 €.
   </div>
 
   <div class="scenario bad">
     <div class="head">
-      <h3>Variante 1 · Compra directa + inversor 25 %<span class="sub">Peor caso de reparto · máximo pago a capital externo</span></h3>
-      <div class="verdict">Margen bajo</div>
+      <h3>A.1 · Compra directa + inversor 25 %<span class="sub">Peor caso de reparto — máximo pago a capital externo</span></h3>
+      <div class="verdict">Poco margen</div>
     </div>
     <table>
       <tr><th>Parte</th><th>%</th><th>€</th></tr>
       <tr><td>Ganancia bruta total</td><td>100 %</td><td>87.500 €</td></tr>
-      <tr><td>Inversor capital</td><td>25 %</td><td>21.875 €</td></tr>
-      <tr><td>Beneficio restante</td><td>75 %</td><td>65.625 €</td></tr>
-      <tr><td>&nbsp;&nbsp;&nbsp;• Esther (50 % del resto)</td><td>37,5 %</td><td>32.812 €</td></tr>
-      <tr><td>&nbsp;&nbsp;&nbsp;• CdU total (50 % del resto)</td><td>37,5 %</td><td>32.812 €</td></tr>
-      <tr class="highlight"><td>&nbsp;&nbsp;&nbsp;• Por socio CdU (÷ 3)</td><td>12,5 %</td><td>10.937 €</td></tr>
+      <tr><td>Inversor (compra 180k + reforma)</td><td>25 %</td><td>21.875 €</td></tr>
+      <tr class="total"><td>Beneficio restante a repartir</td><td>75 %</td><td>65.625 €</td></tr>
+      <tr class="highlight"><td>Esther (50 %)</td><td>37,5 %</td><td>32.812 €</td></tr>
+      <tr class="highlight"><td>Equipo CdU (50 %)</td><td>37,5 %</td><td>32.812 €</td></tr>
     </table>
-    <div class="note">12 meses de operación para que cada socio de CdU se lleve ~11k. Muy por debajo del umbral de esfuerzo/riesgo razonable.</div>
   </div>
 
   <div class="scenario mid">
     <div class="head">
-      <h3>Variante 2 · Aplazado + inversor pequeño 20 %<span class="sub">Aplazado reduce capital necesario → menos % al inversor</span></h3>
-      <div class="verdict">Mejor</div>
+      <h3>A.2 · Compra aplazada + inversor pequeño 15-20 %<span class="sub">Aplazado reduce capital — menos % al inversor</span></h3>
+      <div class="verdict">Intermedio</div>
     </div>
     <table>
       <tr><th>Parte</th><th>%</th><th>€</th></tr>
       <tr><td>Ganancia bruta total</td><td>100 %</td><td>87.500 €</td></tr>
-      <tr><td>Inversor capital</td><td>20 %</td><td>17.500 €</td></tr>
-      <tr><td>Beneficio restante</td><td>80 %</td><td>70.000 €</td></tr>
-      <tr><td>&nbsp;&nbsp;&nbsp;• Esther (50 % del resto)</td><td>40 %</td><td>35.000 €</td></tr>
-      <tr><td>&nbsp;&nbsp;&nbsp;• CdU total (50 % del resto)</td><td>40 %</td><td>35.000 €</td></tr>
-      <tr class="highlight"><td>&nbsp;&nbsp;&nbsp;• Por socio CdU (÷ 3)</td><td>13,3 %</td><td>11.666 €</td></tr>
+      <tr><td>Inversor pequeño (cubre reforma)</td><td>20 %</td><td>17.500 €</td></tr>
+      <tr class="total"><td>Beneficio restante a repartir</td><td>80 %</td><td>70.000 €</td></tr>
+      <tr class="highlight"><td>Esther (50 %)</td><td>40 %</td><td>35.000 €</td></tr>
+      <tr class="highlight"><td>Equipo CdU (50 %)</td><td>40 %</td><td>35.000 €</td></tr>
     </table>
   </div>
 
   <div class="scenario best">
     <div class="head">
-      <h3>Variante 3 · Aplazado + preventas + sin inversor<span class="sub">Capital del equipo + señales compradores = 0 € inversor externo</span></h3>
+      <h3>A.3 · Compra aplazada + preventas + sin inversor<span class="sub">Las señales de compradores financian la obra</span></h3>
       <div class="verdict">Óptimo</div>
     </div>
     <table>
       <tr><th>Parte</th><th>%</th><th>€</th></tr>
       <tr><td>Ganancia bruta total</td><td>100 %</td><td>87.500 €</td></tr>
-      <tr><td>Inversor capital</td><td>0 %</td><td>0 €</td></tr>
-      <tr><td>Beneficio restante</td><td>100 %</td><td>87.500 €</td></tr>
-      <tr><td>&nbsp;&nbsp;&nbsp;• Esther (50 %)</td><td>50 %</td><td>43.750 €</td></tr>
-      <tr><td>&nbsp;&nbsp;&nbsp;• CdU total (50 %)</td><td>50 %</td><td>43.750 €</td></tr>
-      <tr class="highlight"><td>&nbsp;&nbsp;&nbsp;• Por socio CdU (÷ 3)</td><td>16,7 %</td><td>14.583 €</td></tr>
+      <tr><td>Inversor externo</td><td>0 %</td><td>0 €</td></tr>
+      <tr class="total"><td>Beneficio restante a repartir</td><td>100 %</td><td>87.500 €</td></tr>
+      <tr class="highlight"><td>Esther (50 %)</td><td>50 %</td><td>43.750 €</td></tr>
+      <tr class="highlight"><td>Equipo CdU (50 %)</td><td>50 %</td><td>43.750 €</td></tr>
     </table>
-    <div class="note"><strong>Es el escenario más favorable para el equipo.</strong> Aun así, 14.583 € por socio en 12 meses sigue estando en el límite de lo razonable para una operación de esta complejidad.</div>
+    <div class="note">Es el mejor reparto posible. Requiere que los 3 pilares se cumplan: <strong>4 viviendas, compra aplazada, preventas exitosas</strong>.</div>
   </div>
 
-  <div class="section-label">📈 Comparativa final por socio CdU</div>
+  <div class="section-label" style="margin-top:30px;">Comparativa Vía A · qué se lleva cada parte</div>
   <table>
-    <tr><th>Variante</th><th>€ por socio CdU</th><th>Diferencia</th></tr>
-    <tr><td>V1 · Compra directa + inversor 25 %</td><td>10.937 €</td><td>baseline</td></tr>
-    <tr><td>V2 · Aplazado + inversor 20 %</td><td>11.666 €</td><td>+ 729 €</td></tr>
-    <tr class="highlight margin"><td>V3 · Aplazado + preventas (sin inversor)</td><td class="pos">14.583 €</td><td class="pos">+ 3.646 €</td></tr>
+    <tr><th>Variante</th><th>Esther</th><th>Equipo CdU</th><th>Inversor</th></tr>
+    <tr><td>A.1 · Directa + inversor 25%</td><td>32.812 €</td><td>32.812 €</td><td>21.875 €</td></tr>
+    <tr><td>A.2 · Aplazada + inversor 20%</td><td>35.000 €</td><td>35.000 €</td><td>17.500 €</td></tr>
+    <tr class="highlight"><td>A.3 · Aplazada + preventas</td><td><strong>43.750 €</strong></td><td><strong>43.750 €</strong></td><td>0 €</td></tr>
   </table>
 
-  <div class="conclusion">
-    <div class="label">Síntesis estratégica · 3 condiciones</div>
-    <div class="big">Para que la operación encaje en JV con CdU, deben darse <span>3 pilares</span>.</div>
-    <div class="small">
-      <strong>1. Tienen que salir las 4 viviendas.</strong> Con 3 el margen es insuficiente para repartir entre inversor, Esther y CdU. Requisito técnico bloqueante.
-      <br><br>
-      <strong>2. La compra tiene que ser aplazada a 10 meses.</strong> Si hay que poner los 180k al arranque, se necesita inversor externo que se lleva 20-25 % del beneficio. Aplazado elimina esa necesidad y deja más margen al equipo.
-      <br><br>
-      <strong>3. Hay que ejecutar presales con renders durante la obra.</strong> Reservar viviendas con señales antes de acabar permite cubrir la reforma sin inversor y pagar los 180k con las primeras ventas.
-      <br><br>
-      Aun cumpliéndose los 3, el mejor escenario deja <strong>~14.500 € por socio CdU en 12 meses</strong>. Está en el límite de lo razonable para la complejidad de la operación. Si alguno de los 3 pilares falla, el JV no encaja y proponemos la vía alternativa que explicamos abajo.
-    </div>
-  </div>
+  <!-- ==================== 5 ==================== -->
+  <div class="section-label"><span class="n">5</span>Vía B · Esther gestora + CdU apoyo externo</div>
 
-  <div class="section-label">💡 Propuesta alternativa · Esther como gestora principal</div>
+  <div class="intro-text">
+    Si la Vía A no encaja —porque no se confirman las 4 viviendas, no se consigue la compra aplazada o Esther prefiere mantener el control completo— la alternativa es que Esther ejecute la operación como gestora principal y CdU aporte respaldo técnico externo.
+  </div>
 
   <div class="scenario best">
     <div class="head">
-      <h3>Si el JV con CdU no encaja, esta es la vía limpia<span class="sub">Esther ejecuta · CdU apoya técnicamente desde fuera</span></h3>
-      <div class="verdict">Recomendada</div>
+      <h3>Estructura de la Vía B<span class="sub">Esther al frente · CdU da servicio profesional</span></h3>
+      <div class="verdict">Recomendada si A falla</div>
     </div>
 
-    <div style="font-size:13.5px; line-height:1.6; color:#163D60; margin-bottom:16px;">
-      Proponemos que Esther asuma la operación como <strong>gestora principal</strong> y CdU se posicione como <strong>apoyo técnico externo</strong>. Esto le permite a Esther levantar capital libremente fuera de la Comunidad IN (donde ya tiene posibilidades), quedarse con todo el margen operativo de la operación, y contar con nuestro respaldo técnico cuando lo necesite.
-    </div>
-
-    <div class="section-label" style="margin-top:10px;">🤝 Reparto de roles</div>
-    <table style="margin-bottom:16px;">
+    <table style="margin-bottom:14px;">
       <tr><th>Parte</th><th>Aporta</th><th>Recibe</th></tr>
       <tr><td><strong>Esther</strong></td><td>Operación + capital propio + gestión end-to-end</td><td>100 % del beneficio operativo</td></tr>
-      <tr><td><strong>CdU equipo</strong></td><td>Validación técnica + consultoría puntual</td><td>Tarifa plana de servicios (ver abajo)</td></tr>
-      <tr><td><strong>Inversores externos</strong></td><td>Capital (si Esther lo necesita)</td><td>Reparto que Esther acuerde directamente con ellos</td></tr>
+      <tr><td><strong>Equipo CdU</strong></td><td>Validación técnica + consultoría puntual</td><td>Tarifa plana de servicios</td></tr>
+      <tr><td><strong>Inversores externos</strong></td><td>Capital si hace falta</td><td>Acuerdo directo con Esther</td></tr>
     </table>
 
-    <div class="section-label">📦 Servicios CdU disponibles</div>
+    <div class="note" style="margin-top:8px;">Esther levanta capital libremente (Comunidad IN u otras redes) y mantiene el control total. Paga a CdU solo los servicios que utilice.</div>
+  </div>
 
-    <div class="inmueble" style="margin-bottom:10px;">
-      <div class="row"><span class="k"><strong>Fase 2 · Diagnóstico MAP completo</strong></span><span class="v">~ 1.800 €</span></div>
-    </div>
-    <div style="font-size:12.5px; color:#163D60; opacity:0.85; margin-bottom:14px; padding-left:4px;">
-      Análisis técnico (cabida 4 viviendas, huecos fachada, ventilación), jurídico-registral (DH, comunidad, registrador), financiero (números finos reales, no a grosso modo), fiscal (IVA vs TPO, tributación venta) y plan de acción detallado a 90 días. Incluye reunión presencial y documento de entrega.
-    </div>
+  <div class="section-label" style="margin-top:26px;">Servicios de CdU disponibles · precios</div>
 
-    <div class="inmueble" style="margin-bottom:10px;">
-      <div class="row"><span class="k"><strong>Consultoría puntual · sesiones</strong></span><span class="v">100 – 150 €/hora</span></div>
-      <div class="row"><span class="k">Pack 10 horas (20% dto)</span><span class="v">~ 1.200 €</span></div>
-    </div>
-    <div style="font-size:12.5px; color:#163D60; opacity:0.85; margin-bottom:14px; padding-left:4px;">
-      Para resolver puntos específicos durante la operación: negociación con registrador, apoyo en licencia, revisión de contrato con constructora, dudas fiscales, estrategia de comercialización, etc. Se factura por sesión o paquete cerrado.
-    </div>
+  <div class="inmueble">
+    <div class="row"><span class="k"><strong>Fase 2 · Diagnóstico MAP completo</strong></span><span class="v">1.800 €</span></div>
+  </div>
+  <div class="intro-text" style="margin:6px 0 14px; padding-left:4px;">
+    Análisis técnico (cabida 4 viviendas, huecos, ventilación), jurídico-registral (DH, comunidad, registrador), financiero (números finos reales), fiscal (IVA vs TPO, tributación venta) y plan de acción 90 días. Incluye reunión presencial y documento entregable.
+  </div>
 
-    <div class="inmueble" style="margin-bottom:14px;">
-      <div class="row"><span class="k"><strong>Bonus éxito · opcional</strong></span><span class="v">2 % sobre ventas totales</span></div>
-    </div>
-    <div style="font-size:12.5px; color:#163D60; opacity:0.85; margin-bottom:14px; padding-left:4px;">
-      Si Esther lo considera, se puede añadir un bonus éxito ligado a resultado final. Sobre ventas totales de ~460.000 € (4 viv × 115k) son ~9.200 €. Se acordaría por escrito al inicio. Es opcional, no imprescindible.
-    </div>
+  <div class="inmueble">
+    <div class="row"><span class="k"><strong>Consultoría puntual por hora</strong></span><span class="v">90 €/hora</span></div>
+    <div class="row"><span class="k">Pack 10 horas (20% descuento)</span><span class="v">720 €</span></div>
+  </div>
+  <div class="intro-text" style="margin:6px 0 14px; padding-left:4px;">
+    Para resolver puntos específicos durante la operación: trato con registrador, apoyo en licencia, revisión de contrato con constructora, estrategia comercial, dudas fiscales.
+  </div>
 
-    <div class="section-label">✅ Ventajas para Esther</div>
-    <div style="font-size:13px; color:#163D60; line-height:1.6; margin-bottom:14px; padding-left:4px;">
-      • Se queda con todo el margen operativo (no tiene que repartir con CdU en JV)<br>
-      • Levanta capital libre con sus propios inversores (Comunidad IN o fuera)<br>
-      • Controla la operación y el timing al 100 %<br>
-      • Acceso a respaldo técnico del equipo sin comprometer beneficio<br>
-      • Paga solo los servicios que usa
-    </div>
+  <div class="inmueble">
+    <div class="row"><span class="k"><strong>Opción · delegación de ventas</strong></span><span class="v">a convenir</span></div>
+  </div>
+  <div class="intro-text" style="margin:6px 0 14px; padding-left:4px;">
+    Si Esther lo considera, CdU puede encargarse de la comercialización de las viviendas (captación de compradores, visitas, señales, cierre). La fórmula habitual es un honorario por vivienda vendida. Se acordaría en su momento.
+  </div>
 
-    <div class="section-label">✅ Ventajas para CdU</div>
-    <div style="font-size:13px; color:#163D60; line-height:1.6; margin-bottom:14px; padding-left:4px;">
-      • Ingreso directo por servicios profesionales (Fase 2 + consultoría)<br>
-      • No asumimos riesgo de capital ni de obra<br>
-      • Mantenemos la relación y aportamos valor real<br>
-      • Modelo replicable con otros casos similares (foco servicio)<br>
-      • Refuerza el posicionamiento de CdU como consultora técnica del sector
+  <div class="kpi">
+    <div class="card">
+      <div class="lab">Esther se lleva</div>
+      <div class="val">100 %</div>
+      <div class="hint">del beneficio operativo neto (tras costes + inversores si los hay)</div>
     </div>
-
-    <div class="section-label">🎯 Cuándo elegir esta vía</div>
-    <div class="note">
-      <strong>Cuando cualquiera de los 3 pilares del JV no se cumpla:</strong> si no se confirman las 4 viviendas, si no se consigue la compra aplazada, o si el reparto de JV no genera margen suficiente para las 3 partes implicadas. También si Esther prefiere mantener el control completo de la operación y tiene capacidad de levantar capital por su cuenta.
+    <div class="card">
+      <div class="lab">CdU se lleva</div>
+      <div class="val">servicios</div>
+      <div class="hint">Fase 2 (1.800 €) + horas que haga falta (90 €/h)</div>
     </div>
   </div>
 
-  <div class="callout" style="margin-top:24px;">
-    <div class="lab">Resumen final</div>
-    <div class="big">
-      <strong>Vía A · JV con CdU</strong> — si se dan los 3 pilares (4 viv + aplazado + presales). CdU y Esther comparten riesgo y beneficio. Margen ajustado pero viable.
-      <br><br>
-      <strong>Vía B · Esther gestora + CdU apoyo externo</strong> — si cualquier pilar falla. Esther se lleva todo el margen, CdU cobra servicios. Más limpio para todos y más rápido de cerrar.
+  <div class="note">
+    <strong>Cuando elegir esta vía:</strong> si no se cumplen los 3 pilares de la Vía A, si Esther tiene capacidad de levantar capital por su cuenta, o si prefiere mantener el control completo. El coste de tener a CdU como respaldo es muy bajo comparado con ejecutar la operación sin apoyo técnico.
+  </div>
+
+  <!-- ==================== 6 ==================== -->
+  <div class="section-label"><span class="n">6</span>Conclusión y recomendación</div>
+
+  <div class="conclusion">
+    <div class="label">Resumen · dos vías, una decisión</div>
+    <div class="big">La operación es viable con <span>la estructura correcta</span>.<br>Hay dos caminos.</div>
+
+    <div class="two-ways">
+      <div class="way">
+        <div class="tit">Vía A · JV con CdU</div>
+        Funciona si se dan <strong>3 pilares</strong>: 4 viviendas salen técnicamente, compra aplazada 10 meses y preventas durante la obra.
+        <br><br>
+        Escenario óptimo: Esther y equipo CdU se llevan <strong>43.750 € cada uno</strong>.
+      </div>
+      <div class="way">
+        <div class="tit">Vía B · Esther gestora</div>
+        Esther al frente, <strong>100 % del beneficio</strong> operativo para ella. CdU da apoyo técnico (Fase 2 + consultoría 90 €/h) y puede llevar ventas si interesa.
+        <br><br>
+        Funciona aunque falle algún pilar. Más limpio y rápido de cerrar.
+      </div>
+    </div>
+
+    <div style="font-size:13px; line-height:1.55; margin-top:20px; text-align:center; opacity:0.92;">
+      Nuestra recomendación es <strong style="color:#E29F34;">validar primero los 3 pilares de la Vía A</strong> (4 viviendas confirmadas por arquitecto + aceptación de la compra aplazada por la propiedad + viabilidad de preventas en la zona). Si alguno falla, la Vía B queda como plan sólido.
     </div>
   </div>
 
   <div class="footer">
     <strong>CdU de 0 a ÉXITO</strong> · tucambiodeuso.com<br>
-    <span class="team">Xavi Riera · Dani Moreno · Paco Collado</span>
+    <span class="team">Equipo CdU</span>
   </div>
 
   <div class="disclaimer">
-    Cifras aproximadas con fines informativos. Cabida 4 viviendas pendiente de validación técnica.<br>
-    Reparto JV orientativo, sujeto a acuerdo formal con todas las partes.
+    Cifras aproximadas con fines de decisión. Pendiente validación técnica de la cabida de 4 viviendas, aceptación de la contraoferta<br>
+    y cierre definitivo de estructura legal y fiscal. Todos los repartos son orientativos y sujetos a acuerdo formal.
   </div>
 
 </div>
