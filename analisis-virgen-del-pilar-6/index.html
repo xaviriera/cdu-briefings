@@ -8,7 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Montserrat', Arial, sans-serif; background: #FDFBF7; color: #163D60; line-height: 1.5; padding: 24px 16px; }
-.wrap { max-width: 780px; margin: 0 auto; }
+.wrap { max-width: 800px; margin: 0 auto; }
 
 .brand { text-align: center; padding-bottom: 18px; margin-bottom: 22px; border-bottom: 2px solid #E29F34; }
 .brand img { max-width: 190px; height: auto; display: inline-block; }
@@ -19,7 +19,7 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #FDFBF7; color:
 .lead { font-size: 14px; color: #163D60; opacity: 0.85; margin-bottom: 28px; }
 .lead strong { color: #E29F34; font-weight: 800; opacity: 1; }
 
-.section-label { font-size: 10px; font-weight: 800; color: #E29F34; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; margin-top: 28px; }
+.section-label { font-size: 10px; font-weight: 800; color: #E29F34; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; margin-top: 32px; }
 
 .inmueble { background: #fff; border-left: 4px solid #E29F34; border-radius: 0 8px 8px 0; padding: 16px 20px; margin-bottom: 8px; }
 .inmueble .row { display: flex; justify-content: space-between; padding: 5px 0; font-size: 13px; border-bottom: 1px dashed rgba(22,61,96,0.15); }
@@ -27,7 +27,7 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #FDFBF7; color:
 .inmueble .row .k { color: #163D60; opacity: 0.7; font-weight: 500; }
 .inmueble .row .v { color: #163D60; font-weight: 700; }
 
-.scenario { background: #fff; border-radius: 12px; padding: 22px 22px 18px; margin-bottom: 18px; box-shadow: 0 4px 14px rgba(22, 61, 96, 0.06); border: 1.5px solid transparent; }
+.scenario { background: #fff; border-radius: 12px; padding: 22px 22px 18px; margin-bottom: 16px; box-shadow: 0 4px 14px rgba(22, 61, 96, 0.06); border: 1.5px solid transparent; }
 .scenario.bad { border-color: #ebc9c9; }
 .scenario.mid { border-color: #f0dbb3; }
 .scenario.good { border-color: #E29F34; }
@@ -42,41 +42,41 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #FDFBF7; color:
 .scenario.good .verdict { background: #E29F34; color: #fff; }
 .scenario.best .verdict { background: #163D60; color: #E29F34; }
 
-table.prices { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 6px; }
-table.prices th { background: #163D60; color: #FDFBF7; padding: 9px 8px; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
-table.prices th:first-child { text-align: left; border-radius: 6px 0 0 0; }
-table.prices th:last-child { border-radius: 0 6px 0 0; }
-table.prices td { padding: 8px; border-bottom: 1px dashed rgba(22,61,96,0.12); }
-table.prices td:first-child { color: #163D60; opacity: 0.8; font-weight: 500; }
-table.prices td:not(:first-child) { text-align: center; font-weight: 700; color: #163D60; }
-table.prices tr.total td { border-top: 1.5px solid #163D60; font-weight: 800; padding-top: 10px; background: #fdfbf7; }
-table.prices tr.margin td { font-size: 14px; font-weight: 900; padding: 10px 8px; }
-table.prices tr.margin td.pos { color: #2e7a4d; }
-table.prices tr.margin td.neg { color: #9b3333; }
-table.prices tr.margin td.mid-val { color: #8a6a1f; }
-table.prices tr.roi td { font-size: 12px; opacity: 0.8; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+table th { background: #163D60; color: #FDFBF7; padding: 9px 8px; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+table th:first-child { text-align: left; border-radius: 6px 0 0 0; }
+table th:last-child { border-radius: 0 6px 0 0; }
+table td { padding: 8px; border-bottom: 1px dashed rgba(22,61,96,0.12); }
+table td:first-child { color: #163D60; opacity: 0.8; font-weight: 500; }
+table td:not(:first-child) { text-align: center; font-weight: 700; color: #163D60; }
+table tr.total td { border-top: 1.5px solid #163D60; font-weight: 800; padding-top: 10px; background: #fdfbf7; opacity: 1; }
+table tr.margin td { font-size: 14px; font-weight: 900; padding: 10px 8px; }
+table tr.margin td.pos { color: #2e7a4d; }
+table tr.margin td.neg { color: #9b3333; }
+table tr.margin td.mid-val { color: #8a6a1f; }
+table tr.roi td { font-size: 12px; opacity: 0.85; }
+table tr.highlight td { background: #fff8ea; }
 
-table.nums { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-table.nums td { padding: 7px 0; border-bottom: 1px dashed rgba(22,61,96,0.12); }
-table.nums td:first-child { color: #163D60; opacity: 0.75; }
-table.nums td:last-child { text-align: right; font-weight: 700; color: #163D60; }
-table.nums tr.total td { border-top: 1.5px solid #163D60; border-bottom: none; padding-top: 10px; font-weight: 800; font-size: 14.5px; }
+table.nums td { padding: 7px 0; }
+table.nums td:last-child { text-align: right; }
+table.nums tr.total td { background: transparent; }
 
 .note { background: #fff8ea; border: 1px dashed #E29F34; border-radius: 8px; padding: 12px 14px; font-size: 12.5px; color: #7d6608; line-height: 1.5; margin-top: 14px; }
 .note strong { color: #163D60; }
 
-.highlight-box { background: #fff8ea; border: 2px solid #E29F34; border-radius: 10px; padding: 18px 20px; margin: 14px 0; }
-.highlight-box .hl-title { font-size: 14px; font-weight: 800; color: #163D60; margin-bottom: 8px; }
-.highlight-box .hl-title span { color: #E29F34; }
-.highlight-box p { font-size: 13px; color: #163D60; line-height: 1.55; margin-bottom: 8px; }
-.highlight-box p:last-child { margin-bottom: 0; }
+.callout { background: #163D60; color: #FDFBF7; padding: 18px 22px; border-radius: 10px; margin: 12px 0 18px; }
+.callout .lab { font-size: 10px; color: #E29F34; letter-spacing: 2px; font-weight: 800; text-transform: uppercase; margin-bottom: 6px; }
+.callout .big { font-size: 15px; font-weight: 700; line-height: 1.4; }
+.callout .big span { color: #E29F34; }
 
-.conclusion { background: #163D60; color: #FDFBF7; border-radius: 12px; padding: 24px 22px; margin-top: 28px; text-align: center; }
-.conclusion .label { font-size: 10px; font-weight: 700; color: #E29F34; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
-.conclusion .big { font-size: 19px; font-weight: 800; line-height: 1.35; margin-bottom: 12px; }
+.conclusion { background: #163D60; color: #FDFBF7; border-radius: 12px; padding: 24px 22px; margin-top: 28px; }
+.conclusion .label { font-size: 10px; font-weight: 700; color: #E29F34; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; text-align: center; }
+.conclusion .big { font-size: 19px; font-weight: 800; line-height: 1.35; margin-bottom: 14px; text-align: center; }
 .conclusion .big span { color: #E29F34; }
-.conclusion .small { font-size: 13px; font-weight: 500; line-height: 1.55; opacity: 0.92; text-align: left; }
+.conclusion .small { font-size: 13px; font-weight: 500; line-height: 1.55; opacity: 0.92; }
 .conclusion .small strong { color: #E29F34; font-weight: 700; }
+.conclusion .rec { background: rgba(226, 159, 52, 0.1); border: 1px solid rgba(226, 159, 52, 0.3); border-radius: 8px; padding: 14px 16px; margin-top: 14px; font-size: 13px; }
+.conclusion .rec strong { color: #E29F34; }
 
 .footer { text-align: center; margin-top: 32px; padding-top: 22px; border-top: 1px solid rgba(22,61,96,0.12); font-size: 12px; color: #163D60; }
 .footer strong { color: #E29F34; }
@@ -95,7 +95,7 @@ table.nums tr.total td { border-top: 1.5px solid #163D60; border-bottom: none; p
 
   <div class="title">Virgen del Pilar 6 · <span>Crevillent</span></div>
   <div class="lead">
-    Planteamiento aproximado de cómo quedarían los números de la operación, con varios escenarios de precios y un supuesto de compra aplazada. Son cifras <strong>a grosso modo, no finas</strong> — aún no hay firmeza en el punto en el que está la operación — pero es lo que nos sirve para enmarcar la decisión.
+    Análisis completo de viabilidad: escenarios de venta, estructura de capital (compra directa vs aplazada) y reparto de beneficio en Joint Venture. Son cifras <strong>a grosso modo, no finas</strong> — pendientes de cierre de operación y validación técnica — pero enmarcan la decisión.
   </div>
 
   <div class="section-label">📍 El inmueble</div>
@@ -104,166 +104,176 @@ table.nums tr.total td { border-top: 1.5px solid #163D60; border-bottom: none; p
     <div class="row"><span class="k">Superficie registral</span><span class="v">252,50 m²</span></div>
     <div class="row"><span class="k">Planta</span><span class="v">Entresuelo</span></div>
     <div class="row"><span class="k">Uso actual</span><span class="v">Local · Cambio de Uso a viviendas</span></div>
-    <div class="row"><span class="k">Precio de compra</span><span class="v">180.000 €</span></div>
+    <div class="row"><span class="k">Precio de compra negociado</span><span class="v">180.000 €</span></div>
   </div>
 
-  <div class="section-label">📊 Supuestos del análisis</div>
+  <div class="section-label">📊 Supuestos base</div>
   <div class="inmueble">
     <div class="row"><span class="k">Coste de reforma</span><span class="v">~ 600 €/m²</span></div>
+    <div class="row"><span class="k">Reforma total (252,50 m² × 600)</span><span class="v">151.500 €</span></div>
     <div class="row"><span class="k">Impuestos compra (ITP 10%)</span><span class="v">18.000 €</span></div>
     <div class="row"><span class="k">Proyecto + licencia + gestión</span><span class="v">~ 15.000 €</span></div>
-    <div class="row"><span class="k">Gastos de venta (notaría / registro)</span><span class="v">~ 2.000 €/vivienda</span></div>
-    <div class="row"><span class="k">Base de costes (compra 180k + ITP + reforma + licencia)</span><span class="v">~ 364.500 €</span></div>
+    <div class="row"><span class="k">Gastos de venta por vivienda</span><span class="v">~ 2.000 €</span></div>
   </div>
 
-  <div class="section-label">🧮 Escenario A · 3 viviendas de ~84 m²</div>
+  <div class="section-label">🧮 Bloque 1 · Escenarios de venta</div>
+
   <div class="scenario mid">
     <div class="head">
-      <h3>3 viviendas · más grandes<span class="sub">Pisos de 84 m² · precio objetivo más alto</span></h3>
+      <h3>Escenario A · 3 viviendas de ~84 m²<span class="sub">Pisos más grandes · precio objetivo más alto</span></h3>
       <div class="verdict">Margen justo</div>
     </div>
     <table class="nums">
-      <tr><td>Coste base proyecto (compra + ITP + reforma + licencia)</td><td>364.500 €</td></tr>
-      <tr><td>Gastos de venta (3 × 2.000 €)</td><td>6.000 €</td></tr>
+      <tr><td>Coste base proyecto</td><td>364.500 €</td></tr>
+      <tr><td>Gastos venta (3 × 2.000 €)</td><td>6.000 €</td></tr>
       <tr class="total"><td>Coste total del proyecto</td><td>370.500 €</td></tr>
     </table>
-
-    <table class="prices" style="margin-top:16px;">
-      <tr>
-        <th>Precio venta / vivienda</th>
-        <th>120.000 €</th>
-        <th>130.000 €</th>
-        <th>140.000 €</th>
-      </tr>
-      <tr>
-        <td>Ingresos totales (×3)</td>
-        <td>360.000 €</td>
-        <td>390.000 €</td>
-        <td>420.000 €</td>
-      </tr>
-      <tr class="margin">
-        <td>Ganancia neta total</td>
-        <td class="neg">− 10.500 €</td>
-        <td class="mid-val">+ 19.500 €</td>
-        <td class="pos">+ 49.500 €</td>
-      </tr>
-      <tr>
-        <td>Ganancia por vivienda</td>
-        <td>− 3.500 €</td>
-        <td>+ 6.500 €</td>
-        <td>+ 16.500 €</td>
-      </tr>
-      <tr class="roi">
-        <td>Rentabilidad sobre coste</td>
-        <td>− 2,8 %</td>
-        <td>+ 5,3 %</td>
-        <td>+ 13,4 %</td>
-      </tr>
+    <table style="margin-top:16px;">
+      <tr><th>Precio venta / vivienda</th><th>120.000 €</th><th>130.000 €</th><th>140.000 €</th></tr>
+      <tr><td>Ingresos totales (×3)</td><td>360.000 €</td><td>390.000 €</td><td>420.000 €</td></tr>
+      <tr class="margin"><td>Ganancia bruta</td><td class="neg">− 10.500 €</td><td class="mid-val">+ 19.500 €</td><td class="pos">+ 49.500 €</td></tr>
+      <tr><td>Por vivienda</td><td>− 3.500 €</td><td>+ 6.500 €</td><td>+ 16.500 €</td></tr>
+      <tr class="roi"><td>Rentabilidad sobre coste</td><td>− 2,8 %</td><td>+ 5,3 %</td><td>+ 13,4 %</td></tr>
     </table>
-
-    <div class="note">
-      <strong>Lectura:</strong> con 3 viviendas hay que vender al menos a 130.000 € para cubrir gastos con un margen justo. Con 140.000 € la operación empieza a tener sentido, pero depende del techo real de precios de mercado en esa zona.
-    </div>
+    <div class="note">Con 3 viviendas hay que vender mínimo a 130k para cubrir gastos. Cualquier desvío en obra se come el margen.</div>
   </div>
 
-  <div class="section-label">🧮 Escenario B · 4 viviendas de ~63 m²</div>
   <div class="scenario good">
     <div class="head">
-      <h3>4 viviendas · más pequeñas<span class="sub">Pisos de 63 m² · precios más accesibles</span></h3>
-      <div class="verdict">Viable</div>
+      <h3>Escenario B · 4 viviendas de ~63 m²<span class="sub">Pisos más pequeños · precios más accesibles</span></h3>
+      <div class="verdict">Viable bruto</div>
     </div>
     <table class="nums">
-      <tr><td>Coste base proyecto (compra + ITP + reforma + licencia)</td><td>364.500 €</td></tr>
-      <tr><td>Gastos de venta (4 × 2.000 €)</td><td>8.000 €</td></tr>
+      <tr><td>Coste base proyecto</td><td>364.500 €</td></tr>
+      <tr><td>Gastos venta (4 × 2.000 €)</td><td>8.000 €</td></tr>
       <tr class="total"><td>Coste total del proyecto</td><td>372.500 €</td></tr>
     </table>
-
-    <table class="prices" style="margin-top:16px;">
-      <tr>
-        <th>Precio venta / vivienda</th>
-        <th>110.000 €</th>
-        <th>115.000 €</th>
-        <th>120.000 €</th>
-      </tr>
-      <tr>
-        <td>Ingresos totales (×4)</td>
-        <td>440.000 €</td>
-        <td>460.000 €</td>
-        <td>480.000 €</td>
-      </tr>
-      <tr class="margin">
-        <td>Ganancia neta total</td>
-        <td class="pos">+ 67.500 €</td>
-        <td class="pos">+ 87.500 €</td>
-        <td class="pos">+ 107.500 €</td>
-      </tr>
-      <tr>
-        <td>Ganancia por vivienda</td>
-        <td>+ 16.875 €</td>
-        <td>+ 21.875 €</td>
-        <td>+ 26.875 €</td>
-      </tr>
-      <tr class="roi">
-        <td>Rentabilidad sobre coste</td>
-        <td>+ 18,1 %</td>
-        <td>+ 23,5 %</td>
-        <td>+ 28,9 %</td>
-      </tr>
+    <table style="margin-top:16px;">
+      <tr><th>Precio venta / vivienda</th><th>110.000 €</th><th>115.000 €</th><th>120.000 €</th></tr>
+      <tr><td>Ingresos totales (×4)</td><td>440.000 €</td><td>460.000 €</td><td>480.000 €</td></tr>
+      <tr class="margin"><td>Ganancia bruta</td><td class="pos">+ 67.500 €</td><td class="pos">+ 87.500 €</td><td class="pos">+ 107.500 €</td></tr>
+      <tr><td>Por vivienda</td><td>+ 16.875 €</td><td>+ 21.875 €</td><td>+ 26.875 €</td></tr>
+      <tr class="roi"><td>Rentabilidad sobre coste</td><td>+ 18,1 %</td><td>+ 23,5 %</td><td>+ 28,9 %</td></tr>
     </table>
-
-    <div class="note">
-      <strong>Lectura:</strong> con 4 viviendas los precios pueden ser más accesibles (pisos más pequeños) y aun así el margen respira. Es el escenario que realmente da sentido a la operación.
-    </div>
+    <div class="note">La ganancia bruta solo es el 1er filtro. Falta descontar pago a inversores y reparto entre partes (siguiente bloque).</div>
   </div>
 
-  <div class="section-label">⏳ Escenario C · compra aplazada 10 meses</div>
-  <div class="highlight-box">
-    <div class="hl-title">La clave: <span>no inmovilizar los 180.000 € durante la obra</span></div>
-    <p>
-      Si la compra se firma con pago aplazado a 10 meses, durante ese tiempo podemos ejecutar la obra, generar renders de las viviendas resultantes y reservar con señal antes de pagar. El dinero de la compra se afronta con las ventas ya cerradas.
-    </p>
-    <p>
-      <strong style="color:#E29F34;">No cambia la ganancia neta final</strong>, pero cambia radicalmente el <strong style="color:#E29F34;">capital necesario para arrancar</strong> y por tanto la rentabilidad real sobre el dinero que se pone.
-    </p>
+  <div class="callout">
+    <div class="lab">Dato clave</div>
+    <div class="big">La ganancia bruta <span>NO es el beneficio del equipo</span>. Hay que pagar al capital que financia la operación y repartir con todas las partes (Ester + CdU).</div>
+  </div>
+
+  <div class="section-label">💰 Bloque 2 · Estructura de capital</div>
+
+  <div class="scenario mid">
+    <div class="head">
+      <h3>Modalidad 1 · Compra directa 180.000 € ahora<span class="sub">El equipo debe levantar los 180k desde el inicio</span></h3>
+      <div class="verdict">Capital alto</div>
+    </div>
+    <table class="nums">
+      <tr><td>Capital inmediato (compra + ITP)</td><td>198.000 €</td></tr>
+      <tr><td>Capital obra + licencia (primeros meses)</td><td>166.500 €</td></tr>
+      <tr class="total"><td>Capital total a aportar</td><td>364.500 €</td></tr>
+    </table>
+    <div class="note">El equipo (Ester + CdU) no dispone de 365k. <strong>Se necesita un inversor externo</strong> que financie al menos la parte de compra. Ese inversor cobra un retorno del beneficio.</div>
   </div>
 
   <div class="scenario best">
     <div class="head">
-      <h3>Aplazado · 180.000 € a 10 meses<span class="sub">Escenario 4 viviendas · venta media 115.000 €</span></h3>
-      <div class="verdict">Óptimo</div>
+      <h3>Modalidad 2 · Compra aplazada 180.000 € a 10 meses<span class="sub">Pagamos la compra al terminar la obra con las ventas</span></h3>
+      <div class="verdict">Óptima</div>
     </div>
     <table class="nums">
-      <tr><td>Capital necesario (reforma + ITP + licencia)</td><td>~ 184.500 €</td></tr>
-      <tr><td>Compra (180k) se paga con las ventas</td><td>+ 0 € upfront</td></tr>
-      <tr><td>Ganancia neta total (4 uds × 115k)</td><td>+ 87.500 €</td></tr>
-      <tr class="total"><td>Rentabilidad sobre capital efectivo puesto</td><td style="color:#2e7a4d !important;">+ 47,4 %</td></tr>
+      <tr><td>Capital inmediato compra</td><td>0 €</td></tr>
+      <tr><td>ITP + licencia + proyecto</td><td>33.000 €</td></tr>
+      <tr><td>Reforma (financiable por fases con señales de compradores)</td><td>151.500 €</td></tr>
+      <tr class="total"><td>Capital total a aportar (escenario sin preventas)</td><td>~ 184.500 €</td></tr>
     </table>
-    <div class="note"><strong>Casi duplica la rentabilidad</strong> frente a pagar la compra al inicio.</div>
+    <div class="note"><strong>Capital necesario baja un 50 %.</strong> Con preventas (renders + 4 señales × ~10k = 40k antes de acabar), el capital externo puede ser mínimo o incluso cero.</div>
+  </div>
+
+  <div class="section-label">🤝 Bloque 3 · Reparto Joint Venture</div>
+  <div style="font-size:13px; margin-bottom:12px; opacity:0.85;">
+    Estructura de reparto asumida (sobre la ganancia bruta, escenario 4 viv @ 115k = 87.500 €):
+  </div>
+  <div class="inmueble">
+    <div class="row"><span class="k">Inversor capital (si hace falta)</span><span class="v">20 – 25 % del beneficio</span></div>
+    <div class="row"><span class="k">Ester · aportante + gestora</span><span class="v">30 % del beneficio (o del resto si hay inversor)</span></div>
+    <div class="row"><span class="k">CdU · ejecución técnica</span><span class="v">70 % del beneficio (o del resto si hay inversor)</span></div>
+    <div class="row"><span class="k">Dentro de CdU · Xavi / Dani / Paco</span><span class="v">a partes iguales (33,3 % c/u del % CdU)</span></div>
+  </div>
+
+  <div class="scenario bad">
+    <div class="head">
+      <h3>Variante 1 · Compra directa + inversor 25 %<span class="sub">Peor caso de reparto · máximo pago a capital externo</span></h3>
+      <div class="verdict">Margen bajo</div>
+    </div>
+    <table>
+      <tr><th>Parte</th><th>%</th><th>€</th></tr>
+      <tr><td>Ganancia bruta total</td><td>100 %</td><td>87.500 €</td></tr>
+      <tr><td>Inversor capital</td><td>25 %</td><td>21.875 €</td></tr>
+      <tr><td>Resto para el equipo</td><td>75 %</td><td>65.625 €</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;• Ester (30 %)</td><td>22,5 %</td><td>19.687 €</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;• CdU total (70 %)</td><td>52,5 %</td><td>45.937 €</td></tr>
+      <tr class="highlight"><td>&nbsp;&nbsp;&nbsp;• Por socio CdU (÷ 3)</td><td>17,5 %</td><td>15.312 €</td></tr>
+    </table>
+    <div class="note">12 meses de operación para que cada socio de CdU se lleve ~15k. No compensa el riesgo/esfuerzo.</div>
   </div>
 
   <div class="scenario mid">
     <div class="head">
-      <h3>Aplazado · 190.000 € a 10 meses<span class="sub">Si se sube la oferta 10k para cerrar acuerdo</span></h3>
-      <div class="verdict">Aceptable</div>
+      <h3>Variante 2 · Aplazado + inversor pequeño 20 %<span class="sub">Aplazado reduce capital necesario → menos % al inversor</span></h3>
+      <div class="verdict">Mejor</div>
     </div>
-    <table class="nums">
-      <tr><td>Capital necesario (reforma + ITP 19k + licencia)</td><td>~ 185.500 €</td></tr>
-      <tr><td>Compra (190k) se paga con las ventas</td><td>+ 0 € upfront</td></tr>
-      <tr><td>Ganancia neta total (4 uds × 115k)</td><td>+ 76.500 €</td></tr>
-      <tr class="total"><td>Rentabilidad sobre capital efectivo puesto</td><td style="color:#8a6a1f !important;">+ 41,2 %</td></tr>
+    <table>
+      <tr><th>Parte</th><th>%</th><th>€</th></tr>
+      <tr><td>Ganancia bruta total</td><td>100 %</td><td>87.500 €</td></tr>
+      <tr><td>Inversor capital</td><td>20 %</td><td>17.500 €</td></tr>
+      <tr><td>Resto para el equipo</td><td>80 %</td><td>70.000 €</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;• Ester (30 %)</td><td>24 %</td><td>21.000 €</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;• CdU total (70 %)</td><td>56 %</td><td>49.000 €</td></tr>
+      <tr class="highlight"><td>&nbsp;&nbsp;&nbsp;• Por socio CdU (÷ 3)</td><td>18,7 %</td><td>16.333 €</td></tr>
     </table>
-    <div class="note">Subir 10k el precio para cerrar trato reduce la ganancia pero mantiene una rentabilidad sana gracias al aplazamiento.</div>
   </div>
 
+  <div class="scenario best">
+    <div class="head">
+      <h3>Variante 3 · Aplazado + preventas + sin inversor<span class="sub">Capital del equipo + señales compradores = 0 € inversor externo</span></h3>
+      <div class="verdict">Óptimo</div>
+    </div>
+    <table>
+      <tr><th>Parte</th><th>%</th><th>€</th></tr>
+      <tr><td>Ganancia bruta total</td><td>100 %</td><td>87.500 €</td></tr>
+      <tr><td>Inversor capital</td><td>0 %</td><td>0 €</td></tr>
+      <tr><td>Resto para el equipo</td><td>100 %</td><td>87.500 €</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;• Ester (30 %)</td><td>30 %</td><td>26.250 €</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;• CdU total (70 %)</td><td>70 %</td><td>61.250 €</td></tr>
+      <tr class="highlight"><td>&nbsp;&nbsp;&nbsp;• Por socio CdU (÷ 3)</td><td>23,3 %</td><td>20.417 €</td></tr>
+    </table>
+    <div class="note"><strong>Es el único escenario en el que la operación tiene sentido para el equipo.</strong> La clave es la combinación aplazado + preventas + capital equipo.</div>
+  </div>
+
+  <div class="section-label">📈 Comparativa final por socio CdU</div>
+  <table>
+    <tr><th>Variante</th><th>€ por socio CdU</th><th>Diferencia</th></tr>
+    <tr><td>V1 · Compra directa + inversor 25 %</td><td>15.312 €</td><td>baseline</td></tr>
+    <tr><td>V2 · Aplazado + inversor 20 %</td><td>16.333 €</td><td>+ 1.021 €</td></tr>
+    <tr class="highlight margin"><td>V3 · Aplazado + preventas (sin inversor)</td><td class="pos">20.417 €</td><td class="pos">+ 5.105 €</td></tr>
+  </table>
+
   <div class="conclusion">
-    <div class="label">Síntesis · cómo lo vemos</div>
-    <div class="big">La operación tiene sentido si se dan <span>2 condiciones</span>.</div>
+    <div class="label">Síntesis estratégica · 3 conclusiones</div>
+    <div class="big">La operación tiene sentido <span>sólo con la estructura correcta</span>.</div>
     <div class="small">
-      <strong>1. Salen las 4 viviendas, no 3.</strong> Con 3 viviendas el margen se queda en 5.000 – 15.000 € por vivienda. Repartir eso entre 3 socios para una operación tan larga y compleja no tiene sentido desde el punto de vista riesgo/beneficio.
+      <strong>1. Tienen que salir las 4 viviendas.</strong> Con 3 el margen es insuficiente para repartir entre inversor, Ester y CdU. Requisito técnico bloqueante.
       <br><br>
-      <strong>2. La compra es aplazada a 10 meses.</strong> Si hay que poner los 180.000 € al inicio, la rentabilidad real sobre el capital empleado no compensa el tiempo ni el trabajo. Con aplazado, la rentabilidad se dispara porque el dinero de la compra lo genera la propia obra.
+      <strong>2. La compra tiene que ser aplazada a 10 meses.</strong> Si hay que poner los 180k al arranque, se necesita inversor externo que se lleva 20-25 % del beneficio. Aplazado elimina esa necesidad y deja más margen al equipo.
       <br><br>
-      <strong>Tal como está ahora,</strong> y sin esas dos condiciones cerradas, <strong>nosotros no la ejecutaríamos como equipo</strong>. Lo que sí vemos posible es buscar un encaje para que pueda hacerse bajo figura de gestora propia: validar técnicamente las 4 viviendas, levantar el capital necesario para la reforma y coordinar la ejecución. Ese es el camino en el que nos gustaría ayudar a pensar.
+      <strong>3. Hay que ejecutar presales con renders durante la obra.</strong> Reservar viviendas con señales antes de acabar permite cubrir la reforma sin inversor y pagar los 180k con las primeras ventas.
+      <br><br>
+      <div class="rec">
+        <strong>Recomendación:</strong> sin esos 3 pilares (4 viv + aplazado + presales) el equipo CdU no ejecuta la operación directamente. Lo que sí proponemos es buscar un encaje para que Ester pueda hacerla <strong>bajo figura de gestora propia</strong>, con nuestro apoyo técnico en validación y levantamiento de capital si hiciera falta.
+      </div>
     </div>
   </div>
 
@@ -273,8 +283,8 @@ table.nums tr.total td { border-top: 1.5px solid #163D60; border-bottom: none; p
   </div>
 
   <div class="disclaimer">
-    Los números presentados son aproximaciones a nivel informativo. La viabilidad definitiva requiere<br>
-    validación técnica de la cabida (4 viviendas), licencia municipal y cierre del acuerdo de compraventa.
+    Cifras aproximadas con fines informativos. Cabida 4 viviendas pendiente de validación técnica.<br>
+    Reparto JV orientativo, sujeto a acuerdo formal con todas las partes.
   </div>
 
 </div>
