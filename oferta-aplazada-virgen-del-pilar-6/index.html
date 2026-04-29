@@ -207,148 +207,113 @@ section p strong {
     border-top: 2px solid #E29F34;
 }
 
-/* GRID DE OPCIONES */
-.opciones-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-    margin-top: 16px;
-}
-.opcion-card {
-    border: 1.5px solid #e8dfc9;
-    border-radius: 5px;
-    padding: 22px 24px;
+/* CALENDARIO PAGO */
+.calendario {
     background: #FDFBF7;
+    border: 1.5px solid #e8dfc9;
+    border-left: 4px solid #E29F34;
+    border-radius: 4px;
+    padding: 22px 26px;
+    margin: 14px 0 20px 0;
 }
-.opcion-card .badge {
-    display: inline-block;
-    background: #E29F34;
-    color: #fff;
-    font-size: 10.5px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    padding: 4px 10px;
-    border-radius: 3px;
-    margin-bottom: 10px;
-}
-.opcion-card .badge.azul {
-    background: #163D60;
-}
-.opcion-card h3 {
-    color: #163D60;
+.calendario .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px dotted #e0d9c9;
     font-size: 14px;
+}
+.calendario .row:last-of-type { border-bottom: none; }
+.calendario .row .lbl {
+    color: #555;
+    font-weight: 500;
+}
+.calendario .row .lbl .micro {
+    display: block;
+    font-size: 11px;
+    color: #888;
+    font-weight: 400;
+    margin-top: 2px;
+    font-style: italic;
+}
+.calendario .row .val {
+    color: #163D60;
     font-weight: 700;
-    margin-bottom: 10px;
-    line-height: 1.3;
+    font-size: 16px;
+    white-space: nowrap;
 }
-.opcion-card p {
-    font-size: 12.5px;
-    color: #333;
+.calendario .row.tot {
+    border-top: 2px solid #E29F34;
+    border-bottom: none;
+    padding-top: 14px;
+    margin-top: 4px;
+}
+.calendario .row.tot .lbl {
+    color: #163D60;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.calendario .row.tot .val {
+    font-size: 18px;
+}
+
+/* DESTACADO */
+.destacado-box {
+    background: #fff;
+    border: 1.5px solid #E29F34;
+    border-radius: 5px;
+    padding: 18px 22px;
+    margin: 16px 0;
+    font-size: 13px;
+    color: #163D60;
     line-height: 1.65;
-    margin-bottom: 10px;
-    text-align: left;
 }
-.opcion-card ul {
+.destacado-box strong { color: #163D60; }
+.destacado-box .lead {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #E29F34;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+/* GARANTÍAS LIST */
+.garantias {
     list-style: none;
     padding: 0;
     margin: 6px 0 0 0;
 }
-.opcion-card ul li {
+.garantias li {
     position: relative;
-    padding: 5px 0 5px 18px;
-    font-size: 12.5px;
+    padding: 10px 0 10px 30px;
+    font-size: 13px;
     color: #333;
-    line-height: 1.55;
-}
-.opcion-card ul li::before {
-    content: "·";
-    position: absolute;
-    left: 4px;
-    top: 3px;
-    color: #E29F34;
-    font-weight: 700;
-    font-size: 18px;
-}
-.opcion-card .destacado {
-    background: #fff;
-    border-left: 3px solid #163D60;
-    padding: 10px 14px;
-    margin-top: 12px;
-    font-size: 12px;
-    color: #163D60;
-    font-weight: 600;
-    line-height: 1.55;
-}
-.opcion-card .micro {
-    font-size: 11px;
-    color: #777;
-    font-style: italic;
-    margin-top: 8px;
-    line-height: 1.5;
-}
-
-/* CALENDARIO PAGO MINI */
-.calendario-mini {
-    background: #fff;
-    border: 1px solid #e8dfc9;
-    border-radius: 4px;
-    padding: 12px 14px;
-    margin: 10px 0;
-    font-size: 12px;
-}
-.calendario-mini .row {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 0;
+    line-height: 1.65;
     border-bottom: 1px dotted #e0d9c9;
 }
-.calendario-mini .row:last-child { border-bottom: none; }
-.calendario-mini .row.tot {
-    font-weight: 700;
-    color: #163D60;
-    border-top: 1.5px solid #E29F34;
-    border-bottom: none;
-    padding-top: 7px;
-    margin-top: 4px;
-}
-.calendario-mini .lbl { color: #555; }
-.calendario-mini .val { color: #163D60; font-weight: 600; }
-
-/* TABLA FISCAL */
-.fiscal-tabla {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 14px;
-    font-size: 12px;
-}
-.fiscal-tabla th {
+.garantias li:last-child { border-bottom: none; }
+.garantias li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 20px;
+    height: 20px;
     background: #163D60;
     color: #fff;
-    padding: 12px 14px;
-    text-align: left;
     font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
     font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.fiscal-tabla th:first-child {
-    background: #E29F34;
-}
-.fiscal-tabla td {
-    padding: 12px 14px;
-    border-bottom: 1px solid #e8dfc9;
-    vertical-align: top;
-    color: #333;
-    line-height: 1.55;
-}
-.fiscal-tabla td:first-child {
-    background: #FDFBF7;
-    color: #163D60;
-    font-weight: 700;
-    font-size: 11.5px;
-    width: 22%;
-}
+.garantias li strong { color: #163D60; }
 
 /* CONDICIONES */
 .condiciones h3 {
@@ -459,23 +424,12 @@ section p strong {
         max-width: 100%;
     }
     section { page-break-inside: avoid; }
-    .oferta-box { page-break-inside: avoid; }
-    .opciones-grid { page-break-inside: avoid; }
-    .opcion-card { page-break-inside: avoid; }
-    .fiscal-tabla { page-break-inside: avoid; }
+    .oferta-box, .calendario, .destacado-box { page-break-inside: avoid; }
 }
 
 @media (max-width: 720px) {
-    .opciones-grid { grid-template-columns: 1fr; }
     .page { padding: 30px 24px; }
-    .fiscal-tabla, .fiscal-tabla tbody, .fiscal-tabla tr, .fiscal-tabla td, .fiscal-tabla th {
-        display: block;
-        width: 100% !important;
-    }
-    .fiscal-tabla td:first-child {
-        background: #163D60;
-        color: #fff;
-    }
+    .calendario .row { flex-direction: column; align-items: flex-start; gap: 4px; }
 }
 </style>
 </head>
@@ -498,14 +452,14 @@ section p strong {
 
     <!-- TÍTULO DOCUMENTO -->
     <div class="doc-title">
-        <div class="eyebrow">Anexo · Actualización de oferta económica</div>
-        <h1>Mejora de propuesta y modalidades de pago<br>C/ Virgen del Pilar 6 · Crevillent</h1>
+        <div class="eyebrow">Anexo · Última oferta</div>
+        <h1>Mejora de propuesta y formalización<br>C/ Virgen del Pilar 6 · Crevillent</h1>
         <div class="subline">Documento complementario a Ref. CdU-CREV-VP6-2026 (17 abril 2026)</div>
     </div>
 
     <!-- INTRO -->
     <div class="intro-box">
-        En base al feedback recibido por la propiedad y al estado actual de las negociaciones, el Equipo CdU de 0 a ÉXITO presenta una <strong>mejora sustancial sobre la oferta inicial</strong> de 170.000 €, manteniendo intactas las condiciones técnicas y suspensivas recogidas en la propuesta original. El presente anexo recoge la nueva cifra y pone a disposición de la propiedad <strong>dos formas de pago</strong> y <strong>dos modalidades de formalización</strong>, para que la parte vendedora pueda elegir la combinación que mejor se adapte a sus preferencias y a su planificación fiscal.
+        En base al feedback recibido por la propiedad y al estado actual de las negociaciones, el Equipo CdU de 0 a ÉXITO presenta una <strong>mejora final sobre la oferta inicial</strong> de 170.000 €. El presente anexo recoge la nueva cifra, el calendario de pago y la modalidad de formalización propuesta, junto con las garantías ofrecidas a la parte vendedora.
     </div>
 
     <!-- 01 · NUEVA OFERTA -->
@@ -557,185 +511,76 @@ section p strong {
         </p>
     </section>
 
-    <!-- 02 · FORMA DE PAGO -->
+    <!-- 02 · CALENDARIO DE PAGO -->
     <section>
-        <h2><span class="num">02</span> Forma de pago — dos opciones a elegir</h2>
+        <h2><span class="num">02</span> Calendario de pago</h2>
 
         <p>
-            Independientemente de la modalidad de formalización (apartado 03), la parte vendedora puede elegir entre <strong>dos calendarios de pago</strong>:
+            La operación se plantea con <strong>pago aplazado a doce (12) meses</strong> desde la formalización de la escritura pública, conforme al siguiente calendario:
         </p>
 
-        <div class="opciones-grid">
-
-            <!-- OPCIÓN 1 -->
-            <div class="opcion-card">
-                <span class="badge">Opción 1</span>
-                <h3>Pago en dos entregas</h3>
-                <p>
-                    La propiedad recibe <strong>dos cantidades antes del plazo final</strong>, con un compromiso económico mayor por adelantado.
-                </p>
-                <div class="calendario-mini">
-                    <div class="row">
-                        <span class="lbl">A la firma</span>
-                        <span class="val">19.000 €</span>
-                    </div>
-                    <div class="row">
-                        <span class="lbl">Mes 6</span>
-                        <span class="val">19.000 €</span>
-                    </div>
-                    <div class="row">
-                        <span class="lbl">Mes 12 (liquidación)</span>
-                        <span class="val">152.000 €</span>
-                    </div>
-                    <div class="row tot">
-                        <span class="lbl">Total</span>
-                        <span class="val">190.000 €</span>
-                    </div>
+        <div class="calendario">
+            <div class="row">
+                <div class="lbl">
+                    A la firma de la escritura
+                    <span class="micro">Pago inicial en notaría</span>
                 </div>
-                <ul>
-                    <li>20% del precio cobrado en los 6 primeros meses.</li>
-                    <li>Mayor garantía de cobro progresivo para la propiedad.</li>
-                    <li>Apropiada si se prefiere flujo intermedio antes de la liquidación final.</li>
-                </ul>
+                <div class="val">28.500 €</div>
             </div>
-
-            <!-- OPCIÓN 2 -->
-            <div class="opcion-card">
-                <span class="badge azul">Opción 2</span>
-                <h3>Pago en una sola entrega inicial reforzada</h3>
-                <p>
-                    La propiedad recibe <strong>una única cantidad al inicio</strong>, de cuantía reforzada, y el resto en la liquidación final del mes 12.
-                </p>
-                <div class="calendario-mini">
-                    <div class="row">
-                        <span class="lbl">A la firma</span>
-                        <span class="val">28.500 €</span>
-                    </div>
-                    <div class="row">
-                        <span class="lbl">Meses 1 a 11</span>
-                        <span class="val">— sin pagos —</span>
-                    </div>
-                    <div class="row">
-                        <span class="lbl">Mes 12 (liquidación)</span>
-                        <span class="val">161.500 €</span>
-                    </div>
-                    <div class="row tot">
-                        <span class="lbl">Total</span>
-                        <span class="val">190.000 €</span>
-                    </div>
+            <div class="row">
+                <div class="lbl">
+                    Mes 12
+                    <span class="micro">Liquidación final del precio</span>
                 </div>
-                <ul>
-                    <li>15% del precio en la firma.</li>
-                    <li>Sin gestión de cobros intermedios.</li>
-                    <li>Apropiada si se prefiere concentrar la mayor parte del cobro en una única operación al final del plazo.</li>
-                </ul>
+                <div class="val">161.500 €</div>
             </div>
+            <div class="row tot">
+                <div class="lbl">Total a percibir por la propiedad</div>
+                <div class="val">190.000 €</div>
+            </div>
+        </div>
 
+        <p style="font-size: 12.5px; color: #555;">
+            La cantidad inicial (28.500 €) equivale al <strong>15% del precio</strong>, prueba inequívoca de compromiso económico real por parte de la compradora. El saldo aplazado (161.500 €) queda garantizado conforme se detalla en el apartado siguiente.
+        </p>
+    </section>
+
+    <!-- 03 · FORMALIZACIÓN Y GARANTÍAS -->
+    <section>
+        <h2><span class="num">03</span> Formalización en notaría y garantías al vendedor</h2>
+
+        <p>
+            La operación se formaliza mediante <strong>escritura pública de compraventa con precio aplazado</strong> ante notario. Las partes acuden directamente a notaría, la parte compradora abona los 28.500 € en el acto, se transmite la propiedad y se inscribe la escritura en el Registro de la Propiedad junto con las garantías a favor de la parte vendedora.
+        </p>
+
+        <ul class="garantias">
+            <li><strong>Condición resolutoria expresa inscrita</strong> en el Registro de la Propiedad: en caso de impago del saldo aplazado, la operación queda automáticamente resuelta y la propiedad recupera el inmueble junto con todas las mejoras realizadas, conservando lo cobrado.</li>
+            <li><strong>Pagaré por importe del saldo aplazado</strong> (161.500 €), librado a favor de la parte vendedora con vencimiento al mes 12.</li>
+            <li><strong>Hipoteca en garantía a favor de la parte vendedora</strong> por el saldo aplazado, valorable como garantía adicional si así lo solicita la propiedad.</li>
+            <li><strong>Liquidación de ITP y registro inmediato</strong> a cargo íntegro de la parte compradora, sin coste alguno para la propiedad.</li>
+        </ul>
+
+        <div class="destacado-box">
+            <span class="lead">Por qué esta vía es la más segura para la propiedad</span>
+            La propiedad percibe el 15% del precio en el acto de la firma y conserva la titularidad jurídica del inmueble como garantía real inscrita en el Registro hasta el cumplimiento íntegro del pago. En caso de incumplimiento por la parte compradora, recupera la finca con todas las mejoras realizadas, sin pleitos ni demoras.
         </div>
     </section>
 
-    <!-- 03 · MODALIDADES DE FORMALIZACIÓN -->
+    <!-- 04 · IMPLICACIONES FISCALES -->
     <section>
-        <h2><span class="num">03</span> Modalidad de formalización — dos vías a elegir</h2>
+        <h2><span class="num">04</span> Implicaciones fiscales para la propiedad</h2>
 
         <p>
-            La parte compradora pone a disposición de la propiedad <strong>dos vías de formalización</strong> con distinto grado de exposición jurídica y fiscal. La elección queda en manos de la parte vendedora, en función de lo que mejor se adapte a su preferencia personal y a su planificación fiscal.
+            La formalización en notaría con precio aplazado implica los siguientes efectos fiscales para la parte vendedora:
         </p>
 
-        <div class="opciones-grid">
-
-            <!-- MODALIDAD A -->
-            <div class="opcion-card">
-                <span class="badge">Modalidad A</span>
-                <h3>Contrato privado de arras + escritura pública al final</h3>
-                <p>
-                    Las partes firman <strong>contrato privado de arras</strong> por la totalidad del precio. La parte compradora entrega la cantidad correspondiente al calendario elegido en el apartado 02. La <strong>escritura pública de compraventa se otorga en el mes 12</strong>, momento en el que se abona el saldo restante y se transmite la propiedad.
-                </p>
-                <ul>
-                    <li>La propiedad <strong>sigue siendo titular registral</strong> hasta el mes 12.</li>
-                    <li>Las arras se rigen por el art. 1.454 CC: si la parte vendedora desiste, devuelve el doble; si lo hace la compradora, pierde lo entregado.</li>
-                </ul>
-                <div class="destacado">
-                    Implicaciones fiscales (vendedor): la transmisión patrimonial no se perfecciona hasta el otorgamiento de la escritura. La <strong>plusvalía municipal</strong> y la <strong>ganancia patrimonial en IRPF</strong> se devengan en el ejercicio en que se firma la escritura (en este supuesto, mayo 2027 — IRPF a presentar en 2028).
-                </div>
-            </div>
-
-            <!-- MODALIDAD B -->
-            <div class="opcion-card">
-                <span class="badge azul">Modalidad B</span>
-                <h3>Escritura pública de compraventa con precio aplazado</h3>
-                <p>
-                    Las partes acuden directamente a <strong>notaría</strong> y formalizan la <strong>escritura pública de compraventa</strong>. La parte compradora entrega la cantidad correspondiente al calendario elegido en el apartado 02 y queda obligada al pago del resto según dicho calendario. La transmisión de la propiedad es inmediata.
-                </p>
-                <ul>
-                    <li>Saldo aplazado garantizado mediante <strong>condición resolutoria expresa inscrita</strong> en el Registro de la Propiedad.</li>
-                    <li>Adicionalmente, la parte compradora puede ofrecer <strong>hipoteca en garantía a favor de la parte vendedora</strong> y/o pagaré por el saldo aplazado.</li>
-                    <li>En caso de incumplimiento, la propiedad recupera la titularidad junto con todas las mejoras realizadas.</li>
-                </ul>
-                <div class="destacado">
-                    Implicaciones fiscales (vendedor): la <strong>plusvalía municipal</strong> se devenga al escriturar. Para el <strong>IRPF</strong>, al existir más de un año entre la firma y el último cobro, la parte vendedora puede acogerse al régimen de <strong>operaciones a plazos</strong> (art. 14.2.d Ley 35/2006 IRPF), declarando la ganancia patrimonial proporcionalmente a los cobros recibidos en cada ejercicio.
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 04 · TABLA FISCAL COMBINADA -->
-    <section>
-        <h2><span class="num">04</span> Cuándo tributa la propiedad — resumen claro</h2>
-
-        <p>
-            A efectos prácticos, lo relevante para la parte vendedora es <strong>en qué ejercicio fiscal se declaran los impuestos derivados de la venta</strong>. La siguiente tabla resume las cuatro combinaciones posibles, asumiendo firma en mayo de 2026 y liquidación final en mayo de 2027.
-        </p>
-
-        <table class="fiscal-tabla">
-            <thead>
-                <tr>
-                    <th>Combinación</th>
-                    <th>Plusvalía municipal</th>
-                    <th>IRPF · Ganancia patrimonial</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Modalidad A · Opción 1<br><span style="font-weight:400; font-size:10.5px; color:#666;">Arras + 2 entregas</span></td>
-                    <td>Se devenga en mayo 2027 (al escriturar). Pago en 2027.</td>
-                    <td>Se declara íntegra en IRPF 2027 (a presentar en 2028).</td>
-                </tr>
-                <tr>
-                    <td>Modalidad A · Opción 2<br><span style="font-weight:400; font-size:10.5px; color:#666;">Arras + 1 entrega inicial</span></td>
-                    <td>Se devenga en mayo 2027 (al escriturar). Pago en 2027.</td>
-                    <td>Se declara íntegra en IRPF 2027 (a presentar en 2028).</td>
-                </tr>
-                <tr>
-                    <td>Modalidad B · Opción 1<br><span style="font-weight:400; font-size:10.5px; color:#666;">Notaría + 2 entregas</span></td>
-                    <td>Se devenga en mayo 2026 (al escriturar). Pago en 2026.</td>
-                    <td>Aplicando art. 14.2.d LIRPF: en 2026 se declara el 20% de la ganancia (38.000 € cobrados); en 2027 se declara el 80% restante (152.000 €).</td>
-                </tr>
-                <tr>
-                    <td>Modalidad B · Opción 2<br><span style="font-weight:400; font-size:10.5px; color:#666;">Notaría + 1 entrega inicial</span></td>
-                    <td>Se devenga en mayo 2026 (al escriturar). Pago en 2026.</td>
-                    <td>Aplicando art. 14.2.d LIRPF: en 2026 se declara el 15% de la ganancia (28.500 € cobrados); en 2027 se declara el 85% restante (161.500 €).</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p style="font-size: 12px; color: #555; margin-top: 14px; line-height:1.6;">
-            <strong>En lenguaje sencillo:</strong>
-        </p>
-        <ul style="list-style: none; padding: 0; margin: 4px 0 0 0;">
-            <li style="position: relative; padding: 7px 0 7px 22px; font-size: 12.5px; color: #333; line-height: 1.6;">
-                <span style="position: absolute; left: 0; top: 9px; width: 14px; height: 14px; background: #E29F34; color: #fff; border-radius: 50%; font-size: 9px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center;">A</span>
-                Si la propiedad <strong>elige Modalidad A (arras)</strong>, todos los impuestos quedan diferidos a 2027 — no hay nada que declarar este año por esta venta.
-            </li>
-            <li style="position: relative; padding: 7px 0 7px 22px; font-size: 12.5px; color: #333; line-height: 1.6;">
-                <span style="position: absolute; left: 0; top: 9px; width: 14px; height: 14px; background: #163D60; color: #fff; border-radius: 50%; font-size: 9px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center;">B</span>
-                Si la propiedad <strong>elige Modalidad B (notaría)</strong>, la plusvalía municipal sí se paga este año, pero la ganancia patrimonial del IRPF puede prorratearse según los cobros, repartiendo la carga fiscal entre dos ejercicios.
-            </li>
+        <ul class="garantias">
+            <li><strong>Plusvalía municipal (IIVTNU):</strong> se devenga en el ejercicio en que se otorga la escritura pública (2026).</li>
+            <li><strong>IRPF · Ganancia patrimonial:</strong> al existir más de un año entre la firma y el último cobro, la parte vendedora puede acogerse al régimen de <strong>operaciones a plazos</strong> (art. 14.2.d Ley 35/2006 IRPF), declarando la ganancia patrimonial proporcionalmente a los cobros recibidos en cada ejercicio. En este caso: 15% en 2026 (28.500 € cobrados) y 85% restante en 2027 (161.500 € cobrados).</li>
         </ul>
 
         <p style="font-size: 11.5px; color: #888; font-style: italic; margin-top: 14px;">
-            Esta información tiene carácter orientativo. Se recomienda a la parte vendedora consultar con su asesor fiscal de confianza antes de optar por una u otra combinación, dado que la situación particular de cada copropietario (residencia, edad, otras rentas, número de transmitentes) puede alterar la conveniencia de cada vía.
+            Esta información tiene carácter orientativo. Se recomienda a la parte vendedora consultar con su asesor fiscal de confianza, dado que la situación particular de cada copropietario puede alterar la conveniencia del régimen de prorrateo.
         </p>
     </section>
 
@@ -746,8 +591,8 @@ section p strong {
         <div class="condiciones">
             <ol>
                 <li>Viabilidad técnica y urbanística definitiva del proyecto, incluyendo la <strong>obtención de la licencia de segregación</strong> correspondiente.</li>
-                <li><strong>Aprobación comunitaria</strong>, por la mayoría legalmente exigida, de las actuaciones necesarias en la fachada del edificio para la apertura y reordenación de huecos correspondientes a las cuatro (4) viviendas resultantes del proyecto.</li>
-                <li>Aceptación por parte de la propiedad del precio, forma de pago y modalidad de formalización dentro del plazo de validez del presente anexo.</li>
+                <li><strong>Aperturas y cierres de huecos en fachada</strong>, a criterio de la parte compradora promotora, en coherencia con la segregación proyectada y aprovechando la próxima reparación de fachada del edificio.</li>
+                <li>Aceptación por parte de la propiedad del precio, calendario de pago y modalidad de formalización dentro del plazo de validez del presente anexo.</li>
                 <li>El <strong>Impuesto sobre Transmisiones Patrimoniales (ITP)</strong>, así como los gastos notariales, registrales y de gestión, son íntegramente asumidos por la parte compradora.</li>
             </ol>
         </div>
@@ -755,7 +600,7 @@ section p strong {
 
     <!-- CIERRE -->
     <div class="cierre">
-        Esta mejora representa el <strong>último esfuerzo económico</strong> que la parte compradora puede asumir manteniendo la viabilidad del proyecto. Quedamos a disposición de la propiedad para cerrar formalmente la operación bajo la combinación de forma de pago y modalidad que considere más conveniente, y avanzar hacia la firma del contrato correspondiente.
+        Esta propuesta representa el <strong>último esfuerzo económico</strong> que la parte compradora puede asumir manteniendo la viabilidad del proyecto. Quedamos a disposición de la propiedad para proceder a la formalización en notaría conforme a los términos aquí descritos.
     </div>
 
     <!-- FIRMA -->
