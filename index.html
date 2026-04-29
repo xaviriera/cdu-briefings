@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BRIEFING OPERACIONES · COTE IA · 21 abril 2026</title>
+<title>BRIEFING OPERACIONES · COTE IA · 29 abril 2026</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
 
@@ -24,7 +24,7 @@ body {
   align-items: center;
   border-bottom: 3px solid #163D60;
   padding-bottom: 16px;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
 .header-left h1 {
@@ -55,12 +55,52 @@ body {
   color: #999;
 }
 
+.delta-block {
+  background: #fff;
+  border: 2px solid #E29F34;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+}
+
+.delta-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #E29F34;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  margin-bottom: 8px;
+}
+
+.delta-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 18px;
+}
+
+.delta-list li {
+  font-size: 12px;
+  padding: 2px 0;
+  padding-left: 18px;
+  position: relative;
+}
+
+.delta-list li::before {
+  content: '\25B8';
+  position: absolute;
+  left: 0;
+  color: #E29F34;
+  font-weight: 700;
+}
+
 .op-card {
   background: #fff;
   border-left: 5px solid #163D60;
   border-radius: 4px;
-  padding: 16px 20px;
-  margin-bottom: 18px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   page-break-inside: avoid;
 }
@@ -75,7 +115,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .op-name {
@@ -85,7 +125,7 @@ body {
 }
 
 .op-status {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   padding: 2px 10px;
   border-radius: 12px;
@@ -103,18 +143,43 @@ body {
 .op-summary {
   font-size: 12px;
   color: #555;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-style: italic;
 }
 
-.section-title {
+.op-resumen {
+  background: #fdf6e9;
+  border-left: 3px solid #163D60;
+  border-radius: 3px;
+  padding: 9px 12px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.op-resumen strong {
+  color: #163D60;
+}
+
+.op-resumen .lead {
+  display: block;
   font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #E29F34;
+  margin-bottom: 4px;
+}
+
+.section-title {
+  font-size: 10px;
   font-weight: 700;
   color: #E29F34;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-top: 10px;
-  margin-bottom: 4px;
+  margin-top: 8px;
+  margin-bottom: 3px;
 }
 
 .task-list {
@@ -124,13 +189,13 @@ body {
 
 .task-list li {
   font-size: 12px;
-  padding: 2px 0;
+  padding: 1px 0;
   padding-left: 18px;
   position: relative;
 }
 
 .task-list li::before {
-  content: '☐';
+  content: '\2610';
   position: absolute;
   left: 0;
   color: #E29F34;
@@ -138,7 +203,7 @@ body {
 }
 
 .task-list li.done::before {
-  content: '✓';
+  content: '\2713';
   color: #27ae60;
   font-weight: 700;
 }
@@ -149,8 +214,15 @@ body {
 }
 
 .task-list li.alert::before {
-  content: '⚠';
+  content: '\26A0';
   color: #e74c3c;
+}
+
+.task-list li.new::before {
+  content: '\25CF';
+  color: #2471a3;
+  font-size: 11px;
+  top: 2px;
 }
 
 .who {
@@ -169,25 +241,21 @@ body {
 .who.xavi { background: #27ae60; }
 .who.esther { background: #8e44ad; }
 .who.sabater { background: #d35400; }
+.who.rene { background: #6c3483; }
 
 .key-data {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   flex-wrap: wrap;
-  margin: 8px 0;
+  margin: 6px 0;
 }
 
-.key-data .kd {
-  font-size: 11px;
-}
-
-.key-data .kd strong {
-  color: #E29F34;
-}
+.key-data .kd { font-size: 11px; }
+.key-data .kd strong { color: #E29F34; }
 
 .footer {
-  margin-top: 30px;
-  padding-top: 16px;
+  margin-top: 24px;
+  padding-top: 14px;
   border-top: 2px solid #163D60;
   display: flex;
   justify-content: space-between;
@@ -195,32 +263,39 @@ body {
   color: #999;
 }
 
-.footer .cote {
-  font-weight: 700;
-  color: #E29F34;
-}
+.footer .cote { font-weight: 700; color: #E29F34; }
 
 .note {
   background: #f0f4f8;
   border-radius: 4px;
-  padding: 10px 14px;
+  padding: 8px 12px;
   font-size: 11px;
   color: #555;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
-.note.alert {
-  background: #fdecea;
-  color: #922b21;
-}
+.note.alert { background: #fdecea; color: #922b21; }
+.note.new { background: #ebf5fb; color: #1f618d; border-left: 3px solid #2471a3; }
 
 .headline {
   background: #fff8ea;
   border-left: 3px solid #E29F34;
-  padding: 8px 12px;
-  margin: 8px 0;
-  font-size: 12px;
+  padding: 6px 10px;
+  margin: 6px 0;
+  font-size: 11px;
   color: #7d6608;
+}
+
+.section-break {
+  margin: 28px 0 14px;
+  padding: 8px 14px;
+  background: #163D60;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 3px;
 }
 
 @media print {
@@ -234,96 +309,122 @@ body {
 <div class="header">
   <div class="header-left">
     <h1>BRIEFING OPERACIONES</h1>
-    <p>Estado consolidado al 21 de abril de 2026 (mañana) &middot; Documento interno del equipo</p>
+    <p>Estado consolidado al 29 de abril de 2026 &middot; +8 d&iacute;as desde el &uacute;ltimo briefing (21/04)</p>
   </div>
   <div class="header-right">
     <div class="brand">COTE IA</div>
-    <div class="sub">CdU de 0 a EXITO &middot; Asistente de Gestion</div>
+    <div class="sub">CdU de 0 a EXITO &middot; Asistente de Gesti&oacute;n</div>
   </div>
 </div>
+
+<!-- ═══════════════════════ DELTA 21→29 ABRIL ═══════════════════════ -->
+<div class="delta-block">
+  <div class="delta-title">Qu&eacute; se ha movido desde 21/04</div>
+  <ul class="delta-list">
+    <li><strong>Crevillente:</strong> 29/04 update v&iacute;a David: propiedad firme 180K (quieren 200K) + comisi&oacute;n David aparte (~5K) → efectivo 185K. Decisi&oacute;n: entrar o no.</li>
+    <li><strong>Castell&oacute;n:</strong> 27/04 Dani “contactar Ren&eacute; si avanzamos F1”. Sin movimiento Ren&eacute;.</li>
+    <li><strong>Elche (J. Espuche):</strong> Jos&eacute; resolvi&oacute; dudas (19/04). Esperando depo. Sin novedad 8d.</li>
+    <li><strong>Quevedo:</strong> 27/04 Dani “avanzamos con la documentaci&oacute;n?”. Sigue sin contactar Joaqu&iacute;n.</li>
+    <li><strong>Campello:</strong> arquitecto subi&oacute; 3 variantes (20/04). 27/04 Dani pide respuesta Ayto sobre 1&ordf; ocup. IZQ.</li>
+    <li><strong>TDC:</strong> Hidrogea contesta 21/04 (lista docs + 117,42 EUR/contador). Excel y Presup. Reformas DONE.</li>
+    <li><strong>Guardamar:</strong> descartada definitivamente (label ELIMINAR puesta 19/04). Procede archivar.</li>
+    <li><strong>Aspe / Altea:</strong> sin movimientos.</li>
+    <li><strong>Acci&oacute;n Levante IN 25–26/04:</strong> ya ejecutada → SIN registro en Trello. Capturar resultados.</li>
+    <li><strong>Tareas Equipo:</strong> Embajadores CdU (referidos), CCP buenas pr&aacute;cticas TDC, bloque sociedad (pacto, flujo, costes, automatizaciones, contenido, captaci&oacute;n).</li>
+  </ul>
+</div>
+
+<div class="section-break">OPERACIONES</div>
 
 <!-- ═══════════════════════ CREVILLENTE ═══════════════════════ -->
 <div class="op-card yellow">
   <div class="op-header">
-    <span class="op-name">CREVILLENTE (ESTHER) &mdash; PISO SEGREGACION</span>
-    <span class="op-status status-waiting">Oferta rechazada &middot; pivot estrategia</span>
+    <span class="op-name">CREVILLENTE (ESTHER) &mdash; PISO SEGREGACI&Oacute;N</span>
+    <span class="op-status status-alert">Update 29/04 &middot; decisi&oacute;n entrar a 185K</span>
   </div>
-  <div class="op-summary">Local + entreplanta &rarr; 4 viviendas &middot; Asking 180K firme &middot; Nuevo plan: compra aplazada 10 meses</div>
+  <div class="op-summary">Local + entreplanta &rarr; 4 viviendas &middot; Asking 180K firme &middot; Estrategia: pago aplazado 10 meses</div>
+
+  <div class="op-resumen">
+    <span class="lead">D&oacute;nde estamos</span>
+    Lanzamos oferta a 170K el 17/04 y la propiedad la rechaz&oacute;. <strong>Update 29/04 v&iacute;a David (mediador):</strong> los 5 hermanos NO bajan de 180K — incluso quieren subir a 200K. La hermana es la que m&aacute;s pegas pone y no quiere bajar nada. Adem&aacute;s, David ha cambiado de criterio: dijo que negociar&iacute;a su comisi&oacute;n con la propiedad pero ahora le han dicho que la cobre aparte → <strong>coste efectivo CdU ~185K</strong>. La comisi&oacute;n de David s&iacute; es negociable; los 180K de propiedad no. Punto positivo: la propiedad entreg&oacute; <strong>3K esta semana para reformar la fachada</strong> (se&ntilde;al de movimiento). Mercado en Crevillente sin oferta y demanda alta → 4 viviendas se vender&iacute;an r&aacute;pido (incluso en renders). Los n&uacute;meros solo cuadran con 4 viviendas y los huecos de fachada requieren UNANIMIDAD CCPP. <strong>Decisi&oacute;n a tomar en reuni&oacute;n: aceptar 185K efectivo (180K + 5K David) o no entrar</strong>.
+  </div>
 
   <div class="key-data">
     <div class="kd"><strong>Inversora-gestora:</strong> Esther (Fase 3, % a definir)</div>
-    <div class="kd"><strong>Oferta 170K:</strong> rechazada 21/04</div>
-    <div class="kd"><strong>Propiedad:</strong> no baja de 180K</div>
-    <div class="kd"><strong>Ruta tecnica:</strong> Segregar &rarr; ECUV + proyecto visado</div>
+    <div class="kd"><strong>Propiedad firme:</strong> 180K (incluso quieren 200K)</div>
+    <div class="kd"><strong>Comisi&oacute;n David:</strong> aparte ~5K → efectivo 185K</div>
+    <div class="kd"><strong>Se&ntilde;al:</strong> 3K para fachada esta semana</div>
   </div>
 
-  <div class="headline">Equipo alineado: ganamos tiempo con la contraoferta, solicitamos reunion presencial y preparamos oferta con pago aplazado a 180K (Xavi + Dani, 21/04 AM).</div>
+  <div class="headline">Decisi&oacute;n para esta reuni&oacute;n: aceptar 185K efectivo (180K propiedad + 5K David) o no entrar. Comisi&oacute;n David s&iacute; negociable; los 180K no.</div>
 
-  <div class="section-title">Hecho</div>
+  <div class="section-title">Novedad 21–29/04</div>
   <ul class="task-list">
-    <li class="done">Solicitar DH (Normas Comunitarias)</li>
-    <li class="done">Plano cotas (pilares, bajantes, perimetro, ventanas, patios)</li>
-    <li class="done">DH revisada: subdivisible SIN consentimiento CCPP (epigrafe 3: acceso zaguan + ascensor + escalera). En epigrafe 4 cesa subdivision del local y planta 1, se mantiene solo entresuelo</li>
-    <li class="done">Oferta 170K lanzada (Xavi, 17/04)</li>
-    <li class="done">Oferta rechazada por propiedad (21/04)</li>
+    <li class="new"><strong>29/04 Update Xavi v&iacute;a David:</strong> 5 hermanos no bajan de 180K (incluso quieren subir a 200K). La hermana es la m&aacute;s dura.</li>
+    <li class="new"><strong>29/04 Cambio criterio David:</strong> ahora cobra comisi&oacute;n aparte (~5K) en vez de negociarla con la propiedad → coste efectivo CdU 185K</li>
+    <li class="new"><strong>29/04 Se&ntilde;al positiva:</strong> propiedad entreg&oacute; 3K esta semana para reformar fachada</li>
+    <li>27/04 Dani pregunta: ¿Respondieron a la oferta condicionada? &mdash; respondido por update 29/04</li>
+    <li class="alert">21/04 Paco pide precios venta resultantes (¿se usa Im-Pulso?) <span class="who xavi">XAVI</span></li>
   </ul>
 
   <div class="section-title">Pendiente</div>
   <ul class="task-list">
     <li>Preparar contrato oferta con pago aplazado 10 meses a 180K <span class="who dani">DANI</span></li>
-    <li>Solicitar reunion presencial con propiedad &mdash; Xavi cuando este alli <span class="who xavi">XAVI</span></li>
-    <li>Tratar con comunidad reparacion fachada: abrir/cerrar huecos entresuelo para 4V (unanime) <span class="who">EQUIPO CDU</span></li>
-    <li>Positivo huecos &rarr; tomar cotas y medidas correctas <span class="who">EQUIPO CDU</span></li>
-    <li>Urbanismo Crevillente con Antonio para medir <span class="who">EQUIPO CDU</span></li>
-    <li>Definir figura Esther como gestora Fase 3 + porcentajes <span class="who">EQUIPO CDU</span></li>
-    <li>Contrato deposito condicionado con plazos + epigrafe formalizacion a terceros <span class="who">EQUIPO CDU</span></li>
+    <li>Solicitar reuni&oacute;n presencial con propiedad <span class="who xavi">XAVI</span></li>
+    <li>Sacar precios venta resultantes para cerrar n&uacute;meros <span class="who xavi">XAVI</span></li>
+    <li>Tratar con comunidad: huecos fachada para 4V (UNANIMIDAD CCPP)</li>
+    <li>Positivo huecos &rarr; tomar cotas y medidas correctas</li>
+    <li>Urbanismo Crevillente con Antonio para medir</li>
+    <li>Definir figura Esther como gestora F3 + porcentajes</li>
+    <li>Contrato dep&oacute;sito condicionado + ep&iacute;grafe formalizaci&oacute;n a terceros</li>
   </ul>
 
-  <div class="note alert"><strong>Condicionante critico:</strong> los numeros solo cierran con 4 viviendas. Con 3 viviendas la operacion NO sale (Dani, 15/04). Huecos de fachada requieren UNANIMIDAD CCPP.</div>
+  <div class="note alert"><strong>Cr&iacute;tico:</strong> n&uacute;meros solo cierran con 4 viviendas. Con 3 NO sale (Dani 15/04). Huecos = unanimidad CCPP.</div>
 </div>
 
-<!-- ═══════════════════════ ELCHE ═══════════════════════ -->
+<!-- ═══════════════════════ ELCHE JUAN ESPUCHE ═══════════════════════ -->
 <div class="op-card yellow">
   <div class="op-header">
     <span class="op-name">ELCHE &mdash; JUAN ESPUCHE 1</span>
-    <span class="op-status status-waiting">Tanteo comunidad &middot; deposito a lanzar</span>
+    <span class="op-status status-waiting">Tanteo comunidad &middot; dep&oacute;sito a lanzar</span>
   </div>
-  <div class="op-summary">Local &rarr; 3 viviendas &middot; 135 m2 registrales &middot; C/AV/V &middot; Inversion 246.850 EUR &middot; Beneficio 33,7%&ndash;45,8%</div>
+  <div class="op-summary">Local &rarr; 3 viviendas &middot; 135 m&sup2; reg. &middot; C/AV/V &middot; Inversi&oacute;n 246.850 EUR &middot; Beneficio 33,7%–45,8%</div>
+
+  <div class="op-resumen">
+    <span class="lead">D&oacute;nde estamos</span>
+    Operaci&oacute;n viable seg&uacute;n informe COTE IA v3 (11/04). El defecto de cabida est&aacute; descartado y la cesi&oacute;n de contrato con Jos&eacute; <strong>NO genera doble ITP</strong> (correcci&oacute;n Paco 11/04). El 19/04 Jos&eacute; resolvi&oacute; dudas con la propiedad y estamos a la espera de lanzar dep&oacute;sito condicionado. <strong>Sin movimientos en los &uacute;ltimos 8 d&iacute;as</strong>. Faltan los grandes condicionantes: aprobaciones de comunidad (divisi&oacute;n + humos), confirmaci&oacute;n del Registrador Elche n&ordm;2 y validar encaje real de las 3 viviendas con arquitecto. Paralelo: cerrar con Jos&eacute; estructura V&iacute;a A (servicios) o V&iacute;a B (cesi&oacute;n) y fee.
+  </div>
 
   <div class="key-data">
-    <div class="kd"><strong>Originador:</strong> Jose (Sabater)</div>
+    <div class="kd"><strong>Originador:</strong> Jos&eacute; (Sabater)</div>
     <div class="kd"><strong>Comunidad:</strong> 12 vec. &middot; sin admin profesional</div>
-    <div class="kd"><strong>Mayoria:</strong> 3/5 = 8 de 12 votos</div>
+    <div class="kd"><strong>Mayor&iacute;a:</strong> 3/5 = 8 de 12 votos</div>
   </div>
 
-  <div class="section-title">Avances recientes</div>
+  <div class="section-title">Novedad 21–29/04</div>
   <ul class="task-list">
-    <li class="done">Informe COTE IA v3 publicado (tarjeta #41)</li>
-    <li class="done">Defecto cabida descartado (143/135 = 5,9% &lt; 10%)</li>
-    <li class="done">Vendedoras siguen interesadas (Sabater confirma 16/04)</li>
-    <li class="done">Jose resolvio dudas con propiedad (Dani 19/04)</li>
+    <li class="done">Jos&eacute; resolvi&oacute; dudas con propiedad (Dani 19/04)</li>
+    <li>SIN movimiento 21–29/04 → estado idem</li>
   </ul>
 
-  <div class="section-title">Condicionantes criticos</div>
+  <div class="section-title">Condicionantes cr&iacute;ticos</div>
   <ul class="task-list">
-    <li>Aprobacion comunitaria division <span class="who">EQUIPO CDU</span></li>
-    <li>Aprobacion comunitaria perforacion humos <span class="who">EQUIPO CDU</span></li>
-    <li>Confirmacion registrador Elche n2 (finca 34695) <span class="who">EQUIPO CDU</span></li>
-    <li>Encaje real 3 viviendas (esquina doble fachada) <span class="who">EQUIPO CDU</span></li>
-    <li>Limite viviendas por edificio en Elche (Altabix) <span class="who">EQUIPO CDU</span></li>
-    <li>Redistribucion cuota participacion (17%)</li>
+    <li>Aprobaci&oacute;n comunitaria divisi&oacute;n + perforaci&oacute;n humos</li>
+    <li>Confirmaci&oacute;n registrador Elche n2 (finca 34695)</li>
+    <li>Encaje real 3 viv. (esquina doble fachada)</li>
+    <li>L&iacute;mite viviendas por edificio Altabix</li>
+    <li>Redistribuci&oacute;n cuota participaci&oacute;n (17%)</li>
   </ul>
 
   <div class="section-title">Tareas pendientes</div>
   <ul class="task-list">
-    <li>Lanzar contrato deposito condicionado + plazo viabilidad (cuando comunidad resuelta) <span class="who paco">PACO</span></li>
-    <li>Seguimiento tanteo comunidad (plazo 2-3 meses hasta firmeza) <span class="who">EQUIPO CDU</span></li>
-    <li>Contactar presidente comunidad &middot; preparar propuesta asamblea <span class="who">EQUIPO CDU</span></li>
-    <li>Conseguir ultima acta + estatutos comunidad <span class="who">EQUIPO CDU</span></li>
-    <li>Consulta registrador Elche n2 (finca 34695) <span class="who">EQUIPO CDU</span></li>
-    <li>Consulta tecnico municipal Altabix: limite viv + CdU <span class="who">EQUIPO CDU</span></li>
-    <li>Validar encaje 3 viv con arquitecto (doble fachada esquina) <span class="who">EQUIPO CDU</span></li>
-    <li>Acordar con Jose: estructura compra (Via A servicios vs Via B cesion) + fee <span class="who">EQUIPO CDU</span></li>
+    <li>Lanzar contrato dep&oacute;sito condicionado + plazo viabilidad <span class="who paco">PACO</span></li>
+    <li>Contactar presidente comunidad &middot; preparar propuesta asamblea</li>
+    <li>Conseguir &uacute;ltima acta + estatutos comunidad</li>
+    <li>Consulta registrador Elche n2 (finca 34695)</li>
+    <li>Consulta t&eacute;cnico municipal Altabix: l&iacute;mite viv + CdU</li>
+    <li>Validar encaje 3 viv con arquitecto (doble fachada)</li>
+    <li>Acordar con Jos&eacute;: estructura compra (V&iacute;a A servicios vs V&iacute;a B cesi&oacute;n) + fee</li>
     <li>Certificado ATV afecciones Sucesiones (prescriben 06/2027) <span class="who paco">PACO</span></li>
   </ul>
 </div>
@@ -331,75 +432,83 @@ body {
 <!-- ═══════════════════════ ALTABIX ENTRESUELO ═══════════════════════ -->
 <div class="op-card green">
   <div class="op-header">
-    <span class="op-name">ALTABIX &mdash; ENTRESUELO (NUEVA)</span>
-    <span class="op-status status-new">Viable &middot; reunion vecinos 28/04</span>
+    <span class="op-name">ALTABIX &mdash; ENTRESUELO</span>
+    <span class="op-status status-waiting">Reuni&oacute;n vecinos 28/04 &mdash; capturar resultado</span>
   </div>
-  <div class="op-summary">Entresuelo en Altabix &middot; Similar a op Sabater &middot; 110K + 10K intermediario = 120K &middot; Tecn. viable</div>
+  <div class="op-summary">Entresuelo Altabix &middot; Similar a op Sabater &middot; 110K + 10K interm. = 120K &middot; T&eacute;cn. viable</div>
+
+  <div class="op-resumen">
+    <span class="lead">D&oacute;nde estamos</span>
+    Op nueva detectada el 16/04 por Paco. T&eacute;cnicamente viable: la DH permite modificar interior y exterior sin necesidad de autorizaci&oacute;n de fachada, segregaci&oacute;n ni salida de humos. <strong>El &uacute;nico condicionante</strong> es abrir puerta de acceso a las viviendas a trav&eacute;s del zagu&aacute;n com&uacute;n. Hubo cita con el administrador el 17/04 (sin registro de resultado en ning&uacute;n canal) y la <strong>reuni&oacute;n con vecinos era ayer 28/04</strong> — toca capturar qu&eacute; pas&oacute;. Falta dar de alta la operaci&oacute;n en Drive y Trello (no existe ficha) y sacar n&uacute;meros del escenario de viviendas.
+  </div>
 
   <div class="key-data">
     <div class="kd"><strong>Precio:</strong> 120.000 EUR</div>
-    <div class="kd"><strong>Zona:</strong> Altabix, Elche</div>
-    <div class="kd"><strong>Cita admin:</strong> realizada 17/04 &mdash; actualizar resultado</div>
-    <div class="kd"><strong>Reunion vecinos:</strong> 28 abril</div>
+    <div class="kd"><strong>Cita admin:</strong> 17/04 (sin registro resultado)</div>
+    <div class="kd"><strong>Reuni&oacute;n vecinos:</strong> 28/04 → ayer</div>
   </div>
+
+  <div class="section-title">Novedad 21–29/04</div>
+  <ul class="task-list">
+    <li class="alert">Reuni&oacute;n vecinos 28/04 ya ocurri&oacute; → capturar resultado puerta zagu&aacute;n <span class="who paco">PACO</span></li>
+    <li class="alert">Sigue sin registro de la cita admin del 17/04</li>
+  </ul>
 
   <div class="section-title">Hecho</div>
   <ul class="task-list">
     <li class="done">Visita entresuelo con arquitecto (Paco 16/04)</li>
-    <li class="done">Tecnicamente viable confirmado</li>
-    <li class="done">DH obtenida: bajos y altillos pueden modificar interior Y exterior</li>
-    <li class="done">NO requiere autorizacion fachada, segregacion ni salida humos</li>
+    <li class="done">DH obtenida: bajos y altillos pueden modificar interior y exterior</li>
+    <li class="done">NO requiere autorizaci&oacute;n fachada, segregaci&oacute;n ni salida humos</li>
     <li class="done">Precio negociado: 110K + 10K</li>
-  </ul>
-
-  <div class="section-title">Unico condicionante</div>
-  <ul class="task-list">
-    <li>Abrir puerta a traves del zaguan de la comunidad (acceso viviendas) <span class="who">EQUIPO CDU</span></li>
   </ul>
 
   <div class="section-title">Pendiente</div>
   <ul class="task-list">
-    <li class="alert">Confirmar resultado cita admin del 17/04 &mdash; no hay registro en Trello ni Drive <span class="who paco">PACO</span></li>
-    <li>Reunion vecinos 28 abril &mdash; conseguir autorizacion puerta zaguan <span class="who">EQUIPO CDU</span></li>
     <li>Arquitecto consulta viabilidad con ayuntamiento <span class="who paco">PACO</span></li>
-    <li>Sacar numeros (escenario viviendas) <span class="who paco">PACO</span></li>
-    <li>Preparar oferta con plazos <span class="who">EQUIPO CDU</span></li>
-    <li>Dar de alta en Drive + Trello (no existe ficha) <span class="who">EQUIPO CDU</span></li>
+    <li>Sacar n&uacute;meros (escenario viviendas) <span class="who paco">PACO</span></li>
+    <li>Preparar oferta con plazos</li>
+    <li>Dar de alta en Drive + Trello (sigue sin ficha)</li>
   </ul>
-
-  <div class="note alert"><strong>Agujero de trazabilidad:</strong> la cita con el administrador del 17/04 no tiene registro de resultado en ningun canal. Antes de la reunion de vecinos del 28 conviene cerrar ese hueco.</div>
 </div>
 
 <!-- ═══════════════════════ CASTELLON ═══════════════════════ -->
 <div class="op-card green">
   <div class="op-header">
-    <span class="op-name">CASTELLON &mdash; C/ MARTINEZ TENA</span>
-    <span class="op-status status-active">Fase 1 en curso &middot; docs pendientes</span>
+    <span class="op-name">CASTELL&Oacute;N &mdash; C/ MARTINEZ TENA (Op 001)</span>
+    <span class="op-status status-active">Fase 1 en curso &middot; espera Ren&eacute;</span>
   </div>
-  <div class="op-summary">Local &rarr; 4 viviendas &middot; Op 001 servicio CdU &middot; Cliente: Pablo Benitez &middot; Originador: Rene Campillo</div>
+  <div class="op-summary">Local &rarr; 4 viviendas &middot; Cliente: Pablo Ben&iacute;tez &middot; Originador: Ren&eacute; Campillo</div>
+
+  <div class="op-resumen">
+    <span class="lead">D&oacute;nde estamos</span>
+    Es nuestra <strong>primera operaci&oacute;n pagada del servicio (Op 001)</strong>. F1 cobrada (289 EUR), Signwell firmado, urbanismo Castell&oacute;n contestado con requerimientos y checklist enviada a Ren&eacute; por WhatsApp. El bloqueo es claro: <strong>Ren&eacute;/Pablo a&uacute;n no ha pasado la DH</strong> ni avanzado el checklist. Dani pregunta el 27/04 si ya podemos avanzar con el an&aacute;lisis Fase 1. Sin DH no podemos cerrar el diagn&oacute;stico ni entregar Fase 1 al cliente — toca apretar a Ren&eacute; o cambiar el canal.
+  </div>
 
   <div class="key-data">
-    <div class="kd"><strong>Fase 1 GO:</strong> Diagnostico en curso</div>
-    <div class="kd"><strong>Pago:</strong> 289 EUR &middot; recibido</div>
-    <div class="kd"><strong>Contrato Signwell:</strong> firmado</div>
+    <div class="kd"><strong>Pago F1:</strong> 289 EUR recibido</div>
+    <div class="kd"><strong>Signwell:</strong> firmado</div>
+    <div class="kd"><strong>Bloqueo:</strong> esperando DH + checklist Ren&eacute;</div>
   </div>
+
+  <div class="section-title">Novedad 21–29/04</div>
+  <ul class="task-list">
+    <li class="alert">27/04 Dani: «Contactar con Ren&eacute; si avanzamos en an&aacute;lisis Fase 1» <span class="who xavi">XAVI</span></li>
+  </ul>
 
   <div class="section-title">Hecho</div>
   <ul class="task-list">
-    <li class="done">Pago Fase 1 recibido</li>
-    <li class="done">Contrato Signwell firmado</li>
-    <li class="done">Email consulta urbanismo Castellon enviado</li>
-    <li class="done">Ayuntamiento de Castellon ha contestado (con requerimientos)</li>
-    <li class="done">Checklist enviada a Rene por WhatsApp</li>
-    <li class="done">Resumen reunion PDF entregado (v7)</li>
+    <li class="done">Pago F1 + Signwell firmado</li>
+    <li class="done">Email urbanismo Castell&oacute;n enviado + ayuntamiento contest&oacute;</li>
+    <li class="done">Checklist enviada a Ren&eacute; por WhatsApp</li>
+    <li class="done">Resumen reuni&oacute;n PDF (v7) entregado</li>
   </ul>
 
   <div class="section-title">Pendiente</div>
   <ul class="task-list">
-    <li>Rene/Pablo pasa DH (nota division horizontal) <span class="who">RENE</span></li>
-    <li>Trabajar los requerimientos de urbanismo <span class="who">EQUIPO CDU</span></li>
-    <li>Sacar precios (comparables zona) <span class="who">EQUIPO CDU</span></li>
-    <li>CdU Fase 1 completa <span class="who">EQUIPO CDU</span></li>
+    <li class="alert">Ren&eacute;/Pablo pasa DH (nota divisi&oacute;n horizontal) <span class="who rene">RENE</span></li>
+    <li>Trabajar requerimientos urbanismo</li>
+    <li>Sacar precios (comparables zona)</li>
+    <li>CdU Fase 1 completa</li>
   </ul>
 </div>
 
@@ -407,76 +516,75 @@ body {
 <div class="op-card green">
   <div class="op-header">
     <span class="op-name">TORRES DE COTILLAS (TDC) &mdash; C/ D'ESTOUP 17</span>
-    <span class="op-status status-active">Arras listas para firma</span>
+    <span class="op-status status-active">Arras &middot; Hidrogea pidi&oacute; documentaci&oacute;n</span>
   </div>
-  <div class="op-summary">Local 110 m2 &rarr; viviendas &middot; Op propia equipo CdU &middot; Precio 37.000 EUR + impuestos &middot; Deposito 3.000 EUR</div>
+  <div class="op-summary">Local 110 m&sup2; &rarr; viviendas &middot; Op propia equipo &middot; 37.000 EUR + impuestos</div>
+
+  <div class="op-resumen">
+    <span class="lead">D&oacute;nde estamos</span>
+    La m&aacute;s avanzada del portfolio (op propia, no del servicio). VPO presentada en CARM, Iberdrola resuelto (CGP fachada OK, cambio esquema 10 = max 1.000–1.200 EUR), arras reescritas por Dani el 21/04 con cl&aacute;usula 3 protectora y Hidrogea respondi&oacute; el 21/04 con la lista cerrada de docs (escrituras segregadas, bolet&iacute;n instalador, decl. resp. habitabilidad, ref. catastrales, cuenta domiciliaci&oacute;n, justif. tasas + 117,42 EUR/contador). Esta semana Paco ha cerrado <strong>Plantilla Excel y Presupuesto Reformas (DONE 27/04)</strong>. <strong>Siguiente hito cr&iacute;tico: Paco env&iacute;a las arras a Miriam con mensaje sutil para que firme</strong>. Despu&eacute;s: firma INBRUTO, presentaci&oacute;n a oportunidades IN, beca IN.
+  </div>
 
   <div class="key-data">
     <div class="kd"><strong>VPO:</strong> CRT/000241/2026</div>
     <div class="kd"><strong>Solicitante:</strong> CDU DE 0 A EXITO, S.L.</div>
   </div>
 
-  <div class="headline"><strong>Contrato de arras reescrito por Dani (21/04 AM):</strong> listo para firmar con &laquo;secretos&raquo; ocultos en la clausula 3 que nos protegen sin generar friccion. Paco debe firmar y enviarlo a Miriam con mensaje sutil previo: &laquo;hemos realizado algun ajuste puntual para simplificar e integrarlo con el que veniamos trabajando, quedando listo para firma&raquo;. Con las clientas presentes, no se va a negar.</div>
-
-  <div class="section-title">Hecho</div>
+  <div class="section-title">Novedad 21–29/04</div>
   <ul class="task-list">
-    <li class="done">Autorizacion VPO presentada en CARM (CRT/000241/2026)</li>
-    <li class="done">Viabilidad tecnica completada</li>
-    <li class="done">Viabilidad administrativa completada</li>
-    <li class="done">Respuesta de Vivienda recibida</li>
-    <li class="done">Ultima acta comunidad solicitada</li>
-    <li class="done">Visita local con tecnicos</li>
-    <li class="done">Certificado vivienda &mdash; Carmen envio contestacion (Paco 16/04 AM)</li>
-    <li class="done">Iberdrola SOLUCIONADO &mdash; CGP en fachada OK, cambio esquema 10 = max 1.000&ndash;1.200 EUR (Dani 19/04)</li>
-    <li class="done">Borrador contrato arras subido a Drive (Paco 20/04)</li>
-    <li class="done">Dani reescribe contrato arras con clausula 3 protectora (21/04 AM)</li>
+    <li class="done">Plantilla Excel n&uacute;meros completada (Paco 27/04)</li>
+    <li class="done">Presupuesto Reformas (Paco 27/04)</li>
+    <li class="new">21/04 Hidrogea respondi&oacute;: pendiente presupuesto + lista cerrada de docs (escrituras segregadas, bolet&iacute;n instalador, decl. resp. habitabilidad, ref. catastrales, cuenta domiciliaci&oacute;n, justif. tasas) + 117,42 EUR/contador</li>
+    <li class="new">Card nueva: «CCP buenas pr&aacute;cticas» (Dani 27/04)</li>
   </ul>
 
-  <div class="section-title">Next steps (Dani 21/04)</div>
+  <div class="section-title">Hecho (acumulado)</div>
   <ul class="task-list">
-    <li class="alert">Firma de arras: Paco envia a Miriam con mensaje sutil <span class="who paco">PACO</span></li>
-    <li>Firma de inbruto <span class="who paco">PACO</span></li>
-    <li>Excel plantilla numeros <span class="who paco">PACO</span></li>
+    <li class="done">Autorizaci&oacute;n VPO presentada CARM (CRT/000241/2026)</li>
+    <li class="done">Iberdrola: CGP fachada OK, cambio esquema 10 = m&aacute;x 1.000–1.200 EUR</li>
+    <li class="done">Borrador arras subido a Drive (Paco 20/04) + reescritura Dani 21/04 con cl&aacute;usula 3</li>
+    <li class="done">Hidrogea: autorizaci&oacute;n firmada e inspecci&oacute;n previa</li>
+  </ul>
+
+  <div class="section-title">Next steps</div>
+  <ul class="task-list">
+    <li class="alert">Firma de arras: Paco env&iacute;a a Miriam con mensaje sutil <span class="who paco">PACO</span></li>
+    <li>Firma INBRUTO <span class="who paco">PACO</span></li>
     <li>Paso 4 confirmar <span class="who paco">PACO</span></li>
-    <li>Presentacion oportunidades IN <span class="who">EQUIPO CDU</span></li>
+    <li>Presentaci&oacute;n oportunidades IN</li>
     <li>Beca IN <span class="who xavi">XAVI</span></li>
-    <li>Presentar proyecto <span class="who">EQUIPO CDU</span></li>
-  </ul>
-
-  <div class="section-title">Pendiente &mdash; seguimiento</div>
-  <ul class="task-list">
-    <li class="alert">Planificar pago 50% honorarios a firma de arras (coste no previsto &middot; Paco 20/04)</li>
-    <li>Si no hay respuesta Vivienda &rarr; clausula suspensiva en arras <span class="who paco">PACO</span></li>
-    <li>Contactos con Registro: requisitos inscripcion unidades resultantes <span class="who">EQUIPO CDU</span></li>
-    <li>Viabilidad juridica <span class="who dani">DANI</span></li>
-    <li>Viabilidad economica <span class="who paco">PACO</span></li>
-    <li>Manual buen vecino: necesidades comunidad <span class="who">EQUIPO CDU</span></li>
-    <li>Reunion extraordinaria: autorizacion CdU + segregacion <span class="who">EQUIPO CDU</span></li>
-    <li>Coste baterias nuevas CGP (presupuesto) <span class="who dani">DANI</span></li>
-    <li>Gestion de aguas <span class="who paco">PACO</span></li>
-    <li>Revisar si DIGI tiene cobertura <span class="who xavi">XAVI</span></li>
+    <li>Presentar proyecto</li>
+    <li>50% honorarios a firma de arras (coste no previsto)</li>
+    <li>Reuni&oacute;n extraord. CCPP: autorizaci&oacute;n CdU + segregaci&oacute;n</li>
+    <li>Coste bater&iacute;as nuevas CGP (presupuesto) <span class="who dani">DANI</span></li>
+    <li>Contactar Registro: requisitos inscripci&oacute;n unidades resultantes</li>
+    <li>Revisar cobertura DIGI <span class="who xavi">XAVI</span></li>
   </ul>
 </div>
 
 <!-- ═══════════════════════ QUEVEDO LA TORRE ═══════════════════════ -->
-<div class="op-card green">
+<div class="op-card yellow">
   <div class="op-header">
     <span class="op-name">QUEVEDO &mdash; LA TORRE</span>
-    <span class="op-status status-active">Docs solicitados</span>
+    <span class="op-status status-waiting">Bloqueada en Joaqu&iacute;n</span>
   </div>
-  <div class="op-summary">Local visitado 15/04 &middot; Muy buenas posibilidades y margen &middot; Cabida estimada ~6 viviendas (3 lofts + 3 apts 2 hab)</div>
+  <div class="op-summary">Local visitado 15/04 &middot; ~6 viviendas (3 lofts + 3 apts 2 hab)</div>
 
-  <div class="section-title">Avance</div>
+  <div class="op-resumen">
+    <span class="lead">D&oacute;nde estamos</span>
+    Local con muy buenas posibilidades y margen visto el 15/04. Joaqu&iacute;n (originador) pregunt&oacute; qu&eacute; tipo de documentaci&oacute;n necesitamos y <strong>desde entonces no se ha contactado de vuelta</strong>. Dani relanza la pregunta el 27/04. Lleva 12 d&iacute;as parada esperando que Paco haga la solicitud formal a Joaqu&iacute;n. Sin docs no hay encaje preliminar ni an&aacute;lisis econ&oacute;mico.
+  </div>
+
+  <div class="section-title">Novedad 21–29/04</div>
   <ul class="task-list">
-    <li class="done">Paco contacto con Joaquin (15-16/04)</li>
-    <li class="done">Joaquin pregunto que tipo de documentacion necesita</li>
+    <li class="alert">27/04 Dani: «Avanzamos con la documentaci&oacute;n?» <span class="who paco">PACO</span></li>
   </ul>
 
   <div class="section-title">Pendiente</div>
   <ul class="task-list">
-    <li>Contactar con Joaquin para solicitar documentacion <span class="who paco">PACO</span></li>
-    <li>Encaje preliminar <span class="who">EQUIPO CDU</span></li>
-    <li>Analisis economico <span class="who paco">PACO</span></li>
+    <li class="alert">Contactar Joaqu&iacute;n para solicitar documentaci&oacute;n <span class="who paco">PACO</span></li>
+    <li>Encaje preliminar</li>
+    <li>An&aacute;lisis econ&oacute;mico <span class="who paco">PACO</span></li>
   </ul>
 </div>
 
@@ -486,86 +594,82 @@ body {
     <span class="op-name">ASPE &mdash; AVDA JUAN CARLOS I</span>
     <span class="op-status status-waiting">Espera admin fincas</span>
   </div>
-  <div class="op-summary">Pendiente autorizacion comunitaria ampliar garaje &middot; Admin de nuestro lado, conformes con propuesta</div>
+  <div class="op-summary">Pendiente autorizaci&oacute;n comunitaria ampliar garaje &middot; sin movimientos 21–29/04</div>
 
-  <div class="section-title">Hecho</div>
-  <ul class="task-list">
-    <li class="done">Administracion de Fincas alineada con propuesta (Dani 18/03)</li>
-    <li class="done">Documentacion tecnica adjunta 20/04 (Dani: DOC-20260312-WA0006.pdf)</li>
-  </ul>
+  <div class="op-resumen">
+    <span class="lead">D&oacute;nde estamos</span>
+    La administraci&oacute;n de fincas est&aacute; <strong>de nuestro lado</strong> y conforme con la propuesta (Dani 18/03). Documentaci&oacute;n t&eacute;cnica adjuntada el 20/04. <strong>Bloqueada</strong> esperando contestaci&oacute;n formal del administrador y autorizaci&oacute;n comunitaria para ampliar el garaje. Dani tiene que hablar con Fran para tirar de cuerda. Sin movimientos en 8 d&iacute;as.
+  </div>
 
   <div class="section-title">Pendiente</div>
   <ul class="task-list">
-    <li>Contestacion de la Administracion de Fincas <span class="who">ESPERA</span></li>
-    <li>Autorizacion comunitaria ampliar garaje <span class="who">EQUIPO CDU</span></li>
+    <li>Contestaci&oacute;n Administraci&oacute;n de Fincas <span class="who">ESPERA</span></li>
+    <li>Autorizaci&oacute;n comunitaria ampliar garaje</li>
     <li>Dani hablar con Fran &rarr; novedades administrador <span class="who dani">DANI</span></li>
   </ul>
 
-  <div class="note">Paco/Xavi: validar que el PDF subido el 20/04 sirve para mover el expediente o si sigue bloqueado esperando a Fran.</div>
+  <div class="note">Validar que el PDF subido el 20/04 sirve para mover el expediente o si sigue bloqueado esperando a Fran.</div>
 </div>
 
 <!-- ═══════════════════════ CAMPELLO ═══════════════════════ -->
-<div class="op-card green">
+<div class="op-card yellow">
   <div class="op-header">
     <span class="op-name">CAMPELLO &mdash; C/ SANT PERE 43</span>
-    <span class="op-status status-active">3 propuestas arquitectura</span>
+    <span class="op-status status-waiting">Decidir variante &middot; suministros viv. IZQ</span>
   </div>
-  <div class="op-summary">2 viviendas (DCH + IZQ) &middot; Arquitectura ha entregado 3 variantes el 20/04 &middot; Decidir variante &middot; Suministros activos</div>
+  <div class="op-summary">2 viviendas (DCH + IZQ) &middot; 3 variantes arquitecto pendientes elegir</div>
 
-  <div class="section-title">Avance</div>
+  <div class="op-resumen">
+    <span class="lead">D&oacute;nde estamos</span>
+    El arquitecto subi&oacute; <strong>3 variantes (C01/C02/C03) el 20/04</strong> y se ofrece a definir superficies y sombreado para dossier de ventas en cuanto el equipo elija una. Mientras tanto, suministros: la <strong>vivienda DCH es ruta corta</strong> (reactivar contrato cortado) pero la <strong>IZQ nunca ha tenido agua y no est&aacute; coordinada con catastro</strong> — posible falta de licencia 1&ordf; ocupaci&oacute;n. Consulta al Ayto. iniciada el 20/04. Dani pregunta el 27/04 por la respuesta. En paralelo seguimos esperando aceptaci&oacute;n de oferta por parte de Aliseda.
+  </div>
+
+  <div class="section-title">Novedad 21–29/04</div>
   <ul class="task-list">
-    <li class="done">Dani pidio encaje para 2 viviendas + dossier arquitectonico (25/03)</li>
-    <li class="done">Arquitecto (01x381) subio 3 variantes: C01.pdf, C02.pdf, C03.pdf (20/04)</li>
+    <li class="new">20/04 Arquitecto: «Acabo de subir tres propuestas. Si quer&eacute;is que defina superficies y sombreado para dossier de ventas»</li>
+    <li class="alert">27/04 Dani pregunta a 01x381 + Paco: respuesta Ayto sobre 1&ordf; ocup. viv. IZQ</li>
+    <li>20/04 Arquitecto (01): «Ma&ntilde;ana al tel&eacute;fono. Consulta en Ayto. para 1&ordf; ocup. izda. Aguas s&iacute; es lento»</li>
   </ul>
-
-  <div class="headline">Arquitecto: &laquo;Si quereis, defino superficies y sombreado para dossier de ventas. Se elige una variante y trabajamos sobre ella&raquo; (20/04).</div>
 
   <div class="section-title">Pendiente &mdash; ruta principal</div>
   <ul class="task-list">
-    <li class="alert">Decidir variante (C01/C02/C03) entre equipo <span class="who">EQUIPO CDU</span></li>
-    <li>Dossier de ventas: superficies + sombreado de la variante elegida <span class="who">ARQUITECTO</span></li>
-    <li>Seguimos esperando aceptacion oferta por parte de Aliseda <span class="who">ESPERA</span></li>
-    <li>Compra + ITP</li>
-    <li>Deudas pendientes (IBI, CCPP, suministros)</li>
-    <li>Licencia 2a ocupacion (DR + certificado tecnico habitabilidad + tasas)</li>
-    <li>Certificado eficiencia energetica</li>
-    <li>Alta de suministros</li>
-    <li>Tanteo y retracto</li>
-    <li>Venta (planos + renders + paralelo)</li>
+    <li class="alert">Decidir variante (C01/C02/C03)</li>
+    <li>Dossier ventas: superficies + sombreado de la elegida <span class="who">ARQUITECTO</span></li>
+    <li>Aceptaci&oacute;n oferta Aliseda <span class="who">ESPERA</span></li>
+    <li>Compra + ITP &middot; deudas (IBI, CCPP, suministros)</li>
+    <li>Licencia 2&ordf; ocupaci&oacute;n + CEE + alta suministros</li>
+    <li>Tanteo y retracto &middot; venta (planos + renders + paralelo)</li>
   </ul>
 
   <div class="section-title">Pendiente &mdash; suministros</div>
   <ul class="task-list">
-    <li>Consulta Ayto. El Campello: 1a ocupacion viv. IZQ (nunca ha tenido suministro) <span class="who">ARQUITECTO</span></li>
-    <li>Contacto con Aguas de Alicante &mdash; tiempos largos <span class="who">EQUIPO CDU</span></li>
-    <li>Boletin de instalacion fonteneria (DCH y IZQ)</li>
+    <li>Consulta Ayto. El Campello: 1&ordf; ocup. viv. IZQ <span class="who">ARQUITECTO</span></li>
+    <li>Contacto con Aguas de Alicante &mdash; tiempos largos</li>
+    <li>Bolet&iacute;n de instalaci&oacute;n fonteneria (DCH y IZQ)</li>
   </ul>
-
-  <div class="note">Vivienda DCH: reactivar suministro cortado (ruta corta). Vivienda IZQ: nunca ha tenido agua y no esta coordinada con catastro &mdash; posible ausencia de licencia 1a ocupacion &rarr; consulta al Ayto. iniciada 20/04.</div>
 </div>
 
 <!-- ═══════════════════════ ALTEA ═══════════════════════ -->
 <div class="op-card yellow">
   <div class="op-header">
     <span class="op-name">ALTEA &mdash; C/ SANTA TERESA 21 (C.DEUDA)</span>
-    <span class="op-status status-waiting">En revision &middot; viabilidad dudosa</span>
+    <span class="op-status status-waiting">Esperando docs abogado</span>
   </div>
-  <div class="op-summary">Compra por deuda &middot; Valor subasta 249K &middot; Adjudicacion minima 125K (50%) &middot; Deuda solo 70K</div>
+  <div class="op-summary">Compra por deuda &middot; Adjudicaci&oacute;n m&iacute;nima 125K (50%) &middot; Deuda 70K &middot; Sin movimientos 21–29/04</div>
 
-  <div class="headline">Paco (27/03): &laquo;Para adjudicartelo tendrias que abonar la diferencia hasta los 125K (50% del valor de subasta). Si la deuda es de 70K, habria que poner otros 55K. Por mi parte, no lo veo viable&raquo;.</div>
+  <div class="op-resumen">
+    <span class="lead">D&oacute;nde estamos</span>
+    Op de compra por deuda con problema de aritm&eacute;tica: la deuda es 70K pero la adjudicaci&oacute;n m&iacute;nima est&aacute; en 125K (50% del valor de subasta), o sea hay que poner 55K extra. Paco lo dej&oacute; claro el 27/03: «no lo veo viable». Estamos <strong>esperando documentaci&oacute;n del abogado desde el 27/03</strong> (m&aacute;s de un mes) para confirmar el punto exacto del procedimiento. Dani lo recuerda el 19/04. <strong>Decisi&oacute;n pendiente: descartar definitivamente o esperar info</strong>.
+  </div>
 
-  <div class="section-title">Estado</div>
-  <ul class="task-list">
-    <li class="done">Xavi: abogado solicito toda la info (27/03)</li>
-    <li>Esperando llegada de documentacion del abogado (Xavi 27/03)</li>
-    <li class="alert">Dani recuerda el 19/04: &laquo;@xaviriera1 seguimos sin la documentacion?&raquo; <span class="who xavi">XAVI</span></li>
-  </ul>
+  <div class="headline">Paco (27/03): «Para adjudicart&iacute;a tendr&iacute;as que abonar la diferencia hasta los 125K. Si la deuda es 70K, hay que poner otros 55K. No lo veo viable».</div>
 
   <div class="section-title">Pendiente</div>
   <ul class="task-list">
-    <li>Confirmar punto del procedimiento: demanda interpuesta/admitida, deudores personados, notificaciones recogidas <span class="who">EQUIPO CDU</span></li>
-    <li>Consultar al juez el % minimo de adjudicacion <span class="who">EQUIPO CDU</span></li>
-    <li>Decidir viabilidad vs descarte (depende de las dos anteriores) <span class="who">EQUIPO CDU</span></li>
+    <li class="alert">Documentaci&oacute;n abogado a&uacute;n no llega (Dani recuerda 19/04) <span class="who xavi">XAVI</span></li>
+    <li>Confirmar punto del procedimiento</li>
+    <li>Consultar al juez % m&iacute;nimo de adjudicaci&oacute;n</li>
+    <li>Decidir viabilidad vs descarte</li>
   </ul>
 </div>
 
@@ -573,27 +677,111 @@ body {
 <div class="op-card gray">
   <div class="op-header">
     <span class="op-name">GUARDAMAR &mdash; C/ SAN JOSE 87</span>
-    <span class="op-status status-dead">Descartada por costes</span>
+    <span class="op-status status-dead">Descartada &middot; archivar</span>
   </div>
-  <div class="op-summary">Descarte propuesto por Dani (19/04) &middot; 442 m a transformar &middot; Sin beneficio</div>
+  <div class="op-summary">Sin beneficio: 442 m&sup2; a transformar &middot; asking 360K + IVA &middot; etiqueta ELIMINAR puesta 19/04</div>
 
-  <div class="headline">Dani (19/04): &laquo;442 m a transformar, asking price 360K + IVA directamente de promotor. Precio ventas unidades resultantes (4) 170&times;2=340 + 140&times;2=620 &mdash; costes comprando a 250: 442&times;600=265K + 300 y otros impuestos y proyecto &mdash; SIN BENEFICIO. Eliminar esta carpeta&raquo;.</div>
+  <div class="op-resumen">
+    <span class="lead">D&oacute;nde estamos</span>
+    Dani hizo n&uacute;meros el 19/04: <strong>operaci&oacute;n sin beneficio</strong>. 442 m&sup2; a transformar, asking 360K + IVA del promotor, ventas estimadas 620K pero costes (442&times;600 + impuestos + proyecto) se la comen entera. Etiqueta ELIMINAR puesta. Solo falta que Xavi confirme y se archive la carpeta + lista Trello.
+  </div>
+
+  <div class="section-title">Acci&oacute;n</div>
+  <ul class="task-list">
+    <li class="alert">Xavi: confirmar archivado y eliminar lista Trello <span class="who xavi">XAVI</span></li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════ ACCION LEVANTE IN ═══════════════════════ -->
+<div class="section-break">MARKETING &middot; CAPTACI&Oacute;N</div>
+
+<div class="op-card blue">
+  <div class="op-header">
+    <span class="op-name">ACCI&Oacute;N LEVANTE IN &mdash; QUIZ ARQUETIPOS + SORTEO F1</span>
+    <span class="op-status status-alert">Ejecutada 25–26/04 &middot; capturar resultados</span>
+  </div>
+  <div class="op-summary">Workflow n8n activo &middot; tucambiodeuso.com &middot; QR + landing</div>
+
+  <div class="op-resumen">
+    <span class="lead">D&oacute;nde estamos</span>
+    La acci&oacute;n se ejecut&oacute; el fin de semana del <strong>25–26/04 en el evento de Levante IN</strong>: quiz de arquetipos + sorteo de Fase 1 (289 EUR). Workflow n8n activo, dominio tucambiodeuso.com configurado (DKIM+SPF OK), materiales impresos. <strong>Lo cr&iacute;tico ahora</strong>: capturar resultados (n&ordm; participantes, n&ordm; leads, ratio, ganador del sorteo) y abrir card en Trello con post-mortem. <strong>Sin esto perdemos los aprendizajes</strong> y no sabemos si replicar la mec&aacute;nica en el siguiente evento.
+  </div>
+
+  <div class="section-title">Estado pre-evento</div>
+  <ul class="task-list">
+    <li class="done">Workflow n8n ACTIVO</li>
+    <li class="done">Materiales listos (quiz + sorteo Fase 1)</li>
+    <li class="done">Email tucambiodeuso.com (DKIM+SPF OK)</li>
+  </ul>
+
+  <div class="section-title">Pendiente post-evento</div>
+  <ul class="task-list">
+    <li class="alert">N&ordm; participantes en quiz <span class="who xavi">XAVI</span></li>
+    <li class="alert">N&ordm; leads capturados &middot; ratio</li>
+    <li class="alert">Ganador sorteo Fase 1 &rarr; activar onboarding</li>
+    <li class="alert">Repaso aprendizajes (qu&eacute; replicar / qu&eacute; cortar)</li>
+    <li>Crear card en Trello (no existe ficha post-mortem)</li>
+  </ul>
+
+  <div class="note new">No hay tarjeta en Trello sobre esta acci&oacute;n. Conviene abrir una con resultados antes de pasar p&aacute;gina.</div>
+</div>
+
+<div class="op-card blue">
+  <div class="op-header">
+    <span class="op-name">EMBAJADORES CDU (REFERIDOS)</span>
+    <span class="op-status status-new">Iniciativa nueva 20/04</span>
+  </div>
+  <div class="op-summary">Programa de referidos para captar nuevas operaciones v&iacute;a red existente</div>
+
+  <div class="op-resumen">
+    <span class="lead">D&oacute;nde estamos</span>
+    Idea nueva en Trello desde el 20/04 (Xavi). Sin definir todav&iacute;a: mec&aacute;nica, incentivo y perfil del embajador. Decisi&oacute;n previa: ¿se lanza antes o despu&eacute;s de cerrar Op 001 (Pablo Ben&iacute;tez) para tener un caso de &eacute;xito que mostrar?
+  </div>
 
   <div class="section-title">Pendiente</div>
   <ul class="task-list">
-    <li>Xavi confirma descarte y eliminar carpeta/lista Trello <span class="who xavi">XAVI</span></li>
+    <li>Definir mec&aacute;nica + incentivo + perfil embajador <span class="who xavi">XAVI</span></li>
+    <li>Decidir si va antes o despu&eacute;s de cerrar Op 001 (caso de &eacute;xito)</li>
   </ul>
+</div>
+
+<!-- ═══════════════════════ TAREAS EQUIPO ═══════════════════════ -->
+<div class="section-break">TAREAS EQUIPO &middot; SOCIEDAD &middot; FISCAL</div>
+
+<div class="op-card">
+  <div class="op-header">
+    <span class="op-name">PACTO DE SOCIOS &middot; FLUJO &middot; FISCAL &middot; CONTENIDO</span>
+    <span class="op-status status-waiting">Bloque sociedad pendiente</span>
+  </div>
+
+  <div class="op-resumen">
+    <span class="lead">D&oacute;nde estamos</span>
+    Bloque transversal con 7+ cards abiertas en Trello que <strong>llevan d&iacute;as o semanas sin movimiento</strong>: el pacto de socios sigue sin cerrar, el plazo de 15 d&iacute;as para responder Fase 1 sin a&ntilde;adir, la optimizaci&oacute;n fiscal en standby (Alex Algarc&iacute; conocido pero solo entrar&aacute; cuando haga falta optimizar de verdad), y el bloque «sociedad» creado el 14/04 (flujo, costes esenciales, automatizaciones, contenido, captaci&oacute;n) sin avance visible. Adem&aacute;s siguen pendientes desde enero/febrero recopilar testimonios y validar tel&eacute;fonos Paso 4 TDC. <strong>Recomendaci&oacute;n: priorizar 2–3 cards para esta semana en lugar de mantener todo abierto a la vez</strong>.
+  </div>
+
+  <div class="section-title">Pendientes activos</div>
+  <ul class="task-list">
+    <li>Pacto de socios (Tareas Dani + Tareas Xavi 14/04)</li>
+    <li>Plazo 15 d&iacute;as respuesta Fase 1 (a&ntilde;adir cl&aacute;usula)</li>
+    <li>Optimizaci&oacute;n fiscal (FIXCAL? &middot; Alex Algarc&iacute;) &mdash; en standby hasta que necesitemos optimizar</li>
+    <li>Embajadores CdU (referidos)</li>
+    <li>Flujo de trabajo &middot; costes esenciales &middot; automatizaciones &middot; contenido &middot; acciones captaci&oacute;n (bloque tareas Xavi 14/04, sin avance visible)</li>
+    <li>Recopilar y almacenar testimonios (sigue abierto desde enero)</li>
+    <li>Validar tel&eacute;fonos Paso 4 TDC (sigue abierto desde febrero)</li>
+  </ul>
+
+  <div class="note">Estos pendientes existen como cards en Trello pero llevan d&iacute;as/semanas sin movimiento. Conviene priorizar 2–3 para esta semana.</div>
 </div>
 
 <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
 <div class="footer">
   <div>
-    <span class="cote">COTE IA</span> &middot; Asistente de Gestion Interno &middot; CdU de 0 a EXITO
-    <br>Documento generado automaticamente desde Trello &middot; Revision equipo antes de publicar
+    <span class="cote">COTE IA</span> &middot; Asistente de Gesti&oacute;n Interno &middot; CdU de 0 a EXITO
+    <br>Generado desde Trello (4 boards) &middot; Contraste 21–29/04 &middot; Revisi&oacute;n equipo antes de publicar
   </div>
   <div style="text-align:right;">
-    21 abril 2026
-    <br>Equipo: Xavi (Espiritu) &middot; Paco (Mente) &middot; Dani (Corazon)
+    29 abril 2026
+    <br>Equipo: Xavi (Esp&iacute;ritu) &middot; Paco (Mente) &middot; Dani (Coraz&oacute;n)
   </div>
 </div>
 
