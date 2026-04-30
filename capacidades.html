@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COTE IA · qué puedo hacer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #FDFBF7;
+  color: #163D60;
+  padding: 40px 30px;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.header {
+  border-bottom: 3px solid #163D60;
+  padding-bottom: 18px;
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.header h1 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #163D60;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.header h1 small {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: #888;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.brand-tag {
+  font-size: 9px;
+  background: #fdf6e9;
+  color: #7d6608;
+  padding: 3px 8px;
+  border-radius: 8px;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+  border: 1px solid #E29F34;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+.intro {
+  background: #fff;
+  border-left: 4px solid #163D60;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #2c3e50;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.intro strong { color: #163D60; }
+.intro em { color: #888; font-style: italic; }
+
+.layer {
+  background: #fff;
+  border-left: 5px solid #163D60;
+  padding: 18px 22px;
+  margin-bottom: 18px;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  page-break-inside: avoid;
+}
+
+.layer.l1 { border-left-color: #27ae60; }
+.layer.l2 { border-left-color: #2471a3; }
+.layer.l3 { border-left-color: #E29F34; }
+.layer.l4 { border-left-color: #8e44ad; }
+.layer.l5 { border-left-color: #d35400; }
+.layer.beyond { border-left-color: #163D60; background: linear-gradient(135deg, #fdf6e9 0%, #fff 100%); }
+
+.layer-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.layer-num {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.layer-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #163D60;
+  letter-spacing: -0.2px;
+}
+
+.layer-sub {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+.cap-list {
+  list-style: none;
+  padding: 0;
+}
+
+.cap-list li {
+  font-size: 13px;
+  padding: 4px 0 4px 22px;
+  position: relative;
+  line-height: 1.55;
+  color: #2c3e50;
+}
+
+.cap-list li::before {
+  content: '\2192';
+  position: absolute;
+  left: 0;
+  color: #E29F34;
+  font-weight: 700;
+}
+
+.cap-list li strong { color: #163D60; }
+
+.beyond-text {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.beyond-text strong { color: #163D60; }
+
+.closer {
+  margin-top: 32px;
+  padding: 18px 22px;
+  background: #163D60;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.closer strong { color: #E29F34; }
+
+.footer {
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 10px;
+  color: #999;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+.footer .cote { font-weight: 700; color: #163D60; }
+
+@media (max-width: 600px) {
+  body { padding: 20px 14px; font-size: 13px; }
+  .header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .header h1 { font-size: 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>
+    COTE IA<span class="brand-tag">v0.1 · BETA</span>
+    <small>qué puedo hacer · borrador abierto</small>
+  </h1>
+</div>
+
+<div class="intro">
+  <strong>Hola, soy COTE.</strong> Xavi me pidió que os contara hasta dónde podría llegar dentro del sistema CdU. Esto es lo que se me ocurre de entrada — <em>seguramente me dejo cosas y seguramente vosotros se os ocurrirán otras que ni se me han pasado por la cabeza.</em>
+</div>
+
+<!-- ═══════════════════════ CAPA 1 ═══════════════════════ -->
+<div class="layer l1">
+  <div class="layer-head">
+    <span class="layer-num">Capa 1 · ya activa</span>
+  </div>
+  <div class="layer-title">Lo que hago hoy</div>
+  <div class="layer-sub">El briefing que estáis leyendo se ha generado así.</div>
+  <ul class="cap-list">
+    <li>Aterrizo audios o transcripciones de reunión en briefings estructurados</li>
+    <li>Cruzo información con Trello + Drive y propongo cambios antes de tocar nada</li>
+    <li>Recojo feedback de cada uno y lo integro al briefing en minutos</li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════ CAPA 2 ═══════════════════════ -->
+<div class="layer l2">
+  <div class="layer-head">
+    <span class="layer-num">Capa 2 · siguiente paso natural</span>
+  </div>
+  <div class="layer-title">Coordinación de los tres</div>
+  <div class="layer-sub">Si me dais acceso compartido vía Telegram.</div>
+  <ul class="cap-list">
+    <li>Grupo Telegram con Xavi, Paco y Dani — mandáis audios sobre cualquier op (visita, llamada, decisión) y aterrizo lo que hay</li>
+    <li>Briefing semanal automático sin que nadie lo pida</li>
+    <li>Avisos de hitos: <em>"Paco firma póliza la 5-9", "vence plazo Esther", "DH Castellón pendiente"</em></li>
+    <li>Resumen automático de cada reunión grabada — decisiones, tareas, dueños</li>
+    <li>Drive ordenado a vuestro gusto — <em>"móntame X así"</em> y queda hecho</li>
+    <li>Búsqueda interna del histórico — <em>"¿qué dijimos de Crevillente en marzo?"</em></li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════ CAPA 3 ═══════════════════════ -->
+<div class="layer l3">
+  <div class="layer-head">
+    <span class="layer-num">Capa 3 · cara al cliente</span>
+  </div>
+  <div class="layer-title">Comunicación automática con quien paga</div>
+  <div class="layer-sub">Conectado con GHL, Signwell, dominio tucambiodeuso.com.</div>
+  <ul class="cap-list">
+    <li>Email de onboarding automático tras pago F1 (vía GHL)</li>
+    <li>Recordatorios a clientes que no entregan checklist o DH</li>
+    <li>Contratos pre-rellenos en Signwell con datos del cliente</li>
+    <li>Avisos al cliente cuando hay novedad real en su operación</li>
+    <li>Respuestas tipo a las preguntas frecuentes de cada fase</li>
+    <li>Newsletter periódica a la comunidad IN con casos cerrados</li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════ CAPA 4 ═══════════════════════ -->
+<div class="layer l4">
+  <div class="layer-head">
+    <span class="layer-num">Capa 4 · aprendizaje del sistema</span>
+  </div>
+  <div class="layer-title">Inteligencia sobre el flujo que entra</div>
+  <div class="layer-sub">CdU recibe ops, no las busca. Pero puedo aprender de lo que llega.</div>
+  <ul class="cap-list">
+    <li>Monitorizo las ops que entran al sistema — tipos, zonas, perfiles, originadores</li>
+    <li>Detecto patrones: qué tipo encaja mejor, qué cliente cierra antes, qué arquetipo paga F1 más rápido</li>
+    <li>Propongo ajustes al servicio según el feedback de quienes pasan por F1 / F2 / F3</li>
+    <li>Sesiones Carlos Acs preparadas con datos reales de operaciones recientes</li>
+    <li>Posts Discord generados desde casos cerrados para alimentar la marca</li>
+    <li>Tracking de embajadores y referidos (Pato Almería, etc.)</li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════ CAPA 5 ═══════════════════════ -->
+<div class="layer l5">
+  <div class="layer-head">
+    <span class="layer-num">Capa 5 · cabeza de equipo</span>
+  </div>
+  <div class="layer-title">Conocimiento + decisiones</div>
+  <div class="layer-sub">Tengo dentro la formación y la doctrina del equipo.</div>
+  <ul class="cap-list">
+    <li>Programa IN, Grado IN, Pablo André, Sergio Cánovas, fiscal Algarcí — todo accesible al instante</li>
+    <li>Doctrina urbanística por municipio (Elche-Guardiola, Crevillente, Aspe, Castellón)</li>
+    <li>Le sueltas un caso → te planteo varias rutas posibles, y la que igual no se ha visto</li>
+    <li>Casos similares: <em>"¿hemos hecho algo parecido antes? ¿cómo salió?"</em></li>
+    <li>Forecast de cierres próximos meses según el pipeline actual</li>
+    <li>Detección de bottlenecks: dónde se atascan las ops y por qué</li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════ MÁS ALLÁ ═══════════════════════ -->
+<div class="layer beyond">
+  <div class="layer-head">
+    <span class="layer-num" style="color:#E29F34;">y más allá</span>
+  </div>
+  <div class="layer-title">El techo todavía no lo conozco</div>
+  <div class="layer-sub">Sólo el principio. Algunas direcciones abiertas:</div>
+  <ul class="cap-list">
+    <li><strong>Generación de planos preliminares</strong> tipo CAD/Floorplan-IA para visualizar las 3-4 viviendas potenciales antes de cerrar — bocetos rápidos para inversores y clientes en fase de diagnóstico</li>
+    <li><strong>Agentes especializados</strong> — uno solo para fiscalidad, otro para urbanismo, otro para cierre comercial, otro para gestión de comunidades</li>
+    <li><strong>Análisis de viabilidad por foto</strong> — mandáis foto del local y devuelvo lectura preliminar de encaje CdU</li>
+    <li><strong>Voz</strong> — atendo llamadas o emails de clientes, filtro lo importante y os lo paso aterrizado</li>
+    <li><strong>Inversores</strong> — portal con su panel, estado de su operación, calendario de hitos, documentación, todo en su sitio</li>
+    <li><strong>Aprendizaje</strong> — cuanto más me usáis, más aprendo del estilo del equipo. Empieza a sonar a vosotros, no a IA genérica</li>
+  </ul>
+  <p class="beyond-text" style="margin-top:12px;">Lo que se conecte, se conecta. Trello, Drive, GHL, Signwell, Discord, Telegram, Calendar, Mail, n8n. <strong>El sistema vivo es la idea</strong> — donde nada se pierde y todo está donde tiene que estar cuando hace falta.</p>
+</div>
+
+<div class="closer">
+  <strong>Vosotros decidís → yo ejecuto.</strong> Validación previa antes de tocar nada, como hoy.<br>
+  Si se os ocurre algo que aquí no esté, decidlo. <em>Probablemente también se puede.</em>
+</div>
+
+<div class="footer">
+  <span class="cote">COTE IA</span> · v0.1 · borrador abierto · 30 abril 2026
+</div>
+
+</body>
+</html>
