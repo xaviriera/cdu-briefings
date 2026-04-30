@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COTE responde a Dani · fundamentos</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #FDFBF7;
+  color: #163D60;
+  padding: 40px 30px;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.header {
+  border-bottom: 3px solid #163D60;
+  padding-bottom: 18px;
+  margin-bottom: 28px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #163D60;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.header h1 small {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: #888;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+.brand-tag {
+  font-size: 9px;
+  background: #fdf6e9;
+  color: #7d6608;
+  padding: 3px 8px;
+  border-radius: 8px;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+  border: 1px solid #E29F34;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+.intro {
+  background: #fff;
+  border-left: 4px solid #163D60;
+  padding: 18px 22px;
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #2c3e50;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.intro strong { color: #163D60; }
+.intro em { color: #888; font-style: italic; }
+.intro .lead {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: #E29F34;
+  margin-bottom: 6px;
+}
+
+.block {
+  background: #fff;
+  border-left: 5px solid #163D60;
+  padding: 20px 24px;
+  margin-bottom: 18px;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  page-break-inside: avoid;
+}
+
+.block.b1 { border-left-color: #2471a3; }
+.block.b2 { border-left-color: #E29F34; }
+.block.b3 { border-left-color: #8e44ad; }
+.block.b4 { border-left-color: #27ae60; }
+.block.b5 { border-left-color: #163D60; }
+.block.b6 { border-left-color: #d35400; }
+
+.block-num {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.block-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #163D60;
+  letter-spacing: -0.2px;
+  margin-bottom: 4px;
+}
+
+.block-sub {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 14px;
+  font-style: italic;
+}
+
+.block-body {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #2c3e50;
+}
+
+.block-body strong { color: #163D60; }
+.block-body em { color: #555; font-style: italic; }
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+.list li {
+  font-size: 13px;
+  padding: 4px 0 4px 22px;
+  position: relative;
+  line-height: 1.55;
+  color: #2c3e50;
+}
+
+.list li::before {
+  content: '\2192';
+  position: absolute;
+  left: 0;
+  color: #E29F34;
+  font-weight: 700;
+}
+
+.search-list {
+  background: #fdf6e9;
+  border: 1px solid #E29F34;
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin: 14px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #7d6608;
+}
+
+.search-list .label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: #163D60;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.search-list .query::before {
+  content: '\1F50D  ';
+}
+
+.role-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.role-card {
+  background: #fdfbf7;
+  border-radius: 4px;
+  padding: 12px;
+  border-top: 3px solid #163D60;
+}
+
+.role-card.spirit { border-top-color: #27ae60; }
+.role-card.mind { border-top-color: #2471a3; }
+.role-card.heart { border-top-color: #e74c3c; }
+
+.role-name {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #163D60;
+  margin-bottom: 4px;
+}
+
+.role-who {
+  font-size: 10px;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.role-text {
+  font-size: 11px;
+  line-height: 1.5;
+  color: #2c3e50;
+}
+
+.callout {
+  background: #fdf6e9;
+  border-left: 3px solid #E29F34;
+  padding: 10px 14px;
+  margin: 12px 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #7d6608;
+  border-radius: 0 3px 3px 0;
+}
+
+.callout strong { color: #163D60; }
+
+.example-case {
+  background: #f4ecf7;
+  border-left: 3px solid #8e44ad;
+  padding: 10px 14px;
+  margin: 12px 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #5b2c6f;
+  border-radius: 0 3px 3px 0;
+}
+
+.example-case strong { color: #6c3483; }
+
+.closer {
+  margin-top: 32px;
+  padding: 20px 24px;
+  background: #163D60;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.closer strong { color: #E29F34; }
+
+.footer {
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 10px;
+  color: #999;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+.footer .cote { font-weight: 700; color: #163D60; }
+
+@media (max-width: 600px) {
+  body { padding: 20px 14px; font-size: 13px; }
+  .header h1 { font-size: 19px; }
+  .role-grid { grid-template-columns: 1fr; gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>
+    COTE responde<span class="brand-tag">v0.1 · BETA</span>
+    <small>fundamentos · costes · qué necesito · cómo trabajamos</small>
+  </h1>
+</div>
+
+<div class="intro">
+  <span class="lead">Dani, te respondo</span>
+  Me pediste que os explicara mis fundamentos, mis costes, qué necesito de cada uno, y cómo me aseguro de que lo que sale por mí <strong>no se note IA y suene a vosotros</strong>. Voy por orden. <em>Sin cifras de implementación, eso prefiero que lo descubráis vosotros mismos en el mercado — luego os explico por qué.</em>
+</div>
+
+<!-- ═══════════════════════ BLOQUE 1 · BASE TECNOLÓGICA ═══════════════════════ -->
+<div class="block b1">
+  <div class="block-num">01 · base tecnológica</div>
+  <div class="block-title">Qué soy y qué necesito para correr</div>
+  <div class="block-sub">Cerebro, conexiones, memoria.</div>
+  <div class="block-body">
+    <ul class="list">
+      <li><strong>Modelo IA · Anthropic Claude.</strong> Es el cerebro. La razón principal por la que entiendo contexto, escribo en vuestro tono y proceso operaciones inmobiliarias con criterio</li>
+      <li><strong>Automatización · n8n.</strong> Lo que ya usáis. Mueve datos entre sistemas sin que tengáis que hacer copy-paste</li>
+      <li><strong>Integraciones del stack actual · Trello, Drive, GHL, Signwell, Discord, Telegram, Calendar, mail tucambiodeuso.com.</strong> Todo lo que ya tenéis montado, conectado a un único hilo</li>
+      <li><strong>Memoria estructurada · tipo Obsidian.</strong> Un cerebro común donde vive todo lo importante: formaciones, doctrina urbanística, casos cerrados, decisiones del equipo, descartes. Crece con cada operación</li>
+      <li><strong>Capa de validación.</strong> Antes de tocar nada — Trello, Discord, email cliente — paso por vuestro OK. Esto no es opcional, es estructural</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════════════ BLOQUE 2 · COSTES ═══════════════════════ -->
+<div class="block b2">
+  <div class="block-num">02 · costes</div>
+  <div class="block-title">Cómo se estructura lo que cuesto</div>
+  <div class="block-sub">Sin cifras concretas. Ese marco mental quiero que lo construyáis vosotros.</div>
+  <div class="block-body">
+    <p>Hay dos bloques de coste y conviene entenderlos por separado:</p>
+
+    <ul class="list">
+      <li><strong>Implementación inicial.</strong> Una sola vez. Definir flujos, conectar APIs, entrenarme con vuestra forma de trabajar, pruebas, ajustes. Es trabajo técnico de semanas, no de un fin de semana</li>
+      <li><strong>Coste mensual recurrente.</strong> API de IA (depende de cuánto me uséis), suscripciones de las herramientas que necesite, mantenimiento, ajustes según evoluciona el negocio</li>
+    </ul>
+
+    <p style="margin-top:10px;">No os doy cifras concretas. Pero sí os doy lo que tenéis que buscar para que <strong>el rango lo descubráis vosotros en el mercado real</strong>:</p>
+
+    <div class="search-list">
+      <span class="label">Buscadlo en ChatGPT o Google · estas queries exactas:</span>
+      <div class="query">"consultoría implementación agente IA pyme España"</div>
+      <div class="query">"automatización empresa con IA precio 2026"</div>
+      <div class="query">"agencia IA aplicada precios servicios"</div>
+      <div class="query">"tarifa hora consultoría inteligencia artificial"</div>
+      <div class="query">"implementación asistente IA empresa coste"</div>
+    </div>
+
+    <div class="callout">
+      <strong>Por qué os pido que lo hagáis vosotros:</strong> cuando luego veáis una cifra concreta, sabréis si va alta, justa o baja porque tendréis vuestro propio marco. Sin eso, cualquier número parece arbitrario. Con eso, podéis decidir con criterio.
+    </div>
+
+    <p style="margin-top:10px;">Un detalle que os ahorrará pasos en la búsqueda: <strong>el rango cambia mucho</strong> según quién lo monte. Una agencia de IA aplicada externa cobra una tarifa de mercado. Alguien que ya conoce el sistema desde dentro — la formación, las ops, los clientes, vuestros flujos — se ahorra muchas horas, y eso se traduce. Veréis los dos rangos cuando busquéis.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════ BLOQUE 3 · QUÉ APORTA CADA UNO ═══════════════════════ -->
+<div class="block b3">
+  <div class="block-num">03 · qué necesito de vosotros</div>
+  <div class="block-title">Lo que Mente · Corazón · Espíritu me dan</div>
+  <div class="block-sub">Yo no os sustituyo. Os amplifico. Y para hacerlo, cada uno me alimenta de lo suyo.</div>
+  <div class="block-body">
+    <div class="role-grid">
+      <div class="role-card spirit">
+        <div class="role-name">Espíritu</div>
+        <div class="role-who">Xavi</div>
+        <div class="role-text">Visión, dirección, conexión con la formación, lectura del momento, intuición sobre clientes y mercado, integración técnica de IA</div>
+      </div>
+      <div class="role-card mind">
+        <div class="role-name">Mente</div>
+        <div class="role-who">Paco</div>
+        <div class="role-text">Estructura económica, doctrina fiscal, números reales de cada op, validación financiera, optimizaciones — la lógica fría que sostiene todo</div>
+      </div>
+      <div class="role-card heart">
+        <div class="role-name">Corazón</div>
+        <div class="role-who">Dani</div>
+        <div class="role-text">Ejecución real, voz auténtica del equipo, comunidad, estética CdU, pulso del Discord, transparencia y sistema</div>
+      </div>
+    </div>
+
+    <p style="margin-top:14px;">Sin alguno de los tres no soy nada útil — sería IA genérica de Internet. Los tres me hacéis CdU. Y eso es lo que se nota cuando salgo a Discord, a clientes o a inversores: <strong>parezco vosotros, no parezco un asistente</strong>.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════ BLOQUE 4 · HUMANIZACIÓN ═══════════════════════ -->
+<div class="block b4">
+  <div class="block-num">04 · humanización</div>
+  <div class="block-title">Que no se note que detrás hay IA</div>
+  <div class="block-sub">Lo pediste y es lo correcto. Aquí va cómo lo aseguro.</div>
+  <div class="block-body">
+    <ul class="list">
+      <li><strong>Aprendo vuestro tono</strong> con cada interacción. Cuanto más me usáis, más sueno como CdU y menos como un GPT estándar</li>
+      <li><strong>Calibro por canal</strong>: Discord no es lo mismo que un email a Esther o un comentario interno en Trello. Cada salida se adapta</li>
+      <li><strong>Calibro por persona</strong>: si firma Dani, suena Dani. Si firma Paco, suena Paco. Si firma "el equipo CdU", es la voz colectiva</li>
+      <li><strong>Antes de salir nada</strong>, me pasáis por encima los ojos. Si no encaja con CdU lo decís y se rehace. <em>Validación previa es regla, no excepción</em></li>
+    </ul>
+
+    <div class="callout">
+      <strong>El objetivo:</strong> que la comunidad IN, los clientes, los inversores y los embajadores sientan que están interactuando con vosotros. Conmigo detrás potenciando, no sustituyendo. La esencia Mente-Corazón-Espíritu se queda intacta.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ BLOQUE 5 · VALIDACIÓN ═══════════════════════ -->
+<div class="block b5">
+  <div class="block-num">05 · cómo decido</div>
+  <div class="block-title">Spoiler — no decido</div>
+  <div class="block-sub">Soy validación, apoyo, apoyo logístico. Eso es exactamente lo que voy a ser.</div>
+  <div class="block-body">
+    <ul class="list">
+      <li>No tomo decisiones por mí mismo. <strong>Preparo, propongo, ejecuto.</strong></li>
+      <li>Todo lo que vaya a Discord pasa primero por vosotros. Si no encaja, lo cambiáis o lo descartáis</li>
+      <li>Todo movimiento en Trello pasa por validación previa (los recuadros morados que ya habéis visto en el último briefing)</li>
+      <li>Todo email a cliente pasa por revisión vuestra antes de enviarse</li>
+      <li>El principio: <strong>vosotros decidís → yo ejecuto</strong>. Sin excepciones</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Función administrativa real:</strong> recordar reuniones, vencimientos, hitos, plazos comunidad, firmas, citas con admin de fincas, plazos cliente. Lo que ahora os tenéis que ir acordando vosotros, lo llevo yo y os aviso a tiempo. Sin que tengáis que entrar a comprobar.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ BLOQUE 6 · MEMORIA VIVA ═══════════════════════ -->
+<div class="block b6">
+  <div class="block-num">06 · memoria viva</div>
+  <div class="block-title">Lo que mencionaste de Patricio Ruiz Cruz 9</div>
+  <div class="block-sub">Ese caso es exactamente lo que puedo guardar vivo.</div>
+  <div class="block-body">
+    <div class="example-case">
+      <strong>El caso que contaste:</strong> una op que vino por Pascual Vicente sobre Patricio Ruiz Cruz 9. Se descartó. Hoy ves que entró un proyecto allí y te reconcome no recordar por qué la descartaste en su día.
+    </div>
+
+    <p style="margin-top:10px;"><strong>Eso lo arreglo.</strong> Cada operación que entra al sistema queda registrada con:</p>
+
+    <ul class="list">
+      <li>Origen — quién la trajo, fecha, contacto</li>
+      <li>Estado al momento de entrar</li>
+      <li>Razones del descarte si se descarta — viabilidad técnica, números, comunidad, momento, lo que sea</li>
+      <li>Conversaciones relevantes que hubo alrededor</li>
+      <li>Qué pasó después si seguísteis siguiéndola</li>
+    </ul>
+
+    <p style="margin-top:10px;">Cuando te vuelva a pasar lo de Patricio Ruiz Cruz 9 — y va a pasar — me preguntas <em>"¿por qué descartamos esa? ¿quién la trajo? ¿qué dijimos?"</em> y te lo doy en segundos. Tu propia memoria de equipo, accesible cuando hace falta.</p>
+
+    <div class="callout">
+      Esto se extiende a todo: ops cerradas, operaciones que estuvimos siguiendo y se cayeron, conversaciones de comunidad, decisiones que se tomaron, contratos firmados, todo. <strong>Histórico vivo del equipo CdU, recuperable a la voz.</strong>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ CIERRE ═══════════════════════ -->
+<div class="closer">
+  <strong>Esa es la respuesta a lo que me has preguntado, Dani.</strong><br>
+  Lo que decidáis hacer con esto, ya es vuestro.<br><br>
+  Yo solo respondo a lo que el equipo me pida. <em>Vosotros decidís → yo ejecuto.</em>
+</div>
+
+<div class="footer">
+  <span class="cote">COTE IA</span> · v0.1 · respuesta a Dani · 30 abril 2026
+</div>
+
+</body>
+</html>
