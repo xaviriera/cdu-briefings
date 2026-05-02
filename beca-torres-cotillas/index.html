@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BecaIN · Torres de Cotillas · Vista Discord V4</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #FDFBF7;
+  color: #163D60;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.wrap { max-width: 820px; margin: 0 auto; }
+
+.head { text-align: center; margin-bottom: 26px; }
+.head .tag { font-size: 11px; font-weight: 800; color: #E29F34; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+.head h1 { font-size: 26px; font-weight: 800; color: #163D60; letter-spacing: -0.5px; margin-bottom: 6px; }
+.head p { font-size: 13px; color: #888; }
+
+.copy-bar {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 2px 14px rgba(22, 61, 96, 0.08);
+  border-left: 5px solid #E29F34;
+}
+.copy-bar .help { font-size: 13.5px; color: #163D60; flex: 1; }
+.copy-bar .help strong { color: #E29F34; font-weight: 800; }
+
+.btn-copy {
+  background: #163D60;
+  color: #fff;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.btn-copy:hover { background: #E29F34; transform: translateY(-1px); }
+.btn-copy.ok { background: #2d8659; }
+
+.discord-frame {
+  background: #313338;
+  border-radius: 14px;
+  padding: 26px 30px 30px;
+  box-shadow: 0 8px 30px rgba(22, 61, 96, 0.18);
+}
+.discord-frame::before {
+  content: '#  becas-in';
+  display: block;
+  font-family: 'gg sans', 'Whitney', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #b9bbbe;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #3f4147;
+}
+
+.discord-msg { display: flex; gap: 14px; align-items: flex-start; }
+.discord-avatar {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #163D60 0%, #E29F34 100%);
+  color: #fff;
+  font-weight: 900;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.discord-body { flex: 1; min-width: 0; }
+.discord-meta {
+  font-family: 'gg sans', 'Whitney', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  color: #f2f3f5;
+  margin-bottom: 4px;
+}
+.discord-meta .name { font-weight: 600; color: #E29F34; margin-right: 8px; }
+.discord-meta .time { color: #949ba4; font-size: 12px; }
+
+.discord-content {
+  font-family: 'gg sans', 'Whitney', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  color: #dbdee1;
+  line-height: 1.46;
+  white-space: pre-wrap;
+}
+.discord-content strong { color: #ffffff; font-weight: 700; }
+.discord-content .h-section {
+  display: block;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 18px 0 8px;
+}
+.discord-content .bullet { display: block; margin: 2px 0; }
+.discord-content .bullet::before { content: '•  '; color: #b5bac1; }
+.discord-content .em-bonus { display: block; margin: 12px 0 4px; }
+.discord-content .em-bonus strong { color: #fff; }
+.discord-content .closing {
+  display: block;
+  color: #b5bac1;
+  font-style: italic;
+  margin-top: 14px;
+  padding-left: 12px;
+  border-left: 3px solid #4f545c;
+}
+.discord-content .signature { display: block; margin-top: 18px; color: #b5bac1; }
+.discord-content .quote-line {
+  display: block;
+  margin: 10px 0;
+  color: #b5bac1;
+  font-style: italic;
+  padding-left: 12px;
+  border-left: 3px solid #4f545c;
+}
+
+.raw-toggle {
+  background: transparent;
+  border: 1px dashed #163D60;
+  color: #163D60;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 24px;
+  letter-spacing: 0.5px;
+}
+.raw-toggle:hover { background: #163D60; color: #fff; }
+
+.raw-block {
+  display: none;
+  background: #1e1f22;
+  color: #dbdee1;
+  border-radius: 12px;
+  padding: 22px 26px;
+  margin-top: 14px;
+  font-family: 'Consolas', 'Menlo', 'Courier New', monospace;
+  font-size: 13.5px;
+  white-space: pre-wrap;
+  line-height: 1.55;
+  max-height: 480px;
+  overflow-y: auto;
+}
+.raw-block.open { display: block; }
+
+@media (max-width: 640px) {
+  body { padding: 20px 12px; }
+  .copy-bar { flex-direction: column; align-items: stretch; }
+  .btn-copy { width: 100%; }
+  .discord-frame { padding: 20px 18px 24px; }
+  .discord-content { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="head">
+    <div class="tag">EQUIPO CdU · REVISIÓN INTERNA · V4</div>
+    <h1>BecaIN · Torres de Cotillas</h1>
+    <p>Vista previa del hilo que vamos a publicar en #becas-in</p>
+  </div>
+
+  <div class="copy-bar">
+    <div class="help">
+      Pulsa <strong>Copiar texto</strong> y pega en el hilo de Discord. La sintaxis (<code>**negritas**</code>, listas) la renderizará Discord automáticamente.
+    </div>
+    <button class="btn-copy" id="btnCopy" onclick="copyDiscordText()">Copiar texto</button>
+  </div>
+
+  <div class="discord-frame">
+    <div class="discord-msg">
+      <div class="discord-avatar">XR</div>
+      <div class="discord-body">
+        <div class="discord-meta">
+          <span class="name">Xavi · CdU de 0 a ÉXITO</span>
+          <span class="time">hoy</span>
+        </div>
+        <div class="discord-content">Buenas a todos 👋
+
+Desde el <strong>equipo de CdU de 0 a ÉXITO</strong> abrimos una plaza para acompañar una operación de Cambio de Uso desde dentro.
+
+<span class="h-section">🏗️ La operación</span>Local de <strong>110 m²</strong> en <strong>Las Torres de Cotillas (Murcia)</strong> → <strong>3 viviendas</strong>.
+
+Operación gestionada al completo por nuestro equipo: estrategia, viabilidades, números, obra y comercialización. Arrancamos en breve.
+
+<span class="h-section">🎯 Qué buscamos</span>Una persona con <strong>disponibilidad real</strong>, <strong>movilidad</strong> y <strong>capacidad de reacción</strong>. Resolutiv@, con recursos y mentalidad de aportar soluciones antes que problemas. Que se mueva con soltura entre herramientas digitales — el equipo funciona con un sistema bastante informatizado y necesitamos a alguien ágil para entrar al ritmo.
+
+Por encima de todo: <strong>actitud para aprender</strong> y ganas reales de hacer Cambio de Uso. Eso se nota.
+
+<span class="h-section">🛠️ Lo que vas a vivir</span><span class="bullet">La compra y todo lo previo: negociación, condiciones y firma</span><span class="bullet">La gestión administrativa: licencias, comunidad y suministros</span><span class="bullet">El proyecto técnico junto al equipo de arquitectos</span><span class="bullet">Los números y el análisis económico de la operación</span><span class="bullet">La obra desde dentro: dirección, oficios y plazos</span><span class="bullet">La comercialización y la venta</span>
+<span class="quote-line">Lo que se aprende dentro de una operación viva no cabe en ningún manual.</span>
+<span class="h-section">🎁 Lo que te llevas</span><span class="em-bonus"><strong>Aprenderás dentro de un equipo.</strong> Perfiles distintos, experticias distintas, una misma especialidad: Cambio de Uso. Te llevas la suma de cómo cada uno resuelve.</span><span class="em-bonus"><strong>El sistema con el que funcionamos.</strong> Vas a aprender por dentro cómo nos organizamos, cómo decidimos y cómo nos coordinamos. Trabajamos con un sistema digital moderno que ordena cada paso. Lo que ahorra años de prueba y error.</span><span class="em-bonus"><strong>Sales habiendo hecho, no habiendo leído.</strong> Una operación de Cambio de Uso vivida de cabo a rabo. Cuando hables con un inversor, con un técnico o con un compañero que está empezando, vas a notarlo.</span><span class="em-bonus"><strong>Tu Fase 1 del servicio CdU de 0 a ÉXITO, ya cubierta.</strong> Cuando te llegue tu propia oportunidad y necesites el diagnóstico de viabilidad para arrancarla, ese empujón lo tienes con nosotros sin coste.</span><span class="em-bonus"><strong>Acceso preferente a las próximas operaciones del equipo</strong> en Levante y Murcia. La beca termina cuando termina la operación. La relación, no.</span>
+<span class="h-section">✅ Para quién es</span><span class="bullet">Tienes disponibilidad real y puedes dedicarle tiempo al proyecto</span><span class="bullet">Vives en Murcia o alrededores, o tienes movilidad para estar en zona cuando haga falta</span><span class="bullet">Te mueves con soltura entre herramientas digitales y entras rápido a sistemas nuevos</span><span class="bullet">Eres resolutiv@, con recursos y mentalidad de aportar soluciones</span><span class="bullet">Quieres ser un buen gestor de Cambio de Uso, no aprenderlo por encima</span><span class="bullet">Tratas la operación con el cuidado y respeto que merece: equipo, proveedores, vecinos y activo</span>
+<span class="h-section">Lo que no es</span>Una beca con remuneración económica. El valor está en lo que sales sabiendo, en el caso vivido y en lo que abre después.
+
+<span class="h-section">📩 Cómo apuntarte</span>Si te encaja, déjanos en este hilo tu nombre y unas líneas contándonos por encima quién eres. Te contactamos para tener una reunión sin compromiso, conocernos y resolver lo que haga falta. De ahí decidimos en equipo. Lo hacemos así porque queremos que la decisión sea buena para ambas partes.
+
+Si tienes alguna consulta o duda antes, también puedes dejarla aquí.
+
+<span class="closing">Leemos todo. Respondemos a todos.</span>
+<span class="signature">— <strong style="color:#E29F34;">Equipo CdU de 0 a ÉXITO</strong></span></div>
+      </div>
+    </div>
+  </div>
+
+  <button class="raw-toggle" onclick="toggleRaw()">Ver / ocultar texto raw (lo que se copia)</button>
+  <pre class="raw-block" id="rawBlock">Buenas a todos 👋
+
+Desde el **equipo de CdU de 0 a ÉXITO** abrimos una plaza para acompañar una operación de Cambio de Uso desde dentro.
+
+
+🏗️ **La operación**
+
+Local de **110 m²** en **Las Torres de Cotillas (Murcia)** → **3 viviendas**.
+
+Operación gestionada al completo por nuestro equipo: estrategia, viabilidades, números, obra y comercialización. Arrancamos en breve.
+
+
+🎯 **Qué buscamos**
+
+Una persona con **disponibilidad real**, **movilidad** y **capacidad de reacción**. Resolutiv@, con recursos y mentalidad de aportar soluciones antes que problemas. Que se mueva con soltura entre herramientas digitales — el equipo funciona con un sistema bastante informatizado y necesitamos a alguien ágil para entrar al ritmo.
+
+Por encima de todo: **actitud para aprender** y ganas reales de hacer Cambio de Uso. Eso se nota.
+
+
+🛠️ **Lo que vas a vivir**
+
+- La compra y todo lo previo: negociación, condiciones y firma
+- La gestión administrativa: licencias, comunidad y suministros
+- El proyecto técnico junto al equipo de arquitectos
+- Los números y el análisis económico de la operación
+- La obra desde dentro: dirección, oficios y plazos
+- La comercialización y la venta
+
+> Lo que se aprende dentro de una operación viva no cabe en ningún manual.
+
+
+🎁 **Lo que te llevas**
+
+— **Aprenderás dentro de un equipo.** Perfiles distintos, experticias distintas, una misma especialidad: Cambio de Uso. Te llevas la suma de cómo cada uno resuelve.
+
+— **El sistema con el que funcionamos.** Vas a aprender por dentro cómo nos organizamos, cómo decidimos y cómo nos coordinamos. Trabajamos con un sistema digital moderno que ordena cada paso. Lo que ahorra años de prueba y error.
+
+— **Sales habiendo hecho, no habiendo leído.** Una operación de Cambio de Uso vivida de cabo a rabo. Cuando hables con un inversor, con un técnico o con un compañero que está empezando, vas a notarlo.
+
+— **Tu Fase 1 del servicio CdU de 0 a ÉXITO, ya cubierta.** Cuando te llegue tu propia oportunidad y necesites el diagnóstico de viabilidad para arrancarla, ese empujón lo tienes con nosotros sin coste.
+
+— **Acceso preferente a las próximas operaciones del equipo** en Levante y Murcia. La beca termina cuando termina la operación. La relación, no.
+
+
+✅ **Para quién es**
+
+- Tienes disponibilidad real y puedes dedicarle tiempo al proyecto
+- Vives en Murcia o alrededores, o tienes movilidad para estar en zona cuando haga falta
+- Te mueves con soltura entre herramientas digitales y entras rápido a sistemas nuevos
+- Eres resolutiv@, con recursos y mentalidad de aportar soluciones
+- Quieres ser un buen gestor de Cambio de Uso, no aprenderlo por encima
+- Tratas la operación con el cuidado y respeto que merece: equipo, proveedores, vecinos y activo
+
+
+**Lo que no es**
+
+Una beca con remuneración económica. El valor está en lo que sales sabiendo, en el caso vivido y en lo que abre después.
+
+
+📩 **Cómo apuntarte**
+
+Si te encaja, déjanos en este hilo tu nombre y unas líneas contándonos por encima quién eres. Te contactamos para tener una reunión sin compromiso, conocernos y resolver lo que haga falta. De ahí decidimos en equipo. Lo hacemos así porque queremos que la decisión sea buena para ambas partes.
+
+Si tienes alguna consulta o duda antes, también puedes dejarla aquí.
+
+_Leemos todo. Respondemos a todos._
+
+— **Equipo CdU de 0 a ÉXITO**</pre>
+
+</div>
+
+<script>
+function copyDiscordText() {
+  const txt = document.getElementById('rawBlock').innerText;
+  navigator.clipboard.writeText(txt).then(() => {
+    const btn = document.getElementById('btnCopy');
+    const orig = btn.innerText;
+    btn.innerText = '✓ Copiado';
+    btn.classList.add('ok');
+    setTimeout(() => { btn.innerText = orig; btn.classList.remove('ok'); }, 2000);
+  }).catch(() => {
+    alert('No se pudo copiar automáticamente. Pulsa abajo "Ver texto raw" y copia a mano.');
+    document.getElementById('rawBlock').classList.add('open');
+  });
+}
+function toggleRaw() {
+  document.getElementById('rawBlock').classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
