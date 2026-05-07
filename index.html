@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BRIEFING POST-REUNIÓN · COTE IA · 30 abril 2026</title>
+<title>BRIEFING REUNIÓN · COTE IA · 07 mayo 2026</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
 
@@ -141,6 +141,7 @@ body {
 .status-alert { background: #fadbd8; color: #c0392b; }
 .status-dead { background: #e8e8e8; color: #666; text-decoration: line-through; }
 .status-decided { background: #e8daef; color: #6c3483; }
+.status-archived { background: #f4f1ec; color: #7d6608; }
 
 .op-summary {
   font-size: 12px;
@@ -234,6 +235,12 @@ body {
   font-size: 14px;
 }
 
+.task-list li.q::before {
+  content: '\003F';
+  color: #b7950b;
+  font-weight: 700;
+}
+
 .who {
   display: inline-block;
   font-size: 10px;
@@ -288,6 +295,7 @@ body {
 .note.alert { background: #fdecea; color: #922b21; }
 .note.new { background: #ebf5fb; color: #1f618d; border-left: 3px solid #2471a3; }
 .note.decided { background: #f4ecf7; color: #6c3483; border-left: 3px solid #8e44ad; }
+.note.archive { background: #f4f1ec; color: #7d6608; border-left: 3px solid #b7950b; }
 
 .headline {
   background: #fff8ea;
@@ -340,6 +348,16 @@ body {
   color: #f4f6f8;
 }
 
+.banner-meeting ol {
+  font-size: 12px;
+  color: #f4f6f8;
+  padding-left: 22px;
+  margin-top: 8px;
+  line-height: 1.7;
+}
+
+.banner-meeting ol strong { color: #E29F34; }
+
 .proposal-block {
   background: #fff;
   border: 2px dashed #8e44ad;
@@ -380,8 +398,8 @@ body {
 
 <div class="header">
   <div class="header-left">
-    <h1>BRIEFING POST-REUNIÓN</h1>
-    <p>Reunión Xavi · Paco · Dani &middot; 29 abril 2026 11:30 CEST &middot; 1h09min</p>
+    <h1>BRIEFING REUNIÓN PRESENCIAL</h1>
+    <p>Reunión Xavi · Paco · Dani &middot; 07 mayo 2026 10:00–13:00 CEST &middot; brunch al cierre</p>
   </div>
   <div class="header-right">
     <div class="brand">COTE IA <span style="font-size:9px;background:#fdf6e9;color:#7d6608;padding:2px 7px;border-radius:8px;letter-spacing:1.2px;vertical-align:middle;margin-left:6px;font-weight:700;border:1px solid #E29F34;">v0.1 · BETA</span></div>
@@ -391,27 +409,30 @@ body {
 
 <!-- ═══════════════════════ BANNER REUNIÓN ═══════════════════════ -->
 <div class="banner-meeting">
-  <h2>↪ Reunión 29/04 — propuesta de actualización Trello</h2>
-  <p>Este briefing recoge las decisiones tomadas en la reunión y propone los movimientos de Trello a confirmar antes de ejecutar. <strong>NO se ha tocado Trello</strong>: el equipo (Dani especialmente) está encima del board y conviene validar lo nuevo y los cambios de status antes de mover. Los bloques marcados con borde morado son <strong>propuestas de actualización pendientes de OK</strong>.</p>
-  <p style="margin-top:8px;font-size:10px;color:#bdc3c7;font-style:italic;">Generado por COTE IA en fase de pruebas. Por ahora la herramienta corre en el entorno de Xavi — outputs como este son demostraciones de lo que el sistema puede automatizar para el equipo.</p>
+  <h2>↪ Reunión 07/05 — orden del día</h2>
+  <ol>
+    <li><strong>Pacto de socios</strong> — doc cerrado en xaviriera.github.io/cdu-briefings/pacto-socios/</li>
+    <li><strong>Finanzas</strong> — usuario Santander · póliza de crédito · gastos recurrentes</li>
+    <li><strong>Flujo de trabajo</strong></li>
+    <li><strong>Organización y estructuración limpia</strong> — Trello + Drive + automatización capa 1</li>
+    <li><strong>Operaciones actuales</strong> — estado · siguientes pasos · designación gestor</li>
+    <li><strong>12:45</strong> — 1ª reunión colaborador equipo técnico</li>
+  </ol>
+  <p style="margin-top:10px;font-size:10px;color:#bdc3c7;font-style:italic;">Briefing pre-reunión generado por COTE IA cruzando Trello (3 boards CdU) + memoria reunión 29/04 + actividad equipo última semana. Actualizado al 07/05 09:30.</p>
 </div>
 
-<!-- ═══════════════════════ DELTA REUNIÓN ═══════════════════════ -->
+<!-- ═══════════════════════ DELTA SEMANA ═══════════════════════ -->
 <div class="delta-block">
-  <div class="delta-title">Decisiones tomadas en la reunión 29/04</div>
+  <div class="delta-title">Cambios desde briefing 30/04 (última semana)</div>
   <ul class="delta-list">
-    <li><strong>Crevillente:</strong> oferta final 190K + 5K David + pago aplazado 12 meses (efectivo 195K). Si no aceptan → NEXT.</li>
-    <li><strong>TDC:</strong> NO vender en bruto. TDC = escaparate del estándar CdU.</li>
-    <li><strong>Póliza Caixabank:</strong> aprobada en 30K (no 50K). 15K para TDC + 15K reserva.</li>
-    <li><strong>Roles 3 socios:</strong> Dani sistema/transparencia · Paco números/excelencia · Xavi experiencia inversor.</li>
-    <li><strong>Iglesia Crevillente:</strong> entra al pipeline (vía Fran/OLC). División horizontal entregada.</li>
-    <li><strong>Torres Quevedo · Calle La Torre:</strong> docs entregadas, abrir tarjeta Trello.</li>
-    <li><strong>Campello:</strong> ofertar 285K. Techo 290K. Posible Nieves + Fernando.</li>
-    <li><strong>Altea:</strong> 💀 muerto.</li>
-    <li><strong>Marketing Carlos Acs:</strong> pinceladas mensuales (Fase 1 con datos TDC → F2 metodología → F3 beneficios).</li>
-    <li><strong>Op 001 Pablo Benítez:</strong> pelota en su tejado. Pablo cogiendo rol mentor/coach en comunidad.</li>
-    <li><strong>Drive Op 001:</strong> mover checklist FUERA de carpeta finalizados.</li>
-    <li><strong>Op aplazada confirmada:</strong> contraoferta Op 002 Elche 180K aplazada 10 meses sigue en standby (sin novedades).</li>
+    <li><strong>TDC:</strong> BecaIN publicada en Discord (06/05) ✅ · baterías CGP cerradas ✅ · Drive organizado ✅</li>
+    <li><strong>Crevillente Esther:</strong> 🪦 cerrada y archivada en Trello — oferta 190K+5K+12m rechazada (Xavi 07/05)</li>
+    <li><strong>Altea (C.deuda):</strong> 🪦 archivada en Trello — compra deuda inviable confirmada</li>
+    <li><strong>Op 002 Elche:</strong> contrato depósito firmado ✅ · análisis económico cerrado ✅ (06/05)</li>
+    <li><strong>Quevedo · Iglesia · Altabix:</strong> ya con lista propia en board ANALISIS DE OPERACIONES</li>
+    <li><strong>Aspe · Campello:</strong> sin movimiento desde 30/04 — definir hoy estado y designación</li>
+    <li><strong>Pacto socios:</strong> card Trello con 6/6 checks · 3 comments · doc público activo</li>
+    <li><strong>Póliza Caixabank 30K:</strong> firma prevista esta semana (Paco)</li>
   </ul>
 </div>
 
@@ -420,169 +441,116 @@ body {
 
 <div class="op-card purple">
   <div class="op-header">
-    <span class="op-name">TORRES DE COTILLAS (TDC) — C/ D'ESTOUP 17 <span class="validation-badge">DECISIONES NUEVAS</span></span>
-    <span class="op-status status-decided">Escaparate · póliza 30K · CCP tipo</span>
+    <span class="op-name">TORRES DE COTILLAS (TDC) — C/ D'ESTOUP 17</span>
+    <span class="op-status status-active">BecaIN publicada · póliza 30K en firma · escaparate</span>
   </div>
   <div class="op-summary">Local 110 m² → viviendas · Op propia equipo · Modelo de presentación de futuras ops</div>
 
   <div class="op-resumen">
-    <span class="lead">Decisiones reunión 29/04</span>
-    <strong>Descartado vender en bruto</strong> lo que compramos en bruto: queda forzado, no es uso natural. TDC pasa a ser <strong>el escaparate del estándar CdU</strong>: aunque rente menos, tiene que ser óptima. Plan de profesionalización máxima — contrato CCP tipo (sin datos) compartido abierto, memoria de gestión, matriz de riesgos, código de buenas prácticas. <strong>Roles formalizados</strong>: Dani transparencia/sistema, Paco excelencia números (preventas + vitaminado NO se comparte), Xavi experiencia inversor (factor sorpresa). Plan capital: <strong>póliza Caixabank aprobada 30K</strong> (no 50K como pedido) → 15K aporta el equipo gestor a TDC sumando a los 5K ya puestos (=20K), y 15K se quedan en reserva. Coste póliza &lt; rentabilidad operación 1 año = dinero gratis. Visado de proyecto en colegio arquitectos pendiente; desde 18/04 tenemos 2 meses → 18/06 límite teórico de perfeccionamiento de compra.
+    <span class="lead">Estado al 07/05</span>
+    Decisiones consolidadas (29/04): <strong>TDC = escaparate del estándar CdU</strong>, profesionalización máxima, NO vender en bruto. Roles formalizados: Dani sistema/transparencia · Paco números/excelencia · Xavi experiencia inversor. <strong>BecaIN ya publicada en Discord IN el 06/05</strong> y card cerrada en Trello (TAREAS XAVI-03). Drive TDC organizado y baterías CGP cerradas (Dani 30/04). Plazo perfeccionamiento compra: 18/06/2026 (prorrogable). Póliza Caixabank 30K en firma esta semana → 15K capital gestor TDC + 15K reserva.
   </div>
 
   <div class="key-data">
-    <div class="kd"><strong>Póliza Caixabank:</strong> 30K (firma sem 5-9 mayo)</div>
+    <div class="kd"><strong>BecaIN:</strong> publicada 06/05 ✅</div>
+    <div class="kd"><strong>Póliza Caixabank:</strong> 30K (firma sem 5-9/05)</div>
     <div class="kd"><strong>Capital gestor TDC:</strong> 20K (5K previos + 15K póliza)</div>
-    <div class="kd"><strong>Reserva:</strong> 15K</div>
-    <div class="kd"><strong>Plazo perfeccionar compra:</strong> 18/06/2026 (prorrogable)</div>
+    <div class="kd"><strong>Plazo perfeccionar compra:</strong> 18/06/2026</div>
   </div>
 
-  <div class="headline decided">Decisión consolidada: TDC = escaparate. Profesionalización al máximo. NO vender en bruto, promoción completa.</div>
+  <div class="headline decided">TDC = escaparate. Profesionalización al máximo. NO vender en bruto, promoción completa.</div>
 
-  <div class="section-title">Hecho (acumulado, sin cambio)</div>
+  <div class="section-title">Hecho última semana</div>
   <ul class="task-list">
+    <li class="done">BecaIN TDC publicada en Discord IN (Xavi 06/05)</li>
+    <li class="done">Coste baterías CGP cerrado (Dani 30/04)</li>
+    <li class="done">Drive TDC organizado (Dani 30/04)</li>
     <li class="done">Plantilla Excel + Presupuesto Reformas (Paco 27/04)</li>
     <li class="done">Autorización VPO presentada CARM (CRT/000241/2026)</li>
-    <li class="done">Iberdrola CGP fachada OK</li>
-    <li class="done">Hidrogea autorización firmada · arras reescritas Dani 21/04</li>
+    <li class="done">Iberdrola CGP fachada OK · Hidrogea autorización firmada</li>
   </ul>
 
-  <div class="section-title">Next steps post-reunión</div>
+  <div class="section-title">Pendiente · designar y mover</div>
   <ul class="task-list">
-    <li class="alert">Firma de arras: Paco envía a Miriam (sin novedad desde briefing 29/04) <span class="who paco">PACO</span></li>
-    <li class="add"><strong>NUEVO:</strong> Limpiar carpeta Drive (quitar acceso Antonio) <span class="who dani">DANI</span></li>
-    <li class="add"><strong>NUEVO:</strong> Montar contrato CCP tipo + memoria gestión + matriz riesgos compartibles <span class="who dani">DANI</span></li>
-    <li class="add"><strong>NUEVO:</strong> Añadir IM-PULSO al paso 4 TDC <span class="who xavi">XAVI</span></li>
-    <li class="add"><strong>NUEVO:</strong> Lanzar BECA TDC (publicación Discord chula) tras firma <span class="who xavi">XAVI</span></li>
+    <li class="alert">Firma de arras: Paco envía a Miriam <span class="who paco">PACO</span></li>
+    <li class="alert">Firma póliza Caixabank 30K · sem 5-9 mayo <span class="who paco">PACO</span></li>
+    <li>Montar contrato CCP tipo + memoria gestión + matriz riesgos compartibles <span class="who dani">DANI</span></li>
+    <li>Añadir IM-PULSO al paso 4 TDC <span class="who xavi">XAVI</span></li>
     <li>Firma INBRUTO <span class="who paco">PACO</span></li>
     <li>Presentación oportunidades IN</li>
-    <li>Coste baterías nuevas CGP (presupuesto) <span class="who dani">DANI</span></li>
     <li>Reunión extraord. CCPP: autorización CdU + segregación</li>
     <li>Contactar Registro: requisitos inscripción unidades resultantes</li>
   </ul>
-
-  <div class="proposal-block">
-    <div class="proposal-title">Propuesta actualización Trello — TDC board (TAREAS GENERALES-03)</div>
-    <ul class="task-list">
-      <li class="add">Añadir card: <strong>Limpiar carpeta Drive (quitar acceso Antonio)</strong> <span class="who dani">DANI</span></li>
-      <li class="add">Añadir card: <strong>Montar contrato CCP tipo + memoria + matriz riesgos</strong> <span class="who dani">DANI</span></li>
-      <li class="add">Añadir card: <strong>Añadir IM-PULSO al paso 4</strong> <span class="who xavi">XAVI</span></li>
-      <li class="add">Añadir card: <strong>Lanzar BECA TDC (Discord)</strong> <span class="who xavi">XAVI</span> · bloqueada hasta firma de arras</li>
-      <li class="add">Añadir card: <strong>Póliza Caixabank firma 30K</strong> <span class="who paco">PACO</span> · sem 5-9 mayo</li>
-    </ul>
-  </div>
 </div>
 
 <!-- ═══════════════════════ OPERACIONES SERVICIO ═══════════════════════ -->
-<div class="section-break">OPERACIONES SERVICIO</div>
-
-<!-- ═══════════════════════ CREVILLENTE ═══════════════════════ -->
-<div class="op-card purple">
-  <div class="op-header">
-    <span class="op-name">CREVILLENTE (ESTHER) — PISO SEGREGACIÓN <span class="validation-badge">DECISIÓN TOMADA</span></span>
-    <span class="op-status status-decided">Oferta final 190K + 5K + aplazado 12m</span>
-  </div>
-  <div class="op-summary">Local + entreplanta → 4 viviendas · Asking 200K · Decisión 29/04: oferta final cerrada</div>
-
-  <div class="op-resumen">
-    <span class="lead">Decisión reunión 29/04</span>
-    Propuesta final cerrada: <strong>190K propiedad + 5K comisión David asumida por nosotros + pago aplazado 12 meses</strong>. Coste efectivo 195K (rozamos los 200K que pidieron). David se queda sus 5K íntegros para que pelee con fuerza el cierre con los 5 hermanos. <strong>Si rechazan → NEXT, descarte 100%</strong>. No perder más energía. La hermana del propietario empuja a 200K (200/5 = 40K limpios cada uno). El plazo es 12 meses (no 18, no 10) porque el pago se hace con escrituras de venta, no con reservas; la obra dura ~10 meses pero hace falta margen para escriturar. Reservas con arras pueden aportar ~96K€. <strong>Recomendación a Esther</strong>: cabeza, no corazón — como inversora-gestora primero tiene que discernir esto sin sentimentalismo. La operación pasa por dos autorizaciones CCPP: ICR de huecos de fachada (unanimidad) + segregación (3/5 partes).
-  </div>
-
-  <div class="key-data">
-    <div class="kd"><strong>Oferta final:</strong> 190K + 5K David</div>
-    <div class="kd"><strong>Plazo aplazado:</strong> 12 meses</div>
-    <div class="kd"><strong>Coste efectivo CdU:</strong> 195K</div>
-    <div class="kd"><strong>Si rechazan:</strong> NEXT 100%</div>
-  </div>
-
-  <div class="headline decided">Cabeza, no corazón. David cobra íntegro para pelear el cierre con motivación. 12 meses de plazo cubren obra + escrituración.</div>
-
-  <div class="section-title">Pendiente post-reunión</div>
-  <ul class="task-list">
-    <li class="add"><strong>NUEVO:</strong> Trasladar a Esther la oferta final (190K + 5K David + 12m aplazado) <span class="who xavi">XAVI</span></li>
-    <li class="add"><strong>NUEVO:</strong> Esther traslada a propiedad / David <span class="who esther">ESTHER</span></li>
-    <li>Tratar con comunidad: huecos fachada para 4V (UNANIMIDAD CCPP)</li>
-    <li>Tratar con comunidad: segregación (3/5 partes)</li>
-    <li>Positivo huecos → tomar cotas y medidas correctas</li>
-    <li>Urbanismo Crevillente con Antonio para medir</li>
-    <li>Definir figura Esther como gestora F3 + porcentajes</li>
-    <li>Contrato depósito condicionado + epígrafe formalización a terceros <span class="who dani">DANI</span></li>
-  </ul>
-
-  <div class="note alert"><strong>Crítico:</strong> números solo cierran con 4 viviendas. Con 3 NO sale. Huecos = unanimidad CCPP (la mujer del propietario es la dura).</div>
-
-  <div class="proposal-block">
-    <div class="proposal-title">Propuesta actualización Trello — Crevillente (lista existente)</div>
-    <ul class="task-list">
-      <li class="add">Comentar en card <strong>SIGUIENTES PASOS</strong>: oferta final 190K + 5K David + 12m aplazado decidida en reunión 29/04</li>
-      <li class="add">Añadir card: <strong>Trasladar oferta final a Esther / David</strong> <span class="who xavi">XAVI</span></li>
-      <li class="add">Cambiar status de la lista a "DECISIÓN TOMADA · esperando respuesta propiedad"</li>
-    </ul>
-  </div>
-</div>
+<div class="section-break">OPERACIONES SERVICIO · activas</div>
 
 <!-- ═══════════════════════ CASTELLÓN OP 001 ═══════════════════════ -->
-<div class="op-card green">
+<div class="op-card yellow">
   <div class="op-header">
     <span class="op-name">CASTELLÓN — C/ MARTÍNEZ TENA (Op 001 · Pablo Benítez)</span>
-    <span class="op-status status-active">Pelota en su tejado · Pablo coach comunidad</span>
+    <span class="op-status status-waiting">Sin movimiento desde 30/04 · pelota Pablo</span>
   </div>
   <div class="op-summary">Local → 4 viviendas · Cliente: Pablo Benítez · Originador: René Campillo</div>
 
   <div class="op-resumen">
-    <span class="lead">Update reunión 29/04</span>
-    Estado sin cambios operativos: <strong>la pelota está 100% en su tejado</strong>. Han pagado (no les sale gratis la espera) y tienen el trato especial. Falta que envíen el checklist con DH + división. Apunte nuevo importante: <strong>Pablo Benítez está cogiendo rol de mentor/coach</strong> de presentación de oportunidades dentro de la comunidad → cultivar la relación, nos interesa esa figura. Acción correctiva en Drive: el checklist está dentro de la carpeta «finalizados» y debería estar fuera para que no se mezcle con ops cerradas. Sigue siendo Op 001, primera operación pagada del servicio.
+    <span class="lead">Estado al 07/05</span>
+    <strong>Sin movimientos en Trello desde 30/04</strong>. La pelota sigue 100% en su tejado: han pagado, esperando que envíen checklist con DH + división. Apunte vivo: <strong>Pablo Benítez está cogiendo rol de mentor/coach</strong> de oportunidades en la comunidad → cultivar relación.
   </div>
 
   <div class="key-data">
     <div class="kd"><strong>Pago F1:</strong> 289 EUR recibido</div>
     <div class="kd"><strong>Signwell:</strong> firmado</div>
-    <div class="kd"><strong>Bloqueo:</strong> esperando DH + checklist René</div>
-    <div class="kd"><strong>Insight nuevo:</strong> Pablo = mentor presentación</div>
+    <div class="kd"><strong>Bloqueo:</strong> esperando DH + checklist</div>
+    <div class="kd"><strong>Última actividad Trello:</strong> 27/03</div>
   </div>
 
-  <div class="section-title">Pendiente post-reunión</div>
+  <div class="section-title">Para reunión hoy</div>
   <ul class="task-list">
-    <li class="alert">René/Pablo pasan DH (nota división horizontal) <span class="who rene">RENE</span></li>
-    <li class="add"><strong>NUEVO:</strong> Mover checklist FUERA de carpeta finalizados en Drive <span class="who dani">DANI</span></li>
-    <li class="add"><strong>NUEVO:</strong> Cultivar relación Pablo Benítez (rol mentor/coach comunidad) <span class="who xavi">XAVI</span></li>
-    <li>Trabajar requerimientos urbanismo</li>
-    <li>Sacar precios (comparables zona)</li>
-    <li>CdU Fase 1 completa</li>
+    <li class="q">¿Forzamos contacto René/Pablo o seguimos esperando?</li>
+    <li class="q">¿Designación: quién hace seguimiento activo?</li>
   </ul>
 
-  <div class="proposal-block">
-    <div class="proposal-title">Propuesta actualización Trello — Castellón (lista existente)</div>
-    <ul class="task-list">
-      <li class="add">Añadir card: <strong>Mover checklist FUERA de carpeta finalizados (Drive)</strong> <span class="who dani">DANI</span></li>
-      <li class="add">Comentar en card <strong>SIGUIENTES PASOS</strong>: Pablo Benítez asume rol mentor/coach comunidad — cultivar</li>
-    </ul>
-  </div>
+  <div class="section-title">Pendiente</div>
+  <ul class="task-list">
+    <li class="alert">René/Pablo pasan DH (nota división horizontal) <span class="who rene">RENE</span></li>
+    <li>Mover checklist FUERA de carpeta finalizados en Drive <span class="who dani">DANI</span></li>
+    <li>Cultivar relación Pablo Benítez (mentor/coach comunidad) <span class="who xavi">XAVI</span></li>
+    <li>Trabajar requerimientos urbanismo · sacar precios comparables · CdU Fase 1 completa</li>
+  </ul>
 </div>
 
 <!-- ═══════════════════════ ELCHE OP 002 ═══════════════════════ -->
 <div class="op-card green">
   <div class="op-header">
-    <span class="op-name">ELCHE — JUAN ESPUCHE 1 (Op 002)</span>
-    <span class="op-status status-active">Oferta 110K · contrato depósito lanzado</span>
+    <span class="op-name">ELCHE — JUAN ESPUCHE 1 (Op 002) <span class="validation-badge">AVANZA</span></span>
+    <span class="op-status status-active">Depósito firmado · análisis cerrado · próximo CCPP</span>
   </div>
-  <div class="op-summary">Local → 3 viviendas · 135 m² reg. · Operación pasa por aprobación CCPP 3/5 partes (humos + segregación)</div>
+  <div class="op-summary">Local → 3 viviendas · 135 m² reg. · CCPP 3/5 partes (humos + segregación)</div>
 
   <div class="op-resumen">
-    <span class="lead">Estado actual (correcciones Dani 30/04)</span>
-    Operación con <strong>oferta lanzada en 110K</strong> y <strong>contrato de depósito ya en marcha</strong>. La operación pasa por <strong>aprobación CCPP 3/5 partes</strong> para humos + segregación. Operación viable según informe COTE IA v3 (11/04). Defecto de cabida descartado, cesión de contrato con José NO genera doble ITP. José resolvió dudas con propiedad el 19/04. Faltan condicionantes mayores: aprobación CCPP, Registrador Elche n2, encaje 3 viviendas con arquitecto. Estructura compra (Vía A servicios vs Vía B cesión) sin cerrar con José.
+    <span class="lead">Avances última semana</span>
+    Operación que se mueve: <strong>contrato de depósito firmado</strong> (01/05) y <strong>análisis económico cerrado</strong> (06/05 anoche). Oferta 110K en marcha. Siguiente bloque crítico: <strong>aprobación CCPP 3/5 partes</strong> para humos + segregación. Defecto de cabida descartado, cesión de contrato con José NO genera doble ITP. Faltan condicionantes mayores: aprobación CCPP, registrador Elche n2, encaje 3 viviendas con arquitecto. Estructura compra (Vía A servicios vs Vía B cesión) pendiente de cerrar con José.
   </div>
 
   <div class="key-data">
     <div class="kd"><strong>Oferta:</strong> 110K</div>
-    <div class="kd"><strong>Depósito:</strong> contrato lanzado</div>
+    <div class="kd"><strong>Depósito:</strong> firmado 01/05 ✅</div>
+    <div class="kd"><strong>Análisis económico:</strong> cerrado 06/05 ✅</div>
     <div class="kd"><strong>CCPP:</strong> 3/5 partes (humos + segregación)</div>
   </div>
+
+  <div class="section-title">Para reunión hoy</div>
+  <ul class="task-list">
+    <li class="q">¿Vía A (prestación servicios) o Vía B (cesión contrato) con José? Decidir hoy</li>
+    <li class="q">¿Designación gestor F2/F3?</li>
+  </ul>
 
   <div class="section-title">Pendiente</div>
   <ul class="task-list">
     <li class="done">Contrato depósito condicionado lanzado <span class="who paco">PACO</span></li>
+    <li class="done">Análisis económico cerrado</li>
     <li class="alert">Contactar presidente comunidad · preparar propuesta asamblea (3/5 partes)</li>
     <li>Conseguir última acta + estatutos comunidad</li>
     <li>Consulta registrador Elche n2 (finca 34695)</li>
@@ -593,17 +561,23 @@ body {
 </div>
 
 <!-- ═══════════════════════ ASPE ═══════════════════════ -->
-<div class="op-card blue">
+<div class="op-card yellow">
   <div class="op-header">
     <span class="op-name">ASPE — AVDA JUAN CARLOS I</span>
-    <span class="op-status status-waiting">Espera admin fincas</span>
+    <span class="op-status status-waiting">Sin movimiento desde 30/04 · decidir hoy</span>
   </div>
-  <div class="op-summary">Pendiente autorización comunitaria ampliar garaje · sin movimientos</div>
+  <div class="op-summary">Pendiente autorización comunitaria ampliar garaje · sin actividad reciente</div>
 
   <div class="op-resumen">
-    <span class="lead">Update reunión 29/04</span>
-    Estado idéntico al briefing 29/04 pre-reunión. Admin fincas de nuestro lado y conforme con la propuesta. Documentación técnica adjuntada el 20/04. Bloqueada esperando contestación formal del administrador y autorización comunitaria. Dani pendiente de hablar con Fran. Sin movimientos.
+    <span class="lead">Estado al 07/05</span>
+    Sin movimientos visibles en Trello desde el briefing 30/04. Admin fincas conforme con la propuesta y documentación técnica adjuntada el 20/04. Bloqueada esperando contestación formal del administrador y autorización comunitaria. Dani pendiente de hablar con Fran. <strong>Si no hay tracción real, decidir hoy: seguir empujando o archivar</strong>.
   </div>
+
+  <div class="section-title">Para reunión hoy</div>
+  <ul class="task-list">
+    <li class="q">¿Seguimos esperando admin o forzamos? ¿Archivamos si no hay respuesta en N días?</li>
+    <li class="q">¿Designación gestor activo?</li>
+  </ul>
 
   <div class="section-title">Pendiente</div>
   <ul class="task-list">
@@ -614,16 +588,16 @@ body {
 </div>
 
 <!-- ═══════════════════════ CAMPELLO ═══════════════════════ -->
-<div class="op-card purple">
+<div class="op-card yellow">
   <div class="op-header">
-    <span class="op-name">CAMPELLO — C/ SANT PERE 43 <span class="validation-badge">DECISIÓN OFERTA</span></span>
-    <span class="op-status status-decided">Ofertar 285K · techo 290K</span>
+    <span class="op-name">CAMPELLO — C/ SANT PERE 43</span>
+    <span class="op-status status-waiting">Oferta 285K pendiente lanzar · sin movimiento desde 30/04</span>
   </div>
-  <div class="op-summary">2 viviendas (DCH + IZQ) · Ahora subasta fondo · Posible Nieves+Fernando</div>
+  <div class="op-summary">2 viviendas (DCH + IZQ) · Subasta fondo · Posible Nieves+Fernando</div>
 
   <div class="op-resumen">
-    <span class="lead">Decisión reunión 29/04</span>
-    Cambio de escenario: el fondo dice tener una <strong>oferta firme en 280K</strong>. Decisión equipo: <strong>ofertar 285K</strong> para hacernos con el activo. <strong>Si contraofertan a 290K → no subir más, se acabó</strong>. El activo se está mirando para que se lo quede <strong>Nieves con Fernando</strong>. Números si lo cogemos en 285K: +10% impuestos = 320K + 10K varios → se vende en 390K = ganan 70K. Si lo ejecutamos nosotros: compra 310K → vender 430-450K = margen 120K. Suelo IM-PULSO 290K, horquilla 290-320K. Idealista hay anuncios de viviendas similares 300-302K. <strong>Pendiente</strong>: aceptación de oferta de Aliseda + 1ª ocupación viv. IZQ + decidir variante arquitecto (C01/C02/C03).
+    <span class="lead">Estado al 07/05</span>
+    Decisión 29/04: <strong>ofertar 285K</strong>, techo 290K. Posible adquirente: <strong>Nieves + Fernando</strong>. Sin movimiento visible en Trello desde entonces. Suministros complejos (1 viv. nunca tuvo agua, 10/10 checkitems sin marcar en SP). <strong>Decidir hoy si seguir o archivar</strong>.
   </div>
 
   <div class="key-data">
@@ -633,73 +607,66 @@ body {
     <div class="kd"><strong>Suelo IM-PULSO:</strong> 290K</div>
   </div>
 
+  <div class="section-title">Para reunión hoy</div>
+  <ul class="task-list">
+    <li class="q">¿Lanzamos oferta 285K hoy o ya está vencida la ventana?</li>
+    <li class="q">¿Sigue Nieves+Fernando? ¿Designación?</li>
+  </ul>
+
   <div class="section-title">Pendiente</div>
   <ul class="task-list">
-    <li class="add"><strong>NUEVO:</strong> Lanzar oferta 285K (techo 290K) <span class="who equipo">EQUIPO</span></li>
-    <li class="alert">Decidir variante arquitecto (C01/C02/C03)</li>
+    <li class="alert">Lanzar oferta 285K (techo 290K) <span class="who equipo">EQUIPO</span></li>
+    <li>Decidir variante arquitecto (C01/C02/C03)</li>
     <li>Aceptación oferta Aliseda <span class="who equipo">ESPERA</span></li>
     <li>Consulta Ayto El Campello: 1ª ocup. viv. IZQ <span class="who equipo">ARQUITECTO</span></li>
     <li>Compra + ITP · deudas (IBI, CCPP, suministros)</li>
   </ul>
-
-  <div class="proposal-block">
-    <div class="proposal-title">Propuesta actualización Trello — Campello</div>
-    <ul class="task-list">
-      <li class="add">Añadir card: <strong>Lanzar oferta 285K (techo 290K)</strong> <span class="who equipo">EQUIPO</span></li>
-      <li class="add">Comentar contexto: oferta competidora 280K · posible Nieves+Fernando</li>
-    </ul>
-  </div>
 </div>
 
 <!-- ═══════════════════════ QUEVEDO LA TORRE ═══════════════════════ -->
-<div class="op-card purple">
+<div class="op-card blue">
   <div class="op-header">
-    <span class="op-name">TORRES-QUEVEDO / CALLE LA TORRE <span class="validation-badge">REVISIÓN ESTATUTOS</span></span>
-    <span class="op-status status-decided">Verde técnicamente · falta humos + pilares</span>
+    <span class="op-name">TORRES-QUEVEDO / CALLE LA TORRE <span class="validation-badge">EN PIPELINE</span></span>
+    <span class="op-status status-new">Lista creada · análisis Paco en curso</span>
   </div>
   <div class="op-summary">Local visitado 15/04 · ~6 viviendas (3 lofts + 3 apts 2 hab)</div>
 
   <div class="op-resumen">
-    <span class="lead">Update Paco 30/04</span>
-    Joaquín entregó la documentación a Paco. <strong>Estatutos revisados por Paco: permiten segregar y abrir huecos</strong> ✅. Lo que <strong>falta</strong> es la autorización de la salida de humos. Aparece además un punto técnico: <strong>rehabilitación de pilares</strong> — habría que valorar asumir ese coste con el equipo de reformas propio (a coste). Acción inmediata: subir docs a Drive y actualizar tarjeta Trello con la nueva info.
+    <span class="lead">Estado al 07/05</span>
+    Lista propia creada en board ANALISIS DE OPERACIONES. <strong>Estatutos revisados por Paco: permiten segregar y abrir huecos</strong> ✅. Falta autorización salida humos. Punto técnico: <strong>rehabilitación de pilares</strong> — valorar coste con equipo reformas propio. SP con 10 attachments + 3 comments (last 30/04).
   </div>
 
   <div class="key-data">
-    <div class="kd"><strong>Estatutos:</strong> permiten segregar + abrir huecos ✅</div>
+    <div class="kd"><strong>Estatutos:</strong> segregar + abrir huecos OK ✅</div>
     <div class="kd"><strong>Falta:</strong> autorización salida humos</div>
-    <div class="kd"><strong>Punto crítico:</strong> rehabilitación pilares</div>
+    <div class="kd"><strong>Crítico:</strong> rehabilitación pilares</div>
   </div>
 
-  <div class="section-title">Pendiente post-reunión</div>
+  <div class="section-title">Para reunión hoy</div>
   <ul class="task-list">
-    <li class="add"><strong>NUEVO:</strong> Subir docs Quevedo a Drive <span class="who dani">DANI</span></li>
-    <li class="add"><strong>NUEVO:</strong> Actualizar tarjeta Trello con material + revisión estatutos <span class="who dani">DANI</span></li>
-    <li class="add"><strong>NUEVO:</strong> Valorar coste rehabilitación pilares con equipo reformas propio <span class="who paco">PACO</span></li>
+    <li class="q">¿Designación: quién avanza esta op?</li>
+  </ul>
+
+  <div class="section-title">Pendiente</div>
+  <ul class="task-list">
+    <li>Subir docs Quevedo a Drive <span class="who dani">DANI</span></li>
+    <li>Valorar coste rehabilitación pilares con equipo reformas propio <span class="who paco">PACO</span></li>
     <li>Tramitar autorización salida humos (CCPP)</li>
     <li>Análisis económico final con coste pilares incluido <span class="who paco">PACO</span></li>
   </ul>
-
-  <div class="proposal-block">
-    <div class="proposal-title">Propuesta actualización Trello — Torres-Quevedo</div>
-    <ul class="task-list">
-      <li class="add">Añadir card: <strong>Subir docs Joaquín a Drive + actualizar tarjeta</strong> <span class="who dani">DANI</span></li>
-      <li class="add">Comentar en card SIGUIENTES PASOS: estatutos OK segregación + huecos · falta humos · valorar pilares</li>
-      <li class="add">Cerrar (✓) la card "Contactar Joaquín para solicitar documentación" — ya entregada</li>
-    </ul>
-  </div>
 </div>
 
-<!-- ═══════════════════════ IGLESIA CREVILLENTE NUEVA ═══════════════════════ -->
-<div class="op-card purple">
+<!-- ═══════════════════════ IGLESIA CREVILLENTE ═══════════════════════ -->
+<div class="op-card blue">
   <div class="op-header">
-    <span class="op-name">IGLESIA (CREVILLENTE) — vía Fran/OLC <span class="validation-badge">OP NUEVA</span></span>
-    <span class="op-status status-new">Nueva entrada al pipeline</span>
+    <span class="op-name">IGLESIA (CREVILLENTE) — vía Fran/OLC <span class="validation-badge">EN PIPELINE</span></span>
+    <span class="op-status status-new">Lista creada · ~10 unidades · pendiente vehículo</span>
   </div>
   <div class="op-summary">Mastodonte · ~10 unidades · División horizontal entregada</div>
 
   <div class="op-resumen">
-    <span class="lead">Operación nueva entrada en reunión 29/04</span>
-    Op viene por <strong>Fran (OLC)</strong>, que la había estado consultando. <strong>División horizontal entregada por Paco</strong>. Es un mastodonte: probablemente <strong>~10 unidades</strong>. Plan de relación con Fran: cobra por la oportunidad (~3K€/unidad, 30K total) + venta de viviendas (5K cada). Si salen 10 unidades, Fran se levanta del orden de 80K. Promovemos nosotros. Vehículo a decidir (PowerApp existente o crear nueva LLC). <strong>Acciones inmediatas</strong>: crear ficha Trello + carpeta Drive + análisis inicial.
+    <span class="lead">Estado al 07/05</span>
+    Lista creada en board. División horizontal entregada por Paco. Operación viene por <strong>Fran (OLC)</strong>. Plan relación con Fran: ~3K€/unidad por oportunidad + 5K cada venta. Si salen 10 unidades, Fran levanta ~80K. Promovemos nosotros. <strong>Vehículo a decidir</strong>: PowerApp existente o nueva LLC.
   </div>
 
   <div class="key-data">
@@ -709,36 +676,33 @@ body {
     <div class="kd"><strong>Vehículo:</strong> PowerApp o nueva LLC (decidir)</div>
   </div>
 
-  <div class="section-title">Pendiente post-reunión</div>
+  <div class="section-title">Para reunión hoy</div>
   <ul class="task-list">
-    <li class="add"><strong>NUEVO:</strong> Crear lista/tarjeta Trello «IGLESIA CREVILLENTE» <span class="who dani">DANI</span></li>
-    <li class="add"><strong>NUEVO:</strong> Crear carpeta Drive estructurada <span class="who dani">DANI</span></li>
-    <li class="add"><strong>NUEVO:</strong> Subir DH entregada por Paco</li>
-    <li class="add"><strong>NUEVO:</strong> Análisis preliminar 10 unidades <span class="who paco">PACO</span></li>
-    <li class="add"><strong>NUEVO:</strong> Negociar términos con Fran (3K/unidad + 5K venta) <span class="who fran">FRAN</span></li>
-    <li class="add"><strong>NUEVO:</strong> Decidir vehículo (PowerApp vs nueva LLC) <span class="who equipo">EQUIPO</span></li>
+    <li class="q">¿Vehículo: PowerApp existente o nueva LLC?</li>
+    <li class="q">¿Designación gestor lead?</li>
+    <li class="q">¿Negociar términos con Fran ya o esperar análisis preliminar?</li>
   </ul>
 
-  <div class="proposal-block">
-    <div class="proposal-title">Propuesta actualización Trello — IGLESIA CREVILLENTE</div>
-    <ul class="task-list">
-      <li class="add">Crear nueva lista en board <strong>ANALISIS DE OPERACIONES</strong>: «IGLESIA CREVILLENTE»</li>
-      <li class="add">Añadir cards plantilla: CARPETA DRIVE · ANÁLISIS ECONÓMICO · SIGUIENTES PASOS · CONCLUSIONES</li>
-    </ul>
-  </div>
+  <div class="section-title">Pendiente</div>
+  <ul class="task-list">
+    <li>Subir DH entregada por Paco a Drive</li>
+    <li>Análisis preliminar 10 unidades <span class="who paco">PACO</span></li>
+    <li>Negociar términos con Fran (3K/unidad + 5K venta) <span class="who fran">FRAN</span></li>
+    <li>Decidir vehículo (PowerApp vs nueva LLC) <span class="who equipo">EQUIPO</span></li>
+  </ul>
 </div>
 
 <!-- ═══════════════════════ ALTABIX ENTRESUELO ═══════════════════════ -->
-<div class="op-card yellow">
+<div class="op-card blue">
   <div class="op-header">
-    <span class="op-name">ALTABIX — ENTRESUELO <span class="validation-badge">EVALUANDO ENCAJE CDU</span></span>
-    <span class="op-status status-waiting">Análisis avanzado · sentarse con Fran</span>
+    <span class="op-name">ALTABIX — ENTRESUELO <span class="validation-badge">EN PIPELINE</span></span>
+    <span class="op-status status-new">Lista creada · sentar con Fran sistema CdU</span>
   </div>
   <div class="op-summary">110K + 10K interm. = 120K · 25% rentabilidad gruesos · Punto clave: autorización puerta acceso</div>
 
   <div class="op-resumen">
-    <span class="lead">Update Paco 30/04</span>
-    <strong>Aún por definir si entra en el sistema CdU o no</strong> — toca <strong>sentarse con Fran y exponerle la forma de trabajar</strong>. Paco ya sacó <strong>números gruesos: 25% siendo conservador</strong>. El punto clave de la operación es la <strong>autorización de la puerta de acceso</strong> (zaguán común). Paco ya planteó al mediador en la 2ª visita el <strong>plan B</strong>: si la autorización no sale, ¿la propiedad aceptaría pago aplazado? Sigue sin ficha en Drive ni Trello (op detectada el 16/04).
+    <span class="lead">Estado al 07/05</span>
+    Lista propia creada en board. Paco ya sacó <strong>números gruesos: 25% siendo conservador</strong>. Aún por definir si entra en sistema CdU o no — pendiente <strong>sentarse con Fran y exponer forma de trabajo</strong>. Punto clave: <strong>autorización puerta de acceso</strong> (zaguán común). Plan B planteado a mediador en 2ª visita: si la autorización no sale → pago aplazado.
   </div>
 
   <div class="key-data">
@@ -748,50 +712,51 @@ body {
     <div class="kd"><strong>Plan B:</strong> pago aplazado si no autorizan</div>
   </div>
 
+  <div class="section-title">Para reunión hoy</div>
+  <ul class="task-list">
+    <li class="q">¿Reunión con Fran cuándo? ¿Quién la lleva?</li>
+    <li class="q">Resultado reunión vecinos 28/04 (puerta zaguán) — ¿hay update Paco?</li>
+  </ul>
+
   <div class="section-title">Pendiente</div>
   <ul class="task-list">
     <li class="alert">Sentarse con Fran y exponer forma de trabajo CdU <span class="who equipo">EQUIPO</span></li>
     <li class="alert">Capturar resultado reunión vecinos 28/04 (puerta zaguán) <span class="who paco">PACO</span></li>
     <li>Definir si entra en sistema CdU o queda fuera</li>
-    <li>Dar de alta en Drive + Trello (sigue sin ficha)</li>
   </ul>
-
-  <div class="proposal-block">
-    <div class="proposal-title">Propuesta actualización Trello — Altabix</div>
-    <ul class="task-list">
-      <li class="add">Crear lista en board ANALISIS DE OPERACIONES: «ALTABIX - ENTRESUELO» (cuando se decida entrada CdU)</li>
-      <li class="add">Añadir card a TAREAS GENERALES: <strong>Reunión Fran — exponer forma trabajo CdU</strong> <span class="who equipo">EQUIPO</span></li>
-    </ul>
-  </div>
 </div>
 
-<!-- ═══════════════════════ ALTEA ═══════════════════════ -->
+<!-- ═══════════════════════ ARCHIVO ═══════════════════════ -->
+<div class="section-break">ARCHIVO · operaciones almacenadas (reactivables con condiciones)</div>
+
 <div class="op-card gray">
   <div class="op-header">
-    <span class="op-name">ALTEA — C/ SANTA TERESA 21 (C.DEUDA)</span>
-    <span class="op-status status-dead">Muerto · confirmar en reunión</span>
+    <span class="op-name">CREVILLENTE (ESTHER) — VIRGEN DEL PILAR 6 <span class="validation-badge">ARCHIVADA</span></span>
+    <span class="op-status status-archived">Almacenada · reactivar SOLO con descuento</span>
   </div>
-  <div class="op-summary">Compra por deuda · Adjudicación mín 125K (50%) · Deuda 70K</div>
+  <div class="op-summary">Local + entreplanta → 4 viv · Asking 200K · Oferta 190K+5K+12m rechazada</div>
 
   <div class="op-resumen">
-    <span class="lead">Decisión reunión 29/04</span>
-    Confirmado en reunión: <strong>«eso está muerto, ¿no?»</strong> — Xavi y equipo. La operación de compra por deuda no cuadra (deuda 70K, adjudicación mín. 125K, hay que poner 55K extra). Paco lo dejó claro el 27/03. Documentación abogado nunca llegó. <strong>Acción</strong>: archivar la lista Trello.
+    <span class="lead">Cierre 07/05 — Xavi</span>
+    Oferta final propuesta el 29/04 (190K propiedad + 5K David + pago aplazado 12 meses) <strong>rechazada</strong>. Cerrada y archivada en Trello el 07/05. <strong>Si reactivan en algún momento, condición innegociable: descuento sobre el precio rechazado</strong>. No volvemos a la mesa con la misma cifra. Lista archivada (no eliminada) — disponible para retomar si propiedad se mueve.
   </div>
 
-  <div class="section-title">Acción</div>
-  <ul class="task-list">
-    <li class="add"><strong>NUEVO:</strong> Archivar lista Trello ALTEA <span class="who xavi">XAVI</span></li>
-  </ul>
+  <div class="note archive"><strong>Postura para futuras conversaciones:</strong> si David o la propiedad reabren, exigir descuento sobre 190K como condición de entrada. No se vuelve a 195K efectivos.</div>
+</div>
 
-  <div class="proposal-block">
-    <div class="proposal-title">Propuesta actualización Trello — Altea</div>
-    <ul class="task-list">
-      <li class="add">Archivar lista <strong>ALTEA - C/ SANTA TERESA 21 / C.DEUDA</strong> (confirmar previamente con Dani)</li>
-    </ul>
+<div class="op-card gray">
+  <div class="op-header">
+    <span class="op-name">ALTEA — C/ SANTA TERESA 21 (C.DEUDA) <span class="validation-badge">ARCHIVADA</span></span>
+    <span class="op-status status-archived">Almacenada · compra deuda inviable</span>
+  </div>
+  <div class="op-summary">Compra por deuda · adjudicación mín. 125K (50%) · deuda 70K</div>
+
+  <div class="op-resumen">
+    <span class="lead">Cierre 07/05</span>
+    Operación de compra por deuda no cuadra: deuda 70K, adjudicación mínima 125K, requeriría poner 55K extra. Paco lo dejó claro el 27/03. Documentación abogado nunca llegó (Xavi 02/05: "última intentona y si no se cierra esto"). Lista archivada en Trello (no eliminada).
   </div>
 </div>
 
-<!-- ═══════════════════════ GUARDAMAR ═══════════════════════ -->
 <div class="op-card gray">
   <div class="op-header">
     <span class="op-name">GUARDAMAR — C/ SAN JOSE 87</span>
@@ -800,15 +765,9 @@ body {
   <div class="op-summary">Sin beneficio · confirmado borrado</div>
 
   <div class="op-resumen">
-    <span class="lead">Decisión Dani 30/04</span>
-    Operación sin beneficio. Confirmado por Dani: <strong>borrar</strong> lista Trello + archivar carpeta Drive.
+    <span class="lead">Pendiente acción</span>
+    Operación sin beneficio. Confirmado por Dani 30/04: borrar lista Trello + archivar carpeta Drive. <strong>Acción pendiente</strong>.
   </div>
-
-  <div class="section-title">Acción</div>
-  <ul class="task-list">
-    <li class="add"><strong>NUEVO:</strong> Borrar lista Trello GUARDAMAR <span class="who dani">DANI</span></li>
-    <li class="add"><strong>NUEVO:</strong> Archivar carpeta Drive GUARDAMAR <span class="who dani">DANI</span></li>
-  </ul>
 </div>
 
 <!-- ═══════════════════════ MARKETING + CAPTACIÓN ═══════════════════════ -->
@@ -816,41 +775,23 @@ body {
 
 <div class="op-card purple">
   <div class="op-header">
-    <span class="op-name">CARLOS ACS — PINCELADAS MENSUALES <span class="validation-badge">ESTRATEGIA NUEVA</span></span>
-    <span class="op-status status-decided">Plan tres fascículos</span>
+    <span class="op-name">CARLOS ACS — PINCELADAS MENSUALES</span>
+    <span class="op-status status-decided">Plan tres fascículos · pendiente preparar</span>
   </div>
   <div class="op-summary">Plan presentación fragmentada en sesiones Carlos Acs · Trabajo de marca</div>
 
   <div class="op-resumen">
-    <span class="lead">Decisión reunión 29/04</span>
-    El 70% de los asistentes a Levante IN ya conocían CdU por el vídeo de servicios — confirmación de que las sesiones con Carlos Acs tienen mucho impacto. <strong>Estrategia acordada</strong>: ir presentando fascículos mensuales (10-15 min cada vez). Tres bloques planificados:
-    <br>· <strong>Sesión A:</strong> Diagnóstico Fase 1 (qué arquetipo, qué cliente). Usar datos de TDC (op propia, no afecta a clientes).
-    <br>· <strong>Sesión B:</strong> Metodología Fase 2 completa.
-    <br>· <strong>Sesión C:</strong> Beneficios Fase 3 (lo que muchas veces no se entiende).
-    <br>Trabajo de marca: «pinceladas, pinceladas, que vaya haciendo eco». Discord ya da fruto (900 mensajes acumulados de Dani). Pato (embajador Almería) quiere entrevista online. Esperanza saluda en eventos. José Muñoz tutea a Dani.
+    <span class="lead">Sin avance desde 30/04</span>
+    Estrategia acordada el 29/04: tres bloques mensuales (10-15 min). <strong>Sesión A:</strong> Diagnóstico Fase 1 con datos TDC. <strong>Sesión B:</strong> Metodología Fase 2 completa. <strong>Sesión C:</strong> Beneficios Fase 3. Sin avance visible última semana. Discord da fruto (Dani lleva 813+ mensajes en #cambio-de-uso, rol oficial Mentor IN).
   </div>
 
-  <div class="section-title">Pendiente post-reunión</div>
+  <div class="section-title">Pendiente</div>
   <ul class="task-list">
-    <li class="add"><strong>NUEVO:</strong> Preparar Sesión A — Diagnóstico Fase 1 con datos TDC <span class="who equipo">EQUIPO</span></li>
-    <li class="add"><strong>NUEVO:</strong> Preparar Sesión B — Metodología Fase 2 completa <span class="who equipo">EQUIPO</span></li>
-    <li class="add"><strong>NUEVO:</strong> Preparar Sesión C — Beneficios Fase 3 <span class="who equipo">EQUIPO</span></li>
-    <li class="add"><strong>NUEVO:</strong> Coordinar entrevista online Almería con Pato <span class="who dani">DANI</span></li>
+    <li class="alert">Preparar Sesión A — Diagnóstico Fase 1 con datos TDC <span class="who equipo">EQUIPO</span></li>
+    <li>Preparar Sesión B — Metodología Fase 2 completa <span class="who equipo">EQUIPO</span></li>
+    <li>Preparar Sesión C — Beneficios Fase 3 <span class="who equipo">EQUIPO</span></li>
+    <li>Coordinar entrevista online Almería con Pato <span class="who dani">DANI</span></li>
   </ul>
-
-  <div class="proposal-block">
-    <div class="proposal-title">Propuesta actualización Trello — Marketing (board Tareas Generales)</div>
-    <ul class="task-list">
-      <li class="add">Añadir cards al list <strong>MARKETING</strong>:
-        <ul class="task-list" style="margin-top:4px;">
-          <li class="add">Sesión Carlos Acs · Fase 1 (con datos TDC)</li>
-          <li class="add">Sesión Carlos Acs · Fase 2 (metodología completa)</li>
-          <li class="add">Sesión Carlos Acs · Fase 3 (beneficios)</li>
-          <li class="add">Entrevista online Almería con Pato</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
 </div>
 
 <div class="op-card blue">
@@ -861,80 +802,114 @@ body {
   <div class="op-summary">Quiz arquetipos + sorteo Fase 1 · Workflow n8n activo</div>
 
   <div class="op-resumen">
-    <span class="lead">Update reunión 29/04</span>
-    Sin captura de resultados aún. Lo único que se mencionó indirectamente: Paco asistió al evento (le gustó la ponencia de financiación bancaria), 70% de asistentes ya conocían CdU. <strong>Crítico</strong>: capturar nº participantes en quiz, leads, ratio, ganador del sorteo. Sin esto perdemos los aprendizajes.
+    <span class="lead">Sin captura aún (12 días)</span>
+    Workflow n8n activo, materiales lanzados. <strong>Sigue sin captura</strong> de nº participantes en quiz, leads, ratio, ganador del sorteo. Sin esto perdemos los aprendizajes y no podemos activar onboarding del ganador.
   </div>
 
-  <div class="section-title">Pendiente (sin cambios)</div>
+  <div class="section-title">Pendiente</div>
   <ul class="task-list">
     <li class="alert">Nº participantes en quiz <span class="who xavi">XAVI</span></li>
     <li class="alert">Nº leads capturados · ratio</li>
     <li class="alert">Ganador sorteo Fase 1 → activar onboarding</li>
-    <li>Crear card en Trello (no existe ficha post-mortem)</li>
   </ul>
 </div>
 
-<!-- ═══════════════════════ TAREAS EQUIPO + SOCIEDAD ═══════════════════════ -->
-<div class="section-break">SOCIEDAD · ESTRUCTURA · CAPITAL</div>
+<!-- ═══════════════════════ SOCIEDAD · ESTRUCTURA · CAPITAL ═══════════════════════ -->
+<div class="section-break">SOCIEDAD · ESTRUCTURA · CAPITAL · FINANZAS</div>
+
+<div class="op-card purple">
+  <div class="op-header">
+    <span class="op-name">PACTO DE SOCIOS <span class="validation-badge">ORDEN DEL DÍA · PUNTO 1</span></span>
+    <span class="op-status status-active">Doc cerrado · 6/6 checks · 3 comentarios</span>
+  </div>
+  <div class="op-summary">Card Trello #30 con 6/6 checkitems · doc público activo</div>
+
+  <div class="op-resumen">
+    <span class="lead">Estado al 07/05</span>
+    Card SOCIEDAD #30 con todos los checkitems hechos, 3 comentarios, doc cifrado público en <a href="https://xaviriera.github.io/cdu-briefings/pacto-socios/" style="color:#163D60;text-decoration:underline;">xaviriera.github.io/cdu-briefings/pacto-socios/</a> (contraseña en WhatsApp CdU). <strong>Vienen al pacto con doc cerrado, no a redactarlo desde cero</strong>.
+  </div>
+
+  <div class="note decided">Roles socios consolidados (29/04): Dani sistema/transparencia · Paco números/excelencia · Xavi experiencia inversor.</div>
+</div>
 
 <div class="op-card green">
   <div class="op-header">
-    <span class="op-name">PÓLIZA CAIXABANK + LÍNEA DE DESCUENTOS <span class="validation-badge">YA EN TRELLO</span></span>
-    <span class="op-status status-active">Cards creadas por Paco · firma sem 5-9 mayo</span>
+    <span class="op-name">FINANZAS — usuario · póliza · gastos <span class="validation-badge">ORDEN DEL DÍA · PUNTO 2</span></span>
+    <span class="op-status status-active">4 cards activas · cerrar reparto y contabilización</span>
   </div>
-  <div class="op-summary">Capital equipo gestor para TDC + reserva · Idea apalancamiento añadida</div>
+  <div class="op-summary">Cuenta Santander · Póliza Caixabank 30K · Línea SPM · Gastos recurrentes ~60€/mes</div>
 
   <div class="op-resumen">
-    <span class="lead">Update Paco 30/04 · ya movido en Trello</span>
-    Paco firma <strong>póliza Caixabank de 30K</strong> la semana del 5-9 mayo (no 50K — trimestre cerró con pérdidas de 15K, obras a coste). CIRBE como autónomo Paco. <strong>Plan</strong>: 15K para TDC + 15K reserva. <strong>Línea de descuentos</strong> (factoring 120 días): para SPM, banco anticipa facturas a 120d → puede apalancar reformas de CdU. <strong>✅ Paco ya creó las cards en Trello</strong>: Póliza, Línea de descuentos y una idea para apalancarnos. Aprovechado al máximo el dinero disponible.
+    <span class="lead">Cards Trello (FINANZAS + SOCIEDAD)</span>
+    <strong>Usuario Santander</strong> (lista SOCIEDAD): 2/3 checkitems, 5 comments, last 02/05 — cerrar flujo cuenta común. <strong>Póliza Crédito CDU</strong>: 4 comments, last 02/05, firma esta semana 30K → 15K TDC + 15K reserva. <strong>Línea descuentos SPM</strong>: 2 comments, last 02/05, factoring 120 días para apalancar reformas. <strong>Gastos recurrentes</strong>: ~60€/mes (GHL 15→39 + SIM 5 + dominio 5 + Revolut 10). <strong>Gastos puntuales</strong>: ~92€ (Claude 40+15+25 + Signwell 12).
   </div>
 
   <div class="key-data">
-    <div class="kd"><strong>Importe:</strong> 30.000€</div>
-    <div class="kd"><strong>Plazo devolución:</strong> 1 año (ampliable)</div>
-    <div class="kd"><strong>Reparto:</strong> 15K TDC + 15K reserva</div>
-    <div class="kd"><strong>Firma prevista:</strong> sem 5-9 mayo</div>
+    <div class="kd"><strong>Póliza Caixabank:</strong> 30K · firma sem 5-9/05 ✅</div>
+    <div class="kd"><strong>Reparto póliza:</strong> 15K TDC + 15K reserva</div>
+    <div class="kd"><strong>Gastos recurrentes:</strong> ~60€/mes</div>
+    <div class="kd"><strong>Gastos puntuales:</strong> ~92€</div>
   </div>
 
-  <div class="section-title">Hecho · Trello</div>
+  <div class="section-title">Para reunión hoy</div>
   <ul class="task-list">
-    <li class="done">Card Trello: Póliza Caixabank 30K (Paco 30/04)</li>
-    <li class="done">Card Trello: Línea de descuentos SPM (Paco 30/04)</li>
-    <li class="done">Card Trello: Idea apalancamiento (Paco 30/04)</li>
-  </ul>
-
-  <div class="section-title">Pendiente</div>
-  <ul class="task-list">
-    <li class="alert">Firma póliza 30K <span class="who paco">PACO</span> · sem 5-9 mayo</li>
+    <li class="q">¿Quién paga qué de los gastos recurrentes? ¿Reparto formal?</li>
+    <li class="q">Cómo se contabiliza COTE IA aparte (presupuesto separado)</li>
+    <li class="q">Cuenta Santander común — cerrar 1/3 checkitem pendiente</li>
   </ul>
 </div>
 
-<div class="op-card">
+<div class="op-card blue">
   <div class="op-header">
-    <span class="op-name">ROLES SOCIOS · TRANSPARENCIA SISTEMA</span>
-    <span class="op-status status-decided">Formalización roles</span>
+    <span class="op-name">FLUJO DE TRABAJO + ORGANIZACIÓN TRELLO/DRIVE <span class="validation-badge">ORDEN DEL DÍA · PUNTOS 3-4</span></span>
+    <span class="op-status status-waiting">Pizarra en blanco · acotar a principios hoy</span>
   </div>
+  <div class="op-summary">Cards Trello vacías (Flujo · Costes · Automatizaciones · Contenido · Captación)</div>
 
   <div class="op-resumen">
-    <span class="lead">Acuerdo reunión 29/04</span>
-    Reparto formal de roles en presentaciones y operaciones (refuerza memoria existente):
-    <br>· <strong>Dani — Sistema/Transparencia.</strong> Documental abierto: contrato CCP tipo (sin datos), memoria gestión, matriz de riesgos. «Si exponemos con claridad y mantenemos siempre el mismo estándar, nadie nos va a poder recriminar nada».
-    <br>· <strong>Paco — Excelencia números.</strong> Preventas, vitaminado, optimizaciones — esto NO se comparte (es la salsa secreta).
-    <br>· <strong>Xavi — Experiencia inversor.</strong> Factor sorpresa: ir aportando mejoras durante la operación para que el inversor «viva» la op. «Estás dentro y vives la operación, hostia y encima hicieron esto y esto».
+    <span class="lead">Estado al 07/05</span>
+    Cards en TAREAS GENERALES sin contenido aún (Flujo trabajo, Costes esenciales, Automatizaciones, Contenido, Captación). Trello YA tiene buena estructura (5 boards, patrón 1 lista por op + 4 cards plantilla, separación DANI/PACO/XAVI). Falta cerrar dónde vive cada cosa: <strong>Trello = mensajes, Drive = archivos</strong> (postura Xavi 02/05). <strong>Riesgo</strong>: si abrimos reorganización completa hoy con pacto + finanzas + 9 ops + colaborador 12:45, no llega tiempo. <strong>Recomendación</strong>: cerrar principios hoy, sesión específica para detalles después.
   </div>
 
-  <div class="note decided">Mismo principio que Capitán Alfonso Vives (referencia): los inversores valoran sentirse parte de algo que está mejorando constantemente.</div>
+  <div class="section-title">Para reunión hoy</div>
+  <ul class="task-list">
+    <li class="q">Trello = mensajes, Drive = archivos: ¿se acepta como regla?</li>
+    <li class="q">Automatización capa 1: ¿qué entra (n8n, GHL, COTE IA briefings)?</li>
+    <li class="q">¿Sesión específica posterior para reorganización detallada?</li>
+  </ul>
 </div>
 
+<div class="op-card yellow">
+  <div class="op-header">
+    <span class="op-name">12:45 · 1ª REUNIÓN COLABORADOR EQUIPO TÉCNICO</span>
+    <span class="op-status status-new">Pre-reunión sin contexto previo</span>
+  </div>
+  <div class="op-summary">Primera reunión con colaborador externo del equipo técnico</div>
+
+  <div class="op-resumen">
+    <span class="lead">Pre-reunión 12:45</span>
+    Punto 6 del orden del día. Sin información en briefing previo de quién es el colaborador ni qué se espera. Posibles candidatos según contexto: arquitecto nuevo (no Pau/Antonio/Juan, ya integrados), técnico fiscal externo (card "OPTIMIZACIÓN FISCAL FIXCAL?" en TAREAS GENERALES sigue abierta), otro colaborador de comunidad IN.
+  </div>
+
+  <div class="section-title">Para reunión hoy</div>
+  <ul class="task-list">
+    <li class="q">¿Quién es y qué espera Dani de la reunión?</li>
+    <li class="q">¿Qué llevamos preparado / qué decidimos hoy?</li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════ REUNIONES SIGUIENTES ═══════════════════════ -->
+<div class="section-break">SIGUIENTES REUNIONES (ya planificadas)</div>
+
 <div class="op-card">
   <div class="op-header">
-    <span class="op-name">PACTO SOCIOS · FLUJO · FISCAL · CONTENIDO</span>
-    <span class="op-status status-waiting">Bloque sociedad pendiente (sin cambios)</span>
+    <span class="op-name">PRÓXIMAS SESIONES</span>
+    <span class="op-status status-paused">Bloque a establecer hoy</span>
   </div>
 
   <div class="op-resumen">
-    <span class="lead">Sin cambios</span>
-    Bloque transversal sin movimientos en la reunión: pacto de socios, plazo 15 días Fase 1, optimización fiscal (Alex Algarcí standby), embajadores CdU, flujo de trabajo, costes esenciales, automatizaciones, contenido, captación, testimonios, validar teléfonos Paso 4 TDC. Todos siguen abiertos en Trello.
+    <span class="lead">Mensaje Dani 07/05 00:39</span>
+    Reuniones siguientes confirmadas en agenda: <strong>Contenido · Marketing · Colaborador 2 · Embajador</strong>. Todas se establecen tras reunión presencial de hoy. No tocan en el orden del día actual.
   </div>
 </div>
 
@@ -942,11 +917,11 @@ body {
 <div class="footer">
   <div>
     <span class="cote">COTE IA</span> <span style="font-size:9px;background:#fdf6e9;color:#7d6608;padding:1px 5px;border-radius:6px;letter-spacing:0.5px;border:1px solid #E29F34;">v0.1 · BETA</span> · Asistente experimental · CdU de 0 a ÉXITO
-    <br>Generado desde transcripción reunión 29/04 + cruce con Trello (3 boards CdU) · Pendiente OK equipo antes de mover Trello
+    <br>Generado pre-reunión 07/05 cruzando Trello (3 boards · ~50 cards) + briefing 30/04 + actividad equipo última semana
     <br><em style="color:#bdc3c7;">En pruebas con Xavi · cualquier idea para hacerlo extensible al equipo, hablamos.</em>
   </div>
   <div style="text-align:right;">
-    30 abril 2026
+    07 mayo 2026
     <br>Equipo: Xavi (Espíritu) · Paco (Mente) · Dani (Corazón)
   </div>
 </div>
