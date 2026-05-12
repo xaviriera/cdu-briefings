@@ -465,70 +465,70 @@ section p strong {
 @media print {
     @page { size: A4; margin: 0; }
 
-    html, body { background: #fff; font-size: 13px; }
+    html, body { background: #fff; font-size: 11.5px; }
     .page {
         margin: 0;
         box-shadow: none;
-        padding: 14mm 16mm;
+        padding: 13mm 15mm;
         max-width: 100%;
         border-radius: 0;
     }
 
-    /* Cabecera */
-    .header { padding-bottom: 14px; margin-bottom: 20px; }
-    .header-logo img { width: 180px; }
-    .header-meta { font-size: 11px; line-height: 1.65; }
-    .doc-title { margin-bottom: 8px; }
-    .doc-title .eyebrow { font-size: 10.5px; margin-bottom: 6px; }
-    .doc-title h1 { font-size: 22px; line-height: 1.2; }
-    .doc-title .subline { font-size: 12.5px; margin-top: 7px; }
+    /* Cabecera compacta */
+    .header { padding-bottom: 11px; margin-bottom: 14px; }
+    .header-logo img { width: 160px; }
+    .header-meta { font-size: 10px; line-height: 1.55; }
+    .doc-title { margin-bottom: 5px; }
+    .doc-title .eyebrow { font-size: 9.5px; margin-bottom: 5px; letter-spacing: 2.5px; }
+    .doc-title h1 { font-size: 19px; line-height: 1.2; }
+    .doc-title .subline { font-size: 11px; margin-top: 5px; }
 
-    /* Ficha */
-    .ficha { margin: 18px 0 22px 0; padding: 16px 22px; }
-    .ficha-grid { gap: 6px 30px; font-size: 12.5px; }
-    .ficha-grid .label { font-size: 10px; }
-    .ficha-grid .value { font-size: 12.5px; margin-bottom: 4px; }
+    /* Ficha compacta */
+    .ficha { margin: 14px 0 16px 0; padding: 11px 16px; }
+    .ficha-grid { gap: 4px 24px; font-size: 11px; }
+    .ficha-grid .label { font-size: 9.5px; }
+    .ficha-grid .value { font-size: 11px; margin-bottom: 3px; }
 
-    /* Secciones — FLUYEN, sin saltos forzados */
-    section { margin-bottom: 20px; }
-    section h2 { font-size: 12.5px; margin-bottom: 11px; padding-bottom: 6px; }
-    section h2 .num { font-size: 10.5px; padding: 3px 9px; }
-    section p { font-size: 13px; margin-bottom: 10px; line-height: 1.65; }
+    /* Secciones — flujo natural */
+    section { margin-bottom: 14px; }
+    section h2 { font-size: 11.5px; margin-bottom: 8px; padding-bottom: 5px; }
+    section h2 .num { font-size: 9.5px; padding: 2px 8px; }
+    section p { font-size: 11.5px; margin-bottom: 7px; line-height: 1.55; }
 
-    /* Aspectos — FLUYEN, se pueden partir entre páginas si toca */
-    .aspects { margin-top: 10px; }
-    .aspect { padding: 12px 0; gap: 14px; }
-    .aspect-num { width: 30px; height: 30px; font-size: 13px; }
-    .aspect-body h3 { font-size: 13.5px; margin-bottom: 4px; }
-    .aspect-body p { font-size: 13px; margin-bottom: 7px; line-height: 1.6; }
-    .aspect-body .lista-pasos { padding: 4px 0 6px 4px; margin: 6px 0 8px 0; }
-    .aspect-body .lista-pasos li { font-size: 13px; padding: 2px 0 2px 18px; line-height: 1.55; }
-    .aspect-body .nota-adjunto { margin-top: 8px; padding: 8px 12px; font-size: 11.5px; }
+    /* Aspectos — flujo natural */
+    .aspects { margin-top: 7px; }
+    .aspect { padding: 9px 0; gap: 12px; }
+    .aspect-num { width: 26px; height: 26px; font-size: 11.5px; }
+    .aspect-body h3 { font-size: 12px; margin-bottom: 3px; }
+    .aspect-body p { font-size: 11px; margin-bottom: 5px; line-height: 1.5; }
+    .aspect-body .lista-pasos { padding: 2px 0 4px 4px; margin: 4px 0 5px 0; }
+    .aspect-body .lista-pasos li { font-size: 11px; padding: 1px 0 1px 16px; line-height: 1.45; }
+    .aspect-body .nota-adjunto { margin-top: 5px; padding: 6px 10px; font-size: 10px; }
 
-    /* Caja oferta — ÚNICO bloque protegido de partirse */
-    .oferta-box { page-break-inside: avoid; padding: 22px 26px; margin: 12px 0 16px 0; }
-    .oferta-box .ofrecemos { font-size: 11px; margin-bottom: 5px; }
-    .oferta-box .precio { font-size: 34px; }
-    .oferta-box .precio-letras { font-size: 12.5px; margin-top: 5px; }
-    .oferta-box .pago { margin-top: 12px; padding-top: 12px; font-size: 12.5px; }
+    /* Caja oferta — ÚNICO bloque protegido */
+    .oferta-box { page-break-inside: avoid; padding: 16px 22px; margin: 8px 0 11px 0; }
+    .oferta-box .ofrecemos { font-size: 9.5px; margin-bottom: 3px; }
+    .oferta-box .precio { font-size: 28px; }
+    .oferta-box .precio-letras { font-size: 11px; margin-top: 3px; }
+    .oferta-box .pago { margin-top: 9px; padding-top: 9px; font-size: 11px; }
 
     /* Listas */
-    .condiciones h3 { font-size: 12px; margin-bottom: 8px; }
-    .condiciones ol li { font-size: 12.5px; padding: 8px 0 8px 34px; line-height: 1.55; }
-    .condiciones ol li::before { width: 24px; height: 24px; font-size: 11.5px; }
-    .argumentos li { font-size: 12.5px; padding: 9px 0 9px 30px; line-height: 1.6; }
-    .argumentos li::before { width: 22px; height: 22px; top: 11px; font-size: 11.5px; }
-    .adjuntos-box { padding: 15px 19px; margin: 10px 0; }
-    .adjuntos-box .lead { font-size: 10.5px; margin-bottom: 8px; }
-    .adjuntos-box ul li { font-size: 12.5px; padding: 4px 0 4px 20px; line-height: 1.55; }
+    .condiciones h3 { font-size: 11px; margin-bottom: 6px; }
+    .condiciones ol li { font-size: 11px; padding: 6px 0 6px 32px; line-height: 1.5; }
+    .condiciones ol li::before { width: 22px; height: 22px; font-size: 10.5px; top: 6px; }
+    .argumentos li { font-size: 11px; padding: 6px 0 6px 28px; line-height: 1.5; }
+    .argumentos li::before { width: 20px; height: 20px; top: 8px; font-size: 10.5px; }
+    .adjuntos-box { padding: 11px 16px; margin: 7px 0; }
+    .adjuntos-box .lead { font-size: 9.5px; margin-bottom: 6px; }
+    .adjuntos-box ul li { font-size: 11px; padding: 3px 0 3px 18px; line-height: 1.5; }
 
-    /* Cierre, firma, footer — fluyen libres, sin saltos forzados */
-    .cierre { padding: 16px 22px; margin: 20px 0 14px 0; line-height: 1.65; font-size: 12.5px; }
-    .firma { margin-top: 22px; padding-top: 16px; }
-    .firma-block .frase { font-size: 12px; }
-    .firma-block .equipo { font-size: 13.5px; margin-top: 6px; }
-    .firma-block .contacto { font-size: 11px; margin-top: 4px; line-height: 1.6; }
-    .footer-legal { margin-top: 18px; padding-top: 11px; font-size: 9.5px; line-height: 1.6; }
+    /* Cierre + firma + footer compactos y unidos */
+    .cierre { padding: 11px 16px; margin: 14px 0 9px 0; line-height: 1.55; font-size: 11px; }
+    .firma { margin-top: 14px; padding-top: 11px; }
+    .firma-block .frase { font-size: 10.5px; }
+    .firma-block .equipo { font-size: 12px; margin-top: 4px; }
+    .firma-block .contacto { font-size: 10px; margin-top: 3px; line-height: 1.55; }
+    .footer-legal { margin-top: 10px; padding-top: 7px; font-size: 8.5px; line-height: 1.5; }
 
     /* Evitar saltos huérfanos */
     p { orphans: 3; widows: 3; }
