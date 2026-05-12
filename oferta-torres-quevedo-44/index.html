@@ -463,13 +463,13 @@ section p strong {
 }
 
 @media print {
-    @page { size: A4; margin: 14mm 12mm 12mm 12mm; }
+    @page { size: A4; margin: 0; }
 
     html, body { background: #fff; }
     .page {
         margin: 0;
         box-shadow: none;
-        padding: 0;
+        padding: 14mm 16mm;
         max-width: 100%;
         border-radius: 0;
     }
