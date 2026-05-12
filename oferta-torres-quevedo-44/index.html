@@ -463,15 +463,59 @@ section p strong {
 }
 
 @media print {
+    @page { size: A4; margin: 14mm 12mm 12mm 12mm; }
+
     html, body { background: #fff; }
     .page {
         margin: 0;
         box-shadow: none;
-        padding: 30px 40px;
+        padding: 0;
         max-width: 100%;
+        border-radius: 0;
     }
-    section { page-break-inside: avoid; }
-    .oferta-box { page-break-inside: avoid; }
+
+    /* Cabecera y título compactos */
+    .header { padding-bottom: 14px; margin-bottom: 18px; }
+    .doc-title { margin-bottom: 6px; }
+    .doc-title h1 { font-size: 22px; }
+    .doc-title .subline { font-size: 12.5px; margin-top: 6px; }
+
+    /* Ficha más compacta */
+    .ficha { margin: 16px 0 20px 0; padding: 14px 18px; }
+    .ficha-grid { gap: 4px 24px; }
+    .ficha-grid .value { margin-bottom: 2px; }
+
+    /* Secciones: márgenes reducidos */
+    section { margin-bottom: 16px; }
+    section h2 { margin-bottom: 9px; padding-bottom: 6px; page-break-after: avoid; }
+    section p { margin-bottom: 8px; line-height: 1.55; }
+
+    /* Aspectos: padding interior reducido */
+    .aspects { margin-top: 8px; }
+    .aspect { padding: 10px 0; page-break-inside: avoid; }
+    .aspect-body h3 { margin-bottom: 3px; }
+    .aspect-body p { margin-bottom: 5px; line-height: 1.5; }
+    .aspect-body .lista-pasos { padding: 2px 0 4px 4px; margin: 4px 0 6px 0; }
+    .aspect-body .lista-pasos li { padding: 1px 0 1px 18px; line-height: 1.45; }
+    .aspect-body .nota-adjunto { margin-top: 5px; padding: 6px 10px; }
+
+    /* Caja oferta: NO se parte */
+    .oferta-box { page-break-inside: avoid; padding: 22px 26px; margin: 10px 0 14px 0; }
+    .oferta-box .precio { font-size: 34px; }
+
+    /* Condiciones, motivos, adjuntos compactos */
+    .condiciones ol li { padding: 6px 0 6px 36px; }
+    .argumentos li { padding: 7px 0 7px 30px; line-height: 1.5; }
+    .adjuntos-box { padding: 12px 16px; margin: 8px 0; }
+
+    /* Cierre y firma */
+    .cierre { padding: 14px 20px; margin: 18px 0 14px 0; line-height: 1.55; }
+    .firma { margin-top: 22px; padding-top: 14px; page-break-inside: avoid; }
+    .footer-legal { margin-top: 18px; padding-top: 10px; }
+
+    /* Evitar saltos huérfanos */
+    p { orphans: 3; widows: 3; }
+
     .todo { background: #fff; border: none; color: #856404; }
 }
 </style>
