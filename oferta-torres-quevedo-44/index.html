@@ -465,53 +465,70 @@ section p strong {
 @media print {
     @page { size: A4; margin: 0; }
 
-    html, body { background: #fff; }
+    html, body { background: #fff; font-size: 12.5px; }
     .page {
         margin: 0;
         box-shadow: none;
-        padding: 14mm 16mm;
+        padding: 11mm 14mm;
         max-width: 100%;
         border-radius: 0;
     }
 
     /* Cabecera y título compactos */
-    .header { padding-bottom: 14px; margin-bottom: 18px; }
-    .doc-title { margin-bottom: 6px; }
-    .doc-title h1 { font-size: 22px; }
-    .doc-title .subline { font-size: 12.5px; margin-top: 6px; }
+    .header { padding-bottom: 9px; margin-bottom: 12px; }
+    .header-logo img { width: 165px; }
+    .header-meta { font-size: 10.5px; line-height: 1.55; }
+    .doc-title { margin-bottom: 4px; }
+    .doc-title .eyebrow { font-size: 10px; margin-bottom: 4px; }
+    .doc-title h1 { font-size: 19px; line-height: 1.15; }
+    .doc-title .subline { font-size: 11.5px; margin-top: 4px; }
 
-    /* Ficha más compacta */
-    .ficha { margin: 16px 0 20px 0; padding: 14px 18px; }
-    .ficha-grid { gap: 4px 24px; }
-    .ficha-grid .value { margin-bottom: 2px; }
+    /* Ficha muy compacta */
+    .ficha { margin: 10px 0 14px 0; padding: 9px 14px; }
+    .ficha-grid { gap: 2px 22px; font-size: 11.5px; }
+    .ficha-grid .label { font-size: 9.5px; }
+    .ficha-grid .value { margin-bottom: 1px; font-size: 11.5px; }
 
     /* Secciones: márgenes reducidos */
-    section { margin-bottom: 16px; }
-    section h2 { margin-bottom: 9px; padding-bottom: 6px; page-break-after: avoid; }
-    section p { margin-bottom: 8px; line-height: 1.55; }
+    section { margin-bottom: 11px; }
+    section h2 { font-size: 12px; margin-bottom: 6px; padding-bottom: 4px; page-break-after: avoid; }
+    section h2 .num { font-size: 10px; padding: 2px 8px; }
+    section p { font-size: 12px; margin-bottom: 5px; line-height: 1.5; }
 
-    /* Aspectos: padding interior reducido */
-    .aspects { margin-top: 8px; }
-    .aspect { padding: 10px 0; page-break-inside: avoid; }
-    .aspect-body h3 { margin-bottom: 3px; }
-    .aspect-body p { margin-bottom: 5px; line-height: 1.5; }
-    .aspect-body .lista-pasos { padding: 2px 0 4px 4px; margin: 4px 0 6px 0; }
-    .aspect-body .lista-pasos li { padding: 1px 0 1px 18px; line-height: 1.45; }
-    .aspect-body .nota-adjunto { margin-top: 5px; padding: 6px 10px; }
+    /* Aspectos: padding interior mínimo */
+    .aspects { margin-top: 4px; }
+    .aspect { padding: 7px 0; gap: 12px; page-break-inside: avoid; }
+    .aspect-num { width: 28px; height: 28px; font-size: 12px; }
+    .aspect-body h3 { font-size: 12.5px; margin-bottom: 2px; }
+    .aspect-body p { font-size: 11.8px; margin-bottom: 3px; line-height: 1.45; }
+    .aspect-body .lista-pasos { padding: 1px 0 3px 2px; margin: 3px 0 4px 0; }
+    .aspect-body .lista-pasos li { font-size: 11.8px; padding: 0 0 0 16px; line-height: 1.4; }
+    .aspect-body .nota-adjunto { margin-top: 4px; padding: 5px 9px; font-size: 10.5px; }
 
     /* Caja oferta: NO se parte */
-    .oferta-box { page-break-inside: avoid; padding: 22px 26px; margin: 10px 0 14px 0; }
-    .oferta-box .precio { font-size: 34px; }
+    .oferta-box { page-break-inside: avoid; padding: 16px 22px; margin: 6px 0 10px 0; }
+    .oferta-box .ofrecemos { font-size: 10px; margin-bottom: 3px; }
+    .oferta-box .precio { font-size: 30px; }
+    .oferta-box .precio-letras { font-size: 11.5px; margin-top: 3px; }
+    .oferta-box .pago { margin-top: 9px; padding-top: 9px; font-size: 11.5px; }
 
     /* Condiciones, motivos, adjuntos compactos */
-    .condiciones ol li { padding: 6px 0 6px 36px; }
-    .argumentos li { padding: 7px 0 7px 30px; line-height: 1.5; }
-    .adjuntos-box { padding: 12px 16px; margin: 8px 0; }
+    .condiciones h3 { font-size: 11.5px; margin-bottom: 6px; }
+    .condiciones ol li { font-size: 11.5px; padding: 5px 0 5px 32px; }
+    .condiciones ol li::before { width: 22px; height: 22px; font-size: 11px; }
+    .argumentos li { font-size: 11.5px; padding: 6px 0 6px 28px; line-height: 1.45; }
+    .argumentos li::before { width: 20px; height: 20px; top: 8px; font-size: 11px; }
+    .adjuntos-box { padding: 9px 14px; margin: 6px 0; }
+    .adjuntos-box .lead { font-size: 10px; margin-bottom: 5px; }
+    .adjuntos-box ul li { font-size: 11.5px; padding: 3px 0 3px 18px; }
 
-    /* Cierre y firma */
-    .cierre { padding: 14px 20px; margin: 18px 0 14px 0; line-height: 1.55; }
-    .firma { margin-top: 22px; padding-top: 14px; page-break-inside: avoid; }
-    .footer-legal { margin-top: 18px; padding-top: 10px; }
+    /* Cierre y firma — pegados al contenido anterior */
+    .cierre { padding: 10px 16px; margin: 12px 0 8px 0; line-height: 1.5; font-size: 11.8px; page-break-before: avoid; }
+    .firma { margin-top: 14px; padding-top: 10px; page-break-before: avoid; page-break-inside: avoid; }
+    .firma-block .frase { font-size: 11px; }
+    .firma-block .equipo { font-size: 12.5px; margin-top: 5px; }
+    .firma-block .contacto { font-size: 10.5px; margin-top: 3px; line-height: 1.5; }
+    .footer-legal { margin-top: 10px; padding-top: 7px; font-size: 9px; line-height: 1.5; page-break-before: avoid; }
 
     /* Evitar saltos huérfanos */
     p { orphans: 3; widows: 3; }
