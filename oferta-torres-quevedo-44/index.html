@@ -441,6 +441,9 @@ html, body {
 /* SLOT — ocupa el espacio sobrante para empujar firma al fondo */
 .slot-spacer { flex: 1 1 auto; min-height: 0; }
 
+/* En la última hoja, el cierre + adjuntos quedan arriba y la firma al fondo */
+.sheet .cierre { margin-bottom: 0; }
+
 /* ─────────────────────────────────────
    VISTA PANTALLA — hojas apiladas como en Word
    ───────────────────────────────────── */
@@ -666,6 +669,24 @@ html, body {
             <li>La parte compradora <strong>asume íntegramente los riesgos</strong> técnicos, administrativos, estructurales y comunitarios antes descritos, liberando a la propiedad de los plazos y costes asociados a su subsanación.</li>
         </ul>
     </div>
+
+    <div class="slot-spacer"></div>
+
+</div>
+
+<!-- ═════════════════════════════════════════ HOJA 4 ═════════════════════════════════════════ -->
+<div class="sheet">
+
+    <header class="header">
+        <div class="header-logo">
+            <img src="https://assets.cdn.filesafe.space/ybA6CwAZoHGDOhuhyVU8/media/693f127897c023626002d3d2.png" alt="CdU de 0 a ÉXITO">
+        </div>
+        <div class="header-meta">
+            <strong>Propuesta de compra</strong> · Ref. CdU-ELCH-QVD-2026<br>
+            C/ Torres Quevedo 44 · Elche (Alicante)<br>
+            <strong class="validez">Validez: 15 días naturales</strong> desde 12/05/2026
+        </div>
+    </header>
 
     <div class="seccion">
         <h2><span class="num">05</span> Documentos adjuntos</h2>
