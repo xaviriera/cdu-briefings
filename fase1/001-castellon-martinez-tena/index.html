@@ -891,8 +891,8 @@ html, body {
   font-size: 10.5px;
 }
 .econ-card .e-row:last-child { border-bottom: none; }
-.econ-card .e-row .e-lab { color: var(--navy); font-weight: 500; }
-.econ-card .e-row .e-val { color: var(--navy); font-weight: 700; }
+.econ-card .e-row .e-lab { color: var(--navy); font-weight: 500; padding-right: 6px; }
+.econ-card .e-row .e-val { color: var(--navy); font-weight: 700; white-space: nowrap; }
 .econ-card .e-total {
   margin-top: 3mm; padding-top: 3mm;
   border-top: 2px solid var(--navy);
@@ -903,8 +903,9 @@ html, body {
   color: var(--navy); text-transform: uppercase;
 }
 .econ-card .e-total .e-val {
-  font-size: 20px; font-weight: 800; color: var(--ochre);
+  font-size: 17px; font-weight: 800; color: var(--ochre);
   letter-spacing: -0.5px;
+  white-space: nowrap;
 }
 .econ-card .e-note {
   margin-top: 3mm;
@@ -1345,7 +1346,7 @@ html, body {
     </div>
     <div class="cover-photo">
       <img src="./assets-fotos/fachada-posterior.png" alt="Fachada posterior · doble orientación">
-      <div class="photo-tag">Fachada posterior<span class="small">Doble orientación · ventilación cruzada</span></div>
+      <div class="photo-tag">Fachada posterior<span class="small">Edificio pasante · doble orientación</span></div>
     </div>
   </div>
 
@@ -1360,7 +1361,7 @@ html, body {
     </div>
     <div class="item">
       <div class="lab">Ref. catastral</div>
-      <div class="val">2716507‑0001</div>
+      <div class="val">2716507YK5321N0001RJ</div>
     </div>
     <div class="item">
       <div class="lab">Fecha emisión</div>
@@ -1395,7 +1396,7 @@ html, body {
         <div class="label">Identificación del activo</div>
       </div>
       <h2>Qué hay hoy y qué queremos <span class="accent">construir</span> sobre ello</h2>
-      <div class="lead">Inmueble de planta baja en edificio plurifamiliar de dos alturas sobre rasante, con configuración pasante y doble orientación. El planteamiento es transformarlo en <b>cuatro viviendas tipo loft independientes</b> con superficies variables comprendidas entre <b>~ 30 y ~ 38 m² construidos privativos</b>, una vez descontado el distribuidor común de acceso. El encaje exacto se valida en Fase 2 MAP con anteproyecto.</div>
+      <div class="lead">Inmueble de planta baja en edificio plurifamiliar de dos alturas sobre rasante, con <b>configuración pasante</b> y <b>doble orientación a dos calles</b>. El planteamiento es transformarlo en <b>cuatro viviendas tipo loft independientes</b>, distribuidas <b>dos a cada fachada</b>, con superficies variables comprendidas entre <b>~ 34 y ~ 38 m² construidos</b>. El encaje exacto se valida en Fase 2 MAP con anteproyecto.</div>
     </div>
 
     <div class="activo-grid">
@@ -1406,7 +1407,7 @@ html, body {
         </div>
         <div class="ficha-cell">
           <div class="lab">Superficie</div>
-          <div class="val">145,25 m²<br><span class="sm">construidos</span></div>
+          <div class="val">145,25 m²<br><span class="sm">nota simple · 159 m² catastro</span></div>
         </div>
         <div class="ficha-cell">
           <div class="lab">Año construcción</div>
@@ -1422,7 +1423,7 @@ html, body {
         </div>
         <div class="ficha-cell">
           <div class="lab">Ref. catastral</div>
-          <div class="val">2716507‑0001<br><span class="sm">Castellón de la Plana · 12003</span></div>
+          <div class="val" style="font-size:11px;line-height:1.1;">2716507YK5321N0001RJ<br><span class="sm">Castellón de la Plana · 12004</span></div>
         </div>
       </div>
 
@@ -1437,8 +1438,8 @@ html, body {
           <div class="arrow">→</div>
           <div class="t-box after">
             <div class="t-lab">Resultante</div>
-            <div class="t-val">4 viviendas<br>30 – 38 m²</div>
-            <div class="t-meta">Lofts independientes · sup. variable</div>
+            <div class="t-val">4 viviendas<br>34 – 38 m²</div>
+            <div class="t-meta">2 a cada fachada · sin distribuidor común</div>
           </div>
         </div>
       </div>
@@ -1495,19 +1496,19 @@ html, body {
       <div class="col-card">
         <h4>Lo que ya tenemos a favor</h4>
         <ul>
-          <li><strong>LPH de 1960 sin restricción específica</strong> de cambio de uso ni de segregación en la documentación registral.</li>
+          <li><strong>LPH de 1960 sin restricciones específicas</strong> en DH ni estatutos sobre cambio de uso o segregación. Toda actuación se rige por lo dispuesto en la propia LPH.</li>
           <li>No constan prohibiciones expresas en estatutos vigentes.</li>
-          <li>Comunidad reducida (12 vecinos) con <strong>actitud colaborativa</strong> documentada.</li>
-          <li>Antecedentes de comunicación abierta entre originador y resto de propietarios.</li>
+          <li><strong>Comunidad pequeña</strong> (4 viviendas + 1 local) con actitud colaborativa documentada.</li>
+          <li><strong>Cuota del local (33 %)</strong> no se modifica: se segrega entre las 4 unidades resultantes.</li>
         </ul>
       </div>
       <div class="col-card ochre">
         <h4>Lo que hay que formalizar</h4>
         <ul>
           <li><strong>Acta de autorización de segregación / división horizontal</strong> con quórum LPH 1960.</li>
-          <li><strong>Acta de autorización de salida de humos</strong> por fachada para 4 cocinas.</li>
-          <li>Asumir presidencia de la comunidad por parte del originador para convocar reunión formal.</li>
-          <li>Sustituir el consentimiento por WhatsApp por acta notariada o protocolizada.</li>
+          <li><strong>Acta de autorización para la intervención</strong> sobre el colector comunitario (sacarlo fuera del local).</li>
+          <li>Asumir presidencia de la comunidad por parte del cliente para convocar reunión formal.</li>
+          <li>Sustituir consentimientos vía WhatsApp por acta notariada o protocolizada.</li>
         </ul>
       </div>
     </div>
@@ -1521,15 +1522,11 @@ html, body {
         </div>
         <div class="b-item">
           <div class="b-num">2</div>
-          <div><b>Colector comunitario</b> con registro físico dentro del local. Cualquier obra debe respetar acceso.</div>
+          <div><b>Colector comunitario</b> con antecedentes de inundación. Recomendable <b>sacarlo fuera del local</b> en la intervención.</div>
         </div>
         <div class="b-item">
           <div class="b-num">3</div>
-          <div>Salida de humos en fachada principal: <b>integración paisajística</b> a justificar técnicamente.</div>
-        </div>
-        <div class="b-item">
-          <div class="b-num">4</div>
-          <div>Encaje del nuevo número de elementos privativos en la <b>cuota de participación</b> sobre elementos comunes.</div>
+          <div><b>Salida de humos ya existente</b>: conexión a patio de luces. <b>No</b> se hace nueva apertura en fachada principal.</div>
         </div>
       </div>
     </div>
@@ -1559,21 +1556,15 @@ html, body {
         <div class="num">03</div>
         <div class="label">Viabilidad urbanística</div>
       </div>
-      <h2>El ayuntamiento <span class="accent">confirma compatibilidad</span> del uso residencial en planta baja</h2>
+      <h2>El planeamiento <span class="accent">permite</span> el uso residencial en planta baja</h2>
     </div>
 
     <div class="veredicto-card green">
       <div class="icon">✓</div>
       <div class="text">
         <div class="lab">Veredicto pata urbanística</div>
-        <div class="veredicto">Favorable · respaldado por consulta municipal escrita</div>
+        <div class="veredicto">Favorable · compatible con planeamiento PGOU</div>
       </div>
-    </div>
-
-    <div class="cita">
-      <div class="cita-lab">Respuesta consulta urbanística previa</div>
-      <p>"En las subzonas de ordenación pormenorizada residenciales se permite el uso residencial. El uso vivienda en planta baja y entresuelo está permitido. No es obligatoria la dotación de plazas de garaje. Se tendrá en cuenta la integración paisajística de fachada."</p>
-      <div class="source">— Ayuntamiento de Castellón · Departamento de Urbanismo · respuesta a consulta previa CdU</div>
     </div>
 
     <div class="dos-col" style="margin-top: 5mm;">
@@ -1646,7 +1637,7 @@ html, body {
         <div class="label">Viabilidad técnica</div>
       </div>
       <h2>Probable, pero <span class="accent">exige diseño preciso</span> bajo DC‑09</h2>
-      <div class="lead">Altura libre muy favorable y doble orientación con ventilación cruzada natural. El reto está en el encaje geométrico de cuatro unidades cumpliendo iluminación, ventilación, proporción de fachada y funcionalidad espacial.</div>
+      <div class="lead">Altura libre muy favorable y <b>doble orientación</b> a dos calles. El reto está en el encaje geométrico de cuatro unidades cumpliendo iluminación, ventilación, proporción de fachada y funcionalidad espacial.</div>
     </div>
 
     <div class="veredicto-card amber">
@@ -1662,20 +1653,20 @@ html, body {
         <div class="t-lab">Fortalezas técnicas</div>
         <ul>
           <li><b>Altura libre 3,30 m</b> muy por encima del mínimo normativo.</li>
-          <li><b>Configuración pasante</b> con fachadas a calle Martínez de Tena y patio/calle posterior.</li>
-          <li><b>Ventilación cruzada natural</b> garantizada por doble orientación.</li>
-          <li><b>Fachada de 8,20 m</b> suficiente para distribuir 2 viviendas a frente principal.</li>
+          <li><b>Configuración pasante</b> con fachadas a <b>dos calles diferentes</b>.</li>
+          <li><b>Doble orientación</b>: 2 viviendas a cada fachada.</li>
+          <li><b>Fachada de 8,20 m</b> suficiente para 2 viviendas a cada frente.</li>
           <li><b>Estructura</b> previsiblemente clara (edificio 1968 pre‑NCSE‑02, comprobar cálculos).</li>
         </ul>
       </div>
       <div class="t-cons">
         <div class="t-lab">Condicionantes a resolver</div>
         <ul>
-          <li><b>Encaje DC‑09</b>: bancada cocina 2,50 m y proporción de iluminación por unidad ajustada.</li>
-          <li><b>Colector comunitario</b> con registro interior y antecedentes de inundaciones — preservar acceso.</li>
+          <li><b>Encaje DC‑09</b>: proporción de iluminación y ventilación por unidad ajustada.</li>
+          <li><b>Colector comunitario</b> con antecedentes de inundación: <b>sacarlo fuera del local</b> en la intervención.</li>
           <li><b>Centralización eléctrica</b>: adecuación CGP + esquema de fusibles para 4 contadores.</li>
           <li><b>Suministros agua y luz</b>: apertura de expedientes y nuevo armario de contadores.</li>
-          <li><b>Salida de humos</b>: integración paisajística a justificar (4 cocinas a fachada).</li>
+          <li><b>Salida de humos</b>: ya existente, conexión a <b>patio de luces</b>. No nueva apertura en fachada.</li>
         </ul>
       </div>
     </div>
@@ -1686,28 +1677,28 @@ html, body {
         <div class="loft">
           <div class="l-num">A</div>
           <div class="l-lab">Loft 1</div>
-          <div class="l-meta">~ 38 m²</div>
+          <div class="l-meta">~ 38 m² · fachada principal</div>
         </div>
         <div class="loft">
           <div class="l-num">B</div>
           <div class="l-lab">Loft 2</div>
-          <div class="l-meta">~ 35 m²</div>
+          <div class="l-meta">~ 37 m² · fachada principal</div>
         </div>
         <div class="loft">
           <div class="l-num">C</div>
           <div class="l-lab">Loft 3</div>
-          <div class="l-meta">~ 33 m²</div>
+          <div class="l-meta">~ 36 m² · fachada posterior</div>
         </div>
         <div class="loft">
           <div class="l-num">D</div>
           <div class="l-lab">Loft 4</div>
-          <div class="l-meta">~ 30 m²</div>
+          <div class="l-meta">~ 34 m² · fachada posterior</div>
         </div>
       </div>
       <div style="margin-top: 3mm; padding-top: 3mm; border-top: 1px dashed rgba(22,61,96,0.2); display: flex; justify-content: space-between; font-size: 9px; color: var(--navy);">
-        <span><b>Suma 4 unidades:</b> ~ 136 m²</span>
-        <span><b>Distribuidor común:</b> ~ 9 m²</span>
-        <span><b>Total local:</b> 145,25 m²</span>
+        <span><b>2 a cada fachada</b> · sin distribuidor común</span>
+        <span><b>Suma 4 unidades:</b> 145 m²</span>
+        <span><b>Total local:</b> 145,25 m² (nota simple)</span>
       </div>
     </div>
   </div>
@@ -1901,22 +1892,21 @@ html, body {
       <div class="icon">€</div>
       <div class="text">
         <div class="lab">Veredicto pata económica</div>
-        <div class="veredicto">Potencialmente favorable · sujeta a cerrar gap reforma (160 k vs 180 k IVA)</div>
+        <div class="veredicto">Potencialmente favorable · ingreso 380 k vs inversión total ~ 280 k</div>
       </div>
     </div>
 
     <div class="econ-grid">
       <div class="econ-card">
-        <h4>Estructura de costes orientativa</h4>
-        <div class="e-row"><span class="e-lab">Coste reforma (145 m² × 800 €/m²)</span><span class="e-val">116.000 €</span></div>
-        <div class="e-row"><span class="e-lab">Honorarios técnicos + licencia + imprevistos</span><span class="e-val">~ 44.000 €</span></div>
-        <div class="e-row"><span class="e-lab">Adquisición + ITP + notaría + registro</span><span class="e-val">por definir</span></div>
-        <div class="e-row"><span class="e-lab">Costes financieros + comercialización</span><span class="e-val">por definir</span></div>
+        <h4>Estimación de costes totales de la operación</h4>
+        <div class="e-row"><span class="e-lab">Precio de compra</span><span class="e-val">82.000 €</span></div>
+        <div class="e-row"><span class="e-lab">Coste operación<br><span style="font-size:8.5px;opacity:0.75;">reforma · ITP · gastos · licencias · suministros</span></span><span class="e-val">186.016,60 €</span></div>
+        <div class="e-row"><span class="e-lab">In Bruto (Comunidad IN)</span><span class="e-val">12.000 €</span></div>
         <div class="e-total">
-          <span class="e-lab">Reforma estimada</span>
-          <span class="e-val">~ 160.000 €</span>
+          <span class="e-lab">Inversión total orientativa</span>
+          <span class="e-val">280.016,60 €</span>
         </div>
-        <div class="e-note">⚠ Presupuesto interno del equipo apunta a <b>180.000 € con IVA</b>. Gap de ~20 k a alinear antes de cerrar la adquisición.</div>
+        <div class="e-note">Cifras orientativas Fase 1. El desglose detallado por partidas se cierra en <b>Fase 2 MAP</b> con presupuesto técnico visado.</div>
       </div>
 
       <div class="econ-card ochre">
