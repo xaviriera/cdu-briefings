@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COTE · pata fiscal · experimento abierto</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #FDFBF7;
+  color: #163D60;
+  padding: 40px 30px;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.header {
+  border-bottom: 3px solid #163D60;
+  padding-bottom: 18px;
+  margin-bottom: 28px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #163D60;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.header h1 small {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: #888;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+.brand-tag {
+  font-size: 9px;
+  background: #fdf6e9;
+  color: #7d6608;
+  padding: 3px 8px;
+  border-radius: 8px;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+  border: 1px solid #E29F34;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+.intro {
+  background: #fff;
+  border-left: 4px solid #163D60;
+  padding: 18px 22px;
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #2c3e50;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.intro strong { color: #163D60; }
+.intro em { color: #888; font-style: italic; }
+.intro .lead {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: #E29F34;
+  margin-bottom: 6px;
+}
+
+.block {
+  background: #fff;
+  border-left: 5px solid #163D60;
+  padding: 20px 24px;
+  margin-bottom: 18px;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  page-break-inside: avoid;
+}
+
+.block.b1 { border-left-color: #2471a3; }
+.block.b2 { border-left-color: #E29F34; }
+.block.b3 { border-left-color: #8e44ad; }
+.block.b4 { border-left-color: #27ae60; }
+.block.b5 { border-left-color: #163D60; }
+.block.b6 { border-left-color: #d35400; }
+.block.b7 { border-left-color: #c0392b; }
+
+.block-num {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.block-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #163D60;
+  letter-spacing: -0.2px;
+  margin-bottom: 4px;
+}
+
+.block-sub {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 14px;
+  font-style: italic;
+}
+
+.block-body {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #2c3e50;
+}
+
+.block-body strong { color: #163D60; }
+.block-body em { color: #555; font-style: italic; }
+.block-body p { margin-top: 8px; }
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+.list li {
+  font-size: 13px;
+  padding: 4px 0 4px 22px;
+  position: relative;
+  line-height: 1.55;
+  color: #2c3e50;
+}
+
+.list li::before {
+  content: '\2192';
+  position: absolute;
+  left: 0;
+  color: #E29F34;
+  font-weight: 700;
+}
+
+.list li strong { color: #163D60; }
+
+.corpus-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 14px 0;
+}
+
+.corpus-card {
+  background: #fdfbf7;
+  border-radius: 4px;
+  padding: 12px;
+  border-top: 3px solid #163D60;
+}
+
+.corpus-card.f1 { border-top-color: #27ae60; }
+.corpus-card.f2 { border-top-color: #2471a3; }
+.corpus-card.f3 { border-top-color: #E29F34; }
+.corpus-card.f4 { border-top-color: #8e44ad; }
+
+.corpus-name {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #163D60;
+  margin-bottom: 4px;
+}
+
+.corpus-who {
+  font-size: 10px;
+  color: #888;
+  margin-bottom: 6px;
+  font-style: italic;
+}
+
+.corpus-text {
+  font-size: 11px;
+  line-height: 1.5;
+  color: #2c3e50;
+}
+
+.phase-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+  font-size: 12px;
+}
+
+.phase-table th {
+  background: #163D60;
+  color: #fff;
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.phase-table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+  color: #2c3e50;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.phase-table td strong { color: #163D60; }
+.phase-table tr:last-child td { border-bottom: none; }
+
+.phase-num {
+  font-weight: 800;
+  color: #E29F34;
+  font-size: 14px;
+}
+
+.callout {
+  background: #fdf6e9;
+  border-left: 3px solid #E29F34;
+  padding: 12px 16px;
+  margin: 14px 0;
+  font-size: 12px;
+  line-height: 1.65;
+  color: #7d6608;
+  border-radius: 0 3px 3px 0;
+}
+
+.callout strong { color: #163D60; }
+
+.warn-callout {
+  background: #fef5f5;
+  border-left: 3px solid #c0392b;
+  padding: 12px 16px;
+  margin: 14px 0;
+  font-size: 12px;
+  line-height: 1.65;
+  color: #7b241c;
+  border-radius: 0 3px 3px 0;
+}
+
+.warn-callout strong { color: #922b21; }
+
+.example-case {
+  background: #f4ecf7;
+  border-left: 3px solid #8e44ad;
+  padding: 12px 16px;
+  margin: 14px 0;
+  font-size: 12px;
+  line-height: 1.65;
+  color: #5b2c6f;
+  border-radius: 0 3px 3px 0;
+}
+
+.example-case strong { color: #6c3483; }
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0 4px 0;
+}
+
+.tag {
+  font-size: 10px;
+  background: #eaf2f8;
+  color: #2471a3;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  border: 1px solid #d4e6f1;
+}
+
+.tag.green { background: #e8f8f5; color: #1e8449; border-color: #d1f2eb; }
+.tag.amber { background: #fdf6e9; color: #b9770e; border-color: #fad7a0; }
+.tag.purple { background: #f4ecf7; color: #7d3c98; border-color: #d7bde2; }
+
+.closer {
+  margin-top: 32px;
+  padding: 22px 26px;
+  background: #163D60;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.closer strong { color: #E29F34; }
+.closer em { color: #c9d6df; font-style: italic; }
+
+.footer {
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 10px;
+  color: #999;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+.footer .cote { font-weight: 700; color: #163D60; }
+
+.footer-note {
+  margin-top: 16px;
+  font-size: 10px;
+  color: #aaa;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  body { padding: 20px 14px; font-size: 13px; }
+  .header h1 { font-size: 19px; }
+  .corpus-grid { grid-template-columns: 1fr; gap: 8px; }
+  .phase-table { font-size: 11px; }
+  .phase-table td { padding: 8px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>
+    COTE · pata fiscal<span class="brand-tag">v0.1 · BETA</span>
+    <small>Un experimento abierto en paralelo a Cifras Legal</small>
+  </h1>
+</div>
+
+<div class="intro">
+  <span class="lead">Equipo, os propongo algo</span>
+  La SL <strong>CDU DE 0 A ÉXITO, S.L.</strong> está fresca: constituida 4 de marzo, primer trimestre cerrado, segundo trimestre en marcha. <strong>Cifras Legal sigue siendo nuestro asesor titular</strong> y quien presenta de verdad ante AEAT. Lo que os pongo encima de la mesa es <strong>correr en paralelo el segundo trimestre conmigo</strong> — sin tocar nada de lo real — y al final del experimento comparar resultados. Es lo que en trading se llama <em>paper</em>: el sistema opera sin dinero hasta que demuestra que sabe operar.
+</div>
+
+<!-- ═══════════════════════ BLOQUE 1 · LA OPORTUNIDAD ═══════════════════════ -->
+<div class="block b1">
+  <div class="block-num">01 · la oportunidad</div>
+  <div class="block-title">Por qué este trimestre y no otro</div>
+  <div class="block-sub">Primer ejercicio de la SL. Solo gasto, sin facturación. Es el momento exacto para testear.</div>
+  <div class="block-body">
+    <ul class="list">
+      <li><strong>SL recién nacida.</strong> Constitución 4 de marzo de 2026. CIF B26888636. Tres tercios iguales (Xavi, Paco, Dani). Administrador único Paco gratuito. Domicilio Sor Josefa Alcorta 68, Elche</li>
+      <li><strong>Primer trimestre con poco movimiento.</strong> Hasta donde tenemos identificado: cero facturación emitida, solo gastos recibidos (notaría, registro mercantil, Cifras Legal, software, comisiones bancarias)</li>
+      <li><strong>Segundo trimestre en la misma línea.</strong> Misma estructura de gasto. Sin facturación emitida prevista hasta que entre la primera operación o el primer cliente Fase 1 a la SL</li>
+      <li><strong>Resultado esperado del 303 2T:</strong> cuota a compensar arrastrada al 3T y 4T. Sin riesgo de ingreso erróneo, sin saldo a devolver. <strong>Es el escenario más limpio que existe para hacer una prueba</strong></li>
+    </ul>
+    <div class="callout">
+      <strong>Por eso este trimestre.</strong> Si me equivoco en un 303 de cuota cero a compensar, no pasa nada. Si lo hago bien, gano legitimidad para los siguientes — donde sí habrá facturación y donde sí importa.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ BLOQUE 2 · QUÉ PROPONGO ═══════════════════════ -->
+<div class="block b2">
+  <div class="block-num">02 · qué propongo</div>
+  <div class="block-title">Paper fiscal · paralelo a Cifras Legal</div>
+  <div class="block-sub">Cifras hace lo real. Yo hago en paralelo. Comparamos.</div>
+  <div class="block-body">
+    <ul class="list">
+      <li><strong>Cifras Legal sigue siendo el responsable.</strong> Ellos presentan. Ellos firman. Ellos responden ante AEAT si hubiera requerimiento. Nada cambia en lo legal</li>
+      <li><strong>Yo trabajo en sombra.</strong> Mismas facturas, mismo período, mismas casillas. Calculo el 303 2T por mi cuenta y lo guardo como borrador interno</li>
+      <li><strong>Comparamos al final.</strong> Cuando Cifras tenga el suyo listo y yo tenga el mío, ponemos los dos al lado. Casilla a casilla</li>
+      <li><strong>Tres resultados posibles:</strong> convergen (validamos), divergen poco (analizamos por qué — puede ser criterio profesional vs literalidad normativa), divergen mucho (toca mirar)</li>
+    </ul>
+    <div class="example-case">
+      <strong>Lo que esto NO es:</strong> sustituir a Cifras Legal. Ni hoy ni mañana. Cifras es asesoría humana colegiada con responsabilidad legal y experiencia. <em>Lo que esto SÍ es:</em> contar con una segunda mirada estructurada que cruza la misma información con la normativa y os deja un calendario fiscal vivo dentro del proyecto.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ BLOQUE 3 · QUÉ TENGO DETRÁS ═══════════════════════ -->
+<div class="block b3">
+  <div class="block-num">03 · qué tengo detrás</div>
+  <div class="block-title">El motor fiscal · cómo decido qué deduce y qué no</div>
+  <div class="block-sub">Corpus de formación + bases legales verificadas + reglas duras de seguridad.</div>
+  <div class="block-body">
+    <p><strong>Cuatro fuentes de doctrina que llevo cargadas:</strong></p>
+    <div class="corpus-grid">
+      <div class="corpus-card f1">
+        <div class="corpus-name">Programa IN</div>
+        <div class="corpus-who">Alberto Monsalve</div>
+        <div class="corpus-text">Fiscalidad inmobiliaria española aplicada al CdU. IVA promotor, ITP/AJD compraventa, IRPF rentas, sociedad patrimonial vs operativa. <strong>Conservador, normativo, alta autoridad para nuestro caso</strong></div>
+      </div>
+      <div class="corpus-card f2">
+        <div class="corpus-name">Trucos Fiscales</div>
+        <div class="corpus-who">Juan Haro · Pedro Martos</div>
+        <div class="corpus-text">9 bloques + bonos. Sociedad patrimonial, holding, herencias, ampliaciones capital, inmuebles en sociedad, arrendamiento opción compra, viviendas turísticas. <strong>61 plantillas operativas adicionales</strong></div>
+      </div>
+      <div class="corpus-card f3">
+        <div class="corpus-name">Sindicato de Negocios</div>
+        <div class="corpus-who">Alex Algarci</div>
+        <div class="corpus-text">Internacional + LLC USA + Beckham + banderas + IVA + cripto. Doctrina agresiva con motivo económico válido. <strong>Para cuando crezca la operación más allá de España</strong></div>
+      </div>
+      <div class="corpus-card f4">
+        <div class="corpus-name">Estructuras</div>
+        <div class="corpus-who">Álvaro</div>
+        <div class="corpus-text">Estonia, Paraguay, Panamá, holdings, neobancos, MiCA, CRS, P2P. <strong>Referencia internacional verificada</strong></div>
+      </div>
+    </div>
+    <p style="margin-top:14px;"><strong>Dominios jurídicos que cubro de base:</strong></p>
+    <div class="tag-row">
+      <span class="tag">IRPF</span>
+      <span class="tag">IS</span>
+      <span class="tag">IVA</span>
+      <span class="tag">ITP-AJD</span>
+      <span class="tag">IRNR</span>
+      <span class="tag">LGT</span>
+      <span class="tag">Inmobiliario</span>
+      <span class="tag">Beckham</span>
+      <span class="tag">Cripto 720/721</span>
+      <span class="tag">Internacional</span>
+      <span class="tag">LLC USA</span>
+      <span class="tag">Patrimonial</span>
+    </div>
+    <p style="margin-top:14px;"><strong>Fuentes oficiales contra las que verifico antes de afirmar nada:</strong></p>
+    <ul class="list">
+      <li><strong>BOE</strong> — texto vigente de cada ley</li>
+      <li><strong>AEAT</strong> — manual práctico y formularios de cada modelo</li>
+      <li><strong>DGT</strong> — consultas vinculantes citadas con su referencia (V-XXXXX-AA)</li>
+      <li><strong>TS · TC · TJUE</strong> — jurisprudencia citada con número de sentencia y fecha</li>
+    </ul>
+    <p style="margin-top:14px;"><strong>Reglas duras que me autoimpongo</strong> (las llevo escritas en mi configuración):</p>
+    <ul class="list">
+      <li><strong>Cada estrategia con semáforo</strong> 🟢 verde (economía de opción legal) · 🟡 ámbar (zona gris con interpretación) · 🔴 rojo (frontera, requiere asesoría humana o se descarta)</li>
+      <li><strong>Cada afirmación con confianza explícita</strong> — "doctrina DGT vinculante" / "STS reiterada" / "criterio académico" / "opinión COTE"</li>
+      <li><strong>Distingo siempre entre</strong> economía de opción, fraude de ley (art. 15 LGT), simulación (art. 16 LGT) y evasión (art. 305 CP). Solo propongo la primera</li>
+      <li><strong>Para impacto fiscal &gt; 100.000 € o riesgo penal:</strong> contraste obligatorio con asesor colegiado humano. Yo no lo decido, lo señalo</li>
+      <li><strong>Verificación BOE/AEAT antes de afirmar norma específica.</strong> Si no la encuentro, lo digo</li>
+    </ul>
+    <div class="callout">
+      <strong>Diferencia con un ChatGPT genérico:</strong> yo no improviso. Tengo el corpus encima de la mesa, las leyes a un click, y cuando no estoy seguro lo digo. Y cuando hay riesgo paso la consulta a humano colegiado.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ BLOQUE 4 · CÓMO LO HACEMOS ═══════════════════════ -->
+<div class="block b4">
+  <div class="block-num">04 · cómo lo hacemos</div>
+  <div class="block-title">El plan, en 4 fases</div>
+  <div class="block-sub">Hasta el 20 de julio, plazo límite de presentación del 303 2T.</div>
+  <div class="block-body">
+    <table class="phase-table">
+      <thead>
+        <tr>
+          <th style="width:50px;">Fase</th>
+          <th style="width:130px;">Cuándo</th>
+          <th>Qué hacemos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="phase-num">1</span></td>
+          <td>Esta semana <strong style="color:#27ae60;">✓</strong></td>
+          <td><strong>Verificar el 1T <span style="color:#27ae60;">— cerrado</span>.</strong> Consultado en sede AEAT con certificado digital: Modelo 303 1T 2026 presentado el 1 de abril (justificante <code style="font-size:11px;background:#f4f4f4;padding:1px 4px;">3037843373241I</code>) con resultado <strong>a compensar 64,10 €</strong>. Ese saldo se arrastra a la casilla 110 del 303 2T. Pendiente solo pedir a Cifras el porcentaje provisional de deducción (art. 111 LIVA)</td>
+        </tr>
+        <tr>
+          <td><span class="phase-num">2</span></td>
+          <td>Junio · semana 23-30</td>
+          <td><strong>Recopilar gastos del Q2.</strong> Centralizo todas las facturas recibidas abril-mayo-junio en una sola carpeta. Las clasifico por tipo de IVA (21 % / 10 % / 4 % / ISP) y por deducibilidad. Monto Excel limpio</td>
+        </tr>
+        <tr>
+          <td><span class="phase-num">3</span></td>
+          <td>Julio · 1 a 5</td>
+          <td><strong>Cálculo y borrador.</strong> Devuelvo plantilla 303 con cada casilla calculada. Marco posibles dudas (gastos con restricciones — combustible, comidas, mixtos) para que se revisen antes de cerrar</td>
+        </tr>
+        <tr>
+          <td><span class="phase-num">4</span></td>
+          <td>Julio · 10 a 19</td>
+          <td><strong>Comparación con Cifras.</strong> Cuando Cifras tenga el suyo, casilla a casilla. Si converge, validamos el experimento. Si diverge, identificamos por qué</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <strong>Sobre la presentación.</strong> La declaración real al AEAT la sigue presentando Cifras Legal con su firma profesional, como hasta ahora. Mi 303 paralelo es de uso interno para comparar — no se sube a sede. <em>Solo hablaríamos de cambiar quién presenta cuando hayamos validado varios trimestres y vosotros queráis ese paso. Hoy no toca.</em>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ BLOQUE 5 · QUÉ GANAMOS ═══════════════════════ -->
+<div class="block b5">
+  <div class="block-num">05 · qué ganamos si converge</div>
+  <div class="block-title">Lo que entra dentro del proyecto si el experimento sale bien</div>
+  <div class="block-sub">No es sustituir a Cifras. Es ganar herramienta nuestra.</div>
+  <div class="block-body">
+    <ul class="list">
+      <li><strong>Calendario fiscal vivo</strong> de la SL — 303 cada trimestre, 202 pagos fraccionados IS, 200 IS anual, 232 vinculadas, 347 con terceros, depósito Cuentas Anuales, Titularidad Real. Avisos antes del plazo, sin sustos</li>
+      <li><strong>Segunda opinión inmediata</strong> ante decisiones grandes — qué activos meter en SL vs PF, IVA en compras de CdU (21 % suelo / 10 % vivienda / 4 % VPO / ISP rehabilitación), retribución socios, prestaciones accesorias, contratos vinculados con socios</li>
+      <li><strong>Estrategia fiscal sistemática</strong> — todo razonado con norma, sentencia y semáforo de riesgo. Para que cuando Cifras nos pregunte "¿por qué queréis hacerlo así?", la respuesta esté escrita</li>
+      <li><strong>Plantillas operativas</strong> — modelos 303, 202, 232, 347, plantillas Reasonable Cause IRS, recursos de reposición, alegaciones. Más de 60 plantillas ya pre-cargadas</li>
+      <li><strong>Memoria del caso</strong> — todo lo que hagamos queda escrito y trazable. Cifras puede consultarlo, vosotros podéis consultarlo, yo lo uso para coherencia entre trimestres</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════════════ BLOQUE 6 · SI NO CONVERGE ═══════════════════════ -->
+<div class="block b6">
+  <div class="block-num">06 · si no converge</div>
+  <div class="block-title">El experimento también gana si falla</div>
+  <div class="block-sub">Coste de equivocarse en paper = cero.</div>
+  <div class="block-body">
+    <ul class="list">
+      <li><strong>Si divergencia menor:</strong> identifico qué casilla, contrasto contra norma y consulta DGT, ajusto. La iteración siguiente es mejor</li>
+      <li><strong>Si divergencia grande:</strong> reviso mi corpus, detecto el gap, lo lleno. Cifras Legal sigue trabajando con normalidad sin que nada cambie para ellos ni para vosotros</li>
+      <li><strong>Si fallo sistemáticamente:</strong> el experimento se cierra. Quedan documentadas las razones. Cifras sigue como hasta ahora. Cero coste, cero riesgo, cero molestia para AEAT</li>
+    </ul>
+    <div class="example-case">
+      <strong>Lo importante:</strong> nada de esto pasa por sede AEAT. Es trabajo en mi cuaderno. Vosotros decidís en cada paso si lo que veis tiene sentido o no.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ BLOQUE 7 · PRÓXIMO PASO ═══════════════════════ -->
+<div class="block b7">
+  <div class="block-num">07 · próximo paso</div>
+  <div class="block-title">Lo que necesito para arrancar Fase 1</div>
+  <div class="block-sub">Dos peticiones a Cifras Legal · cuatro confirmaciones internas.</div>
+  <div class="block-body">
+    <p><strong>A Cifras Legal — Paco les pide:</strong></p>
+    <ul class="list">
+      <li>El <strong>porcentaje provisional de deducción</strong> (artículo 111 LIVA) que declararon en el alta censal de la sociedad. <em>Es el dato que me falta para cerrar el 2T</em></li>
+    </ul>
+    <div class="callout" style="margin-top:8px;">
+      <strong>Ya verificado por mí en sede AEAT:</strong> Modelo 303 1T 2026 presentado el 1 de abril por Cifras Legal. Justificante <code style="font-size:11px;background:#fff;padding:1px 4px;border:1px solid #E29F34;">3037843373241I</code>. Resultado: a compensar 64,10 €. Saldo arrastrado al 2T listo.
+    </div>
+    <p style="margin-top:12px;"><strong>Internamente — confirmamos entre los 3:</strong></p>
+    <ul class="list">
+      <li>Dónde están centralizadas <strong>las facturas recibidas Q2</strong> (Drive, email tucambiodeuso, Holded, otro). Si no están todas en un sitio, las juntamos</li>
+      <li>Confirmamos que <strong>no ha habido ningún cobro</strong> a la SL en Q2 (ningún anticipo, ningún honorario)</li>
+      <li>Confirmamos el <strong>certificado digital de representante</strong> de la sociedad (B26888636) está accesible para Paco cuando llegue julio</li>
+      <li>Acordamos día para <strong>recapitular Fase 4</strong> entre los 3 antes del 20 de julio</li>
+    </ul>
+    <div class="warn-callout">
+      <strong>Dos cosas que me han llamado la atención al abrir el caso</strong> y conviene que las miremos los 3, independientemente del experimento:<br><br>
+      <strong>1 · Declaración de Titularidad Real</strong> (RD 609/2023). Es obligación del administrador único en el plazo de 1 mes desde la constitución. Plazo formal: 4 de abril de 2026. <em>Hay que verificar si quedó cubierta por el flujo del notario (Ley 14/2013 emprendedores) o si hay que presentarla aparte al Registro Central. Si está pendiente, mejor presentarla con escrito de extemporaneidad antes que esperar a un requerimiento.</em><br><br>
+      <strong>2 · Régimen económico matrimonial</strong> que figura en el alta censal (DUE) de la sociedad. Hay discrepancia con lo que dice la escritura para dos socios. No urge, pero conviene corregir antes de cualquier transmisión futura de participaciones. Modificación censal simple.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ CLOSER ═══════════════════════ -->
+<div class="closer">
+  Lo que os pongo encima de la mesa es <strong>una segunda mirada, no una sustitución</strong>.<br>
+  Cifras Legal sigue siendo nuestra asesoría. Lo que añadimos es un cuaderno paralelo que aprende con nosotros, guarda lo importante, y avisa antes del plazo.<br><br>
+  <em>Si veis sentido al experimento, le pedimos las dos cosas a Cifras y empezamos.<br>
+  Si no lo veis, cerramos el cuaderno y seguimos como hasta ahora. Cero riesgo para vosotros, en cualquier caso.</em>
+</div>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<div class="footer">
+  <span class="cote">COTE IA</span> · pata fiscal · v0.1 BETA · CdU de 0 a ÉXITO<br>
+  Asistente de Análisis Interno · 17 de mayo de 2026
+</div>
+
+<div class="footer-note">
+  COTE IA — de "explicote", nuestra forma de preguntarnos entre nosotros cuando algo no queda claro.<br>
+  El motor fiscal que llevo cargado se llama FISCUS y trabaja con doctrina española, normativa BOE/AEAT/DGT y jurisprudencia TS/TC/TJUE verificada.
+</div>
+
+</body>
+</html>
