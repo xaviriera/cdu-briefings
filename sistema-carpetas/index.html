@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>COTE IA · Modelo de carpetas Drive CdU · v0.5</title>
-<meta name="description" content="Modelo de organización del Shared Drive del proyecto CdU de 0 a Éxito. Tres tipos de operación, fases visibles, una sola lógica.">
+<title>COTE IA · Modelo de carpetas Drive CdU · v0.6</title>
+<meta name="description" content="Modelo de organización del Shared Drive del proyecto CdU de 0 a Éxito. Tres tipos de operación, flujo visual de transiciones, guía operativa.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
@@ -19,6 +19,9 @@
   --muted: #6b6b6b;
   --line: #e6dfd2;
   --soft: #f4ede0;
+  --green: #2c5f2d;
+  --blue: #1a4a8c;
+  --red: #a02020;
 }
 
 body {
@@ -28,7 +31,7 @@ body {
   padding: 40px 28px 80px;
   font-size: 14px;
   line-height: 1.6;
-  max-width: 920px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
@@ -48,10 +51,10 @@ body {
 .brand-tag .brand { font-size: 14px; font-weight: 800; color: var(--ochre); letter-spacing: 0.3px; }
 .brand-tag .sub { font-size: 11px; color: #999; margin-top: 2px; }
 
-section { margin: 36px 0 28px; }
+section { margin: 40px 0 28px; }
 section h2 {
-  font-size: 18px; font-weight: 800; color: var(--navy);
-  margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--line);
+  font-size: 19px; font-weight: 800; color: var(--navy);
+  margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--navy);
   letter-spacing: -0.2px;
 }
 section h2 .num {
@@ -61,7 +64,11 @@ section h2 .num {
 }
 section h3 {
   font-size: 13px; font-weight: 700; color: var(--ochre);
-  margin: 22px 0 8px; text-transform: uppercase; letter-spacing: 0.5px;
+  margin: 24px 0 8px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+section h4 {
+  font-size: 12px; font-weight: 700; color: var(--navy);
+  margin: 18px 0 6px; text-transform: uppercase; letter-spacing: 0.4px;
 }
 section p { margin-bottom: 10px; }
 section ul, section ol { margin: 8px 0 14px 20px; }
@@ -83,21 +90,93 @@ section strong { color: var(--navy); font-weight: 700; }
 }
 .tree .comment { color: var(--muted); font-style: italic; }
 .tree .h { color: var(--ochre); font-weight: 700; }
+.tree .ataj { color: var(--ochre); font-weight: 700; }
 
-.flow {
+/* === LEYENDA DE ACCIONES === */
+.actions-legend {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  background: var(--paper); border: 1.5px solid var(--line);
+  border-radius: 6px; padding: 14px 18px; margin: 14px 0 22px;
+}
+.actions-legend .item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px;
+}
+.action-tag {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px; font-weight: 800;
+  padding: 4px 10px; border-radius: 3px;
+  color: white; letter-spacing: 0.5px; text-transform: uppercase;
+  white-space: nowrap;
+}
+.tag-create { background: var(--green); }
+.tag-move { background: var(--blue); }
+.tag-shortcut { background: var(--ochre); }
+.tag-delete-shortcut { background: var(--red); }
+
+/* === BLOQUE FLUJO POR TIPO === */
+.flow-block {
   background: var(--paper);
   border: 1.5px solid var(--line);
-  border-radius: 6px;
-  padding: 20px 22px;
-  margin: 18px 0;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  line-height: 1.7;
-  color: var(--navy);
-  overflow-x: auto;
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin: 16px 0 24px;
 }
-.flow strong { color: var(--ochre); }
-.flow .arrow { color: var(--ochre); font-weight: 800; }
+.flow-block .flow-header {
+  font-size: 13px; font-weight: 800;
+  color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px;
+  padding-bottom: 10px; border-bottom: 2px solid var(--ochre);
+  margin-bottom: 14px;
+}
+
+/* === TRANSICIÓN INDIVIDUAL === */
+.transition {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 8px;
+  border-bottom: 1px dashed var(--line);
+}
+.transition:last-child { border-bottom: none; }
+.transition .trigger {
+  grid-column: 1 / -1;
+  font-size: 11.5px;
+  color: var(--navy);
+  font-weight: 600;
+  background: var(--soft);
+  padding: 6px 10px;
+  border-radius: 3px;
+  margin-bottom: 6px;
+}
+.transition .trigger strong { color: var(--ochre); font-weight: 800; }
+.transition .from, .transition .to {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  background: var(--cream);
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+  color: var(--navy);
+  word-break: break-all;
+  line-height: 1.5;
+}
+.transition .from.empty {
+  background: transparent; border: none; color: var(--muted);
+  font-style: italic; text-align: center;
+}
+.transition .action-cell {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  text-align: center;
+}
+.transition .arrow {
+  color: var(--muted); font-size: 14px; font-weight: 800;
+}
+@media (max-width: 760px) {
+  .transition { grid-template-columns: 1fr; gap: 8px; }
+  .transition .arrow { transform: rotate(90deg); }
+}
 
 table {
   width: 100%; border-collapse: collapse;
@@ -128,6 +207,7 @@ td code {
   font-size: 12px; font-weight: 800; text-transform: uppercase;
   letter-spacing: 0.5px; color: var(--navy);
   margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--line);
+  margin-top: 0;
 }
 .col-card .note { font-size: 11px; color: var(--muted); margin-top: 8px; line-height: 1.4; }
 
@@ -137,6 +217,36 @@ td code {
   border-left: 4px solid var(--navy); font-size: 13px;
 }
 .callout strong { color: var(--navy); }
+
+.steps {
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
+  padding: 18px 22px;
+  margin: 14px 0;
+}
+.steps ol { counter-reset: step-counter; list-style: none; margin-left: 0; }
+.steps ol li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 38px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.steps ol li::before {
+  content: counter(step-counter);
+  position: absolute; left: 0; top: 0;
+  background: var(--navy); color: var(--cream);
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 12px;
+}
+.steps code {
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  background: var(--soft); padding: 1px 6px; border-radius: 2px; color: var(--navy);
+}
 
 footer {
   margin-top: 60px; border-top: 2px solid var(--navy);
@@ -150,10 +260,10 @@ footer .left { font-weight: 600; color: var(--navy); }
 
 <div class="header">
   <div>
-    <h1>Modelo de carpetas Drive — CdU<small>Tres tipos de operación · fases visibles · una sola lógica</small></h1>
+    <h1>Modelo de carpetas Drive — CdU<small>Tres tipos de operación · flujo visual · guía operativa</small></h1>
   </div>
   <div class="brand-tag">
-    <div class="brand">COTE IA · Propuesta v0.5</div>
+    <div class="brand">COTE IA · Propuesta v0.6</div>
     <div class="sub">Shared Drive del equipo</div>
   </div>
 </div>
@@ -166,51 +276,188 @@ footer .left { font-weight: 600; color: var(--navy); }
   <div class="three-cols">
     <div class="col-card">
       <h4>① Operación del servicio</h4>
-      <p style="font-size:12px;"><strong>El cliente contrata.</strong> Empieza pagando F1 (289€). Sigue a F2 si decide continuar.</p>
-      <div class="note"><strong>Origen:</strong> contacto comercial · marketing · referido.<br>
-      <strong>Flujo:</strong> F1 DIAGNÓSTICO → F2 MAP.<br>
-      <strong>La carpeta padre indica la fase</strong> (F1/, F2/).<br>
-      <strong>Cuando llega F3</strong> → pasa a ③ INICIADAS.</div>
+      <p style="font-size:12px;"><strong>El cliente contrata.</strong> Paga F1 (289€). Sigue F2 si continúa.</p>
+      <div class="note"><strong>Vive en:</strong> <code>01_OPERACIONES_SERVICIO/</code><br>
+      <strong>Subdivisiones:</strong> F1_DIAGNOSTICO · F2_MAP · F3_EXITO · FINALIZADAS<br>
+      <strong>Al llegar F3:</strong> se mueve a ③ INICIADAS.</div>
     </div>
     <div class="col-card">
-      <h4>② Operación fuera del servicio</h4>
-      <p style="font-size:12px;"><strong>Viene de un proveedor</strong> con comisión pactada. No paga F1, no sigue el flujo del servicio.</p>
-      <div class="note"><strong>Decisión final:</strong> presentar como INBRUTO al Programa IN · quedárnosla nosotros · devolverla al proveedor.</div>
+      <h4>② Op fuera del servicio</h4>
+      <p style="font-size:12px;"><strong>Viene de proveedor</strong> con comisión. No paga F1.</p>
+      <div class="note"><strong>Vive en:</strong> <code>02_OPERACIONES_FUERA_SERVICIO/</code><br>
+      <strong>Subdivisiones:</strong> EN_ANALISIS · DERIVADAS_INBRUTO · DESCARTADAS<br>
+      <strong>Decisión final:</strong> INBRUTO Programa · propia · devolver al proveedor.</div>
     </div>
     <div class="col-card">
       <h4>③ Operación iniciada</h4>
-      <p style="font-size:12px;"><strong>Ya en ejecución.</strong> Equipo gestiona obra/venta. Aquí entran las que llegan a F3.</p>
-      <div class="note"><strong>Origen doble</strong> (trazabilidad):<br>
-      · DESDE_SERVICIO/ (cliente escaló al llegar F3)<br>
-      · DESDE_FUERA_SERVICIO/ (nos la quedamos)</div>
+      <p style="font-size:12px;"><strong>Ya en ejecución.</strong> Equipo gestiona obra/venta.</p>
+      <div class="note"><strong>Vive en:</strong> <code>03_OPERACIONES_INICIADAS/</code><br>
+      <strong>Subdivisiones:</strong> DESDE_SERVICIO · DESDE_FUERA_SERVICIO · FINALIZADAS<br>
+      <strong>Origen doble</strong> para trazabilidad.</div>
     </div>
   </div>
 </section>
 
-<!-- ============== 2. FLUJO ============== -->
+<!-- ============== 2. FLUJO VISUAL ============== -->
 <section>
-  <h2><span class="num">02</span>Flujo entre los 3 tipos</h2>
-  <p>Una operación nunca vive en dos sitios. Cuando cambia de tipo o de fase, su carpeta <strong>se mueve</strong>.</p>
+  <h2><span class="num">02</span>Flujo y transiciones — qué se mueve, qué se crea, qué es atajo</h2>
+  <p>Cada cambio de estado de una operación tiene <strong>una acción concreta</strong>. Una sola fuente de verdad por carpeta — los atajos son punteros, no copias.</p>
 
-<div class="flow">     <strong>① SERVICIO</strong>                                  <strong>② FUERA SERVICIO</strong>
-   (cliente paga F1)                              (proveedor con comisión)
-        │                                                │
-       F1 <span class="arrow">→</span> F2                                       EN_ANALISIS
-        │                                                │
-        ├─ cliente acaba sin escalar a F3              ├─ derivada como INBRUTO
-        │       <span class="arrow">→</span> FINALIZADAS dentro de ①                    │       <span class="arrow">→</span> DERIVADAS_INBRUTO dentro de ②
-        │                                                │
-        │  cliente llega a F3                           ├─ devolvemos al proveedor
-        │  (= ejecución venta/explotación)              │       <span class="arrow">→</span> DESCARTADAS dentro de ②
-        │              <span class="arrow">↓</span>                                    │
-        │                                                │  nos la quedamos
-        │                                                │              <span class="arrow">↓</span>
-        └────────────────<span class="arrow">┐</span>              <span class="arrow">┌</span>──────────────────┘
-                         <span class="arrow">↓</span>              <span class="arrow">↓</span>
-                  <strong>③ OPERACIÓN INICIADA</strong>
-            (subdividida por origen para trazabilidad)
-              ├── DESDE_SERVICIO/
-              └── DESDE_FUERA_SERVICIO/</div>
+  <div class="actions-legend">
+    <div class="item"><span class="action-tag tag-create">CREAR</span> Carpeta nueva</div>
+    <div class="item"><span class="action-tag tag-move">MOVER</span> Carpeta entera cambia de ubicación</div>
+    <div class="item"><span class="action-tag tag-shortcut">CREAR ATAJO</span> Apuntador a la carpeta real</div>
+    <div class="item"><span class="action-tag tag-delete-shortcut">BORRAR ATAJO</span> Solo elimina el apuntador</div>
+  </div>
+
+  <!-- BLOQUE 1: SERVICIO -->
+  <div class="flow-block">
+    <div class="flow-header">① Flujo de una op del servicio</div>
+
+    <div class="transition">
+      <div class="trigger"><strong>EVENTO:</strong> nuevo cliente firma contrato F1 (paga 289€)</div>
+      <div class="from empty">— (no existe aún)</div>
+      <div class="action-cell">
+        <span class="action-tag tag-create">CREAR</span>
+        <span class="arrow">→</span>
+      </div>
+      <div class="to"><code>01_SERVICIO/F1_DIAGNOSTICO/<br>NNN_Cliente_Ciudad/</code></div>
+    </div>
+
+    <div class="transition">
+      <div class="trigger"><strong>EVENTO:</strong> cliente decide continuar y firma F2</div>
+      <div class="from"><code>01_SERVICIO/F1_DIAGNOSTICO/<br>{op}/</code></div>
+      <div class="action-cell">
+        <span class="action-tag tag-move">MOVER</span>
+        <span class="arrow">→</span>
+      </div>
+      <div class="to"><code>01_SERVICIO/F2_MAP/<br>{op}/</code></div>
+    </div>
+
+    <div class="transition">
+      <div class="trigger"><strong>EVENTO:</strong> cliente llega a F3 (ejecución venta/explotación) — paso doble</div>
+      <div class="from"><code>01_SERVICIO/F2_MAP/<br>{op}/</code></div>
+      <div class="action-cell">
+        <span class="action-tag tag-move">MOVER</span>
+        <span class="arrow">→</span>
+      </div>
+      <div class="to"><code>03_INICIADAS/<br>DESDE_SERVICIO/<br>{op}/</code></div>
+    </div>
+
+    <div class="transition">
+      <div class="trigger"><strong>+ ADEMÁS</strong> (mismo evento): se crea atajo en F3 para mantener visibilidad desde el servicio</div>
+      <div class="from"><code>03_INICIADAS/<br>DESDE_SERVICIO/{op}/</code><br>(carpeta REAL)</div>
+      <div class="action-cell">
+        <span class="action-tag tag-shortcut">CREAR ATAJO</span>
+        <span class="arrow">→</span>
+      </div>
+      <div class="to"><code>01_SERVICIO/F3_EXITO/<br>{op} ↗</code><br>(atajo apunta a la real)</div>
+    </div>
+
+    <div class="transition">
+      <div class="trigger"><strong>EVENTO:</strong> ejecución completada (venta cerrada o explotación)</div>
+      <div class="from"><code>03_INICIADAS/<br>DESDE_SERVICIO/{op}/</code></div>
+      <div class="action-cell">
+        <span class="action-tag tag-move">MOVER</span>
+        <span class="arrow">→</span>
+      </div>
+      <div class="to"><code>03_INICIADAS/<br>FINALIZADAS/<br>{op}/</code></div>
+    </div>
+
+    <div class="transition">
+      <div class="trigger"><strong>+ ADEMÁS</strong> (mismo evento): borrar el atajo que ya no tiene sentido</div>
+      <div class="from"><code>01_SERVICIO/F3_EXITO/<br>{op} ↗</code></div>
+      <div class="action-cell">
+        <span class="action-tag tag-delete-shortcut">BORRAR ATAJO</span>
+        <span class="arrow">→</span>
+      </div>
+      <div class="to empty">(la carpeta real NO se borra,<br>está a salvo en FINALIZADAS)</div>
+    </div>
+
+    <div class="transition">
+      <div class="trigger"><strong>EVENTO ALTERNATIVO:</strong> cliente acaba el servicio sin escalar a F3 (en F1 o F2)</div>
+      <div class="from"><code>01_SERVICIO/F1_DIAGNOSTICO/{op}/</code><br>o <code>F2_MAP/{op}/</code></div>
+      <div class="action-cell">
+        <span class="action-tag tag-move">MOVER</span>
+        <span class="arrow">→</span>
+      </div>
+      <div class="to"><code>01_SERVICIO/<br>FINALIZADAS/<br>{op}/</code></div>
+    </div>
+  </div>
+
+  <!-- BLOQUE 2: FUERA SERVICIO -->
+  <div class="flow-block">
+    <div class="flow-header">② Flujo de una op fuera del servicio</div>
+
+    <div class="transition">
+      <div class="trigger"><strong>EVENTO:</strong> proveedor nos pasa oportunidad nueva</div>
+      <div class="from empty">— (no existe aún)</div>
+      <div class="action-cell">
+        <span class="action-tag tag-create">CREAR</span>
+        <span class="arrow">→</span>
+      </div>
+      <div class="to"><code>02_FUERA_SERVICIO/<br>EN_ANALISIS/<br>Ciudad_Identificador/</code></div>
+    </div>
+
+    <div class="transition">
+      <div class="trigger"><strong>DECISIÓN A:</strong> derivamos al Programa IN como INBRUTO</div>
+      <div class="from"><code>02_FUERA_SERVICIO/<br>EN_ANALISIS/{op}/</code></div>
+      <div class="action-cell">
+        <span class="action-tag tag-move">MOVER</span>
+        <span class="arrow">→</span>
+      </div>
+      <div class="to"><code>02_FUERA_SERVICIO/<br>DERIVADAS_INBRUTO/<br>{op}/</code></div>
+    </div>
+
+    <div class="transition">
+      <div class="trigger"><strong>DECISIÓN B:</strong> devolvemos al proveedor (no encaja)</div>
+      <div class="from"><code>02_FUERA_SERVICIO/<br>EN_ANALISIS/{op}/</code></div>
+      <div class="action-cell">
+        <span class="action-tag tag-move">MOVER</span>
+        <span class="arrow">→</span>
+      </div>
+      <div class="to"><code>02_FUERA_SERVICIO/<br>DESCARTADAS/<br>{op}/</code></div>
+    </div>
+
+    <div class="transition">
+      <div class="trigger"><strong>DECISIÓN C:</strong> nos la quedamos — pasa a ejecución</div>
+      <div class="from"><code>02_FUERA_SERVICIO/<br>EN_ANALISIS/{op}/</code></div>
+      <div class="action-cell">
+        <span class="action-tag tag-move">MOVER</span>
+        <span class="arrow">→</span>
+      </div>
+      <div class="to"><code>03_INICIADAS/<br>DESDE_FUERA_SERVICIO/<br>{op}/</code></div>
+    </div>
+  </div>
+
+  <!-- BLOQUE 3: INICIADAS -->
+  <div class="flow-block">
+    <div class="flow-header">③ Cierre de una op iniciada (cualquier origen)</div>
+
+    <div class="transition">
+      <div class="trigger"><strong>EVENTO:</strong> ejecución completada</div>
+      <div class="from"><code>03_INICIADAS/<br>DESDE_SERVICIO/{op}/</code><br>o<br><code>DESDE_FUERA_SERVICIO/{op}/</code></div>
+      <div class="action-cell">
+        <span class="action-tag tag-move">MOVER</span>
+        <span class="arrow">→</span>
+      </div>
+      <div class="to"><code>03_INICIADAS/<br>FINALIZADAS/<br>{op}/</code></div>
+    </div>
+
+    <div class="transition">
+      <div class="trigger"><strong>+ SI venía de servicio:</strong> borrar el atajo en F3 del servicio</div>
+      <div class="from"><code>01_SERVICIO/F3_EXITO/<br>{op} ↗</code></div>
+      <div class="action-cell">
+        <span class="action-tag tag-delete-shortcut">BORRAR ATAJO</span>
+        <span class="arrow">→</span>
+      </div>
+      <div class="to empty">(carpeta real intacta<br>en FINALIZADAS)</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Regla de oro:</strong> ninguna acción crea una "copia". Solo existen carpetas REALES (única fuente de verdad) y ATAJOS (apuntadores). Si borras un atajo, la carpeta real sobrevive. Si trabajas dentro de un atajo, modificas la carpeta real (no se duplica).
+  </div>
 </section>
 
 <!-- ============== 3. ARBOL RAIZ ============== -->
@@ -221,11 +468,11 @@ footer .left { font-weight: 600; color: var(--navy); }
 <pre class="tree"><span class="h">📁 CdU DE 0 a ÉXITO/</span>
 │
 ├── 00_SERVICIO_KIT/                  <span class="comment"># Plantillería del servicio (kit profesional)</span>
-├── 01_OPERACIONES_SERVICIO/          <span class="comment"># Ops del servicio en F1 o F2</span>
+├── 01_OPERACIONES_SERVICIO/          <span class="comment"># Ops del servicio en F1, F2 o F3 (atajo)</span>
 ├── 02_OPERACIONES_FUERA_SERVICIO/    <span class="comment"># Ops de proveedor</span>
 ├── 03_OPERACIONES_INICIADAS/         <span class="comment"># Ops en ejecución (F3 del servicio o propias)</span>
 ├── 04_EMPRESA/                       <span class="comment"># SL · finanzas · equipo · marketing</span>
-├── 05_NORMATIVA_CCAA/                <span class="comment"># Requisitos por localidades</span>
+├── 05_NORMATIVA_CCAA/                <span class="comment"># Requisitos urbanísticos por localidades</span>
 └── _ARCHIVO/                         <span class="comment"># Histórico sin actividad</span>
 </pre>
 </section>
@@ -235,85 +482,66 @@ footer .left { font-weight: 600; color: var(--navy); }
   <h2><span class="num">04</span>Árbol detallado de cada carpeta raíz</h2>
 
   <h3>00_SERVICIO_KIT — plantillería del servicio</h3>
-  <p>Aquí vive <strong>el kit profesional del servicio CdU</strong>: contratos plantilla, guiones de reunión, materiales metodológicos. No son operaciones — son los recursos que se usan en cualquier operación de servicio.</p>
 <pre class="tree"><span class="h">00_SERVICIO_KIT/</span>
-├── FASE_1_DIAGNOSTICO/        <span class="comment"># Guion reunión bienvenida + entrega · contrato F1 plantilla · preguntas-cortas</span>
-├── FASE_2_MAP/                <span class="comment"># 9 carpetas temáticas: Negociación · CCP · Fiscal · Comunidad · Obras · Entes…</span>
+├── FASE_1_DIAGNOSTICO/        <span class="comment"># Guion bienvenida + entrega · contrato F1 plantilla</span>
+├── FASE_2_MAP/                <span class="comment"># Negociación · CCP · Fiscal · Comunidad · Obras…</span>
 ├── FASE_3_EXITO/              <span class="comment"># Contrato F3 plantilla · materiales comercialización</span>
 ├── CONTRACTUAL/                <span class="comment"># Acuerdos colaboración + CCP transversales</span>
 └── CHECKLIST_INTERNO/         <span class="comment"># Trámites registrales · plantilla visita local</span>
 </pre>
 
-  <h3>01_OPERACIONES_SERVICIO — ops del servicio en curso</h3>
-  <p>Una op pasa por <strong>F1 (diagnóstico) → F2 (MAP)</strong>. Si llega a F3 → se mueve a <code>03_INICIADAS/DESDE_SERVICIO/</code>. Si acaba antes sin escalar → a FINALIZADAS.</p>
+  <h3>01_OPERACIONES_SERVICIO — ops del servicio</h3>
 <pre class="tree"><span class="h">01_OPERACIONES_SERVICIO/</span>
-├── _PLANTILLA/                <span class="comment"># Plantilla a copiar al arrancar nueva op</span>
-├── F1_DIAGNOSTICO/             <span class="comment"># Ops con F1 activa o entregada</span>
+├── _PLANTILLA/                <span class="comment"># Copiar al arrancar nueva op</span>
+├── F1_DIAGNOSTICO/             <span class="comment"># Ops en F1 (carpetas reales)</span>
 │     └── 001_PabloBenitez_Castellon/
-├── F2_MAP/                     <span class="comment"># Ops en MAP (hoy vacío)</span>
-└── FINALIZADAS/                <span class="comment"># Servicio cerrado sin escalar a iniciada</span>
+├── F2_MAP/                     <span class="comment"># Ops en F2 (carpetas reales)</span>
+├── F3_EXITO/                   <span class="comment"># Ops en F3 (ATAJOS ↗ apuntan a INICIADAS/DESDE_SERVICIO)</span>
+└── FINALIZADAS/                <span class="comment"># Cliente acabó sin escalar a F3</span>
 </pre>
 
   <h3>02_OPERACIONES_FUERA_SERVICIO — ops de proveedor</h3>
-  <p>Ops que llegan vía proveedor externo (con comisión pactada). No pasan por F1/F2 del servicio.</p>
 <pre class="tree"><span class="h">02_OPERACIONES_FUERA_SERVICIO/</span>
 ├── _PLANTILLA/                <span class="comment"># Plantilla ligera (sin F1/F2/F3 internas)</span>
 ├── EN_ANALISIS/                <span class="comment"># En estudio · decisión pendiente</span>
-│     ├── Aspe_AvdaJuanCarlos/
-│     ├── Campello_SantPere43/
-│     ├── Crevillente_VirgenPilar6_Esther/
-│     ├── Elche_JuanEspuche/
-│     └── Elche_TorreQuevedo/
-├── DERIVADAS_INBRUTO/          <span class="comment"># Presentadas al Programa IN como INBRUTO</span>
-└── DESCARTADAS/                <span class="comment"># Devueltas al proveedor o no encajan</span>
+├── DERIVADAS_INBRUTO/          <span class="comment"># Presentadas al Programa IN</span>
+└── DESCARTADAS/                <span class="comment"># Devueltas al proveedor</span>
 </pre>
 
   <h3>03_OPERACIONES_INICIADAS — ops en ejecución</h3>
-  <p>Cuando una op llega a F3 (servicio) o cuando nos quedamos una op del proveedor (fuera servicio). El sub-directorio indica el origen.</p>
 <pre class="tree"><span class="h">03_OPERACIONES_INICIADAS/</span>
-├── _PLANTILLA/                <span class="comment"># Plantilla completa (igual que op servicio + F3 EXITO)</span>
+├── _PLANTILLA/
 ├── DESDE_SERVICIO/             <span class="comment"># Llegaron al alcanzar F3 desde ①</span>
 ├── DESDE_FUERA_SERVICIO/       <span class="comment"># Llegaron al quedárnoslas desde ②</span>
 │     └── 01_TorresCotillas/
-└── FINALIZADAS/                <span class="comment"># Ejecución cerrada (venta/explotación completada)</span>
+└── FINALIZADAS/                <span class="comment"># Ejecución cerrada (venta/explotación)</span>
 </pre>
 
   <h3>04_EMPRESA — todo lo de la SL</h3>
-  <p>Sociedad, finanzas, equipo, fiscal y marketing. Es la única zona NO operativa de ops — es el back-office de la SL CdU de 0 a Éxito (B26888636).</p>
 <pre class="tree"><span class="h">04_EMPRESA/</span>
 ├── SOCIEDAD/                  <span class="comment"># Constitución · escrituras · pacto socios · juntas</span>
-├── FINANZAS/                  <span class="comment"># Banca SL · póliza Caixa · modelos 303/232 · IVA · IS</span>
-├── FISCAL_CASOS/              <span class="comment"># Casos abiertos AEAT · sl-cdu (FISCUS)</span>
+├── FINANZAS/                  <span class="comment"># Banca SL · póliza · modelos 303/232 · IVA · IS</span>
+├── FISCAL_CASOS/              <span class="comment"># Casos abiertos AEAT</span>
 ├── EQUIPO/                    <span class="comment"># Contratos socios · fichas Xavi/Paco/Dani/arquitectos</span>
 └── MARKETING/                 <span class="comment"># Imagen corp · landings · presentaciones · imágenes/videos ops</span>
 </pre>
 
   <h3>05_NORMATIVA_CCAA — requisitos urbanísticos</h3>
-  <p>Doctrina urbanística + preguntas-tipo organizadas por CCAA y municipio. Material de consulta para diagnósticos y proyectos.</p>
 <pre class="tree"><span class="h">05_NORMATIVA_CCAA/</span>
 ├── REQUISITOS_POR_LOCALIDADES/
 │     ├── COMUNIDAD_VALENCIANA/
-│     │     ├── Elche/  Crevillente/  Aspe/  Campello/  …
 │     ├── CATALUNYA/
 │     ├── MURCIA/
 │     └── (otras CCAA según necesidad)
 └── PREGUNTAS_AYUNTAMIENTO.pdf
 </pre>
-
-  <h3>_ARCHIVO — histórico inactivo</h3>
-  <p>Operaciones y materiales con más de 6 meses sin actividad. Nada se borra — se archiva.</p>
-<pre class="tree"><span class="h">_ARCHIVO/</span>
-├── OPS_HISTORICAS/
-└── MATERIAL_VIEJO/
-</pre>
 </section>
 
-<!-- ============== 5. PLANTILLA INTERNA POR TIPO ============== -->
+<!-- ============== 5. PLANTILLA INTERNA ============== -->
 <section>
   <h2><span class="num">05</span>Plantilla interna de cada op</h2>
-  <p>Lo que cambia es <strong>si las fases F1/F2/F3 están visibles como subcarpetas dentro de la op</strong>.</p>
 
-  <h3>Tipo ① · Servicio (y ③ iniciada que viene desde servicio)</h3>
+  <h3>Tipo ① servicio · y ③ iniciada desde servicio</h3>
 <pre class="tree"><span class="h">📁 {NNN}_{Cliente}_{Ciudad}/</span>
 ├── 00_INFO.md                          <span class="comment"># Ficha viva: cliente, dirección, m², estado, link Trello</span>
 │
@@ -321,7 +549,7 @@ footer .left { font-weight: 600; color: var(--navy); }
 │     ├── 01_VIABILIDAD/
 │     │     └── ECONOMICA/  ADMINISTRATIVA/  TECNICA/  JURIDICA/
 │     ├── 02_REUNIONES/                 <span class="comment"># Acta bienvenida + entrega F1</span>
-│     ├── 03_DOCUMENTACION/             <span class="comment"># Nota simple, catastro, comunicaciones cliente</span>
+│     ├── 03_DOCUMENTACION/             <span class="comment"># Nota simple, catastro, comunicaciones</span>
 │     └── 04_INFORME_F1/                <span class="comment"># Entregable final F1</span>
 │
 ├── F2_MAP/
@@ -332,20 +560,16 @@ footer .left { font-weight: 600; color: var(--navy); }
 │     ├── 09_PARTICIPES_CCP/            <span class="comment"># Si hay CCP/JV/INBRUTO</span>
 │     └── 10_REUNIONES/
 │
-├── F3_EXITO/                           <span class="comment"># Solo si la op llegó a INICIADAS</span>
+├── F3_EXITO/                           <span class="comment"># Solo activa cuando la op pasa a INICIADAS</span>
 │     ├── 11_COMERCIALIZACION/
-│     ├── 12_VENTA/                     <span class="comment"># Escrituras venta</span>
+│     ├── 12_VENTA/
 │     └── 13_CIERRE/
 │
 └── 14_FOTOGRAFIAS/                     <span class="comment"># Transversal F1-F3</span>
       └── ESTADO_ORIGINAL/  AVANCES/  PASO_4_ALQUILER/  PASO_4_VENTA/
 </pre>
 
-  <div class="callout">
-    <strong>Doble visibilidad de fase:</strong> la op vive en la carpeta padre que indica su fase actual (<code>01_SERVICIO/F1_DIAGNOSTICO/{op}</code> · <code>F2_MAP/{op}</code> · <code>03_INICIADAS/...{op}</code>). Dentro de la op, las 3 sub-carpetas F1/F2/F3 acumulan el material de cada fase. Cuando pasa de F1 a F2 → se mueve la carpeta padre, conservando todo el contenido interno.
-  </div>
-
-  <h3>Tipo ② · Fuera del servicio — plantilla ligera</h3>
+  <h3>Tipo ② fuera del servicio — plantilla ligera</h3>
 <pre class="tree"><span class="h">📁 {Ciudad}_{Identificador}/</span>
 ├── 00_INFO.md                          <span class="comment"># Proveedor, comisión pactada, decisión final</span>
 ├── 01_VIABILIDAD/
@@ -354,28 +578,61 @@ footer .left { font-weight: 600; color: var(--navy); }
 │     └── PROVEEDOR/  CONSULTAS/  PRESUPUESTOS/
 └── 03_REUNIONES/
 </pre>
-  <p style="font-size: 12px; color: var(--muted);">Si nos la quedamos → se mueve a <code>03_INICIADAS/DESDE_FUERA_SERVICIO/</code> y se reorganiza añadiendo F2_MAP/ y F3_EXITO/ (lo previo en VIABILIDAD/DOCUMENTACION/REUNIONES se reubica en F1_DIAGNOSTICO/).</p>
 </section>
 
-<!-- ============== 6. NAMING ============== -->
+<!-- ============== 6. COMO CREAR UN ATAJO ============== -->
 <section>
-  <h2><span class="num">06</span>Convención de nombres</h2>
+  <h2><span class="num">06</span>Cómo crear un atajo en Drive — mini-guía</h2>
+  <p>Un atajo en Drive es un <strong>apuntador a una carpeta real</strong>. Se reconoce por la flechita ↗ en el icono. Sirve para "ver" la misma carpeta desde dos ubicaciones sin duplicarla.</p>
+
+  <h4>Crear el atajo (desde drive.google.com)</h4>
+  <div class="steps">
+    <ol>
+      <li>Ir a la carpeta REAL (ej. <code>03_INICIADAS/DESDE_SERVICIO/{op}/</code>).</li>
+      <li>Clic derecho sobre la carpeta → <strong>Organizar</strong> → <strong>Añadir atajo</strong>.</li>
+      <li>Drive abre un selector. Navegar y seleccionar la carpeta destino: <code>01_SERVICIO/F3_EXITO/</code>.</li>
+      <li>Pulsar <strong>Añadir</strong>. El atajo aparece en F3_EXITO con la flechita ↗.</li>
+    </ol>
+  </div>
+
+  <h4>Cómo funciona en el día a día</h4>
+  <table>
+    <thead>
+      <tr><th>Acción</th><th>Qué pasa</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Subir archivo dentro del atajo</td><td>Se guarda en la carpeta REAL (en INICIADAS). No hay copia.</td></tr>
+      <tr><td>Editar un documento dentro del atajo</td><td>Edita el original. Quien lo abra desde la real o desde el atajo, ve lo mismo.</td></tr>
+      <tr><td>Borrar el atajo (clic derecho → eliminar)</td><td>Solo desaparece el atajo. <strong>La carpeta real NO se borra</strong>.</td></tr>
+      <tr><td>Borrar la carpeta real</td><td>El atajo queda roto. Por eso siempre operamos sobre la real, nunca borramos la real mientras existe el atajo.</td></tr>
+      <tr><td>Permisos</td><td>El atajo hereda los permisos de la carpeta real. En Shared Drive todos los del equipo ya tienen acceso.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>Regla operativa:</strong> siempre se trabaja dentro de la carpeta REAL (la que está en <code>03_INICIADAS/</code>). El atajo en <code>01_SERVICIO/F3_EXITO/</code> es solo una "ventana" para que sigamos viendo qué ops del servicio están en F3.
+  </div>
+</section>
+
+<!-- ============== 7. NAMING ============== -->
+<section>
+  <h2><span class="num">07</span>Convención de nombres</h2>
   <table>
     <thead>
       <tr><th style="width:28%">Tipo</th><th>Formato</th><th>Ejemplo</th></tr>
     </thead>
     <tbody>
-      <tr><td>Op Servicio</td><td><code>NNN_{Cliente}_{Ciudad}/</code> · NNN = orden entrada al servicio</td><td><code>001_PabloBenitez_Castellon</code></td></tr>
-      <tr><td>Op Fuera Servicio</td><td><code>{Ciudad}_{Identificador}/</code></td><td><code>Aspe_AvdaJuanCarlos</code> · <code>Elche_TorreQuevedo</code></td></tr>
-      <tr><td>Op Iniciada</td><td><code>NN_{NombreOp}/</code> · NN = orden iniciación</td><td><code>01_TorresCotillas</code></td></tr>
+      <tr><td>Op Servicio</td><td><code>NNN_{Cliente}_{Ciudad}/</code></td><td><code>001_PabloBenitez_Castellon</code></td></tr>
+      <tr><td>Op Fuera Servicio</td><td><code>{Ciudad}_{Identificador}/</code></td><td><code>Aspe_AvdaJuanCarlos</code></td></tr>
+      <tr><td>Op Iniciada</td><td><code>NN_{NombreOp}/</code></td><td><code>01_TorresCotillas</code></td></tr>
       <tr><td>Subcarpetas internas</td><td><code>NN_NOMBRE</code> · sin acentos · sin espacios · MAYÚSCULA</td><td><code>01_VIABILIDAD_ECONOMICA</code> · <code>F2_MAP</code></td></tr>
     </tbody>
   </table>
 </section>
 
-<!-- ============== 7. VINCULO DRIVE-TRELLO ============== -->
+<!-- ============== 8. VINCULO DRIVE-TRELLO ============== -->
 <section>
-  <h2><span class="num">07</span>Vínculo Drive ↔ Trello</h2>
+  <h2><span class="num">08</span>Vínculo Drive ↔ Trello</h2>
   <p>Drive almacena, Trello gestiona. Cada zona Drive tiene su tablero correspondiente.</p>
 
   <table>
@@ -383,35 +640,34 @@ footer .left { font-weight: 600; color: var(--navy); }
       <tr><th style="width:42%">Drive</th><th style="width:30%">Trello (tablero)</th><th>Lista o card</th></tr>
     </thead>
     <tbody>
-      <tr><td><code>01_OPERACIONES_SERVICIO/F{1,2}/{op}/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>1 card por op · etiqueta de fase</td></tr>
+      <tr><td><code>01_OPERACIONES_SERVICIO/F{1,2}/{op}/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>1 card por op · etiqueta fase</td></tr>
       <tr><td><code>02_OPERACIONES_FUERA_SERVICIO/EN_ANALISIS/{op}/</code></td><td><strong>ANALISIS DE OPERACIONES</strong></td><td>1 lista por op</td></tr>
       <tr><td><code>03_OPERACIONES_INICIADAS/{DESDE_*}/{op}/</code></td><td><strong>Board propio por op</strong></td><td>Listas: DT · Obras · Admin/Fiscal · Comercial</td></tr>
       <tr><td><code>04_EMPRESA/SOCIEDAD/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>Lista "SOCIEDAD"</td></tr>
       <tr><td><code>04_EMPRESA/FINANZAS/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>Lista "FINANZAS"</td></tr>
       <tr><td><code>04_EMPRESA/MARKETING/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>Lista "MARKETING"</td></tr>
-      <tr><td><code>00_SERVICIO_KIT/</code></td><td>Sin tablero (plantillería estable)</td><td>—</td></tr>
     </tbody>
   </table>
 
   <div class="callout">
-    <strong>Regla del enlace doble:</strong> toda card Trello lleva el link a su subcarpeta Drive. Toda op en Drive tiene en su <code>00_INFO.md</code> el link al card o board Trello.
+    <strong>Enlace doble:</strong> toda card Trello lleva el link a su subcarpeta Drive. Toda op en Drive tiene en su <code>00_INFO.md</code> el link al card o board Trello.
   </div>
 </section>
 
-<!-- ============== 8. PRINCIPIOS ============== -->
+<!-- ============== 9. PRINCIPIOS ============== -->
 <section>
-  <h2><span class="num">08</span>5 principios que mantienen el sistema</h2>
+  <h2><span class="num">09</span>5 principios que mantienen el sistema</h2>
   <ol>
     <li><strong>Tres tipos, tres carpetas raíz.</strong> Ninguna op vive en dos sitios.</li>
-    <li><strong>La fase se ve en el path.</strong> Cambiar de fase = mover la carpeta padre. Conserva el material interno intacto.</li>
-    <li><strong>F3 = ejecución → INICIADAS.</strong> Cuando una op del servicio llega a F3, deja de ser servicio y pasa a iniciada.</li>
-    <li><strong>Trazabilidad del origen.</strong> Dentro de INICIADAS, <code>DESDE_SERVICIO/</code> vs <code>DESDE_FUERA_SERVICIO/</code>.</li>
-    <li><strong>Nada se borra, todo se archiva.</strong></li>
+    <li><strong>La fase se ve en el path.</strong> Cambiar de fase = mover la carpeta padre.</li>
+    <li><strong>F3 = ejecución → INICIADAS.</strong> Cuando una op del servicio llega a F3, pasa a iniciada + atajo en F3_EXITO para visibilidad.</li>
+    <li><strong>Atajos no duplican.</strong> Una sola fuente de verdad (la carpeta REAL en INICIADAS). El atajo es solo "ventana".</li>
+    <li><strong>Nada se borra, todo se archiva.</strong> Cuando una op cierra, va a FINALIZADAS.</li>
   </ol>
 </section>
 
 <footer>
-  <div class="left">COTE IA · Modelo de carpetas Drive CdU · v0.5</div>
+  <div class="left">COTE IA · Modelo de carpetas Drive CdU · v0.6</div>
   <div>Borrador para reunión equipo</div>
 </footer>
 
