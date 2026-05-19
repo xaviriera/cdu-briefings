@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>COTE IA · Sistema de carpetas Drive CdU · v0.4</title>
-<meta name="description" content="Propuesta de COTE IA para organizar el Shared Drive del proyecto CdU de 0 a Éxito. Tres tipos de operación, fases visibles, una sola lógica.">
+<title>COTE IA · Modelo de carpetas Drive CdU · v0.5</title>
+<meta name="description" content="Modelo de organización del Shared Drive del proyecto CdU de 0 a Éxito. Tres tipos de operación, fases visibles, una sola lógica.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
@@ -48,19 +48,6 @@ body {
 .brand-tag .brand { font-size: 14px; font-weight: 800; color: var(--ochre); letter-spacing: 0.3px; }
 .brand-tag .sub { font-size: 11px; color: #999; margin-top: 2px; }
 
-.delta {
-  background: var(--paper);
-  border: 2px solid var(--ochre);
-  border-radius: 6px;
-  padding: 18px 22px;
-  margin: 24px 0;
-}
-.delta-title {
-  font-size: 12px; font-weight: 800; color: var(--ochre);
-  text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px;
-}
-.delta p { font-size: 14px; line-height: 1.6; }
-
 section { margin: 36px 0 28px; }
 section h2 {
   font-size: 18px; font-weight: 800; color: var(--navy);
@@ -73,8 +60,8 @@ section h2 .num {
   margin-right: 10px; letter-spacing: 0.4px; vertical-align: middle;
 }
 section h3 {
-  font-size: 14px; font-weight: 700; color: var(--navy);
-  margin: 18px 0 8px; text-transform: uppercase; letter-spacing: 0.4px;
+  font-size: 13px; font-weight: 700; color: var(--ochre);
+  margin: 22px 0 8px; text-transform: uppercase; letter-spacing: 0.5px;
 }
 section p { margin-bottom: 10px; }
 section ul, section ol { margin: 8px 0 14px 20px; }
@@ -85,7 +72,7 @@ section strong { color: var(--navy); font-weight: 700; }
   background: var(--soft);
   border-left: 4px solid var(--ochre);
   padding: 18px 22px;
-  margin: 18px 0;
+  margin: 12px 0;
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 12px;
   line-height: 1.65;
@@ -143,12 +130,10 @@ td code {
   margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--line);
 }
 .col-card .note { font-size: 11px; color: var(--muted); margin-top: 8px; line-height: 1.4; }
-.col-card .ex { font-size: 11px; color: var(--navy); margin-top: 6px; }
-.col-card .ex code { font-size: 10.5px; background: var(--soft); padding: 1px 4px; border-radius: 2px; }
 
 .callout {
   background: var(--soft); border-radius: 6px;
-  padding: 14px 18px; margin: 18px 0;
+  padding: 14px 18px; margin: 14px 0;
   border-left: 4px solid var(--navy); font-size: 13px;
 }
 .callout strong { color: var(--navy); }
@@ -165,46 +150,39 @@ footer .left { font-weight: 600; color: var(--navy); }
 
 <div class="header">
   <div>
-    <h1>Sistema de carpetas — Drive CdU<small>Tres tipos de operación · fases visibles · una sola lógica</small></h1>
+    <h1>Modelo de carpetas Drive — CdU<small>Tres tipos de operación · fases visibles · una sola lógica</small></h1>
   </div>
   <div class="brand-tag">
-    <div class="brand">COTE IA · Propuesta v0.4</div>
-    <div class="sub">19 may 2026 · Shared Drive del equipo</div>
+    <div class="brand">COTE IA · Propuesta v0.5</div>
+    <div class="sub">Shared Drive del equipo</div>
   </div>
-</div>
-
-<div class="delta">
-  <div class="delta-title">Alcance</div>
-  <p>Solo el <strong>Shared Drive del equipo CdU</strong>: <code>G:\Unidades compartidas\CdU DE 0 A ÉXITO\CdU DE 0 a ÉXITO</code>. Cubre las ops del servicio (F1/F2/F3), las que llegan fuera del servicio (proveedores con comisión) y las ya iniciadas por el equipo. No incluye recursos personales ni material técnico individual.</p>
 </div>
 
 <!-- ============== 1. LOS 3 TIPOS ============== -->
 <section>
   <h2><span class="num">01</span>Los 3 tipos de operación</h2>
-  <p>Toda operación pertenece a uno de los 3 tipos. <strong>El tipo determina su carpeta raíz</strong>. La distinción es clara porque cada uno tiene origen, flujo y entregables distintos.</p>
+  <p>Toda operación pertenece a uno de los 3 tipos. <strong>El tipo determina dónde vive</strong>. Cada uno tiene origen, flujo y entregables distintos.</p>
 
   <div class="three-cols">
     <div class="col-card">
       <h4>① Operación del servicio</h4>
-      <p style="font-size:12px;"><strong>El cliente contrata.</strong> Empieza pagando F1 (289€). Si pasa, sigue a F2 y F3.</p>
-      <div class="note"><strong>Origen:</strong> contacto comercial, acción marketing, referido.<br>
-      <strong>Flujo:</strong> F1 DIAGNÓSTICO → F2 MAP → F3 ÉXITO.<br>
-      <strong>Carpeta padre indica fase</strong> (F1/, F2/, F3/, FINALIZADAS/).</div>
-      <div class="ex"><strong>Ejemplo hoy:</strong> <code>001_PabloBenitez_Castellon</code> en F1.<br>Históricas: Elda_AnaPrieto, Petrel_JoseFrances.</div>
+      <p style="font-size:12px;"><strong>El cliente contrata.</strong> Empieza pagando F1 (289€). Sigue a F2 si decide continuar.</p>
+      <div class="note"><strong>Origen:</strong> contacto comercial · marketing · referido.<br>
+      <strong>Flujo:</strong> F1 DIAGNÓSTICO → F2 MAP.<br>
+      <strong>La carpeta padre indica la fase</strong> (F1/, F2/).<br>
+      <strong>Cuando llega F3</strong> → pasa a ③ INICIADAS.</div>
     </div>
     <div class="col-card">
       <h4>② Operación fuera del servicio</h4>
-      <p style="font-size:12px;"><strong>Viene de un proveedor externo</strong> con comisión pactada. No paga F1, no sigue el flujo del servicio.</p>
+      <p style="font-size:12px;"><strong>Viene de un proveedor</strong> con comisión pactada. No paga F1, no sigue el flujo del servicio.</p>
       <div class="note"><strong>Decisión final:</strong> presentar como INBRUTO al Programa IN · quedárnosla nosotros · devolverla al proveedor.</div>
-      <div class="ex"><strong>Ejemplos hoy:</strong> Espuche, Esther Crevillente VP6, Av.Novelda, Quevedo, Aspe, Campello, Manuel López Quereda.</div>
     </div>
     <div class="col-card">
       <h4>③ Operación iniciada</h4>
-      <p style="font-size:12px;"><strong>El equipo es gestor.</strong> Ya en ejecución (compra firmada, obra en marcha).</p>
-      <div class="note"><strong>Origen doble</strong> (importante para trazabilidad):<br>
-      · desde ① servicio (cliente escaló y entramos)<br>
-      · desde ② fuera-servicio (nos la quedamos)</div>
-      <div class="ex"><strong>Ejemplo hoy:</strong> <code>01_TorresCotillas</code> (vino del proveedor René, nos la quedamos).</div>
+      <p style="font-size:12px;"><strong>Ya en ejecución.</strong> Equipo gestiona obra/venta. Aquí entran las que llegan a F3.</p>
+      <div class="note"><strong>Origen doble</strong> (trazabilidad):<br>
+      · DESDE_SERVICIO/ (cliente escaló al llegar F3)<br>
+      · DESDE_FUERA_SERVICIO/ (nos la quedamos)</div>
     </div>
   </div>
 </section>
@@ -212,105 +190,141 @@ footer .left { font-weight: 600; color: var(--navy); }
 <!-- ============== 2. FLUJO ============== -->
 <section>
   <h2><span class="num">02</span>Flujo entre los 3 tipos</h2>
-  <p>Una operación nunca vive en dos sitios. Cuando cambia de tipo o de fase, su carpeta <strong>se mueve</strong>, no se duplica.</p>
+  <p>Una operación nunca vive en dos sitios. Cuando cambia de tipo o de fase, su carpeta <strong>se mueve</strong>.</p>
 
-<div class="flow">      <strong>① SERVICIO</strong>                                <strong>② FUERA SERVICIO</strong>
-   (cliente paga F1)                            (proveedor con comisión)
-        │                                              │
-   F1 <span class="arrow">→</span> F2 <span class="arrow">→</span> F3                                EN_ANALISIS
-        │                                              │
-        ├─ cliente acaba sin entrar                  ├─ derivada como INBRUTO
-        │       <span class="arrow">→</span> FINALIZADAS dentro de ①                  │       <span class="arrow">→</span> DERIVADAS_INBRUTO dentro de ②
-        │                                              │
-        │                                              ├─ devolvemos al proveedor
-        │                                              │       <span class="arrow">→</span> DESCARTADAS dentro de ②
-        │                                              │
-        │  cliente escala y entramos nosotros        │  nos la quedamos
-        │              <span class="arrow">↓</span>                                  │              <span class="arrow">↓</span>
-        └──────────────<span class="arrow">┐</span>            <span class="arrow">┌</span>───────────────┘
-                       <span class="arrow">↓</span>            <span class="arrow">↓</span>
+<div class="flow">     <strong>① SERVICIO</strong>                                  <strong>② FUERA SERVICIO</strong>
+   (cliente paga F1)                              (proveedor con comisión)
+        │                                                │
+       F1 <span class="arrow">→</span> F2                                       EN_ANALISIS
+        │                                                │
+        ├─ cliente acaba sin escalar a F3              ├─ derivada como INBRUTO
+        │       <span class="arrow">→</span> FINALIZADAS dentro de ①                    │       <span class="arrow">→</span> DERIVADAS_INBRUTO dentro de ②
+        │                                                │
+        │  cliente llega a F3                           ├─ devolvemos al proveedor
+        │  (= ejecución venta/explotación)              │       <span class="arrow">→</span> DESCARTADAS dentro de ②
+        │              <span class="arrow">↓</span>                                    │
+        │                                                │  nos la quedamos
+        │                                                │              <span class="arrow">↓</span>
+        └────────────────<span class="arrow">┐</span>              <span class="arrow">┌</span>──────────────────┘
+                         <span class="arrow">↓</span>              <span class="arrow">↓</span>
                   <strong>③ OPERACIÓN INICIADA</strong>
             (subdividida por origen para trazabilidad)
               ├── DESDE_SERVICIO/
-              └── DESDE_FUERA_SERVICIO/  ← TDC vive aquí</div>
+              └── DESDE_FUERA_SERVICIO/</div>
 </section>
 
-<!-- ============== 3. ARBOL DRIVE ============== -->
+<!-- ============== 3. ARBOL RAIZ ============== -->
 <section>
-  <h2><span class="num">03</span>Drive — árbol raíz</h2>
-  <p>Raíz canónica: <code>CdU DE 0 a ÉXITO</code> (Shared Drive). <strong>8 carpetas raíz, ni una más</strong>.</p>
+  <h2><span class="num">03</span>Árbol raíz — vista general</h2>
+  <p>Raíz canónica: <code>CdU DE 0 a ÉXITO</code> (Shared Drive). <strong>7 carpetas raíz</strong>.</p>
 
 <pre class="tree"><span class="h">📁 CdU DE 0 a ÉXITO/</span>
 │
-├── <span class="h">00_SERVICIO_KIT/</span>                  <span class="comment"># Plantillería del servicio (antes: DOCUMENTACIÓN FASES)</span>
-│       ├── FASE_1_DIAGNOSTICO/        <span class="comment"># Guion bienvenida + entrega · contrato F1 · preguntas-cortas</span>
-│       ├── FASE_2_MAP/                <span class="comment"># 9 carpetas temáticas: Negociación, CCP, Fiscal, Comunidad, Obras…</span>
-│       ├── FASE_3_EXITO/              <span class="comment"># Contrato F3 · acuerdos colaboración</span>
-│       ├── CONTRACTUAL/                <span class="comment"># Acuerdos colaboración + CCP transversales</span>
-│       └── CHECKLIST_INTERNO/         <span class="comment"># Trámites registrales · plantilla visita local</span>
-│
-├── <span class="h">01_OPERACIONES_SERVICIO/</span>          <span class="comment"># Cliente paga F1 → flujo F1/F2/F3</span>
-│       ├── _PLANTILLA/
-│       ├── F1_DIAGNOSTICO/             <span class="comment"># Ops con F1 activa o entregada (aún no han pasado a F2)</span>
-│       │     └── 001_PabloBenitez_Castellon/
-│       ├── F2_MAP/                     <span class="comment"># Ops en MAP (vacío hoy)</span>
-│       ├── F3_EXITO/                   <span class="comment"># Ops en ÉXITO (vacío hoy)</span>
-│       └── FINALIZADAS/                <span class="comment"># Servicio acabado sin escalar a iniciada</span>
-│             ├── Elda_AnaPrieto/
-│             └── Petrel_JoseFrances/
-│
-├── <span class="h">02_OPERACIONES_FUERA_SERVICIO/</span>    <span class="comment"># Vienen de proveedor con comisión — no F1/F2</span>
-│       ├── _PLANTILLA/
-│       ├── EN_ANALISIS/                <span class="comment"># En estudio, decisión pendiente</span>
-│       │     ├── Aspe_AvdaJuanCarlos/
-│       │     ├── Campello_SantPere43/
-│       │     ├── Crevillente_VirgenPilar6_Esther/
-│       │     ├── Crevillente_AvNovelda_Esther/
-│       │     ├── Elche_JuanEspuche/
-│       │     ├── Elche_ManuelLopezQuereda/    <span class="comment"># Mover desde OTROS_TDC</span>
-│       │     └── Elche_TorreQuevedo/
-│       ├── DERIVADAS_INBRUTO/          <span class="comment"># Presentadas al Programa IN</span>
-│       └── DESCARTADAS/                 <span class="comment"># Devueltas al proveedor o no encajan</span>
-│
-├── <span class="h">03_OPERACIONES_INICIADAS/</span>         <span class="comment"># Equipo gestor — ya en ejecución</span>
-│       ├── _PLANTILLA/
-│       ├── DESDE_SERVICIO/             <span class="comment"># Llegaron tras escalar en ①</span>
-│       ├── DESDE_FUERA_SERVICIO/       <span class="comment"># Llegaron al quedárnoslas en ②</span>
-│       │     └── 01_TorresCotillas/    <span class="comment"># Limpiar bug 09 duplicado · sacar SL a EMPRESA</span>
-│       └── FINALIZADAS/
-│
-├── <span class="h">04_EMPRESA/</span>                       <span class="comment"># Todo lo transversal de la SL B26888636</span>
-│       ├── SOCIEDAD/                   <span class="comment"># Constitución · escrituras · pacto socios</span>
-│       ├── FINANZAS/                   <span class="comment"># Banca SL · póliza Caixa · modelo 303/232 · IS</span>
-│       ├── FISCAL_CASOS/               <span class="comment"># Casos abiertos AEAT · sl-cdu (FISCUS)</span>
-│       └── EQUIPO/                     <span class="comment"># Contratos socios · fichas Xavi/Paco/Dani/arquitectos</span>
-│
-├── <span class="h">05_MARKETING/</span>                     <span class="comment"># Imagen Corp · Imágenes/Videos Ops · Landings · Presentaciones · Reuniones</span>
-│
-├── <span class="h">06_NORMATIVA_CCAA/</span>                <span class="comment"># Requisitos por localidades + preguntas ayuntamiento</span>
-│
-└── <span class="h">_ARCHIVO/</span>                         <span class="comment"># Cementerio: TEMPORAL viejo, ops históricas &gt;6 meses sin actividad</span>
+├── 00_SERVICIO_KIT/                  <span class="comment"># Plantillería del servicio (kit profesional)</span>
+├── 01_OPERACIONES_SERVICIO/          <span class="comment"># Ops del servicio en F1 o F2</span>
+├── 02_OPERACIONES_FUERA_SERVICIO/    <span class="comment"># Ops de proveedor</span>
+├── 03_OPERACIONES_INICIADAS/         <span class="comment"># Ops en ejecución (F3 del servicio o propias)</span>
+├── 04_EMPRESA/                       <span class="comment"># SL · finanzas · equipo · marketing</span>
+├── 05_NORMATIVA_CCAA/                <span class="comment"># Requisitos por localidades</span>
+└── _ARCHIVO/                         <span class="comment"># Histórico sin actividad</span>
 </pre>
 </section>
 
-<!-- ============== 4. PLANTILLA INTERNA ============== -->
+<!-- ============== 4. ARBOL DETALLADO POR CARPETA ============== -->
 <section>
-  <h2><span class="num">04</span>Plantilla interna de cada tipo</h2>
-  <p>Cada tipo tiene su plantilla. Lo que cambia es <strong>si las fases F1/F2/F3 son carpetas visibles dentro de la op</strong>.</p>
+  <h2><span class="num">04</span>Árbol detallado de cada carpeta raíz</h2>
 
-  <h3>Tipo ① · Servicio — fases F1/F2/F3 dentro de la op</h3>
+  <h3>00_SERVICIO_KIT — plantillería del servicio</h3>
+  <p>Aquí vive <strong>el kit profesional del servicio CdU</strong>: contratos plantilla, guiones de reunión, materiales metodológicos. No son operaciones — son los recursos que se usan en cualquier operación de servicio.</p>
+<pre class="tree"><span class="h">00_SERVICIO_KIT/</span>
+├── FASE_1_DIAGNOSTICO/        <span class="comment"># Guion reunión bienvenida + entrega · contrato F1 plantilla · preguntas-cortas</span>
+├── FASE_2_MAP/                <span class="comment"># 9 carpetas temáticas: Negociación · CCP · Fiscal · Comunidad · Obras · Entes…</span>
+├── FASE_3_EXITO/              <span class="comment"># Contrato F3 plantilla · materiales comercialización</span>
+├── CONTRACTUAL/                <span class="comment"># Acuerdos colaboración + CCP transversales</span>
+└── CHECKLIST_INTERNO/         <span class="comment"># Trámites registrales · plantilla visita local</span>
+</pre>
 
+  <h3>01_OPERACIONES_SERVICIO — ops del servicio en curso</h3>
+  <p>Una op pasa por <strong>F1 (diagnóstico) → F2 (MAP)</strong>. Si llega a F3 → se mueve a <code>03_INICIADAS/DESDE_SERVICIO/</code>. Si acaba antes sin escalar → a FINALIZADAS.</p>
+<pre class="tree"><span class="h">01_OPERACIONES_SERVICIO/</span>
+├── _PLANTILLA/                <span class="comment"># Plantilla a copiar al arrancar nueva op</span>
+├── F1_DIAGNOSTICO/             <span class="comment"># Ops con F1 activa o entregada</span>
+│     └── 001_PabloBenitez_Castellon/
+├── F2_MAP/                     <span class="comment"># Ops en MAP (hoy vacío)</span>
+└── FINALIZADAS/                <span class="comment"># Servicio cerrado sin escalar a iniciada</span>
+</pre>
+
+  <h3>02_OPERACIONES_FUERA_SERVICIO — ops de proveedor</h3>
+  <p>Ops que llegan vía proveedor externo (con comisión pactada). No pasan por F1/F2 del servicio.</p>
+<pre class="tree"><span class="h">02_OPERACIONES_FUERA_SERVICIO/</span>
+├── _PLANTILLA/                <span class="comment"># Plantilla ligera (sin F1/F2/F3 internas)</span>
+├── EN_ANALISIS/                <span class="comment"># En estudio · decisión pendiente</span>
+│     ├── Aspe_AvdaJuanCarlos/
+│     ├── Campello_SantPere43/
+│     ├── Crevillente_VirgenPilar6_Esther/
+│     ├── Elche_JuanEspuche/
+│     └── Elche_TorreQuevedo/
+├── DERIVADAS_INBRUTO/          <span class="comment"># Presentadas al Programa IN como INBRUTO</span>
+└── DESCARTADAS/                <span class="comment"># Devueltas al proveedor o no encajan</span>
+</pre>
+
+  <h3>03_OPERACIONES_INICIADAS — ops en ejecución</h3>
+  <p>Cuando una op llega a F3 (servicio) o cuando nos quedamos una op del proveedor (fuera servicio). El sub-directorio indica el origen.</p>
+<pre class="tree"><span class="h">03_OPERACIONES_INICIADAS/</span>
+├── _PLANTILLA/                <span class="comment"># Plantilla completa (igual que op servicio + F3 EXITO)</span>
+├── DESDE_SERVICIO/             <span class="comment"># Llegaron al alcanzar F3 desde ①</span>
+├── DESDE_FUERA_SERVICIO/       <span class="comment"># Llegaron al quedárnoslas desde ②</span>
+│     └── 01_TorresCotillas/
+└── FINALIZADAS/                <span class="comment"># Ejecución cerrada (venta/explotación completada)</span>
+</pre>
+
+  <h3>04_EMPRESA — todo lo de la SL</h3>
+  <p>Sociedad, finanzas, equipo, fiscal y marketing. Es la única zona NO operativa de ops — es el back-office de la SL CdU de 0 a Éxito (B26888636).</p>
+<pre class="tree"><span class="h">04_EMPRESA/</span>
+├── SOCIEDAD/                  <span class="comment"># Constitución · escrituras · pacto socios · juntas</span>
+├── FINANZAS/                  <span class="comment"># Banca SL · póliza Caixa · modelos 303/232 · IVA · IS</span>
+├── FISCAL_CASOS/              <span class="comment"># Casos abiertos AEAT · sl-cdu (FISCUS)</span>
+├── EQUIPO/                    <span class="comment"># Contratos socios · fichas Xavi/Paco/Dani/arquitectos</span>
+└── MARKETING/                 <span class="comment"># Imagen corp · landings · presentaciones · imágenes/videos ops</span>
+</pre>
+
+  <h3>05_NORMATIVA_CCAA — requisitos urbanísticos</h3>
+  <p>Doctrina urbanística + preguntas-tipo organizadas por CCAA y municipio. Material de consulta para diagnósticos y proyectos.</p>
+<pre class="tree"><span class="h">05_NORMATIVA_CCAA/</span>
+├── REQUISITOS_POR_LOCALIDADES/
+│     ├── COMUNIDAD_VALENCIANA/
+│     │     ├── Elche/  Crevillente/  Aspe/  Campello/  …
+│     ├── CATALUNYA/
+│     ├── MURCIA/
+│     └── (otras CCAA según necesidad)
+└── PREGUNTAS_AYUNTAMIENTO.pdf
+</pre>
+
+  <h3>_ARCHIVO — histórico inactivo</h3>
+  <p>Operaciones y materiales con más de 6 meses sin actividad. Nada se borra — se archiva.</p>
+<pre class="tree"><span class="h">_ARCHIVO/</span>
+├── OPS_HISTORICAS/
+└── MATERIAL_VIEJO/
+</pre>
+</section>
+
+<!-- ============== 5. PLANTILLA INTERNA POR TIPO ============== -->
+<section>
+  <h2><span class="num">05</span>Plantilla interna de cada op</h2>
+  <p>Lo que cambia es <strong>si las fases F1/F2/F3 están visibles como subcarpetas dentro de la op</strong>.</p>
+
+  <h3>Tipo ① · Servicio (y ③ iniciada que viene desde servicio)</h3>
 <pre class="tree"><span class="h">📁 {NNN}_{Cliente}_{Ciudad}/</span>
 ├── 00_INFO.md                          <span class="comment"># Ficha viva: cliente, dirección, m², estado, link Trello</span>
 │
-├── F1_DIAGNOSTICO/                     <span class="comment"># Activa siempre (toda op de servicio empieza aquí)</span>
+├── F1_DIAGNOSTICO/
 │     ├── 01_VIABILIDAD/
-│     │     ├── ECONOMICA/  ADMINISTRATIVA/  TECNICA/  JURIDICA/
+│     │     └── ECONOMICA/  ADMINISTRATIVA/  TECNICA/  JURIDICA/
 │     ├── 02_REUNIONES/                 <span class="comment"># Acta bienvenida + entrega F1</span>
 │     ├── 03_DOCUMENTACION/             <span class="comment"># Nota simple, catastro, comunicaciones cliente</span>
-│     └── 04_INFORME_F1/                <span class="comment"># Entregable final F1 (PDF + GH Pages)</span>
+│     └── 04_INFORME_F1/                <span class="comment"># Entregable final F1</span>
 │
-├── F2_MAP/                             <span class="comment"># Solo si cliente paga F2</span>
+├── F2_MAP/
 │     ├── 05_NEGOCIACION/
 │     ├── 06_COMPRAVENTA/               <span class="comment"># Arras, escritura</span>
 │     ├── 07_OBRA/                      <span class="comment"># Proyecto técnico, licencia, ejecución</span>
@@ -318,7 +332,7 @@ footer .left { font-weight: 600; color: var(--navy); }
 │     ├── 09_PARTICIPES_CCP/            <span class="comment"># Si hay CCP/JV/INBRUTO</span>
 │     └── 10_REUNIONES/
 │
-├── F3_EXITO/                           <span class="comment"># Solo si cliente paga F3</span>
+├── F3_EXITO/                           <span class="comment"># Solo si la op llegó a INICIADAS</span>
 │     ├── 11_COMERCIALIZACION/
 │     ├── 12_VENTA/                     <span class="comment"># Escrituras venta</span>
 │     └── 13_CIERRE/
@@ -328,31 +342,24 @@ footer .left { font-weight: 600; color: var(--navy); }
 </pre>
 
   <div class="callout">
-    <strong>Doble visibilidad de fase:</strong> la op vive dentro de la sub-carpeta padre que indica su fase activa (<code>01_SERVICIO/F1_DIAGNOSTICO/{op}</code>) y dentro de la op están las 3 fases como sub-carpetas para guardar el material de cada una. Cuando pasa de F1 a F2: se MUEVE la carpeta de <code>F1_DIAGNOSTICO/</code> a <code>F2_MAP/</code>, conservando intacto su árbol interno F1/F2/F3.
+    <strong>Doble visibilidad de fase:</strong> la op vive en la carpeta padre que indica su fase actual (<code>01_SERVICIO/F1_DIAGNOSTICO/{op}</code> · <code>F2_MAP/{op}</code> · <code>03_INICIADAS/...{op}</code>). Dentro de la op, las 3 sub-carpetas F1/F2/F3 acumulan el material de cada fase. Cuando pasa de F1 a F2 → se mueve la carpeta padre, conservando todo el contenido interno.
   </div>
 
   <h3>Tipo ② · Fuera del servicio — plantilla ligera</h3>
-
 <pre class="tree"><span class="h">📁 {Ciudad}_{Identificador}/</span>
-├── 00_INFO.md                          <span class="comment"># Incluye: proveedor, comisión pactada, decisión final</span>
+├── 00_INFO.md                          <span class="comment"># Proveedor, comisión pactada, decisión final</span>
 ├── 01_VIABILIDAD/
 │     └── ECONOMICA/  ADMINISTRATIVA/  TECNICA/  JURIDICA/
 ├── 02_DOCUMENTACION/
 │     └── PROVEEDOR/  CONSULTAS/  PRESUPUESTOS/
 └── 03_REUNIONES/
 </pre>
-
-  <h3>Tipo ③ · Iniciada — misma plantilla que ① (servicio)</h3>
-  <p>Cuando una op pasa a INICIADAS:</p>
-  <ul>
-    <li><strong>Desde ①:</strong> la carpeta entera se mueve a <code>03_OPERACIONES_INICIADAS/DESDE_SERVICIO/</code>. Conserva F1/F2/F3 con lo que ya había + se rellena lo nuevo.</li>
-    <li><strong>Desde ②:</strong> se mueve a <code>03_OPERACIONES_INICIADAS/DESDE_FUERA_SERVICIO/</code>, se reorganiza añadiendo F2_MAP/ y F3_EXITO/ (lo previo en VIABILIDAD/DOCUMENTACION se reubica en F1_DIAGNOSTICO/).</li>
-  </ul>
+  <p style="font-size: 12px; color: var(--muted);">Si nos la quedamos → se mueve a <code>03_INICIADAS/DESDE_FUERA_SERVICIO/</code> y se reorganiza añadiendo F2_MAP/ y F3_EXITO/ (lo previo en VIABILIDAD/DOCUMENTACION/REUNIONES se reubica en F1_DIAGNOSTICO/).</p>
 </section>
 
-<!-- ============== 5. NAMING ============== -->
+<!-- ============== 6. NAMING ============== -->
 <section>
-  <h2><span class="num">05</span>Convención de nombres</h2>
+  <h2><span class="num">06</span>Convención de nombres</h2>
   <table>
     <thead>
       <tr><th style="width:28%">Tipo</th><th>Formato</th><th>Ejemplo</th></tr>
@@ -366,20 +373,22 @@ footer .left { font-weight: 600; color: var(--navy); }
   </table>
 </section>
 
-<!-- ============== 6. VINCULO DRIVE-TRELLO ============== -->
+<!-- ============== 7. VINCULO DRIVE-TRELLO ============== -->
 <section>
-  <h2><span class="num">06</span>Vínculo Drive ↔ Trello</h2>
+  <h2><span class="num">07</span>Vínculo Drive ↔ Trello</h2>
+  <p>Drive almacena, Trello gestiona. Cada zona Drive tiene su tablero correspondiente.</p>
+
   <table>
     <thead>
       <tr><th style="width:42%">Drive</th><th style="width:30%">Trello (tablero)</th><th>Lista o card</th></tr>
     </thead>
     <tbody>
-      <tr><td><code>01_OPERACIONES_SERVICIO/F{1,2,3}/{op}/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>1 card por op · etiqueta de fase</td></tr>
+      <tr><td><code>01_OPERACIONES_SERVICIO/F{1,2}/{op}/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>1 card por op · etiqueta de fase</td></tr>
       <tr><td><code>02_OPERACIONES_FUERA_SERVICIO/EN_ANALISIS/{op}/</code></td><td><strong>ANALISIS DE OPERACIONES</strong></td><td>1 lista por op</td></tr>
       <tr><td><code>03_OPERACIONES_INICIADAS/{DESDE_*}/{op}/</code></td><td><strong>Board propio por op</strong></td><td>Listas: DT · Obras · Admin/Fiscal · Comercial</td></tr>
       <tr><td><code>04_EMPRESA/SOCIEDAD/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>Lista "SOCIEDAD"</td></tr>
       <tr><td><code>04_EMPRESA/FINANZAS/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>Lista "FINANZAS"</td></tr>
-      <tr><td><code>05_MARKETING/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>Lista "MARKETING"</td></tr>
+      <tr><td><code>04_EMPRESA/MARKETING/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>Lista "MARKETING"</td></tr>
       <tr><td><code>00_SERVICIO_KIT/</code></td><td>Sin tablero (plantillería estable)</td><td>—</td></tr>
     </tbody>
   </table>
@@ -389,87 +398,21 @@ footer .left { font-weight: 600; color: var(--navy); }
   </div>
 </section>
 
-<!-- ============== 7. PLAN MIGRACION ============== -->
-<section>
-  <h2><span class="num">07</span>Plan de migración — 4 fases</h2>
-
-  <h3>Fase A · Limpieza huérfanas (30 min)</h3>
-  <ul>
-    <li>Borrar <code>cdu/</code> (vacía).</li>
-    <li>Mover <code>sl-cdu/</code> → <code>04_EMPRESA/FISCAL_CASOS/sl-cdu/</code>.</li>
-    <li>Mover <code>TEMPORAL/</code> → <code>_ARCHIVO/TEMPORAL_2025/</code>.</li>
-    <li><code>NUTRICIÓN/</code> fuera del proyecto (es formaciones Comunidad IN).</li>
-    <li>Eliminar duplicado de Pablo Castellón (consolidar en <code>01_OPERACIONES_SERVICIO/F1_DIAGNOSTICO/001_PabloBenitez_Castellon/</code>).</li>
-  </ul>
-
-  <h3>Fase B · Renombrar y crear raíz (45 min)</h3>
-  <ul>
-    <li><code>DOCUMENTACIÓN FASES/</code> → <code>00_SERVICIO_KIT/</code> con sub-carpetas <code>FASE_1_DIAGNOSTICO</code> / <code>FASE_2_MAP</code> / <code>FASE_3_EXITO</code>.</li>
-    <li><code>OPERACIONES/26-DIAGNÓSTICOS-CDU/</code> → <code>01_OPERACIONES_SERVICIO/</code> · crear <code>F1_DIAGNOSTICO/</code>, <code>F2_MAP/</code>, <code>F3_EXITO/</code>, <code>FINALIZADAS/</code>.</li>
-    <li><code>OPERACIONES/26-OPERACIONES-FUERA-DEL-SERVICIO/</code> → <code>02_OPERACIONES_FUERA_SERVICIO/</code> · crear <code>EN_ANALISIS/</code>, <code>DERIVADAS_INBRUTO/</code>, <code>DESCARTADAS/</code>.</li>
-    <li><code>OPERACIONES/26-OPERACIONES-INICIADAS/</code> → <code>03_OPERACIONES_INICIADAS/</code> · crear <code>DESDE_SERVICIO/</code>, <code>DESDE_FUERA_SERVICIO/</code>, <code>FINALIZADAS/</code>.</li>
-    <li>Eliminar la carpeta intermedia <code>OPERACIONES/</code>.</li>
-    <li>Crear <code>04_EMPRESA/</code>. Mover <code>SOCIEDAD/</code> y <code>FINANZAS/</code> dentro. Crear <code>FISCAL_CASOS/</code> y <code>EQUIPO/</code>.</li>
-    <li>Renombrar <code>MARKETING/</code> → <code>05_MARKETING/</code> · <code>NORMATIVA URBANISTICA CCAA/</code> → <code>06_NORMATIVA_CCAA/</code> · crear <code>_ARCHIVO/</code>.</li>
-    <li>Crear <code>_PLANTILLA/</code> dentro de cada caja operativa (01, 02, 03) con el árbol correspondiente.</li>
-  </ul>
-
-  <h3>Fase C · Mapeo op por op (1-2h en sesión equipo)</h3>
-  <table>
-    <thead>
-      <tr><th>Op actual</th><th>Va a</th><th>Notas</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Pablo Benítez Castellón (Op 001 · ÚNICA del servicio)</td><td><code>01_OPERACIONES_SERVICIO/F1_DIAGNOSTICO/001_PabloBenitez_Castellon/</code></td><td>Consolidar las 2 copias duplicadas. F1 entregada 15/05.</td></tr>
-      <tr><td>Esther Crevillente VirgenPilar6 (mal en "ELCHE-AV.NOVELDA-ESTHER")</td><td><code>02_OPERACIONES_FUERA_SERVICIO/EN_ANALISIS/Crevillente_VirgenPilar6_Esther/</code></td><td>Corregir nombre (es Crevillente, no Elche). Op de proveedor.</td></tr>
-      <tr><td>Av. Novelda Esther (op nueva 14/05)</td><td><code>02_OPERACIONES_FUERA_SERVICIO/EN_ANALISIS/Crevillente_AvNovelda_Esther/</code></td><td>Corregir nombre. Op de proveedor.</td></tr>
-      <tr><td>Juan Espuche (Elche)</td><td><code>02_OPERACIONES_FUERA_SERVICIO/EN_ANALISIS/Elche_JuanEspuche/</code></td><td>Op de proveedor.</td></tr>
-      <tr><td>Torre Quevedo (Elche)</td><td><code>02_OPERACIONES_FUERA_SERVICIO/EN_ANALISIS/Elche_TorreQuevedo/</code></td><td>Viene de mediador Joaquin.</td></tr>
-      <tr><td>Aspe Avda Joan Carlos</td><td><code>02_OPERACIONES_FUERA_SERVICIO/EN_ANALISIS/Aspe_AvdaJuanCarlos/</code></td><td>—</td></tr>
-      <tr><td>Campello Sant Pere 43</td><td><code>02_OPERACIONES_FUERA_SERVICIO/EN_ANALISIS/Campello_SantPere43/</code></td><td>—</td></tr>
-      <tr><td>Manuel López Quereda (en OTROS_TDC, no es TDC)</td><td><code>02_OPERACIONES_FUERA_SERVICIO/EN_ANALISIS/Elche_ManuelLopezQuereda/</code></td><td>Disolver OTROS_TDC.</td></tr>
-      <tr><td>Torres Cotillas (única iniciada)</td><td><code>03_OPERACIONES_INICIADAS/DESDE_FUERA_SERVICIO/01_TorresCotillas/</code></td><td>Vino del proveedor René. Corregir bug 09 (sacar SL a 04_EMPRESA, dejar 09_PARTICIPES).</td></tr>
-      <tr><td>Docs TDC en OTROS_TDC (Inbruto, Depósito, D'Estoup)</td><td><code>03_OPERACIONES_INICIADAS/DESDE_FUERA_SERVICIO/01_TorresCotillas/F2_MAP/06_COMPRAVENTA/</code></td><td>Disolver OTROS_TDC.</td></tr>
-      <tr><td>Murcia Rafael Romero (abandonado feb)</td><td><code>02_OPERACIONES_FUERA_SERVICIO/DESCARTADAS/</code> o <code>_ARCHIVO/</code></td><td>Validar si sigue vivo.</td></tr>
-      <tr><td>Elda Ana Prieto · Petrel José Frances (históricas servicio)</td><td><code>01_OPERACIONES_SERVICIO/FINALIZADAS/</code></td><td>Ops servicio cerradas sin escalar.</td></tr>
-      <tr><td>Altea C/Santa Teresa</td><td><code>02_OPERACIONES_FUERA_SERVICIO/EN_ANALISIS/</code> o <code>DESCARTADAS/</code></td><td>Validar si sigue viva.</td></tr>
-    </tbody>
-  </table>
-
-  <h3>Fase D · Trello — espejar las 3 cajas (30 min)</h3>
-  <ul>
-    <li><strong>ANALISIS DE OPERACIONES</strong> ← <code>02_OPERACIONES_FUERA_SERVICIO/EN_ANALISIS/</code> · 1 lista por op.</li>
-    <li><strong>TAREAS GENERALES EQUIPO</strong> ← <code>01_OPERACIONES_SERVICIO/F{1,2,3}/</code> con 1 card por op y etiqueta de fase. También listas EMPRESA (Sociedad, Finanzas, Marketing).</li>
-    <li><strong>OPERACIONES (PLANTILLA)</strong> ← se clona a board nuevo cuando una op pase a INICIADAS (igual que <code>03.-TORRES DE COTILLAS (TDC)</code>).</li>
-    <li>Card pineada en TAREAS GENERALES con el link a este briefing y la regla del enlace doble.</li>
-  </ul>
-</section>
-
 <!-- ============== 8. PRINCIPIOS ============== -->
 <section>
-  <h2><span class="num">08</span>5 principios para que aguante</h2>
+  <h2><span class="num">08</span>5 principios que mantienen el sistema</h2>
   <ol>
-    <li><strong>Tres tipos de op, tres carpetas raíz.</strong> Ninguna op vive en dos sitios.</li>
-    <li><strong>La fase del servicio se ve en el path.</strong> <code>F1_DIAGNOSTICO/</code> · <code>F2_MAP/</code> · <code>F3_EXITO/</code> · <code>FINALIZADAS/</code>. Cambiar de fase = mover la carpeta de op.</li>
-    <li><strong>"FASE" solo significa una cosa.</strong> Es la fase del servicio CdU. Plantillería en <code>00_SERVICIO_KIT/</code>, instancia en <code>01_OPERACIONES_SERVICIO/</code>.</li>
-    <li><strong>Trazabilidad del origen en INICIADAS.</strong> <code>DESDE_SERVICIO/</code> vs <code>DESDE_FUERA_SERVICIO/</code> dice de dónde vino.</li>
-    <li><strong>Nada se borra, todo se archiva.</strong> <code>_ARCHIVO/</code> guarda histórico.</li>
+    <li><strong>Tres tipos, tres carpetas raíz.</strong> Ninguna op vive en dos sitios.</li>
+    <li><strong>La fase se ve en el path.</strong> Cambiar de fase = mover la carpeta padre. Conserva el material interno intacto.</li>
+    <li><strong>F3 = ejecución → INICIADAS.</strong> Cuando una op del servicio llega a F3, deja de ser servicio y pasa a iniciada.</li>
+    <li><strong>Trazabilidad del origen.</strong> Dentro de INICIADAS, <code>DESDE_SERVICIO/</code> vs <code>DESDE_FUERA_SERVICIO/</code>.</li>
+    <li><strong>Nada se borra, todo se archiva.</strong></li>
   </ol>
 </section>
 
-<!-- ============== FEEDBACK ============== -->
-<div class="delta" style="margin-top:40px;">
-  <div class="delta-title">Cómo dar feedback</div>
-  <ul style="margin-top:8px;">
-    <li><strong>Dani:</strong> ¿el modelo "fase en path + fase en sub-carpeta dentro de op" se mantiene cuando trabajas día a día? ¿Te incomoda mover la carpeta de F1 a F2 cuando un cliente avanza, o es claro?</li>
-    <li><strong>Paco:</strong> ¿la consolidación 04_EMPRESA (Sociedad · Finanzas · Fiscal Casos · Equipo) te encaja para gestionar la SL B26888636?</li>
-    <li><strong>Equipo:</strong> ¿la trazabilidad <code>DESDE_SERVICIO/</code> vs <code>DESDE_FUERA_SERVICIO/</code> dentro de INICIADAS os parece útil, o sobra?</li>
-  </ul>
-</div>
-
 <footer>
-  <div class="left">COTE IA · Sistema de carpetas Drive CdU · v0.4</div>
-  <div>19 mayo 2026 · Borrador para reunión equipo</div>
+  <div class="left">COTE IA · Modelo de carpetas Drive CdU · v0.5</div>
+  <div>Borrador para reunión equipo</div>
 </footer>
 
 </body>
