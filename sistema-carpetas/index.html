@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>COTE IA · Modelo de carpetas Drive CdU · v0.8</title>
-<meta name="description" content="Modelo de organización del Shared Drive del proyecto CdU de 0 a Éxito. Estructura, flujo, vínculo Drive↔Trello, guía operativa.">
+<title>COTE IA · Modelo de carpetas Drive CdU · v0.9</title>
+<meta name="description" content="Modelo de organización del Shared Drive del proyecto CdU. Estructura, flujo, simulación visual de tableros Trello, guía operativa.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
@@ -23,6 +23,10 @@
   --blue: #1a4a8c;
   --red: #a02020;
   --trello: #0079bf;
+  --trello-dark: #026aa7;
+  --trello-list: #ebecf0;
+  --trello-text: #172b4d;
+  --trello-muted: #5e6c84;
 }
 
 body {
@@ -32,30 +36,18 @@ body {
   padding: 40px 28px 80px;
   font-size: 14px;
   line-height: 1.6;
-  max-width: 960px;
+  max-width: 980px;
   margin: 0 auto;
 }
 
-.header {
-  border-bottom: 3px solid var(--navy);
-  padding-bottom: 20px;
-  margin-bottom: 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  gap: 16px;
-}
+.header { border-bottom: 3px solid var(--navy); padding-bottom: 20px; margin-bottom: 32px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; }
 .header h1 { font-size: 26px; font-weight: 800; color: var(--navy); letter-spacing: -0.5px; line-height: 1.15; }
 .header h1 small { display: block; font-size: 11px; font-weight: 500; color: #888; letter-spacing: 0.4px; text-transform: uppercase; margin-top: 6px; }
 .brand-tag { text-align: right; }
 .brand-tag .brand { font-size: 14px; font-weight: 800; color: var(--ochre); letter-spacing: 0.3px; }
 .brand-tag .sub { font-size: 11px; color: #999; margin-top: 2px; }
 
-.toc {
-  background: var(--paper); border: 1.5px solid var(--line); border-radius: 6px;
-  padding: 14px 20px; margin-bottom: 28px; font-size: 12px;
-}
+.toc { background: var(--paper); border: 1.5px solid var(--line); border-radius: 6px; padding: 14px 20px; margin-bottom: 28px; font-size: 12px; }
 .toc strong { color: var(--navy); font-weight: 800; text-transform: uppercase; letter-spacing: 0.4px; font-size: 11px; }
 .toc ol { margin: 8px 0 0 0; list-style: none; counter-reset: toc; columns: 2; column-gap: 24px; }
 .toc ol li { counter-increment: toc; padding-left: 22px; position: relative; margin-bottom: 4px; }
@@ -64,95 +56,38 @@ body {
 .toc a:hover { color: var(--ochre); }
 
 section { margin: 44px 0 28px; scroll-margin-top: 20px; }
-section h2 {
-  font-size: 19px; font-weight: 800; color: var(--navy);
-  margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--navy);
-  letter-spacing: -0.2px;
-}
-section h2 .num {
-  display: inline-block; background: var(--navy); color: var(--cream);
-  font-size: 12px; font-weight: 800; padding: 2px 8px; border-radius: 3px;
-  margin-right: 10px; letter-spacing: 0.4px; vertical-align: middle;
-}
-section h3 {
-  font-size: 13px; font-weight: 700; color: var(--ochre);
-  margin: 24px 0 8px; text-transform: uppercase; letter-spacing: 0.5px;
-}
-section h4 {
-  font-size: 12px; font-weight: 700; color: var(--navy);
-  margin: 18px 0 6px; text-transform: uppercase; letter-spacing: 0.4px;
-}
+section h2 { font-size: 19px; font-weight: 800; color: var(--navy); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--navy); letter-spacing: -0.2px; }
+section h2 .num { display: inline-block; background: var(--navy); color: var(--cream); font-size: 12px; font-weight: 800; padding: 2px 8px; border-radius: 3px; margin-right: 10px; letter-spacing: 0.4px; vertical-align: middle; }
+section h3 { font-size: 13px; font-weight: 700; color: var(--ochre); margin: 24px 0 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+section h4 { font-size: 12px; font-weight: 700; color: var(--navy); margin: 18px 0 6px; text-transform: uppercase; letter-spacing: 0.4px; }
 section p { margin-bottom: 10px; }
 section ul, section ol { margin: 8px 0 14px 20px; }
 section li { margin-bottom: 6px; }
 section strong { color: var(--navy); font-weight: 700; }
 
-.tree {
-  background: var(--soft);
-  border-left: 4px solid var(--ochre);
-  padding: 18px 22px;
-  margin: 12px 0;
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 12px;
-  line-height: 1.65;
-  white-space: pre-wrap;
-  border-radius: 0 4px 4px 0;
-  color: var(--navy);
-  overflow-x: auto;
-}
+.tree { background: var(--soft); border-left: 4px solid var(--ochre); padding: 18px 22px; margin: 12px 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 1.65; white-space: pre-wrap; border-radius: 0 4px 4px 0; color: var(--navy); overflow-x: auto; }
 .tree.tree-full { font-size: 11.5px; line-height: 1.7; padding: 22px 26px; border-left-width: 5px; }
 .tree .comment { color: var(--muted); font-style: italic; }
 .tree .h { color: var(--ochre); font-weight: 700; }
 .tree .ataj { color: var(--ochre); font-weight: 700; }
 .tree .real { color: var(--blue); font-weight: 700; }
 
-.actions-legend {
-  display: flex; gap: 12px; flex-wrap: wrap;
-  background: var(--paper); border: 1.5px solid var(--line);
-  border-radius: 6px; padding: 14px 18px; margin: 14px 0 22px;
-}
+.actions-legend { display: flex; gap: 12px; flex-wrap: wrap; background: var(--paper); border: 1.5px solid var(--line); border-radius: 6px; padding: 14px 18px; margin: 14px 0 22px; }
 .actions-legend .item { display: flex; align-items: center; gap: 8px; font-size: 12px; }
-.action-tag {
-  display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10.5px; font-weight: 800;
-  padding: 4px 10px; border-radius: 3px;
-  color: white; letter-spacing: 0.5px; text-transform: uppercase;
-  white-space: nowrap;
-}
+.action-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 800; padding: 4px 10px; border-radius: 3px; color: white; letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap; }
 .tag-create { background: var(--green); }
 .tag-move { background: var(--blue); }
 .tag-shortcut { background: var(--ochre); }
 .tag-delete-shortcut { background: var(--red); }
 
-.flow-block {
-  background: var(--paper); border: 1.5px solid var(--line);
-  border-radius: 8px; padding: 16px 18px; margin: 16px 0 24px;
-}
-.flow-block .flow-header {
-  font-size: 13px; font-weight: 800;
-  color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px;
-  padding-bottom: 10px; border-bottom: 2px solid var(--ochre);
-  margin-bottom: 14px;
-}
+.flow-block { background: var(--paper); border: 1.5px solid var(--line); border-radius: 8px; padding: 16px 18px; margin: 16px 0 24px; }
+.flow-block .flow-header { font-size: 13px; font-weight: 800; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; padding-bottom: 10px; border-bottom: 2px solid var(--ochre); margin-bottom: 14px; }
 
-.transition {
-  display: grid; grid-template-columns: 1fr auto 1fr;
-  gap: 12px; align-items: center;
-  padding: 12px 8px; border-bottom: 1px dashed var(--line);
-}
+.transition { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; padding: 12px 8px; border-bottom: 1px dashed var(--line); }
 .transition:last-child { border-bottom: none; }
-.transition .trigger {
-  grid-column: 1 / -1; font-size: 11.5px; color: var(--navy); font-weight: 600;
-  background: var(--soft); padding: 6px 10px; border-radius: 3px; margin-bottom: 6px;
-}
+.transition .trigger { grid-column: 1 / -1; font-size: 11.5px; color: var(--navy); font-weight: 600; background: var(--soft); padding: 6px 10px; border-radius: 3px; margin-bottom: 6px; }
 .transition .trigger strong { color: var(--ochre); font-weight: 800; }
-.transition .from, .transition .to {
-  font-family: 'JetBrains Mono', monospace; font-size: 11px;
-  background: var(--cream); padding: 8px 10px;
-  border-radius: 4px; border: 1px solid var(--line);
-  color: var(--navy); word-break: break-all; line-height: 1.5;
-}
+.transition .from, .transition .to { font-family: 'JetBrains Mono', monospace; font-size: 11px; background: var(--cream); padding: 8px 10px; border-radius: 4px; border: 1px solid var(--line); color: var(--navy); word-break: break-all; line-height: 1.5; }
 .transition .from.empty { background: transparent; border: none; color: var(--muted); font-style: italic; text-align: center; }
 .transition .action-cell { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
 .transition .arrow { color: var(--muted); font-size: 14px; font-weight: 800; }
@@ -161,100 +96,138 @@ section strong { color: var(--navy); font-weight: 700; }
   .transition .arrow { transform: rotate(90deg); }
 }
 
+/* === SIMULACION TABLERO TRELLO === */
+.trello-board {
+  background: var(--trello);
+  border-radius: 8px;
+  padding: 14px 14px 18px;
+  margin: 16px 0 28px;
+  box-shadow: 0 4px 14px rgba(0,121,191,0.18);
+  overflow-x: auto;
+}
+.board-title {
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  padding: 4px 8px;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.board-title .badge-new {
+  background: var(--ochre); color: white;
+  font-size: 9.5px; font-weight: 800;
+  padding: 2px 7px; border-radius: 3px;
+  letter-spacing: 0.5px; text-transform: uppercase;
+}
+.board-title .badge-existing {
+  background: rgba(255,255,255,0.25); color: white;
+  font-size: 9.5px; font-weight: 700;
+  padding: 2px 7px; border-radius: 3px;
+  letter-spacing: 0.4px; text-transform: uppercase;
+}
+.lists {
+  display: flex;
+  gap: 8px;
+  min-width: min-content;
+  padding-bottom: 4px;
+}
+.trello-list {
+  background: var(--trello-list);
+  border-radius: 5px;
+  padding: 8px 7px 12px;
+  min-width: 190px;
+  max-width: 240px;
+  flex-shrink: 0;
+}
+.list-header {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--trello-text);
+  padding: 4px 6px 8px;
+  letter-spacing: 0.2px;
+}
+.trello-card {
+  background: white;
+  border-radius: 3px;
+  padding: 6px 8px;
+  margin-bottom: 5px;
+  font-size: 10.5px;
+  line-height: 1.4;
+  box-shadow: 0 1px 0 rgba(9,30,66,.25);
+  border-left: 3px solid var(--trello);
+}
+.trello-card.card-service { border-left-color: var(--green); }
+.trello-card.card-fuera { border-left-color: var(--ochre); }
+.trello-card.card-iniciada { border-left-color: var(--red); }
+.trello-card.card-empresa { border-left-color: var(--navy); }
+.trello-card.shortcut { background: #fff8e8; border-left: 3px dashed var(--ochre); }
+.trello-card .card-name {
+  color: var(--trello-text);
+  font-weight: 700;
+  margin-bottom: 2px;
+  font-size: 11px;
+}
+.trello-card .card-meta {
+  font-size: 9.5px;
+  color: var(--trello-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+.trello-card .card-meta span { display: inline-flex; align-items: center; gap: 2px; }
+.trello-card.empty {
+  background: rgba(255,255,255,0.4);
+  color: var(--trello-muted);
+  font-style: italic;
+  box-shadow: none;
+  text-align: center;
+  padding: 8px;
+  font-size: 10px;
+  border-left: 3px dashed rgba(0,0,0,0.15);
+}
+.list-add {
+  font-size: 10.5px;
+  color: var(--trello-muted);
+  padding: 6px 8px;
+  margin-top: 4px;
+  cursor: default;
+  font-style: italic;
+}
+
 /* === VINCULO TRELLO-DRIVE === */
-.link-pair {
-  display: grid;
-  grid-template-columns: 1fr 50px 1fr;
-  gap: 0;
-  align-items: stretch;
-  margin: 12px 0;
-}
-.link-card {
-  background: var(--paper);
-  border: 1.5px solid var(--line);
-  border-radius: 6px;
-  padding: 12px 14px;
-  font-size: 12px;
-  line-height: 1.55;
-}
+.link-pair { display: grid; grid-template-columns: 1fr 50px 1fr; gap: 0; align-items: stretch; margin: 12px 0; }
+.link-card { background: var(--paper); border: 1.5px solid var(--line); border-radius: 6px; padding: 12px 14px; font-size: 12px; line-height: 1.55; }
 .link-card.trello { border-left: 5px solid var(--trello); }
 .link-card.drive { border-left: 5px solid var(--ochre); }
-.link-card .head {
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 10.5px;
-  letter-spacing: 0.5px;
-  margin-bottom: 6px;
-}
+.link-card .head { font-weight: 800; text-transform: uppercase; font-size: 10.5px; letter-spacing: 0.5px; margin-bottom: 6px; }
 .link-card.trello .head { color: var(--trello); }
 .link-card.drive .head { color: var(--ochre); }
 .link-card .title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 4px; line-height: 1.3; }
 .link-card .detail { color: var(--muted); font-size: 11.5px; }
-.link-card code {
-  font-family: 'JetBrains Mono', monospace; font-size: 11px;
-  background: var(--soft); padding: 1px 4px; border-radius: 2px; color: var(--navy);
-}
-.link-arrow {
-  display: flex; align-items: center; justify-content: center;
-  color: var(--ochre); font-size: 20px; font-weight: 800;
-}
+.link-card code { font-family: 'JetBrains Mono', monospace; font-size: 11px; background: var(--soft); padding: 1px 4px; border-radius: 2px; color: var(--navy); }
+.link-arrow { display: flex; align-items: center; justify-content: center; color: var(--ochre); font-size: 20px; font-weight: 800; }
 @media (max-width: 720px) {
   .link-pair { grid-template-columns: 1fr; gap: 4px; }
   .link-arrow { transform: rotate(90deg); padding: 4px 0; height: auto; }
 }
 
-.new-board {
-  background: linear-gradient(135deg, var(--soft) 0%, var(--paper) 100%);
-  border: 2px solid var(--ochre);
-  border-radius: 6px;
-  padding: 16px 20px;
-  margin: 18px 0;
-}
-.new-board .badge {
-  display: inline-block;
-  background: var(--ochre); color: white;
-  font-size: 10px; font-weight: 800;
-  padding: 3px 8px; border-radius: 3px;
-  letter-spacing: 0.5px; text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.new-board strong { color: var(--navy); }
-.new-board code { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; background: white; padding: 1px 5px; border-radius: 2px; color: var(--navy); border: 1px solid var(--line); }
-
-table {
-  width: 100%; border-collapse: collapse;
-  margin: 14px 0 18px; background: var(--paper); font-size: 12.5px;
-}
+table { width: 100%; border-collapse: collapse; margin: 14px 0 18px; background: var(--paper); font-size: 12.5px; }
 th, td { border: 1px solid var(--line); padding: 9px 12px; text-align: left; vertical-align: top; }
-th {
-  background: var(--navy); color: var(--cream); font-weight: 700;
-  font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.4px;
-}
+th { background: var(--navy); color: var(--cream); font-weight: 700; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.4px; }
 tr:nth-child(even) td { background: #fafaf6; }
-td code {
-  font-family: 'JetBrains Mono', monospace; font-size: 11.5px;
-  background: var(--soft); padding: 1px 5px; border-radius: 2px; color: var(--navy);
-}
+td code { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; background: var(--soft); padding: 1px 5px; border-radius: 2px; color: var(--navy); }
 
 .three-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin: 18px 0; }
 @media (max-width: 820px) { .three-cols { grid-template-columns: 1fr; } }
-.col-card {
-  background: var(--paper); border: 1.5px solid var(--line);
-  border-top: 4px solid var(--ochre); border-radius: 4px;
-  padding: 14px 16px;
-}
-.col-card h4 {
-  font-size: 12px; font-weight: 800; text-transform: uppercase;
-  letter-spacing: 0.5px; color: var(--navy);
-  margin: 0 0 8px 0; padding-bottom: 6px; border-bottom: 1px solid var(--line);
-}
+.col-card { background: var(--paper); border: 1.5px solid var(--line); border-top: 4px solid var(--ochre); border-radius: 4px; padding: 14px 16px; }
+.col-card h4 { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--navy); margin: 0 0 8px 0; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
 .col-card .note { font-size: 11px; color: var(--muted); margin-top: 8px; line-height: 1.4; }
 
-.callout {
-  background: var(--soft); border-radius: 6px;
-  padding: 14px 18px; margin: 14px 0;
-  border-left: 4px solid var(--navy); font-size: 13px;
-}
+.callout { background: var(--soft); border-radius: 6px; padding: 14px 18px; margin: 14px 0; border-left: 4px solid var(--navy); font-size: 13px; }
 .callout strong { color: var(--navy); }
 
 .steps { background: var(--paper); border: 1.5px solid var(--line); border-radius: 6px; padding: 18px 22px; margin: 14px 0; }
@@ -263,11 +236,7 @@ td code {
 .steps ol li::before { content: counter(step-counter); position: absolute; left: 0; top: 0; background: var(--navy); color: var(--cream); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px; }
 .steps code { font-family: 'JetBrains Mono', monospace; font-size: 12px; background: var(--soft); padding: 1px 6px; border-radius: 2px; color: var(--navy); }
 
-footer {
-  margin-top: 60px; border-top: 2px solid var(--navy);
-  padding-top: 18px; font-size: 12px; color: var(--muted);
-  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-}
+footer { margin-top: 60px; border-top: 2px solid var(--navy); padding-top: 18px; font-size: 12px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
 footer .left { font-weight: 600; color: var(--navy); }
 </style>
 </head>
@@ -275,10 +244,10 @@ footer .left { font-weight: 600; color: var(--navy); }
 
 <div class="header">
   <div>
-    <h1>Modelo de carpetas Drive — CdU<small>Estructura, flujo, vínculo con Trello y guía operativa</small></h1>
+    <h1>Modelo de carpetas Drive — CdU<small>Estructura, flujo, simulación visual de Trello y guía operativa</small></h1>
   </div>
   <div class="brand-tag">
-    <div class="brand">COTE IA · Propuesta v0.8</div>
+    <div class="brand">COTE IA · Propuesta v0.9</div>
     <div class="sub">Shared Drive del equipo</div>
   </div>
 </div>
@@ -294,7 +263,7 @@ footer .left { font-weight: 600; color: var(--navy); }
     <li><a href="#s6">Flujo y transiciones</a></li>
     <li><a href="#s7">Cómo crear un atajo en Drive</a></li>
     <li><a href="#s8">Convención de nombres</a></li>
-    <li><a href="#s9">Vínculo Drive ↔ Trello</a></li>
+    <li><a href="#s9">Vínculo Drive ↔ Trello — tableros simulados</a></li>
     <li><a href="#s10">5 principios</a></li>
   </ol>
 </div>
@@ -302,7 +271,7 @@ footer .left { font-weight: 600; color: var(--navy); }
 <!-- ============== 1. LOS 3 TIPOS ============== -->
 <section id="s1">
   <h2><span class="num">01</span>Los 3 tipos de operación</h2>
-  <p>Toda operación pertenece a uno de los 3 tipos. <strong>El tipo determina dónde vive</strong>. Cada uno tiene origen, flujo y entregables distintos.</p>
+  <p>Toda operación pertenece a uno de los 3 tipos. <strong>El tipo determina dónde vive</strong>.</p>
 
   <div class="three-cols">
     <div class="col-card">
@@ -314,17 +283,15 @@ footer .left { font-weight: 600; color: var(--navy); }
     </div>
     <div class="col-card">
       <h4>② Op fuera del servicio</h4>
-      <p style="font-size:12px;"><strong>Viene de proveedor</strong> con comisión. No paga F1.</p>
+      <p style="font-size:12px;"><strong>Viene de proveedor</strong> con comisión.</p>
       <div class="note"><strong>Vive en:</strong> <code>02_OPERACIONES_FUERA_SERVICIO/</code><br>
-      <strong>Sub-cajas:</strong> EN_ANALISIS · DERIVADAS_INBRUTO · DESCARTADAS<br>
-      <strong>Decisión final:</strong> INBRUTO Programa · propia · devolver.</div>
+      <strong>Sub-cajas:</strong> EN_ANALISIS · DERIVADAS_INBRUTO · DESCARTADAS</div>
     </div>
     <div class="col-card">
       <h4>③ Operación iniciada</h4>
       <p style="font-size:12px;"><strong>Ya en ejecución.</strong> Equipo gestiona obra/venta.</p>
       <div class="note"><strong>Vive en:</strong> <code>03_OPERACIONES_INICIADAS/</code><br>
-      <strong>Sub-cajas:</strong> DESDE_SERVICIO · DESDE_FUERA_SERVICIO · FINALIZADAS<br>
-      <strong>Origen doble</strong> para trazabilidad.</div>
+      <strong>Sub-cajas:</strong> DESDE_SERVICIO · DESDE_FUERA_SERVICIO · FINALIZADAS</div>
     </div>
   </div>
 </section>
@@ -339,10 +306,10 @@ footer .left { font-weight: 600; color: var(--navy); }
 ├── 00_SERVICIO_KIT/                  <span class="comment"># Plantillería del servicio</span>
 ├── 01_OPERACIONES_SERVICIO/          <span class="comment"># Ops del servicio en F1, F2 o F3 (atajo)</span>
 ├── 02_OPERACIONES_FUERA_SERVICIO/    <span class="comment"># Ops de proveedor</span>
-├── 03_OPERACIONES_INICIADAS/         <span class="comment"># Ops en ejecución (F3 servicio o propias)</span>
+├── 03_OPERACIONES_INICIADAS/         <span class="comment"># Ops en ejecución</span>
 ├── 04_EMPRESA/                       <span class="comment"># SL · finanzas · equipo · marketing</span>
-├── 05_NORMATIVA_CCAA/                <span class="comment"># Requisitos urbanísticos por localidades</span>
-└── _ARCHIVO/                         <span class="comment"># Histórico sin actividad</span>
+├── 05_NORMATIVA_CCAA/                <span class="comment"># Requisitos urbanísticos</span>
+└── _ARCHIVO/                         <span class="comment"># Histórico</span>
 </pre>
 </section>
 
@@ -350,33 +317,33 @@ footer .left { font-weight: 600; color: var(--navy); }
 <section id="s3">
   <h2><span class="num">03</span>Árbol detallado de cada carpeta raíz</h2>
 
-  <h3>00_SERVICIO_KIT — plantillería del servicio</h3>
+  <h3>00_SERVICIO_KIT</h3>
 <pre class="tree"><span class="h">00_SERVICIO_KIT/</span>
 ├── FASE_1_DIAGNOSTICO/        <span class="comment"># Guion bienvenida + entrega · contrato F1 plantilla</span>
 ├── FASE_2_MAP/                <span class="comment"># Negociación · CCP · Fiscal · Comunidad · Obras…</span>
-├── FASE_3_EXITO/              <span class="comment"># Contrato F3 plantilla · materiales comercialización</span>
+├── FASE_3_EXITO/              <span class="comment"># Contrato F3 · materiales comercialización</span>
 ├── CONTRACTUAL/                <span class="comment"># Acuerdos colaboración + CCP transversales</span>
 └── CHECKLIST_INTERNO/         <span class="comment"># Trámites registrales · plantilla visita local</span>
 </pre>
 
-  <h3>01_OPERACIONES_SERVICIO — ops del servicio</h3>
+  <h3>01_OPERACIONES_SERVICIO</h3>
 <pre class="tree"><span class="h">01_OPERACIONES_SERVICIO/</span>
-├── _PLANTILLA/                <span class="comment"># Copiar al arrancar nueva op</span>
-├── F1_DIAGNOSTICO/             <span class="comment"># Ops en F1 (carpetas reales)</span>
-├── F2_MAP/                     <span class="comment"># Ops en F2 (carpetas reales)</span>
-├── F3_EXITO/                   <span class="comment"># Ops en F3 (ATAJOS ↗ apuntan a INICIADAS/DESDE_SERVICIO)</span>
+├── _PLANTILLA/
+├── F1_DIAGNOSTICO/             <span class="comment"># Ops en F1 (reales)</span>
+├── F2_MAP/                     <span class="comment"># Ops en F2 (reales)</span>
+├── F3_EXITO/                   <span class="comment"># Ops en F3 (ATAJOS ↗ a INICIADAS/DESDE_SERVICIO)</span>
 └── FINALIZADAS/                <span class="comment"># Cliente acabó sin escalar a F3</span>
 </pre>
 
-  <h3>02_OPERACIONES_FUERA_SERVICIO — ops de proveedor</h3>
+  <h3>02_OPERACIONES_FUERA_SERVICIO</h3>
 <pre class="tree"><span class="h">02_OPERACIONES_FUERA_SERVICIO/</span>
-├── _PLANTILLA/                <span class="comment"># Plantilla ligera (sin F1/F2/F3 internas)</span>
+├── _PLANTILLA/                <span class="comment"># Ligera (sin F1/F2/F3 internas)</span>
 ├── EN_ANALISIS/                <span class="comment"># En estudio · decisión pendiente</span>
 ├── DERIVADAS_INBRUTO/          <span class="comment"># Presentadas al Programa IN</span>
 └── DESCARTADAS/                <span class="comment"># Devueltas al proveedor</span>
 </pre>
 
-  <h3>03_OPERACIONES_INICIADAS — ops en ejecución</h3>
+  <h3>03_OPERACIONES_INICIADAS</h3>
 <pre class="tree"><span class="h">03_OPERACIONES_INICIADAS/</span>
 ├── _PLANTILLA/
 ├── DESDE_SERVICIO/             <span class="comment"># Llegaron al alcanzar F3 desde ①</span>
@@ -384,23 +351,21 @@ footer .left { font-weight: 600; color: var(--navy); }
 └── FINALIZADAS/                <span class="comment"># Ejecución cerrada</span>
 </pre>
 
-  <h3>04_EMPRESA — todo lo de la SL</h3>
+  <h3>04_EMPRESA</h3>
 <pre class="tree"><span class="h">04_EMPRESA/</span>
 ├── SOCIEDAD/                  <span class="comment"># Constitución · escrituras · pacto socios · juntas</span>
 ├── FINANZAS/                  <span class="comment"># Banca SL · póliza · modelos 303/232 · IVA · IS</span>
 ├── FISCAL_CASOS/              <span class="comment"># Casos abiertos AEAT</span>
 ├── EQUIPO/                    <span class="comment"># Contratos socios · fichas Xavi/Paco/Dani/arquitectos</span>
-└── MARKETING/                 <span class="comment"># Imagen corp · landings · presentaciones · imágenes/videos</span>
+└── MARKETING/                 <span class="comment"># Imagen corp · landings · presentaciones</span>
 </pre>
 
-  <h3>05_NORMATIVA_CCAA — requisitos urbanísticos</h3>
+  <h3>05_NORMATIVA_CCAA</h3>
 <pre class="tree"><span class="h">05_NORMATIVA_CCAA/</span>
-├── REQUISITOS_POR_LOCALIDADES/
-│     ├── COMUNIDAD_VALENCIANA/
-│     ├── CATALUNYA/
-│     ├── MURCIA/
-│     └── (otras CCAA según necesidad)
-└── PREGUNTAS_AYUNTAMIENTO.pdf
+└── REQUISITOS_POR_LOCALIDADES/
+      ├── COMUNIDAD_VALENCIANA/
+      ├── CATALUNYA/
+      └── MURCIA/
 </pre>
 </section>
 
@@ -414,24 +379,17 @@ footer .left { font-weight: 600; color: var(--navy); }
 ├── 00_INFO.md                          <span class="comment"># Ficha viva: cliente, dirección, m², estado, link Trello</span>
 │
 ├── F1_DIAGNOSTICO/
-│     ├── 01_VIABILIDAD/
-│     │     └── ECONOMICA/  ADMINISTRATIVA/  TECNICA/  JURIDICA/
+│     ├── 01_VIABILIDAD/  (ECONOMICA · ADMINISTRATIVA · TECNICA · JURIDICA)
 │     ├── 02_REUNIONES/                 <span class="comment"># Acta bienvenida + entrega F1</span>
 │     ├── 03_DOCUMENTACION/             <span class="comment"># Nota simple, catastro, comunicaciones</span>
 │     └── 04_INFORME_F1/                <span class="comment"># Entregable final F1</span>
 │
 ├── F2_MAP/
-│     ├── 05_NEGOCIACION/
-│     ├── 06_COMPRAVENTA/               <span class="comment"># Arras, escritura</span>
-│     ├── 07_OBRA/                      <span class="comment"># Proyecto técnico, licencia, ejecución</span>
-│     ├── 08_SUMINISTROS/               <span class="comment"># Iberdrola, Aguas, Gas</span>
-│     ├── 09_PARTICIPES_CCP/            <span class="comment"># Si hay CCP/JV/INBRUTO</span>
-│     └── 10_REUNIONES/
+│     ├── 05_NEGOCIACION/  06_COMPRAVENTA/  07_OBRA/
+│     ├── 08_SUMINISTROS/  09_PARTICIPES_CCP/  10_REUNIONES/
 │
 ├── F3_EXITO/                           <span class="comment"># Solo activa cuando la op pasa a INICIADAS</span>
-│     ├── 11_COMERCIALIZACION/
-│     ├── 12_VENTA/
-│     └── 13_CIERRE/
+│     ├── 11_COMERCIALIZACION/  12_VENTA/  13_CIERRE/
 │
 └── 14_FOTOGRAFIAS/                     <span class="comment"># Transversal F1-F3</span>
       └── ESTADO_ORIGINAL/  AVANCES/  PASO_4_ALQUILER/  PASO_4_VENTA/
@@ -440,10 +398,8 @@ footer .left { font-weight: 600; color: var(--navy); }
   <h3>Tipo ② fuera del servicio — plantilla ligera</h3>
 <pre class="tree"><span class="h">📁 {Ciudad}_{Identificador}/</span>
 ├── 00_INFO.md                          <span class="comment"># Proveedor, comisión pactada, decisión final</span>
-├── 01_VIABILIDAD/
-│     └── ECONOMICA/  ADMINISTRATIVA/  TECNICA/  JURIDICA/
-├── 02_DOCUMENTACION/
-│     └── PROVEEDOR/  CONSULTAS/  PRESUPUESTOS/
+├── 01_VIABILIDAD/  (ECONOMICA · ADMINISTRATIVA · TECNICA · JURIDICA)
+├── 02_DOCUMENTACION/  (PROVEEDOR · CONSULTAS · PRESUPUESTOS)
 └── 03_REUNIONES/
 </pre>
 </section>
@@ -451,39 +407,27 @@ footer .left { font-weight: 600; color: var(--navy); }
 <!-- ============== 5. ARBOL COMPLETO EXPANDIDO ============== -->
 <section id="s5">
   <h2><span class="num">05</span>Árbol completo expandido — todo en una sola vista</h2>
-  <p>Vista panorámica. De un vistazo se ve <strong>dónde va cada cosa</strong>. Incluye ejemplos reales actuales.</p>
+  <p>Vista panorámica con ejemplos reales (Pablo en F1, TDC en ejecución).</p>
 
-<pre class="tree tree-full"><span class="h">📁 CdU DE 0 a ÉXITO/</span>  <span class="comment">(Shared Drive)</span>
+<pre class="tree tree-full"><span class="h">📁 CdU DE 0 a ÉXITO/</span>
 │
-├── <span class="h">00_SERVICIO_KIT/</span>
-│   ├── FASE_1_DIAGNOSTICO/
-│   ├── FASE_2_MAP/
-│   ├── FASE_3_EXITO/
-│   ├── CONTRACTUAL/
-│   └── CHECKLIST_INTERNO/
+├── <span class="h">00_SERVICIO_KIT/</span>  (FASE_1 · FASE_2 · FASE_3 · CONTRACTUAL · CHECKLIST_INTERNO)
 │
 ├── <span class="h">01_OPERACIONES_SERVICIO/</span>
 │   ├── _PLANTILLA/
 │   ├── F1_DIAGNOSTICO/
 │   │   └── <span class="real">001_PabloBenitez_Castellon/</span>          <span class="comment">← op real en F1</span>
-│   │       ├── 00_INFO.md
-│   │       ├── F1_DIAGNOSTICO/
-│   │       ├── F2_MAP/  (vacío hasta que el cliente pague F2)
-│   │       ├── F3_EXITO/  (vacío hasta que llegue F3)
-│   │       └── 14_FOTOGRAFIAS/
+│   │       └── 00_INFO.md · F1_DIAGNOSTICO/ · F2_MAP/ · F3_EXITO/ · 14_FOTOGRAFIAS/
 │   ├── F2_MAP/                                    <span class="comment">(vacío hoy)</span>
-│   ├── F3_EXITO/                                  <span class="comment">(vacío hoy · futuros atajos ↗)</span>
+│   ├── F3_EXITO/                                  <span class="comment">(vacío · futuros atajos ↗)</span>
 │   └── FINALIZADAS/                               <span class="comment">(históricas: Elda, Petrel)</span>
 │
 ├── <span class="h">02_OPERACIONES_FUERA_SERVICIO/</span>
 │   ├── _PLANTILLA/
 │   ├── EN_ANALISIS/
-│   │   ├── Aspe_AvdaJuanCarlos/
-│   │   ├── Campello_SantPere43/
-│   │   ├── Crevillente_VirgenPilar6_Esther/
-│   │   ├── Crevillente_AvNovelda_Esther/
-│   │   ├── Elche_JuanEspuche/
-│   │   ├── Elche_ManuelLopezQuereda/
+│   │   ├── Aspe_AvdaJuanCarlos/         ├── Crevillente_VirgenPilar6_Esther/
+│   │   ├── Campello_SantPere43/         ├── Elche_JuanEspuche/
+│   │   ├── Crevillente_AvNovelda_Esther/├── Elche_ManuelLopezQuereda/
 │   │   └── Elche_TorreQuevedo/
 │   ├── DERIVADAS_INBRUTO/
 │   └── DESCARTADAS/
@@ -493,34 +437,18 @@ footer .left { font-weight: 600; color: var(--navy); }
 │   ├── DESDE_SERVICIO/                            <span class="comment">(vacío hoy)</span>
 │   ├── DESDE_FUERA_SERVICIO/
 │   │   └── <span class="real">01_TorresCotillas/</span>                    <span class="comment">← op real en ejecución</span>
-│   │       ├── 00_INFO.md
-│   │       ├── F1_DIAGNOSTICO/  F2_MAP/  F3_EXITO/
-│   │       └── 14_FOTOGRAFIAS/
+│   │       └── 00_INFO.md · F1_ · F2_ · F3_ · 14_FOTOGRAFIAS/
 │   └── FINALIZADAS/
 │
-├── <span class="h">04_EMPRESA/</span>
-│   ├── SOCIEDAD/
-│   ├── FINANZAS/
-│   ├── FISCAL_CASOS/sl-cdu/
-│   ├── EQUIPO/
-│   └── MARKETING/
-│
-├── <span class="h">05_NORMATIVA_CCAA/</span>
-│   └── REQUISITOS_POR_LOCALIDADES/
-│       ├── COMUNIDAD_VALENCIANA/  CATALUNYA/  MURCIA/
-│
+├── <span class="h">04_EMPRESA/</span>  (SOCIEDAD · FINANZAS · FISCAL_CASOS · EQUIPO · MARKETING)
+├── <span class="h">05_NORMATIVA_CCAA/</span>  (REQUISITOS_POR_LOCALIDADES/...)
 └── <span class="h">_ARCHIVO/</span>
-
-<span class="comment">Leyenda:</span>
-   <span class="real">────</span>  carpeta real con contenido vivo
-   <span class="ataj">↗</span>     atajo a una carpeta real en otra ubicación
 </pre>
 </section>
 
 <!-- ============== 6. FLUJO Y TRANSICIONES ============== -->
 <section id="s6">
   <h2><span class="num">06</span>Flujo y transiciones — qué se mueve, qué se crea, qué es atajo</h2>
-  <p>Cada cambio de estado tiene <strong>una acción concreta</strong>. Una sola fuente de verdad por carpeta — los atajos son punteros, no copias.</p>
 
   <div class="actions-legend">
     <div class="item"><span class="action-tag tag-create">CREAR</span> Carpeta nueva</div>
@@ -532,13 +460,13 @@ footer .left { font-weight: 600; color: var(--navy); }
   <div class="flow-block">
     <div class="flow-header">① Flujo de una op del servicio</div>
     <div class="transition">
-      <div class="trigger"><strong>EVENTO:</strong> nuevo cliente firma contrato F1 (paga 289€)</div>
+      <div class="trigger"><strong>EVENTO:</strong> cliente firma F1 (paga 289€)</div>
       <div class="from empty">— (no existe aún)</div>
       <div class="action-cell"><span class="action-tag tag-create">CREAR</span><span class="arrow">→</span></div>
-      <div class="to"><code>01_SERVICIO/F1_DIAGNOSTICO/<br>NNN_Cliente_Ciudad/</code></div>
+      <div class="to"><code>01_SERVICIO/F1_DIAGNOSTICO/NNN_Cliente_Ciudad/</code></div>
     </div>
     <div class="transition">
-      <div class="trigger"><strong>EVENTO:</strong> cliente decide continuar y firma F2</div>
+      <div class="trigger"><strong>EVENTO:</strong> cliente firma F2</div>
       <div class="from"><code>01_SERVICIO/F1_DIAGNOSTICO/{op}/</code></div>
       <div class="action-cell"><span class="action-tag tag-move">MOVER</span><span class="arrow">→</span></div>
       <div class="to"><code>01_SERVICIO/F2_MAP/{op}/</code></div>
@@ -550,7 +478,7 @@ footer .left { font-weight: 600; color: var(--navy); }
       <div class="to"><code>03_INICIADAS/DESDE_SERVICIO/{op}/</code></div>
     </div>
     <div class="transition">
-      <div class="trigger"><strong>+ ADEMÁS</strong> (mismo evento): se crea atajo en F3 para mantener visibilidad</div>
+      <div class="trigger"><strong>+ ADEMÁS:</strong> atajo en F3 para mantener visibilidad</div>
       <div class="from"><code>03_INICIADAS/DESDE_SERVICIO/{op}/</code><br>(carpeta REAL)</div>
       <div class="action-cell"><span class="action-tag tag-shortcut">CREAR ATAJO</span><span class="arrow">→</span></div>
       <div class="to"><code>01_SERVICIO/F3_EXITO/{op} ↗</code></div>
@@ -562,16 +490,10 @@ footer .left { font-weight: 600; color: var(--navy); }
       <div class="to"><code>03_INICIADAS/FINALIZADAS/{op}/</code></div>
     </div>
     <div class="transition">
-      <div class="trigger"><strong>+ ADEMÁS:</strong> borrar el atajo ya sin sentido</div>
+      <div class="trigger"><strong>+ ADEMÁS:</strong> borrar el atajo</div>
       <div class="from"><code>01_SERVICIO/F3_EXITO/{op} ↗</code></div>
       <div class="action-cell"><span class="action-tag tag-delete-shortcut">BORRAR ATAJO</span><span class="arrow">→</span></div>
-      <div class="to empty">(la real NO se borra)</div>
-    </div>
-    <div class="transition">
-      <div class="trigger"><strong>EVENTO ALTERNATIVO:</strong> cliente acaba sin escalar a F3</div>
-      <div class="from"><code>01_SERVICIO/F{1,2}/{op}/</code></div>
-      <div class="action-cell"><span class="action-tag tag-move">MOVER</span><span class="arrow">→</span></div>
-      <div class="to"><code>01_SERVICIO/FINALIZADAS/{op}/</code></div>
+      <div class="to empty">(la real intacta en FINALIZADAS)</div>
     </div>
   </div>
 
@@ -584,53 +506,37 @@ footer .left { font-weight: 600; color: var(--navy); }
       <div class="to"><code>02_FUERA_SERVICIO/EN_ANALISIS/{op}/</code></div>
     </div>
     <div class="transition">
-      <div class="trigger"><strong>DECISIÓN A:</strong> derivamos al Programa IN</div>
+      <div class="trigger"><strong>DECISIÓN:</strong> INBRUTO / devolver / nos la quedamos</div>
       <div class="from"><code>02_FUERA_SERVICIO/EN_ANALISIS/{op}/</code></div>
       <div class="action-cell"><span class="action-tag tag-move">MOVER</span><span class="arrow">→</span></div>
-      <div class="to"><code>02_FUERA_SERVICIO/DERIVADAS_INBRUTO/{op}/</code></div>
-    </div>
-    <div class="transition">
-      <div class="trigger"><strong>DECISIÓN B:</strong> devolvemos al proveedor</div>
-      <div class="from"><code>02_FUERA_SERVICIO/EN_ANALISIS/{op}/</code></div>
-      <div class="action-cell"><span class="action-tag tag-move">MOVER</span><span class="arrow">→</span></div>
-      <div class="to"><code>02_FUERA_SERVICIO/DESCARTADAS/{op}/</code></div>
-    </div>
-    <div class="transition">
-      <div class="trigger"><strong>DECISIÓN C:</strong> nos la quedamos — pasa a ejecución</div>
-      <div class="from"><code>02_FUERA_SERVICIO/EN_ANALISIS/{op}/</code></div>
-      <div class="action-cell"><span class="action-tag tag-move">MOVER</span><span class="arrow">→</span></div>
-      <div class="to"><code>03_INICIADAS/DESDE_FUERA_SERVICIO/{op}/</code></div>
+      <div class="to"><code>DERIVADAS_INBRUTO/</code> · <code>DESCARTADAS/</code> · <code>03_INICIADAS/DESDE_FUERA_SERVICIO/</code></div>
     </div>
   </div>
 
   <div class="callout">
-    <strong>Regla de oro:</strong> ninguna acción crea una "copia". Solo existen carpetas REALES y ATAJOS. Si borras un atajo, la real sobrevive. Si trabajas dentro de un atajo, modificas la carpeta real.
+    <strong>Regla de oro:</strong> ninguna acción crea una "copia". Solo existen carpetas REALES y ATAJOS.
   </div>
 </section>
 
 <!-- ============== 7. COMO CREAR UN ATAJO ============== -->
 <section id="s7">
-  <h2><span class="num">07</span>Cómo crear un atajo en Drive — mini-guía</h2>
-  <p>Un atajo es un <strong>apuntador a una carpeta real</strong>. Se reconoce por la flechita ↗ en el icono.</p>
+  <h2><span class="num">07</span>Cómo crear un atajo en Drive</h2>
 
-  <h4>Crear el atajo</h4>
   <div class="steps">
     <ol>
       <li>Ir a la carpeta REAL (ej. <code>03_INICIADAS/DESDE_SERVICIO/{op}/</code>).</li>
       <li>Clic derecho sobre la carpeta → <strong>Organizar</strong> → <strong>Añadir atajo</strong>.</li>
       <li>Drive abre un selector. Navegar y seleccionar la carpeta destino: <code>01_SERVICIO/F3_EXITO/</code>.</li>
-      <li>Pulsar <strong>Añadir</strong>. El atajo aparece en F3_EXITO con la flechita ↗.</li>
+      <li>Pulsar <strong>Añadir</strong>. El atajo aparece con la flechita ↗.</li>
     </ol>
   </div>
 
-  <h4>Cómo funciona en el día a día</h4>
   <table>
     <thead><tr><th>Acción</th><th>Qué pasa</th></tr></thead>
     <tbody>
       <tr><td>Subir archivo dentro del atajo</td><td>Se guarda en la carpeta REAL.</td></tr>
       <tr><td>Editar documento dentro del atajo</td><td>Edita el original.</td></tr>
       <tr><td>Borrar el atajo</td><td>Solo elimina el atajo. <strong>La real NO se borra</strong>.</td></tr>
-      <tr><td>Borrar la carpeta real</td><td>El atajo queda roto. Nunca se borra la real mientras existe atajo.</td></tr>
       <tr><td>Permisos</td><td>El atajo hereda los permisos de la real.</td></tr>
     </tbody>
   </table>
@@ -650,125 +556,317 @@ footer .left { font-weight: 600; color: var(--navy); }
   </table>
 </section>
 
-<!-- ============== 9. VINCULO DRIVE TRELLO ============== -->
+<!-- ============== 9. VINCULO TRELLO-DRIVE CON SIMULACIONES ============== -->
 <section id="s9">
-  <h2><span class="num">09</span>Vínculo Drive ↔ Trello</h2>
-  <p><strong>Trello = gestión de tareas. Drive = almacén documental.</strong> Todo lo que activa una acción (asignar una tarea a Dani, decidir si una op pasa de F1 a F2, programar una visita) vive en Trello. Todo lo que se genera como documento (informe, contrato, foto, factura) vive en Drive.</p>
+  <h2><span class="num">09</span>Vínculo Drive ↔ Trello — tableros simulados</h2>
+  <p><strong>Trello = gestión de tareas. Drive = almacén documental.</strong> Aquí se ve cómo se verán los 4 tableros Trello con sus listas y cards reales/ejemplos.</p>
 
-  <p>Por cada carpeta operativa de Drive hay <strong>un tablero o lista Trello asociada</strong>. Cuando algo cambia en una, debe reflejarse en la otra mediante el enlace doble.</p>
+  <p>El equipo tiene <strong>4 tableros</strong> en total: 3 existen, 1 es nuevo a crear.</p>
 
-  <h3>Mapeo visual — Trello ◀━━▶ Drive</h3>
+  <!-- TABLERO 1 -->
+  <h3>Tablero 1 · ANALISIS DE OPERACIONES</h3>
+  <p>Existe ya. Refleja <code>02_OPERACIONES_FUERA_SERVICIO/</code>. <strong>Una lista por op de proveedor en estudio</strong> + listas finales DERIVADAS/DESCARTADAS. Cada card es una tarea concreta del análisis.</p>
 
-  <div class="link-pair">
-    <div class="link-card trello">
-      <div class="head">📋 Tablero Trello</div>
-      <div class="title">ANALISIS DE OPERACIONES</div>
-      <div class="detail">1 lista por op en estudio. Cada card es una tarea de análisis (visita, nota simple, consulta normativa, llamada al proveedor).</div>
-    </div>
-    <div class="link-arrow">◀━▶</div>
-    <div class="link-card drive">
-      <div class="head">📁 Carpeta Drive</div>
-      <div class="title">02_OPERACIONES_FUERA_SERVICIO/EN_ANALISIS/</div>
-      <div class="detail">1 carpeta por op en estudio. Almacena nota simple, fotos, presupuestos, acuerdo proveedor.</div>
+  <div class="trello-board">
+    <div class="board-title">📋 ANALISIS DE OPERACIONES <span class="badge-existing">existe</span></div>
+    <div class="lists">
+      <div class="trello-list">
+        <div class="list-header">Aspe_AvdaJuanCarlos</div>
+        <div class="trello-card card-fuera">
+          <div class="card-name">Pedir nota simple al proveedor</div>
+          <div class="card-meta"><span>👤 Xavi</span><span>📎 Drive</span></div>
+        </div>
+        <div class="trello-card card-fuera">
+          <div class="card-name">Visita técnica con arquitecto</div>
+          <div class="card-meta"><span>👤 Dani</span><span>⏰ 24/05</span></div>
+        </div>
+        <div class="trello-card card-fuera">
+          <div class="card-name">Análisis económico</div>
+          <div class="card-meta"><span>👤 Paco</span></div>
+        </div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">Elche_TorreQuevedo</div>
+        <div class="trello-card card-fuera">
+          <div class="card-name">Oferta argumentada enviada</div>
+          <div class="card-meta"><span>✅ Hecho</span></div>
+        </div>
+        <div class="trello-card card-fuera">
+          <div class="card-name">Esperando respuesta mediador Joaquin</div>
+          <div class="card-meta"><span>👤 Xavi</span></div>
+        </div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">Elche_JuanEspuche</div>
+        <div class="trello-card card-fuera">
+          <div class="card-name">Cabida 143/135 — descartado #6</div>
+          <div class="card-meta"><span>✅ Hecho</span></div>
+        </div>
+        <div class="trello-card card-fuera">
+          <div class="card-name">Validar comunidad 12 vecinos</div>
+          <div class="card-meta"><span>👤 Dani</span></div>
+        </div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">Crevillente_VP6_Esther</div>
+        <div class="trello-card card-fuera">
+          <div class="card-name">Rebaja -10k oferta</div>
+          <div class="card-meta"><span>👤 Xavi</span></div>
+        </div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">DERIVADAS_INBRUTO</div>
+        <div class="trello-card empty">— vacía hoy</div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">DESCARTADAS</div>
+        <div class="trello-card empty">— vacía hoy</div>
+      </div>
+      <div class="list-add">+ Añadir lista (cada vez que entre op nueva)</div>
     </div>
   </div>
 
-  <div class="link-pair">
-    <div class="link-card trello">
-      <div class="head">📋 Tablero Trello (NUEVO sugerido)</div>
-      <div class="title">OPERACIONES SERVICIO</div>
-      <div class="detail">Listas: <code>F1 EN CURSO</code> · <code>F2 EN CURSO</code> · <code>F3 EN CURSO</code> (cards atajo) · <code>FINALIZADAS</code>. Una card por op del servicio que se mueve de lista cuando cambia de fase.</div>
-    </div>
-    <div class="link-arrow">◀━▶</div>
-    <div class="link-card drive">
-      <div class="head">📁 Carpeta Drive</div>
-      <div class="title">01_OPERACIONES_SERVICIO/</div>
-      <div class="detail">Sub-carpetas F1_DIAGNOSTICO · F2_MAP · F3_EXITO (atajos) · FINALIZADAS. La fase de Trello coincide con la sub-carpeta de Drive.</div>
+  <!-- TABLERO 2 -->
+  <h3>Tablero 2 · OPERACIONES SERVICIO <span style="color: var(--ochre); font-weight: 700;">(NUEVO)</span></h3>
+  <p>Tablero a crear. Refleja <code>01_OPERACIONES_SERVICIO/</code>. <strong>Una card por op del servicio, en la lista de su fase actual</strong>. Cuando avanza, se arrastra la card de lista (y se mueve la carpeta Drive).</p>
+
+  <div class="trello-board">
+    <div class="board-title">📋 OPERACIONES SERVICIO <span class="badge-new">+ nuevo</span></div>
+    <div class="lists">
+      <div class="trello-list">
+        <div class="list-header">F1 EN CURSO</div>
+        <div class="trello-card card-service">
+          <div class="card-name">001 · Pablo Benítez · Castellón</div>
+          <div class="card-meta">
+            <span>👤 Xavi+Dani</span>
+            <span>📅 F1 firmada 8/abr</span>
+            <span>📎 Drive</span>
+          </div>
+        </div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">F2 EN CURSO</div>
+        <div class="trello-card empty">— ninguna op en F2 todavía</div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">F3 EN CURSO</div>
+        <div class="trello-card empty">— ninguna op en F3 todavía</div>
+        <div style="font-size: 10px; color: var(--trello-muted); padding: 6px 8px; margin-top: 4px; font-style: italic;">cuando llegue F3, la card aquí enlaza al board propio de la op iniciada</div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">FINALIZADAS</div>
+        <div class="trello-card card-service">
+          <div class="card-name">Elda · Ana Prieto</div>
+          <div class="card-meta"><span>📅 cerrada feb-26</span></div>
+        </div>
+        <div class="trello-card card-service">
+          <div class="card-name">Petrel · José Frances</div>
+          <div class="card-meta"><span>📅 cerrada feb-26</span></div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="link-pair">
-    <div class="link-card trello">
-      <div class="head">📋 Tablero Trello (1 por op)</div>
-      <div class="title">Board propio · clonado de OPERACIONES (PLANTILLA)</div>
-      <div class="detail">Listas estándar: <strong>Dirección Técnica</strong> · <strong>Coord/Ejecución Obras</strong> · <strong>Admin/Fiscalidad</strong> · <strong>Dirección Comercial/Marketing</strong> · <strong>Tareas Realizadas</strong>. Ya existe el ejemplo: <em>03.-TORRES DE COTILLAS (TDC)</em>.</div>
-    </div>
-    <div class="link-arrow">◀━▶</div>
-    <div class="link-card drive">
-      <div class="head">📁 Carpeta Drive</div>
-      <div class="title">03_OPERACIONES_INICIADAS/{DESDE_*}/{op}/</div>
-      <div class="detail">Carpeta con plantilla completa F1/F2/F3 internas. Cada card de Trello apunta a su subcarpeta correspondiente dentro de la op.</div>
+  <!-- TABLERO 3 -->
+  <h3>Tablero 3 · OPERACIONES (PLANTILLA) + clones por op</h3>
+  <p>La PLANTILLA existe. Cada vez que una op pasa a INICIADAS, se <strong>clona la plantilla</strong> a un board nuevo con el nombre de la op (ej. <code>03.-TORRES DE COTILLAS (TDC)</code> ya existe). Las listas reflejan las áreas funcionales del equipo.</p>
+
+  <div class="trello-board">
+    <div class="board-title">📋 OPERACIONES (PLANTILLA) <span class="badge-existing">existe</span></div>
+    <div class="lists">
+      <div class="trello-list">
+        <div class="list-header">MODELO NO TOCAR</div>
+        <div class="trello-card card-iniciada">
+          <div class="card-name">Plantilla card op</div>
+          <div class="card-meta"><span>📋 Modelo</span></div>
+        </div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">DIRECCIÓN TÉCNICA</div>
+        <div class="trello-card empty">cards técnicas</div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">COORD/EJECUCIÓN OBRAS</div>
+        <div class="trello-card empty">cards de obra</div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">ADMIN/FISCALIDAD</div>
+        <div class="trello-card empty">cards de admin</div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">DIRECCIÓN COMERCIAL/MARKETING</div>
+        <div class="trello-card empty">cards comerciales</div>
+      </div>
     </div>
   </div>
 
-  <div class="link-pair">
-    <div class="link-card trello">
-      <div class="head">📋 Tablero Trello</div>
-      <div class="title">TAREAS GENERALES EQUIPO</div>
-      <div class="detail">NO contiene tareas de operaciones. Contiene la gestión interna del equipo y de la empresa.<br>
-      Listas: <code>SOCIEDAD</code> · <code>FINANZAS</code> · <code>MARKETING</code> · <code>MEJORAS</code> · <code>AGENDA CONTACTOS URBANISMO</code> · <code>TAREAS DANI/PACO/XAVI</code> · <code>HECHO</code>.</div>
-    </div>
-    <div class="link-arrow">◀━▶</div>
-    <div class="link-card drive">
-      <div class="head">📁 Carpetas Drive (varias)</div>
-      <div class="title">04_EMPRESA/* + 05_NORMATIVA_CCAA/</div>
-      <div class="detail">SOCIEDAD ↔ <code>04_EMPRESA/SOCIEDAD/</code><br>
-      FINANZAS ↔ <code>04_EMPRESA/FINANZAS/</code><br>
-      MARKETING ↔ <code>04_EMPRESA/MARKETING/</code><br>
-      AGENDA CONTACTOS ↔ <code>05_NORMATIVA_CCAA/</code></div>
+  <p style="margin-top: 18px; font-size: 12px;"><strong>Ejemplo del clon vivo — board <code>03.-TORRES DE COTILLAS (TDC)</code>:</strong></p>
+
+  <div class="trello-board">
+    <div class="board-title">📋 03.-TORRES DE COTILLAS (TDC) <span class="badge-existing">clon de PLANTILLA · existe</span></div>
+    <div class="lists">
+      <div class="trello-list">
+        <div class="list-header">MURCIA-TORRES-DE-COTILLAS</div>
+        <div class="trello-card card-iniciada">
+          <div class="card-name">Ficha resumen op</div>
+          <div class="card-meta"><span>📎 Drive op</span></div>
+        </div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">DIRECCIÓN TÉCNICA</div>
+        <div class="trello-card card-iniciada">
+          <div class="card-name">Proyecto técnico arquitecto</div>
+          <div class="card-meta"><span>👤 Pau</span><span>📎 07_OBRA/</span></div>
+        </div>
+        <div class="trello-card card-iniciada">
+          <div class="card-name">Solicitar licencia ayto</div>
+          <div class="card-meta"><span>👤 Dani</span></div>
+        </div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">COORD/EJECUCIÓN OBRAS</div>
+        <div class="trello-card card-iniciada">
+          <div class="card-name">Alta Iberdrola</div>
+          <div class="card-meta"><span>👤 Dani</span><span>📎 07_SUMINISTROS/</span></div>
+        </div>
+        <div class="trello-card card-iniciada">
+          <div class="card-name">Alta Hidrogea</div>
+          <div class="card-meta"><span>👤 Dani</span></div>
+        </div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">ADMIN/FISCALIDAD</div>
+        <div class="trello-card card-iniciada">
+          <div class="card-name">Factura técnico abonada</div>
+          <div class="card-meta"><span>✅ Paco</span><span>📎 08_FISCALIDAD/</span></div>
+        </div>
+        <div class="trello-card card-iniciada">
+          <div class="card-name">Reunión partícipes mayo</div>
+          <div class="card-meta"><span>👤 Xavi</span><span>📎 09_PARTICIPES/</span></div>
+        </div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">COMERCIAL/MARKETING</div>
+        <div class="trello-card card-iniciada">
+          <div class="card-name">Fotos estado original</div>
+          <div class="card-meta"><span>✅ Dani</span><span>📎 10_FOTOGRAFIAS/</span></div>
+        </div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">TAREAS REALIZADAS</div>
+        <div class="trello-card card-iniciada">
+          <div class="card-name">Cambio de uso aprobado</div>
+          <div class="card-meta"><span>✅ Hecho</span></div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <h3>Tablero NUEVO propuesto</h3>
-  <div class="new-board">
-    <span class="badge">+ Tablero a crear</span>
-    <p style="margin-top: 4px;"><strong>OPERACIONES SERVICIO</strong> — actualmente no existe un tablero dedicado para las ops del servicio (Pablo Castellón vive sin tablero propio). Propuesta:</p>
-    <ul style="margin-top: 8px;">
-      <li><strong>Listas:</strong> <code>F1 EN CURSO</code> · <code>F2 EN CURSO</code> · <code>F3 EN CURSO</code> · <code>FINALIZADAS SERVICIO</code>.</li>
-      <li><strong>Una card por op</strong> con la ficha del cliente (nombre, dirección, F1 firmada en, próxima reunión, gestor asignado).</li>
-      <li><strong>Cuando el cliente pasa de F1 a F2:</strong> se arrastra la card de lista F1 a F2 (al mismo tiempo se mueve la carpeta Drive correspondiente).</li>
-      <li><strong>Cuando llega F3:</strong> la card se mueve a F3 EN CURSO Y en Drive la carpeta se mueve a <code>03_INICIADAS/DESDE_SERVICIO/</code> + atajo en F3_EXITO. En Trello la card de F3_EN_CURSO debería enlazar al BOARD propio de la op iniciada (no duplicar tareas).</li>
-    </ul>
-    <p style="margin-top: 10px; font-size: 12px; color: var(--muted);"><strong>Por qué un tablero propio:</strong> permite que Dani, Paco y Xavi vean en una sola vista a TODAS las ops del servicio en curso por fase, sin mezclarlas con tareas internas de empresa (sociedad, finanzas, etc.) que viven en TAREAS GENERALES EQUIPO.</p>
+  <!-- TABLERO 4 -->
+  <h3>Tablero 4 · TAREAS GENERALES EQUIPO</h3>
+  <p>Existe ya. <strong>NO contiene tareas de operaciones</strong>. Es la gestión interna del equipo y de la empresa. Refleja <code>04_EMPRESA/</code> + <code>05_NORMATIVA_CCAA/</code>.</p>
+
+  <div class="trello-board">
+    <div class="board-title">📋 TAREAS GENERALES EQUIPO <span class="badge-existing">existe</span></div>
+    <div class="lists">
+      <div class="trello-list">
+        <div class="list-header">SOCIEDAD</div>
+        <div class="trello-card card-empresa">
+          <div class="card-name">Cuenta operativa fuera de Caixa</div>
+          <div class="card-meta"><span>⏰ 31/may</span><span>📎 04_EMPRESA/SOCIEDAD/</span></div>
+        </div>
+        <div class="trello-card card-empresa">
+          <div class="card-name">Acta + contrato interno póliza</div>
+          <div class="card-meta"><span>👤 Paco</span></div>
+        </div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">FINANZAS</div>
+        <div class="trello-card card-empresa">
+          <div class="card-name">Modelo 303 2T 2026</div>
+          <div class="card-meta"><span>⏰ 20/jul</span><span>👤 Paco</span></div>
+        </div>
+        <div class="trello-card card-empresa">
+          <div class="card-name">Caso FISCUS sl-cdu</div>
+          <div class="card-meta"><span>👤 Xavi</span><span>📎 FISCAL_CASOS/</span></div>
+        </div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">MARKETING</div>
+        <div class="trello-card card-empresa">
+          <div class="card-name">Landing servicio CdU v3</div>
+          <div class="card-meta"><span>👤 Xavi</span><span>📎 04_EMPRESA/MARKETING/</span></div>
+        </div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">AGENDA CONTACTOS URBANISMO</div>
+        <div class="trello-card card-empresa">
+          <div class="card-name">Jaime Guardiola (Elche)</div>
+          <div class="card-meta"><span>📞 jefazo urbanismo</span></div>
+        </div>
+        <div class="trello-card card-empresa">
+          <div class="card-name">Pau (arquitecto)</div>
+        </div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">MEJORAS</div>
+        <div class="trello-card card-empresa">
+          <div class="card-name">Sistema carpetas v0.9 (este briefing)</div>
+        </div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">TAREAS DANI</div>
+        <div class="trello-card card-empresa">
+          <div class="card-name">Visita Aspe martes</div>
+        </div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">TAREAS PACO</div>
+        <div class="trello-card card-empresa">
+          <div class="card-name">Pólizas seguros</div>
+        </div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">TAREAS XAVI</div>
+        <div class="trello-card card-empresa">
+          <div class="card-name">Presentar este briefing al equipo</div>
+        </div>
+      </div>
+      <div class="trello-list">
+        <div class="list-header">HECHO</div>
+        <div class="trello-card card-empresa">
+          <div class="card-name">SL constituida B26888636</div>
+          <div class="card-meta"><span>✅ 17/may</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <h3>Tabla resumen completa</h3>
+  <!-- TABLA RESUMEN -->
+  <h3>Tabla resumen Drive ↔ Trello</h3>
   <table>
     <thead>
-      <tr><th style="width:34%">Drive</th><th style="width:32%">Trello tablero</th><th>Listas o cards</th></tr>
+      <tr><th style="width:32%">Drive</th><th style="width:34%">Trello tablero</th><th>Listas o cards</th></tr>
     </thead>
     <tbody>
-      <tr><td><code>00_SERVICIO_KIT/</code></td><td><em>(sin tablero — plantillería estable)</em></td><td>—</td></tr>
-      <tr><td><code>01_OPERACIONES_SERVICIO/</code></td><td><strong>OPERACIONES SERVICIO</strong> <em>(NUEVO)</em></td><td>F1 EN CURSO · F2 EN CURSO · F3 EN CURSO · FINALIZADAS</td></tr>
-      <tr><td><code>02_OPERACIONES_FUERA_SERVICIO/</code></td><td><strong>ANALISIS DE OPERACIONES</strong> <em>(existe)</em></td><td>1 lista por op + FINALIZADAS</td></tr>
-      <tr><td><code>03_OPERACIONES_INICIADAS/{op}/</code></td><td><strong>Board propio por op</strong> <em>(clonar PLANTILLA)</em></td><td>DT · Obras · Admin/Fiscal · Comercial · Tareas realizadas</td></tr>
-      <tr><td><code>04_EMPRESA/SOCIEDAD/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong> <em>(existe)</em></td><td>Lista SOCIEDAD</td></tr>
-      <tr><td><code>04_EMPRESA/FINANZAS/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>Lista FINANZAS</td></tr>
-      <tr><td><code>04_EMPRESA/MARKETING/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>Lista MARKETING</td></tr>
-      <tr><td><code>04_EMPRESA/EQUIPO/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>Lista MEJORAS · TAREAS DANI/PACO/XAVI</td></tr>
-      <tr><td><code>05_NORMATIVA_CCAA/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>Lista AGENDA CONTACTOS URBANISMO</td></tr>
+      <tr><td><code>00_SERVICIO_KIT/</code></td><td><em>sin tablero (plantillería estable)</em></td><td>—</td></tr>
+      <tr><td><code>01_OPERACIONES_SERVICIO/</code></td><td><strong>OPERACIONES SERVICIO</strong> 🆕</td><td>F1 · F2 · F3 · FINALIZADAS</td></tr>
+      <tr><td><code>02_OPERACIONES_FUERA_SERVICIO/</code></td><td><strong>ANALISIS DE OPERACIONES</strong></td><td>1 lista por op + DERIVADAS · DESCARTADAS</td></tr>
+      <tr><td><code>03_OPERACIONES_INICIADAS/{op}/</code></td><td><strong>Board propio por op</strong> (clonar PLANTILLA)</td><td>DT · Obras · Admin/Fiscal · Comercial · Hecho</td></tr>
+      <tr><td><code>04_EMPRESA/SOCIEDAD/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>Lista SOCIEDAD</td></tr>
+      <tr><td><code>04_EMPRESA/FINANZAS/</code></td><td>↑</td><td>Lista FINANZAS</td></tr>
+      <tr><td><code>04_EMPRESA/MARKETING/</code></td><td>↑</td><td>Lista MARKETING</td></tr>
+      <tr><td><code>04_EMPRESA/EQUIPO/</code></td><td>↑</td><td>MEJORAS · TAREAS DANI/PACO/XAVI</td></tr>
+      <tr><td><code>05_NORMATIVA_CCAA/</code></td><td>↑</td><td>AGENDA CONTACTOS URBANISMO</td></tr>
     </tbody>
   </table>
 
   <h3>Regla del enlace doble</h3>
   <div class="callout">
-    <strong>Toda card Trello que genere o reciba documento</strong> lleva en su descripción el <strong>link a la subcarpeta Drive</strong> correspondiente.<br>
+    <strong>Toda card Trello</strong> que genere o reciba documento lleva en su descripción el <strong>link a la subcarpeta Drive</strong> correspondiente (📎 visible arriba en las simulaciones).<br>
     <strong>Toda op en Drive</strong> tiene en su <code>00_INFO.md</code> el <strong>link al card o board Trello</strong> asociado.<br>
     Doble dirección: desde Trello sabes dónde está el documento; desde Drive sabes dónde está la tarea.
   </div>
-
-  <h3>Reglas operativas — cuándo se actualiza qué</h3>
-  <table>
-    <thead><tr><th style="width:38%">Trigger</th><th>Acción en Trello</th><th>Acción en Drive</th></tr></thead>
-    <tbody>
-      <tr><td>Entra op nueva del servicio (cliente firma F1)</td><td>Crear card en lista F1 EN CURSO (board OPERACIONES SERVICIO)</td><td>Crear carpeta <code>01_SERVICIO/F1_DIAGNOSTICO/NNN_Cliente_Ciudad/</code> desde plantilla</td></tr>
-      <tr><td>Entra op nueva de proveedor</td><td>Crear lista nueva con nombre de la op en board ANALISIS DE OPERACIONES</td><td>Crear carpeta <code>02_FUERA_SERVICIO/EN_ANALISIS/{op}/</code></td></tr>
-      <tr><td>Op del servicio pasa F1 → F2</td><td>Mover card de F1 EN CURSO a F2 EN CURSO</td><td>Mover carpeta a <code>F2_MAP/</code></td></tr>
-      <tr><td>Op del servicio llega a F3</td><td>Mover card a F3 EN CURSO + clonar tablero PLANTILLA con nombre del cliente</td><td>Mover carpeta a <code>03_INICIADAS/DESDE_SERVICIO/</code> + crear atajo en <code>F3_EXITO/</code></td></tr>
-      <tr><td>Op cierra (venta o explotación)</td><td>Mover card a FINALIZADAS · archivar board propio</td><td>Mover a <code>03_INICIADAS/FINALIZADAS/</code> + borrar atajo</td></tr>
-      <tr><td>Tarea fiscal/sociedad nueva</td><td>Card en TAREAS GENERALES EQUIPO · lista correspondiente (SOCIEDAD/FINANZAS)</td><td>Si hay documento generado, va a <code>04_EMPRESA/{zona}/</code></td></tr>
-    </tbody>
-  </table>
 </section>
 
 <!-- ============== 10. PRINCIPIOS ============== -->
@@ -784,7 +882,7 @@ footer .left { font-weight: 600; color: var(--navy); }
 </section>
 
 <footer>
-  <div class="left">COTE IA · Modelo de carpetas Drive CdU · v0.8</div>
+  <div class="left">COTE IA · Modelo de carpetas Drive CdU · v0.9</div>
   <div>Borrador para reunión equipo</div>
 </footer>
 
