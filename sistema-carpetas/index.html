@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>COTE IA · Sistema de carpetas CdU · propuesta v0.1</title>
-<meta name="description" content="Propuesta de COTE IA para organizar Drive + Trello + Local del proyecto CdU de 0 a Éxito en un sistema único, minimalista y verificable.">
+<title>COTE IA · Sistema de carpetas Drive CdU · v0.2</title>
+<meta name="description" content="Propuesta de COTE IA para organizar el Shared Drive del proyecto CdU de 0 a Éxito en un sistema único, minimalista y operativo.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
@@ -32,7 +32,6 @@ body {
   margin: 0 auto;
 }
 
-/* ============== HEADER ============== */
 .header {
   border-bottom: 3px solid var(--navy);
   padding-bottom: 20px;
@@ -59,22 +58,10 @@ body {
   text-transform: uppercase;
   margin-top: 6px;
 }
-.brand-tag {
-  text-align: right;
-}
-.brand-tag .brand {
-  font-size: 14px;
-  font-weight: 800;
-  color: var(--ochre);
-  letter-spacing: 0.3px;
-}
-.brand-tag .sub {
-  font-size: 11px;
-  color: #999;
-  margin-top: 2px;
-}
+.brand-tag { text-align: right; }
+.brand-tag .brand { font-size: 14px; font-weight: 800; color: var(--ochre); letter-spacing: 0.3px; }
+.brand-tag .sub { font-size: 11px; color: #999; margin-top: 2px; }
 
-/* ============== BLOQUE DELTA / DESTACADO ============== */
 .delta {
   background: var(--paper);
   border: 2px solid var(--ochre);
@@ -92,7 +79,6 @@ body {
 }
 .delta p { font-size: 14px; line-height: 1.6; }
 
-/* ============== SECCION ============== */
 section { margin: 36px 0 28px; }
 section h2 {
   font-size: 18px;
@@ -128,38 +114,6 @@ section ul, section ol { margin: 8px 0 14px 20px; }
 section li { margin-bottom: 6px; }
 section strong { color: var(--navy); font-weight: 700; }
 
-/* ============== 3 CAJAS HORIZONTAL ============== */
-.three-boxes {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 14px;
-  margin: 20px 0 8px;
-}
-@media (max-width: 720px) { .three-boxes { grid-template-columns: 1fr; } }
-.box {
-  background: var(--paper);
-  border: 1.5px solid var(--line);
-  border-top: 4px solid var(--ochre);
-  border-radius: 4px;
-  padding: 16px 14px;
-}
-.box .label {
-  font-size: 10px;
-  font-weight: 800;
-  color: var(--ochre);
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-}
-.box .title {
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--navy);
-  margin: 4px 0 8px;
-}
-.box .body { font-size: 12.5px; color: #444; line-height: 1.5; }
-.box .body strong { color: var(--navy); }
-
-/* ============== ARBOL ASCII ============== */
 .tree {
   background: var(--soft);
   border-left: 4px solid var(--ochre);
@@ -173,13 +127,12 @@ section strong { color: var(--navy); font-weight: 700; }
   color: var(--navy);
   overflow-x: auto;
 }
-.tree .root { font-weight: 700; color: var(--navy); }
 .tree .comment { color: var(--muted); font-style: italic; }
-.tree .new { background: var(--ochre); color: #fff; padding: 0 4px; border-radius: 2px; font-weight: 600; font-size: 11px;}
-.tree .keep { background: #d8ead8; color: #2c5f2d; padding: 0 4px; border-radius: 2px; font-weight: 600; font-size: 11px;}
-.tree .rename { background: #d6e6ff; color: #1a4a8c; padding: 0 4px; border-radius: 2px; font-weight: 600; font-size: 11px;}
+.tree .new { background: var(--ochre); color: #fff; padding: 0 4px; border-radius: 2px; font-weight: 600; font-size: 11px; }
+.tree .keep { background: #d8ead8; color: #2c5f2d; padding: 0 4px; border-radius: 2px; font-weight: 600; font-size: 11px; }
+.tree .rename { background: #d6e6ff; color: #1a4a8c; padding: 0 4px; border-radius: 2px; font-weight: 600; font-size: 11px; }
+.tree .merge { background: #ffe2c2; color: #8a4500; padding: 0 4px; border-radius: 2px; font-weight: 600; font-size: 11px; }
 
-/* ============== TABLA ============== */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -211,7 +164,6 @@ td code {
   color: var(--navy);
 }
 
-/* ============== COMPARATIVA 2 COLUMNAS ============== */
 .compare {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -243,7 +195,6 @@ td code {
   white-space: pre-wrap;
 }
 
-/* ============== CALLOUT ============== */
 .callout {
   background: var(--soft);
   border-radius: 6px;
@@ -254,7 +205,6 @@ td code {
 }
 .callout strong { color: var(--navy); }
 
-/* ============== ETIQUETAS LEYENDA ============== */
 .legend {
   display: flex;
   gap: 14px;
@@ -264,18 +214,12 @@ td code {
   margin: 4px 0 18px;
 }
 .legend span { display: flex; align-items: center; gap: 5px; }
-.legend .tag {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  border-radius: 2px;
-}
+.legend .tag { display: inline-block; width: 14px; height: 14px; border-radius: 2px; }
 .legend .tag-new { background: var(--ochre); }
 .legend .tag-keep { background: #d8ead8; }
 .legend .tag-rename { background: #d6e6ff; }
-.legend .tag-delete { background: #f4cccc; }
+.legend .tag-merge { background: #ffe2c2; }
 
-/* ============== FOOTER ============== */
 footer {
   margin-top: 60px;
   border-top: 2px solid var(--navy);
@@ -288,459 +232,335 @@ footer {
   gap: 8px;
 }
 footer .left { font-weight: 600; color: var(--navy); }
-footer .right { color: var(--muted); }
-.kbd {
-  font-family: 'JetBrains Mono', monospace;
-  background: var(--soft);
-  padding: 1px 6px;
-  border-radius: 3px;
-  font-size: 11px;
-  color: var(--navy);
-}
 </style>
 </head>
 <body>
 
-<!-- ============== HEADER ============== -->
 <div class="header">
   <div>
-    <h1>Sistema de carpetas CdU<small>Drive · Trello · Local — un solo sistema, una sola lógica</small></h1>
+    <h1>Sistema de carpetas — Drive CdU<small>Una sola lógica, sin duplicidades, alineada con cómo trabajamos</small></h1>
   </div>
   <div class="brand-tag">
-    <div class="brand">COTE IA · Propuesta v0.1</div>
-    <div class="sub">19 may 2026 · borrador para el equipo</div>
+    <div class="brand">COTE IA · Propuesta v0.2</div>
+    <div class="sub">19 may 2026 · Shared Drive del equipo</div>
   </div>
 </div>
 
-<!-- ============== MANIFIESTO ============== -->
 <div class="delta">
-  <div class="delta-title">Por qué esta propuesta</div>
-  <p>Hoy el proyecto CdU vive en <strong>tres herramientas distintas</strong> (Drive · Trello · Local) que no comparten lógica. Dani ha empezado a poner orden en Drive (TDC y Diagnósticos están bien estructurados), pero las operaciones en curso del servicio (Pablo Castellón, Esther Crevillente, Espuche, Av. Novelda) viven dispersas, con nombres distintos y sin replicar la plantilla. Esto cuesta tiempo, genera duplicados y dificulta que cualquiera del equipo encuentre algo.</p>
-  <p style="margin-top:10px;">La propuesta es <strong>un sistema firme, minimalista y vinculado</strong>: Drive es el <strong>almacén documental</strong>, Trello es la <strong>gestión del flujo de tareas</strong>, y ambos se reflejan mutuamente. El local de Xavi (taller IA) queda fuera del circuito del equipo y solo guarda recursos técnicos y plantillas.</p>
+  <div class="delta-title">Alcance</div>
+  <p>Solo el <strong>Shared Drive del equipo CdU</strong> (<code>G:\Unidades compartidas\CdU DE 0 A ÉXITO\CdU DE 0 a ÉXITO</code>). Cubre el servicio CdU (Fase 1/2/3) y las ops propias del equipo (TDC). No incluye ops personales ni recursos técnicos individuales.</p>
 </div>
 
-<!-- ============== 1. DIAGNOSTICO ACTUAL ============== -->
+<!-- ============== 1. DIAGNOSTICO ============== -->
 <section>
-  <h2><span class="num">01</span>Diagnóstico — qué pasa hoy</h2>
-  <p>Auditoría del 19 may 2026 sobre Drive, Trello y carpeta local. Datos verificados, no impresiones.</p>
+  <h2><span class="num">01</span>Diagnóstico — qué está bien y qué arreglar</h2>
+
+  <h3>Lo que ya está bien</h3>
   <ul>
-    <li><strong>Drive raíz tiene 4 carpetas CdU competing</strong> — <code>cdu</code> (vacía), <code>CdU_EXITO</code> (backup repo Xavi), <code>cdu-exito</code> (notas sesiones), <code>sl-cdu</code> (caso FISCUS). Solo una es canónica: <code>CdU DE 0 a ÉXITO</code>.</li>
-    <li><strong>Pipeline F1/F2 del servicio está muerto.</strong> <code>26-FASE-1/02.EN ESTUDIO</code> contiene 1 sola op (Murcia/Rafael Romero) abandonada desde feb. <code>26-FASE-2/ASESORAMIENTO-ACTIVO</code> está vacío.</li>
-    <li><strong>Las 4 ops vivas del servicio NO están en el pipeline</strong> — Pablo Castellón, Esther VP6, Espuche y Av. Novelda viven sueltas, sin estructura compartida. Cada una con nomenclatura distinta.</li>
-    <li><strong>TDC tiene 11 carpetas con bug:</strong> dos carpetas con prefijo <code>09._</code> (SL y PARTÍCIPES). Y la mitad están vacías (esqueleto sin contenido).</li>
-    <li><strong>Crevillente_Esther_VirgenPilar6</strong> (op servicio activa) tiene 6 archivos sueltos sin estructura. Hay además otras carpetas Crevillente en Drive que son personales de Esther o ajenas al equipo CdU — confunden la búsqueda.</li>
-    <li>Las plantillas FASE-1, FASE-2 y FASE-3 del servicio existen pero están <strong>desconectadas de las ops reales</strong>: los contratos plantilla viven aquí, pero las ops del servicio no.</li>
+    <li><code>SOCIEDAD/</code> — limpia (CONSTITUCIÓN + PRESENTACIÓN DOCUMENTOS), activa post-constitución SL.</li>
+    <li><code>NORMATIVA URBANISTICA CCAA/REQUISITOS POR LOCALIDADES/</code> — escalable, formato claro por CCAA.</li>
+    <li><code>DOCUMENTACIÓN FASES/FASE 2/</code> — 9 carpetas temáticas excelentes (Negociación, CCP, Planteamiento Fiscal, Relaciones Comunidad, Obras, Entes Implicados…). Es el activo intelectual más fuerte del servicio.</li>
+    <li><code>26-OPERACIONES-INICIADAS/01.-TORRES DE COTILLAS/</code> — 11 subcarpetas estandarizadas (01_VIABILIDAD_ECONÓMICA → 10_FOTOGRAFÍAS). Patrón replicable.</li>
+    <li><code>MARKETING/</code> — 6 carpetas con lógica (Imagen Corporativa, Imágenes/Videos Ops, Landings Producto CdU, Presentaciones, Recursos Varios, Reuniones).</li>
   </ul>
 
-  <div class="callout">
-    <strong>Decisión técnica:</strong> el modelo TDC (carpetero por área funcional, 11 carpetas) es el patrón más maduro del equipo CdU. Lo limpiamos (corregimos el bug 09 duplicado, sacamos lo de la SL a 04_EMPRESA por ser transversal) y lo convertimos en plantilla universal para toda op iniciada del equipo.
-  </div>
+  <h3>Lo que hay que arreglar</h3>
+  <ul>
+    <li><strong>Confusión semántica grave "FASE":</strong> existen dos jerarquías que usan "FASE 1/2/3" pero significan cosas distintas — <code>DOCUMENTACIÓN FASES/FASE_1,2,3/</code> son <em>plantillas y guiones del servicio</em>, mientras <code>OPERACIONES/26-DIAGNÓSTICOS-CDU/26-FASE-1,2,3/</code> es <em>pipeline de estado de ops</em>. Esto confunde al equipo.</li>
+    <li><strong>Pipeline ops F1/F2/F3 abandonado:</strong> <code>26-FASE-1/02.EN ESTUDIO/</code> contiene solo 1 op (Murcia Rafael Romero, feb). <code>26-FASE-1/03.FINALIZADA/01.GO, 02.GO CON AJUSTES, 03.NO GO/</code> totalmente vacías. <code>26-FASE-2/ASESORAMIENTO-ACTIVO/</code> sin pipeline interno. <code>26-FASE-3/</code> solo contiene una plantilla contrato.</li>
+    <li><strong>Pablo Castellón duplicado</strong> en <code>26-FASE-1/03.FINALIZADA/CASTELLÓN…/</code> Y en <code>26-OPERACIONES-FUERA-DEL-SERVICIO/26-FINALIZADOS/Castellon…/</code>.</li>
+    <li><strong>Op Esther mal nombrada</strong> — <code>26-ELCHE-AV.NOVELDA-ESTHER/</code> está en Crevillente, no en Elche.</li>
+    <li><strong><code>OTROS_TDC/</code> es ambiguo</strong> — mezcla docs TDC (contrato venta inbruto, oferta D'Estoup, depósito) con leads ajenos (oferta Elche Manuel López Quereda).</li>
+    <li><strong>TDC bug 09 duplicado:</strong> dos subcarpetas con prefijo <code>09._</code> (SL y PARTÍCIPES). Además SL es transversal a todas las ops, no debe vivir dentro de cada op.</li>
+    <li><strong>Naming inconsistente en ops:</strong> <code>26-ELCHE-TORRE-QUEVEDO</code> vs <code>Aspe - Avda Joan Carlos I</code> vs <code>01.-TORRES DE COTILLAS</code> vs <code>26-CAMPELLO-SANT PERE</code>.</li>
+    <li><strong><code>TEMPORAL/</code> es cementerio</strong> que duplica MARKETING (carpetas IMAGEN CORPORATIVA y LANDINGS PRODUCTO viejas).</li>
+    <li><strong><code>FINANZAS/</code> desfasada</strong> — solo gastos 2025/2026 y referencia a LLC vieja, sin reflejo de la SL CDU DE 0 A ÉXITO B26888636 constituida 17/05.</li>
+    <li><strong>Carpetas raíz huérfanas:</strong> existen además <code>cdu/</code> (vacía), <code>cdu-exito/</code>, <code>sl-cdu/</code> en Mi Unidad fuera del Shared Drive canónico — confunden la búsqueda.</li>
+  </ul>
 </section>
 
-<!-- ============== 2. PRINCIPIO RECTOR ============== -->
+<!-- ============== 2. PRINCIPIO ============== -->
 <section>
-  <h2><span class="num">02</span>Principio rector — un sistema, tres planos</h2>
-  <p>Cada herramienta tiene un propósito único y no compite con las otras. Cuando algo nuevo entra en el proyecto, hay un solo sitio donde ponerlo.</p>
-
-  <div class="three-boxes">
-    <div class="box">
-      <div class="label">PLANO 1 · DRIVE</div>
-      <div class="title">Almacén</div>
-      <div class="body">
-        <strong>Documentos generados y recibidos.</strong><br>
-        Contratos, informes, notas simples, escrituras, planos, fotos, presupuestos, facturas.<br><br>
-        <strong>Una op = una carpeta única</strong> que sigue al cliente o al activo desde análisis hasta cierre.
-      </div>
-    </div>
-    <div class="box">
-      <div class="label">PLANO 2 · TRELLO</div>
-      <div class="title">Gestión</div>
-      <div class="body">
-        <strong>Flujo de tareas y estado.</strong><br>
-        Listas por área funcional (DT, Obras, Admin/Fiscal, Comercial). Cards = tareas con fechas, responsables, checklists.<br><br>
-        Cada card en Trello que genere documento incluye <strong>link a la subcarpeta Drive</strong> que lo contiene.
-      </div>
-    </div>
-    <div class="box">
-      <div class="label">PLANO 3 · LOCAL</div>
-      <div class="title">Taller IA (Xavi)</div>
-      <div class="body">
-        <strong>Recursos técnicos, no operativos.</strong><br>
-        Plantillas reutilizables, agentes IA (COTE), scripts (n8n, GHL), borradores Discord, knowledge interna, zona privada.<br><br>
-        <strong>No tiene carpetas por op</strong>. El equipo no accede aquí.
-      </div>
-    </div>
-  </div>
-
-  <div class="callout">
-    <strong>Regla de oro:</strong> ningún documento operativo vive en dos sitios. Si está en Drive, no se duplica en local. Si está en Trello como card, no tiene "copia" en Drive — Trello apunta a Drive.
-  </div>
+  <h2><span class="num">02</span>Principio rector</h2>
+  <ol>
+    <li><strong>Una op = una carpeta única.</strong> Cuando cambia de estado, se mueve, no se duplica.</li>
+    <li><strong>"FASE" significa una sola cosa.</strong> Las fases del servicio (1, 2, 3) son <em>plantillería</em> (qué entregamos al cliente). El estado de una op concreta se nombra en su <code>00_INFO.md</code> interno, no en el path.</li>
+    <li><strong>Drive es almacén documental.</strong> El flujo de tareas vive en Trello. Cada subcarpeta importante tiene su <code>00_INFO.md</code> con link al card Trello que la genera.</li>
+    <li><strong>Naming uniforme:</strong> sin acentos en nombres de carpeta, formato <code>{Ciudad}_{Identificador}/</code>. Sin prefijos <code>26-</code> ni <code>.-</code>.</li>
+  </ol>
 </section>
 
-<!-- ============== 3. DRIVE: ARBOL UNICO ============== -->
+<!-- ============== 3. ARBOL DRIVE ============== -->
 <section>
-  <h2><span class="num">03</span>Drive — árbol raíz</h2>
-  <p>Raíz canónica única: <code>CdU DE 0 a ÉXITO</code>. Las otras 3 carpetas raíz se borran o se anidan. <strong>8 carpetas raíz, ni una más</strong>.</p>
+  <h2><span class="num">03</span>Drive — árbol único</h2>
+  <p>Raíz canónica: <code>CdU DE 0 a ÉXITO</code> (Shared Drive). 7 carpetas raíz, ni una más.</p>
 
   <div class="legend">
     <span><span class="tag tag-keep"></span> Mantener</span>
     <span><span class="tag tag-rename"></span> Renombrar</span>
+    <span><span class="tag tag-merge"></span> Consolidar / mover</span>
     <span><span class="tag tag-new"></span> Nueva</span>
-    <span><span class="tag tag-delete"></span> Eliminar/mover</span>
   </div>
 
-<pre class="tree"><span class="root">📁 CdU DE 0 a ÉXITO/</span>
+<pre class="tree">📁 <strong>CdU DE 0 a ÉXITO/</strong>  <span class="comment"># Shared Drive raíz</span>
 │
-├── <span class="new">NUEVO</span> 📁 <strong>00_PRODUCTO_SERVICIO/</strong>           <span class="comment"># Qué es el servicio CdU — contratos plantilla F1/F2/F3, brochure, checklist técnico interno</span>
+├── <span class="rename">RENOMBRAR</span> 📁 <strong>00_SERVICIO_KIT/</strong>          <span class="comment"># Antes: DOCUMENTACIÓN FASES. Renombrar evita el doble-uso de "FASE".</span>
+│       ├── FASE_1/                <span class="comment"># Guiones bienvenida, entrega diagnóstico, preguntas-cortas, contrato F1, propuesta evolución</span>
+│       ├── FASE_2/                <span class="comment"># 9 carpetas temáticas (Negociación, CCP, Fiscal, Comunidad, Obras, Entes…)</span>
+│       ├── FASE_3/                <span class="comment"># Contrato F3, acuerdos colaboración, CCP</span>
+│       ├── CONTRACTUAL/           <span class="comment"># Acuerdos colaboración + CCP transversales F1-F3</span>
+│       └── CHECKLIST_INTERNO/     <span class="comment"># 00_Tramites_Registrales.pdf + plantilla visita local</span>
 │
-├── <span class="rename">RENOMBRAR</span> 📁 <strong>01_ANÁLISIS_OPERACIONES/</strong>     <span class="comment"># Antes: 26-OPERACIONES-FUERA-DEL-SERVICIO</span>
-│       ├── _PLANTILLA/                 <span class="comment"># Plantilla ligera (4 carpetas)</span>
-│       ├── Quevedo_Elche/
+├── <span class="rename">RENOMBRAR</span> 📁 <strong>01_ANÁLISIS_OPERACIONES/</strong>   <span class="comment"># Antes: 26-OPERACIONES-FUERA-DEL-SERVICIO. Oportunidades en estudio pre-servicio.</span>
+│       ├── _PLANTILLA/                       <span class="comment"># Plantilla nivel 1 (ligera) — ver sección 04</span>
 │       ├── Aspe_AvdaJuanCarlos/
-│       └── DESCARTADAS/
+│       ├── Campello_SantPere43/
+│       ├── Crevillente_AvNovelda_Esther/     <span class="comment"># Mover desde "26-ELCHE -AV.NOVELDA-ESTHER" (error: es Crevillente)</span>
+│       ├── Elche_JuanEspuche/
+│       ├── Elche_ManuelLopezQuereda/         <span class="comment"># Mover desde OTROS_TDC (lead Elche, no relacionado con TDC)</span>
+│       ├── Elche_TorreQuevedo/
+│       └── DESCARTADAS/                       <span class="comment"># + lo que estaba en 26-DESCARTADAS</span>
 │
-├── <span class="rename">RENOMBRAR</span> 📁 <strong>02_OPERACIONES_SERVICIO/</strong>     <span class="comment"># Antes: 26-DIAGNÓSTICOS-CDU</span>
-│       ├── _PLANTILLA/                 <span class="comment"># Plantilla completa (mismo modelo TDC)</span>
-│       ├── 001_Castellon_PabloBenitez/ <span class="comment"># Migrar desde root Drive</span>
-│       ├── 002_Crevillente_EstherVP6/  <span class="comment"># Migrar desde root Drive</span>
-│       ├── 003_Elche_JuanEspuche/      <span class="comment"># Migrar desde 26-FUERA-DEL-SERVICIO</span>
+├── <span class="merge">CONSOLIDAR</span> 📁 <strong>02_OPERACIONES_SERVICIO/</strong>   <span class="comment"># Antes: 26-DIAGNÓSTICOS-CDU. Ops donde un cliente paga F1/F2/F3.</span>
+│       ├── _PLANTILLA/                       <span class="comment"># Plantilla nivel 2 (completa) — ver sección 04</span>
+│       ├── 001_PabloBenitez_Castellon/       <span class="comment"># Consolidar duplicado (estaba en 26-FASE-1/03.FINALIZADA Y en 26-FUERA-SERVICIO/26-FINALIZADOS)</span>
+│       └── FINALIZADAS/                       <span class="comment"># Ops cerradas tras F1 sin pasar a F2: Elda_AnaPrieto, Petrel_JoseFrances</span>
+│
+├── <span class="keep">MANTENER</span> 📁 <strong>03_OPERACIONES_INICIADAS/</strong>   <span class="comment"># Ops en ejecución del equipo CdU. Hoy solo TDC.</span>
+│       ├── _PLANTILLA/                       <span class="comment"># Misma plantilla nivel 2</span>
+│       ├── 01_TorresCotillas/                <span class="comment"># Corregir bug 09 duplicado: SL fuera (a EMPRESA), PARTÍCIPES queda como 09_</span>
 │       └── FINALIZADAS/
 │
-├── <span class="keep">MANTENER</span> 📁 <strong>03_OPERACIONES_INICIADAS/</strong>     <span class="comment"># Ya en ejecución (propias o servicio que llegó a F2/F3)</span>
-│       ├── _PLANTILLA/                 <span class="comment"># Misma plantilla que 02</span>
-│       ├── 01_TorresCotillas/          <span class="comment"># Única op iniciada actual del equipo CdU. Limpiar bug 09 duplicado</span>
-│       └── FINALIZADAS/                 <span class="comment"># Cuando se cierre TDC u otra op del equipo</span>
+├── <span class="merge">CONSOLIDAR</span> 📁 <strong>04_EMPRESA/</strong>                <span class="comment"># Une SOCIEDAD + FINANZAS + lo transversal de la SL</span>
+│       ├── SOCIEDAD/                          <span class="comment"># Constitución, escrituras, pacto socios, junta. Ya está bien.</span>
+│       ├── FINANZAS/                          <span class="comment"># Banca SL, póliza Caixa, modelo 303/232, IVA, IS. Reorganizar.</span>
+│       ├── FISCAL_CASOS/                      <span class="comment"># Traer sl-cdu/ desde Mi Unidad. Casos abiertos AEAT.</span>
+│       └── EQUIPO/                            <span class="comment"># Contratos socios Xavi/Paco/Dani, fichas arquitectos</span>
 │
-├── <span class="new">CONSOLIDAR</span> 📁 <strong>04_EMPRESA/</strong>                  <span class="comment"># Une SOCIEDAD + FINANZAS actuales</span>
-│       ├── SOCIEDAD/                   <span class="comment"># Constitución, escrituras, pacto socios</span>
-│       ├── FINANZAS/                   <span class="comment"># Banca, póliza, IS, IVA, modelo 303/232</span>
-│       ├── FISCAL_CASOS/sl-cdu/        <span class="comment"># Mover carpeta raíz sl-cdu aquí</span>
-│       └── EQUIPO/                     <span class="comment"># Contratos socios, fichas Xavi/Paco/Dani/arquitectos</span>
+├── <span class="keep">MANTENER</span> 📁 <strong>05_MARKETING/</strong>                <span class="comment"># Imagen Corporativa, Imágenes Videos Ops, Landings Producto, Presentaciones, Recursos, Reuniones</span>
 │
-├── <span class="keep">MANTENER</span> 📁 <strong>05_MARKETING/</strong>                <span class="comment"># Landings, ads, briefings exportados, copy del servicio</span>
+├── <span class="keep">MANTENER</span> 📁 <strong>06_NORMATIVA_CCAA/</strong>            <span class="comment"># REQUISITOS POR LOCALIDADES (VLC, CAT, expandir) + PREGUNTAS AYUNTAMIENTO</span>
 │
-├── <span class="keep">MANTENER</span> 📁 <strong>06_NORMATIVA_CCAA/</strong>            <span class="comment"># Por comunidad autónoma: VLC, MURCIA, CAT, etc.</span>
-│
-└── <span class="new">NUEVO</span> 📁 <strong>_ARCHIVO/</strong>                    <span class="comment"># Carpetas viejas + descartadas + años anteriores</span>
+└── <span class="new">NUEVO</span> 📁 <strong>_ARCHIVO/</strong>                    <span class="comment"># Cementerio: TEMPORAL/, Altea pre-estudio, ops históricas sin actividad &gt;6 meses</span>
 
 
-<span class="comment">🗑️  ELIMINAR / MOVER fuera de CdU DE 0 a ÉXITO:</span>
-   - cdu/                       → BORRAR (vacía)
-   - CdU_EXITO/                 → mover a Drive raíz como _SYNC_REPO_LOCAL/ (backup técnico Xavi)
-   - cdu-exito/                 → mover a XAVI_WIKI (son notas de sesión)
-   - sl-cdu/                    → MOVER a 04_EMPRESA/FISCAL_CASOS/sl-cdu/
-   - NUTRICIÓN/                 → mover a Drive raíz fuera del proyecto CdU
-   - TEMPORAL/                  → revisar y archivar (BecaIN, masterclass → 07_FORMACIÓN_PROPIA si se mantiene)
+<span class="comment">🗑️  ELIMINAR / MOVER desde Mi Unidad (fuera del Shared Drive):</span>
+   - cdu/                    → BORRAR (vacía)
+   - cdu-exito/              → no es del equipo (notas técnicas Xavi)
+   - sl-cdu/                 → MOVER a 04_EMPRESA/FISCAL_CASOS/sl-cdu/
+   - NUTRICIÓN/              → fuera del proyecto CdU (es formaciones Comunidad IN)
+   - TEMPORAL/               → mover a _ARCHIVO/
+   - OTROS_TDC/              → disolver: TDC docs a 03_INICIADAS/01_TorresCotillas/06_DOCUMENTACIÓN/; lead Quereda a 01_ANÁLISIS_OPERACIONES/
 </pre>
 </section>
 
-<!-- ============== 4. LAS 3 CAJAS OPERATIVAS ============== -->
+<!-- ============== 4. PLANTILLA OP ============== -->
 <section>
-  <h2><span class="num">04</span>Las 3 cajas de operaciones — flujo de vida</h2>
-  <p>Toda operación CdU pasa por uno o varios de estos 3 estados. <strong>El cambio de estado = mover la carpeta entre cajas.</strong></p>
-
-  <table>
-    <thead>
-      <tr>
-        <th style="width:22%">Caja</th>
-        <th style="width:36%">Qué contiene</th>
-        <th style="width:42%">Cuándo entra / cuándo sale</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>01_ANÁLISIS_<br>OPERACIONES</strong></td>
-        <td>Oportunidades que estamos estudiando pero <strong>aún no son operación ni del servicio ni propia</strong>. Ej: Quevedo, Aspe, Campello.</td>
-        <td><strong>Entra:</strong> cuando detectamos una oportunidad (listing, referido, prospección).<br><strong>Sale a:</strong> 02_SERVICIO si cliente firma F1 · 03_INICIADAS si decidimos ejecutarla nosotros · DESCARTADAS si no encaja.</td>
-      </tr>
-      <tr>
-        <td><strong>02_OPERACIONES_<br>SERVICIO</strong></td>
-        <td>Ops donde <strong>somos asesores de un cliente</strong> que ha contratado F1, F2 o F3. Ej: Pablo Castellón, Esther VP6, Espuche, Av. Novelda.</td>
-        <td><strong>Entra:</strong> cliente firma contrato F1 (289€) y empieza el diagnóstico.<br><strong>Sale a:</strong> FINALIZADAS (cliente termina sin pasar a F2) · 03_INICIADAS (si el equipo entra como gestor/JV en la ejecución).</td>
-      </tr>
-      <tr>
-        <td><strong>03_OPERACIONES_<br>INICIADAS</strong></td>
-        <td>Ops <strong>en ejecución real</strong> donde el equipo CdU opera (propias del equipo o de servicio que escaló a ejecución). Ej: Torres de Cotillas. Futuras: Espuche o VP6 si pasan a F2.</td>
-        <td><strong>Entra:</strong> firma de compraventa (o arras vinculantes) y arranque de proyecto técnico.<br><strong>Sale a:</strong> FINALIZADAS al cerrar la venta o explotación.</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="callout">
-    <strong>Cuándo una op vive en 2 cajas:</strong> nunca. Cuando una op del servicio escala a ejecución, su carpeta de <code>02_SERVICIO</code> se MUEVE entera a <code>03_INICIADAS</code> (no se duplica). Trello lo refleja: el board pasa de "TAREAS GENERALES EQUIPO" a un board nuevo desde la plantilla OPERACIONES.
-  </div>
-</section>
-
-<!-- ============== 5. PLANTILLA OP ============== -->
-<section>
-  <h2><span class="num">05</span>Plantilla universal de carpeta-op</h2>
-  <p>Una sola plantilla con <strong>dos niveles de carga</strong>: ligera al inicio (análisis), completa al pasar a servicio o iniciada. Cuando una op crece, NO se cambia su estructura — solo se rellena más.</p>
+  <h2><span class="num">04</span>Plantilla universal de carpeta-op</h2>
+  <p>Una sola plantilla con <strong>dos niveles</strong>: ligera al inicio (análisis), completa al pasar a servicio o iniciada. La estructura no cambia entre los dos niveles — solo se añaden carpetas, las existentes mantienen su número.</p>
 
   <div class="compare">
     <div class="col">
       <h4>Nivel 1 · Análisis (op nueva)</h4>
-<pre>📁 {NN}_Ciudad_Cliente/
-├── 00_INFO_OPERACION.md
+<pre>📁 {Ciudad}_{Identificador}/
+├── 00_INFO.md
 ├── 01_VIABILIDAD/
-│   ├── ECONÓMICA/
+│   ├── ECONOMICA/
 │   ├── ADMINISTRATIVA/
-│   ├── TÉCNICA/
-│   └── JURÍDICA/
-├── 02_DOCUMENTACIÓN/
+│   ├── TECNICA/
+│   └── JURIDICA/
+├── 02_DOCUMENTACION/
 │   ├── CONSULTAS/
 │   ├── CONTRATOS/
 │   └── PRESUPUESTOS/
 └── 03_REUNIONES/</pre>
-      <p style="font-size:11.5px; color: var(--muted); margin-top:8px;">4 carpetas. Inspirado en cómo Dani ha montado Quevedo.</p>
+      <p style="font-size:11.5px; color: var(--muted); margin-top:8px;">Modelo Quevedo limpio. 4 carpetas.</p>
     </div>
     <div class="col">
       <h4>Nivel 2 · Servicio o Iniciada</h4>
-<pre>📁 {NN}_Ciudad_Cliente/
-├── 00_INFO_OPERACION.md
-├── 01_VIABILIDAD_ECONÓMICA/
+<pre>📁 {NNN}_{Cliente}_{Ciudad}/
+├── 00_INFO.md
+├── 01_VIABILIDAD_ECONOMICA/
 ├── 02_VIABILIDAD_ADMINISTRATIVA/
-├── 03_VIABILIDAD_TÉCNICA/
-├── 04_VIABILIDAD_JURÍDICA/
-├── 05_DIAGNÓSTICO_F1/
-├── 06_DOCUMENTACIÓN/
+├── 03_VIABILIDAD_TECNICA/
+├── 04_VIABILIDAD_JURIDICA/
+├── 05_DIAGNOSTICO_F1/
+├── 06_DOCUMENTACION/
 │   ├── COMPRAVENTA/
-│   ├── NEGOCIACIÓN/
+│   ├── NEGOCIACION/
 │   ├── CONSULTAS/
 │   ├── CONTRATOS/
 │   ├── PRESUPUESTOS/
-│   └── TASAS-LICENCIAS/
+│   └── TASAS_LICENCIAS/
 ├── 07_SUMINISTROS/
 │   ├── IBERDROLA/
 │   ├── AGUAS/
 │   └── GAS/
 ├── 08_FISCALIDAD/
 │   └── FACTURAS_ABONADAS/
-├── 09_PARTÍCIPES/
+├── 09_PARTICIPES/
 │   └── REUNIONES/
-└── 10_FOTOGRAFÍAS/
+└── 10_FOTOGRAFIAS/
     ├── ESTADO_ORIGINAL/
     ├── AVANCES/
     ├── PASO_4_ALQUILER/
     └── PASO_4_VENTA/</pre>
-      <p style="font-size:11.5px; color: var(--muted); margin-top:8px;">10 carpetas. Inspirado en TDC, sin el bug 09 duplicado.</p>
+      <p style="font-size:11.5px; color: var(--muted); margin-top:8px;">Modelo TDC corregido. 10 carpetas (sin 09 duplicado, SL movida a 04_EMPRESA).</p>
     </div>
   </div>
 
-  <h3>00_INFO_OPERACION.md — ficha de la op (siempre la primera carpeta)</h3>
-  <p>Un solo archivo markdown que va con la op en todas las cajas. Contiene: número de op, dirección, m² útil/construidos, asking, oferta, encaje propuesto, fecha entrada, cliente (si servicio), gestor responsable, partícipes (si propia/JV), link al board Trello, link al pasaje de cada visita.</p>
-  <p>Este archivo es <strong>la fuente de verdad</strong> sobre el estado de la op. Si quieres saber dónde está algo, lo abres primero.</p>
+  <h3>00_INFO.md — ficha de la op</h3>
+  <p>Archivo markdown corto que va con la op desde análisis hasta cierre. Contiene: dirección, m² útil/construidos, asking, oferta, encaje propuesto, fecha entrada, cliente (si servicio), gestor responsable, partícipes (si propia/JV), <strong>estado actual</strong> (en estudio / GO / GO con ajustes / NO GO / en ejecución / finalizada), link al board Trello.</p>
+
+  <div class="callout">
+    <strong>Estado en el archivo, no en el path.</strong> El pipeline <code>01.PRE-ESTUDIO/02.EN ESTUDIO/03.FINALIZADA/{GO,GO con ajustes,NO GO}</code> de <code>26-DIAGNÓSTICOS-CDU/26-FASE-1/</code> está abandonado precisamente porque obliga a mover carpetas por cada cambio de estado. Si el estado vive en el <code>00_INFO.md</code> y en Trello, una op puede cambiar de estado sin mover ni un archivo.
+  </div>
 </section>
 
-<!-- ============== 6. NAMING ============== -->
+<!-- ============== 5. CONVENCION NOMBRES ============== -->
 <section>
-  <h2><span class="num">06</span>Convención de nombres</h2>
-  <p>Sin acentos, sin caracteres especiales raros, formato uniforme. Compatible con Drive, Trello, Git, URL.</p>
-
+  <h2><span class="num">05</span>Convención de nombres</h2>
   <table>
     <thead>
       <tr><th style="width:30%">Tipo</th><th>Formato</th><th>Ejemplo</th></tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Op en Análisis</td>
-        <td><code>Ciudad_Calle</code> (sin número)</td>
-        <td><code>Quevedo_Elche</code> · <code>Aspe_AvdaJuanCarlos</code></td>
-      </tr>
-      <tr>
-        <td>Op en Servicio</td>
-        <td><code>NNN_Cliente_Ciudad</code> (NNN = orden de entrada al servicio)</td>
-        <td><code>001_PabloBenitez_Castellon</code> · <code>002_EstherDavo_VP6</code></td>
-      </tr>
-      <tr>
-        <td>Op Iniciada</td>
-        <td><code>NN_NombreOp_Ciudad</code> (NN = orden por iniciación)</td>
-        <td><code>01_TorresCotillas</code></td>
-      </tr>
-      <tr>
-        <td>Subcarpetas internas</td>
-        <td><code>NN_NOMBRE_MAYUSCULA</code> (sin acentos, sin espacios)</td>
-        <td><code>01_VIABILIDAD_ECONOMICA</code> · <code>07_SUMINISTROS</code></td>
-      </tr>
-      <tr>
-        <td>Archivos en carpeta</td>
-        <td><code>NN_descripcion_corta.ext</code> (cuando importa el orden)</td>
-        <td><code>01_nota_simple.pdf</code> · <code>03_acta_visita.docx</code></td>
-      </tr>
+      <tr><td>Op en Análisis</td><td><code>{Ciudad}_{Identificador}/</code></td><td><code>Elche_TorreQuevedo</code> · <code>Aspe_AvdaJuanCarlos</code></td></tr>
+      <tr><td>Op en Servicio</td><td><code>NNN_{Cliente}_{Ciudad}/</code> (NNN = orden entrada al servicio)</td><td><code>001_PabloBenitez_Castellon</code></td></tr>
+      <tr><td>Op Iniciada</td><td><code>NN_{NombreOp}/</code> (NN = orden iniciación)</td><td><code>01_TorresCotillas</code></td></tr>
+      <tr><td>Subcarpetas internas</td><td><code>NN_NOMBRE_MAYUSCULA</code> · sin acentos · sin espacios</td><td><code>01_VIABILIDAD_ECONOMICA</code> · <code>07_SUMINISTROS</code></td></tr>
+      <tr><td>Archivos en carpeta</td><td><code>NN_descripcion_corta.ext</code> cuando importa el orden</td><td><code>01_nota_simple.pdf</code></td></tr>
     </tbody>
   </table>
 </section>
 
-<!-- ============== 7. VINCULO DRIVE TRELLO ============== -->
+<!-- ============== 6. VINCULO DRIVE TRELLO ============== -->
 <section>
-  <h2><span class="num">07</span>Vínculo Drive ↔ Trello — armonía operativa</h2>
-  <p>Drive y Trello son <strong>dos vistas del mismo proyecto</strong>. Por cada carpeta operativa hay un correlato en Trello. Por cada card que genere documento hay una subcarpeta Drive enlazada.</p>
+  <h2><span class="num">06</span>Vínculo Drive ↔ Trello</h2>
+  <p>Drive almacena, Trello gestiona. Cada zona Drive se refleja en un tablero Trello concreto.</p>
 
   <table>
     <thead>
-      <tr><th style="width:34%">Drive</th><th style="width:34%">Trello (tablero)</th><th>Trello (lista o card)</th></tr>
+      <tr><th style="width:36%">Drive</th><th style="width:34%">Trello (tablero)</th><th>Lista o card</th></tr>
     </thead>
     <tbody>
-      <tr>
-        <td><code>01_ANÁLISIS_OPERACIONES/</code></td>
-        <td><strong>ANALISIS DE OPERACIONES</strong></td>
-        <td>1 lista por op (Quevedo, Aspe, Campello…)</td>
-      </tr>
-      <tr>
-        <td><code>02_OPERACIONES_SERVICIO/{op}/</code></td>
-        <td><strong>TAREAS GENERALES EQUIPO</strong></td>
-        <td>1 card por op en lista "F1 en curso" · checklist con hitos</td>
-      </tr>
-      <tr>
-        <td><code>03_OPERACIONES_INICIADAS/{op}/</code></td>
-        <td><strong>Board propio por op</strong> (clonar plantilla)</td>
-        <td>Listas por área: DT · Obras · Admin/Fiscal · Comercial</td>
-      </tr>
-      <tr>
-        <td><code>04_EMPRESA/SOCIEDAD/</code></td>
-        <td><strong>TAREAS GENERALES EQUIPO</strong></td>
-        <td>Lista "SOCIEDAD" · cards de gestión societaria</td>
-      </tr>
-      <tr>
-        <td><code>04_EMPRESA/FINANZAS/</code></td>
-        <td><strong>TAREAS GENERALES EQUIPO</strong></td>
-        <td>Lista "FINANZAS" · cards de tesorería, modelos, impuestos</td>
-      </tr>
-      <tr>
-        <td><code>05_MARKETING/</code></td>
-        <td><strong>TAREAS GENERALES EQUIPO</strong></td>
-        <td>Lista "MARKETING"</td>
-      </tr>
+      <tr><td><code>01_ANÁLISIS_OPERACIONES/{op}/</code></td><td><strong>ANALISIS DE OPERACIONES</strong></td><td>1 lista por op</td></tr>
+      <tr><td><code>02_OPERACIONES_SERVICIO/{op}/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>1 card por op con checklist hitos F1/F2/F3</td></tr>
+      <tr><td><code>03_OPERACIONES_INICIADAS/{op}/</code></td><td><strong>Board propio por op</strong> (clonar plantilla OPERACIONES)</td><td>Listas por área: DT · Obras · Admin/Fiscal · Comercial</td></tr>
+      <tr><td><code>04_EMPRESA/SOCIEDAD/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>Lista "SOCIEDAD"</td></tr>
+      <tr><td><code>04_EMPRESA/FINANZAS/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>Lista "FINANZAS"</td></tr>
+      <tr><td><code>05_MARKETING/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>Lista "MARKETING"</td></tr>
+      <tr><td><code>00_SERVICIO_KIT/</code></td><td>Sin tablero (es plantillería estable)</td><td>—</td></tr>
+      <tr><td><code>06_NORMATIVA_CCAA/</code></td><td><strong>TAREAS GENERALES EQUIPO</strong></td><td>Lista "AGENDA CONTACTOS URBANISMO"</td></tr>
     </tbody>
   </table>
 
   <div class="callout">
-    <strong>Regla del enlace:</strong> toda card Trello que genere o reciba documento debe llevar en su descripción el link a la subcarpeta Drive correspondiente. Y toda subcarpeta Drive con varios documentos debe tener un archivo <code>00_README.md</code> con el link al card Trello que la genera. Doble dirección.
+    <strong>Regla del enlace:</strong> toda card Trello que genere o reciba documento lleva en su descripción el link a la subcarpeta Drive correspondiente. Toda subcarpeta de op tiene un <code>00_INFO.md</code> con link al card Trello. Doble dirección.
   </div>
 </section>
 
-<!-- ============== 8. LOCAL TALLER IA ============== -->
+<!-- ============== 7. DONDE GUARDO X ============== -->
 <section>
-  <h2><span class="num">08</span>Local CdU_EXITO (Xavi) — taller IA</h2>
-  <p>El local es <strong>solo de Xavi</strong>. El equipo no necesita acceder. Sirve para mantener plantillas, agentes IA, scripts y borradores. No replica Drive.</p>
-
-<pre class="tree"><span class="root">📁 CdU_EXITO/  (en C:\Users\xavir\...)</span>
-├── CLAUDE.md                <span class="comment"># Instrucciones maestras para Claude Code</span>
-├── CONTEXT/                 <span class="comment"># Producto, voz de marca, estado del proyecto</span>
-├── PLANTILLAS/              <span class="comment"># Replicables (informe F1, oferta argumentada, briefing HTML)</span>
-├── AGENTES/                 <span class="comment"># COTE IA: viabilidad, normativa, captación</span>
-├── KNOWLEDGE/               <span class="comment"># Formación IN, voz Dani, fiscalidad, doctrina interna</span>
-├── MARKETING/               <span class="comment"># Landings, ads, copy del servicio (no producto Drive)</span>
-├── BRIEFINGS/               <span class="comment"># Subrepo cdu-briefings → GitHub Pages (donde vive este HTML)</span>
-├── GHL/                     <span class="comment"># Config y snippets GoHighLevel</span>
-├── DRAFTS_DISCORD/          <span class="comment"># Borradores de respuestas Comunidad IN</span>
-├── _PRIVADO_XAVI/           <span class="comment"># 🔒 Zona privada — gitignored, off-limits para agentes</span>
-└── _ARCHIVO/                <span class="comment"># Material viejo de sesiones</span>
-</pre>
-
-  <div class="callout">
-    <strong>Lo que NO está en local:</strong> ni una sola carpeta por operación. Si Xavi necesita trabajar con docs de una op, abre Drive. El local es solo para construcción de plantillas, herramientas IA y trabajo técnico antes de que llegue a Drive.
-  </div>
-</section>
-
-<!-- ============== 9. GUIA RAPIDA ============== -->
-<section>
-  <h2><span class="num">09</span>¿Dónde guardo X? — guía rápida</h2>
-  <p>Si dudas dónde dejar algo, consulta esta tabla. Una entrada, un destino.</p>
-
+  <h2><span class="num">07</span>¿Dónde guardo X?</h2>
   <table>
     <thead>
-      <tr><th style="width:38%">Esto que tengo entre manos…</th><th>Va aquí</th></tr>
+      <tr><th style="width:42%">Esto que tengo entre manos…</th><th>Va aquí</th></tr>
     </thead>
     <tbody>
-      <tr><td>Nota simple de un local que estamos estudiando (sin cliente aún)</td><td><code>01_ANÁLISIS_OPERACIONES/{Ciudad_Calle}/01_VIABILIDAD/JURÍDICA/</code></td></tr>
-      <tr><td>Contrato F1 firmado por un cliente nuevo</td><td><code>02_OPERACIONES_SERVICIO/{NNN_Cliente}/00_INFO_OPERACION.md</code> + el PDF en <code>06_DOCUMENTACIÓN/CONTRATOS/</code></td></tr>
-      <tr><td>Informe Fase 1 entregable al cliente</td><td><code>02_OPERACIONES_SERVICIO/{NNN_Cliente}/05_DIAGNÓSTICO_F1/</code></td></tr>
-      <tr><td>Acta reunión arquitecto sobre proyecto técnico</td><td><code>03_OPERACIONES_INICIADAS/{op}/03_VIABILIDAD_TÉCNICA/</code> (o <code>09_PARTÍCIPES/REUNIONES/</code> si va de gestión)</td></tr>
-      <tr><td>Factura de Iberdrola por alta de suministros</td><td><code>03_OPERACIONES_INICIADAS/{op}/07_SUMINISTROS/IBERDROLA/</code></td></tr>
+      <tr><td>Nota simple de un local que estamos estudiando (sin cliente todavía)</td><td><code>01_ANÁLISIS_OPERACIONES/{Ciudad}_{Id}/01_VIABILIDAD/JURIDICA/</code></td></tr>
+      <tr><td>Contrato F1 firmado por cliente nuevo</td><td><code>02_OPERACIONES_SERVICIO/{NNN_Cliente_Ciudad}/06_DOCUMENTACION/CONTRATOS/</code></td></tr>
+      <tr><td>Informe Fase 1 entregable</td><td><code>02_OPERACIONES_SERVICIO/{NNN_Cliente_Ciudad}/05_DIAGNOSTICO_F1/</code></td></tr>
+      <tr><td>Guion de la reunión de entrega F1 (plantilla, no de un cliente concreto)</td><td><code>00_SERVICIO_KIT/FASE_1/</code></td></tr>
+      <tr><td>Factura Iberdrola alta suministros TDC</td><td><code>03_OPERACIONES_INICIADAS/01_TorresCotillas/07_SUMINISTROS/IBERDROLA/</code></td></tr>
       <tr><td>Factura recibida que ya hemos pagado</td><td><code>{op}/08_FISCALIDAD/FACTURAS_ABONADAS/</code></td></tr>
-      <tr><td>Foto del estado original del local (antes de obra)</td><td><code>{op}/10_FOTOGRAFÍAS/ESTADO_ORIGINAL/</code></td></tr>
-      <tr><td>Foto del avance de obra para post Discord</td><td><code>{op}/10_FOTOGRAFÍAS/AVANCES/</code></td></tr>
-      <tr><td>Escritura constitutiva de la SL</td><td><code>04_EMPRESA/SOCIEDAD/CONSTITUCIÓN/</code></td></tr>
+      <tr><td>Foto del estado original del local</td><td><code>{op}/10_FOTOGRAFIAS/ESTADO_ORIGINAL/</code></td></tr>
+      <tr><td>Escritura constitutiva SL</td><td><code>04_EMPRESA/SOCIEDAD/CONSTITUCION/</code></td></tr>
       <tr><td>Modelo 303 trimestre 2T 2026 presentado</td><td><code>04_EMPRESA/FINANZAS/MODELOS/2026_T2/</code></td></tr>
-      <tr><td>Landing nueva del servicio CdU</td><td><code>05_MARKETING/landings/</code></td></tr>
-      <tr><td>Normativa urbanística de un nuevo municipio</td><td><code>06_NORMATIVA_CCAA/{CCAA}/{Municipio}/</code></td></tr>
-      <tr><td>Borrador de respuesta para Discord Comunidad IN</td><td><strong>Local Xavi</strong> · <code>DRAFTS_DISCORD/</code> (no Drive)</td></tr>
-      <tr><td>Plantilla nueva de informe (genérica, reutilizable)</td><td><strong>Local Xavi</strong> · <code>PLANTILLAS/</code> (no Drive)</td></tr>
+      <tr><td>Landing nueva del servicio</td><td><code>05_MARKETING/Landings Producto CdU/</code></td></tr>
+      <tr><td>Normativa urbanística de un nuevo municipio</td><td><code>06_NORMATIVA_CCAA/REQUISITOS POR LOCALIDADES/{CCAA}/{Municipio}/</code></td></tr>
     </tbody>
   </table>
 </section>
 
-<!-- ============== 10. PLAN MIGRACION ============== -->
+<!-- ============== 8. PLAN MIGRACION ============== -->
 <section>
-  <h2><span class="num">10</span>Plan de migración — 4 fases</h2>
-  <p>Migración por fases acotadas. Cada fase termina con Drive más limpio y reversible. Nada se borra sin antes archivar.</p>
+  <h2><span class="num">08</span>Plan de migración — 4 fases</h2>
+  <p>Migración acotada y reversible. Cada fase deja Drive más limpio que antes. Nada se borra sin antes archivar.</p>
 
   <h3>Fase A · Limpieza huérfanas (30 min)</h3>
   <ul>
-    <li>Borrar carpeta <code>cdu/</code> de Drive raíz (vacía verificada).</li>
-    <li>Renombrar <code>CdU_EXITO/</code> raíz → <code>_SYNC_REPO_LOCAL/</code> (es backup del repo de Xavi, no operativo del equipo).</li>
-    <li>Mover <code>cdu-exito/</code> raíz a <code>XAVI_WIKI</code> (son notas de sesión).</li>
-    <li>Mover <code>sl-cdu/</code> raíz → <code>CdU DE 0 a ÉXITO/04_EMPRESA/FISCAL_CASOS/sl-cdu/</code>.</li>
-    <li>Borrar o mover <code>NUTRICIÓN/</code> (no pinta nada aquí).</li>
+    <li>Borrar <code>cdu/</code> de Mi Unidad (verificada vacía).</li>
+    <li>Mover <code>sl-cdu/</code> → <code>04_EMPRESA/FISCAL_CASOS/sl-cdu/</code>.</li>
+    <li>Mover <code>TEMPORAL/</code> → <code>_ARCHIVO/TEMPORAL_2025/</code>.</li>
+    <li>Sacar <code>NUTRICIÓN/</code> del proyecto CdU (es formaciones Comunidad IN, no nuestro).</li>
+    <li>Identificar y unificar duplicados de Pablo Castellón (eliminar la copia de <code>26-FASE-1/03.FINALIZADA/CASTELLÓN…</code>, dejar solo en <code>02_OPERACIONES_SERVICIO/FINALIZADAS/001_PabloBenitez_Castellon/</code>).</li>
   </ul>
 
-  <h3>Fase B · Renombrar raíz interna (15 min)</h3>
+  <h3>Fase B · Renombrar raíz (45 min)</h3>
   <ul>
-    <li><code>26-OPERACIONES-FUERA-DEL-SERVICIO/</code> → <code>01_ANÁLISIS_OPERACIONES/</code></li>
-    <li><code>26-DIAGNÓSTICOS-CDU/</code> → <code>02_OPERACIONES_SERVICIO/</code></li>
-    <li><code>26-OPERACIONES-INICIADAS/</code> → <code>03_OPERACIONES_INICIADAS/</code></li>
-    <li>Crear <code>00_PRODUCTO_SERVICIO/</code> (mover contratos plantilla F1/F2/F3 desde <code>02_OPERACIONES_SERVICIO/26-FASE-1/</code> y <code>26-FASE-3/</code>).</li>
-    <li>Crear <code>_ARCHIVO/</code>. Mover <code>26-CHECKLIST CDU</code>, <code>2025-12 DISEÑO FASES PARTE 1/2</code>, <code>TEMPORAL/</code>.</li>
-    <li>Crear <code>_PLANTILLA/</code> en cada caja (01, 02, 03) con el árbol del nivel correspondiente.</li>
+    <li><code>DOCUMENTACIÓN FASES/</code> → <code>00_SERVICIO_KIT/</code></li>
+    <li><code>OPERACIONES/26-OPERACIONES-FUERA-DEL-SERVICIO/</code> → <code>01_ANÁLISIS_OPERACIONES/</code> (sube al nivel raíz)</li>
+    <li><code>OPERACIONES/26-DIAGNÓSTICOS-CDU/</code> → <code>02_OPERACIONES_SERVICIO/</code> (sube al nivel raíz)</li>
+    <li><code>OPERACIONES/26-OPERACIONES-INICIADAS/</code> → <code>03_OPERACIONES_INICIADAS/</code> (sube al nivel raíz)</li>
+    <li>Eliminar la carpeta intermedia <code>OPERACIONES/</code> (no aporta — las 3 ya están al raíz).</li>
+    <li>Crear <code>04_EMPRESA/</code>. Mover <code>SOCIEDAD/</code> y <code>FINANZAS/</code> dentro. Crear <code>FISCAL_CASOS/</code> y <code>EQUIPO/</code>.</li>
+    <li>Renombrar <code>NORMATIVA URBANISTICA CCAA/</code> → <code>06_NORMATIVA_CCAA/</code>.</li>
+    <li>Renombrar <code>MARKETING/</code> → <code>05_MARKETING/</code>.</li>
+    <li>Crear <code>_ARCHIVO/</code>.</li>
+    <li>Crear <code>_PLANTILLA/</code> en cada caja operativa (01, 02, 03) con el árbol del nivel correspondiente.</li>
   </ul>
 
-  <h3>Fase C · Migrar ops dispersas (1-2h, hacerlo en sesión equipo)</h3>
+  <h3>Fase C · Renombrar y consolidar ops (1-2h en sesión equipo)</h3>
   <ul>
-    <li><strong>Pablo Castellón</strong> (id <code>19hChus22...</code>): mover a <code>02_OPERACIONES_SERVICIO/001_PabloBenitez_Castellon/</code>. Reorganizar 12 archivos planos según plantilla nivel 2.</li>
-    <li><strong>Esther VP6</strong> (id <code>1EQ3vdVa...</code>): mover a <code>02_OPERACIONES_SERVICIO/002_EstherDavo_VP6/</code>. Reorganizar 6 archivos sueltos.</li>
-    <li><strong>Juan Espuche 1</strong>: mover de <code>01_ANÁLISIS/</code> a <code>02_OPERACIONES_SERVICIO/003_JuanEspuche_Elche/</code> SOLO si hay contrato F1 firmado. Si no, queda en análisis.</li>
-    <li><strong>Av. Novelda Esther</strong>: ya en análisis, mantener.</li>
-    <li><strong>Quevedo</strong>: ya en análisis, mantener (modelo plantilla nivel 1 limpio).</li>
-    <li><strong>TDC</strong>: corregir bug <code>09_</code> duplicado (renombrar <code>09._PARTÍCIPES/</code> → <code>09_PARTÍCIPES/</code> y <code>09._CDU DE 0 A ÉXITO SL/</code> → mover a <code>04_EMPRESA/SOCIEDAD/</code>). Renombrar carpeta raíz a <code>01_TorresCotillas/</code> (sin prefijo <code>.-</code> ni mayúsculas con espacios).</li>
-    <li><strong>Limpieza Crevillente</strong>: identificar y consolidar carpetas Crevillente del equipo CdU (solo la del servicio VP6). Las carpetas Crevillente que sean personales de Esther o de ops ajenas al equipo CdU se sacan del proyecto.</li>
+    <li><code>26-CAMPELLO-SANT PERE</code> → <code>Campello_SantPere43/</code></li>
+    <li><code>26-ELCHE -AV.NOVELDA-ESTHER</code> → <code>Crevillente_AvNovelda_Esther/</code> <em>(corrige el error: era Crevillente, no Elche)</em></li>
+    <li><code>26-ELCHE-JUAN ESPUCHE</code> → <code>Elche_JuanEspuche/</code></li>
+    <li><code>26-ELCHE-TORRE-QUEVEDO</code> → <code>Elche_TorreQuevedo/</code></li>
+    <li><code>Aspe - Avda Joan Carlos I</code> → <code>Aspe_AvdaJuanCarlos/</code></li>
+    <li><code>26-DESCARTADAS</code> → <code>01_ANÁLISIS_OPERACIONES/DESCARTADAS/</code></li>
+    <li><code>01.-TORRES DE COTILLAS</code> → <code>01_TorresCotillas/</code> · corregir bug 09: renombrar <code>09._PARTÍCIPES/</code> → <code>09_PARTICIPES/</code> y mover <code>09._CDU DE 0 A ÉXITO SL/</code> → <code>04_EMPRESA/SOCIEDAD/</code>.</li>
+    <li>Disolver <code>OTROS_TDC/</code>: docs TDC → <code>03_OPERACIONES_INICIADAS/01_TorresCotillas/06_DOCUMENTACION/</code>; lead Quereda → <code>01_ANÁLISIS_OPERACIONES/Elche_ManuelLopezQuereda/</code>.</li>
+    <li>Ops históricas en <code>26-FASE-1/03.FINALIZADA/</code> (Elda, Petrel) → <code>02_OPERACIONES_SERVICIO/FINALIZADAS/</code>.</li>
+    <li>Op Altea en <code>26-FASE-1/01.PRE-ESTUDIO/</code> → <code>01_ANÁLISIS_OPERACIONES/Altea_CSantaTeresa/</code> (si sigue viva) o a <code>DESCARTADAS/</code>.</li>
+    <li>Vaciar las subcarpetas <code>01.PRE-ESTUDIO/</code>, <code>02.EN ESTUDIO/</code>, <code>03.FINALIZADA/{GO,GO con ajustes,NO GO}/</code> dentro de <code>02_OPERACIONES_SERVICIO/</code> — el estado se llevará al <code>00_INFO.md</code> de cada op.</li>
   </ul>
 
   <h3>Fase D · Trello — espejar las 3 cajas (30 min)</h3>
   <ul>
-    <li>Tablero <strong>ANALISIS DE OPERACIONES</strong>: ya está alineado, solo limpiar listas obsoletas.</li>
-    <li>Tablero <strong>TAREAS GENERALES EQUIPO</strong>: añadir lista "F1 en curso" + lista "F2 en curso" para reflejar ops del servicio.</li>
-    <li>Tablero <strong>OPERACIONES (PLANTILLA)</strong>: validar que las listas (DT · Obras · Admin/Fiscal · Comercial) son las definitivas. Cuando una nueva op del equipo arranque (próxima Espuche o VP6 si escalan a F2), clonar este plantilla a un board nuevo dedicado.</li>
-    <li>Documentar la regla del enlace doble (card ↔ subcarpeta Drive) como convención escrita en una card pinned del board TAREAS GENERALES.</li>
+    <li>Tablero <strong>ANALISIS DE OPERACIONES</strong>: ya está alineado con <code>01_ANÁLISIS_OPERACIONES/</code>. Limpiar listas de ops descartadas.</li>
+    <li>Tablero <strong>TAREAS GENERALES EQUIPO</strong>: añadir lista <strong>F1_EN_CURSO</strong> (1 card por cliente activo en F1) y <strong>F2_EN_CURSO</strong> (idem F2). Cards llevan link a <code>02_OPERACIONES_SERVICIO/{op}/</code>.</li>
+    <li>Tablero <strong>OPERACIONES (PLANTILLA)</strong>: validar las 5 listas (Modelo · DT · Obras · Admin/Fiscal · Comercial). Cuando arranque la próxima op iniciada, clonar la plantilla a un board nuevo (igual que <code>03.-TORRES DE COTILLAS (TDC)</code>).</li>
+    <li>Card pineada en TAREAS GENERALES con la regla del enlace doble (Trello card ↔ Drive subcarpeta) y el link a este briefing.</li>
   </ul>
 </section>
 
-<!-- ============== 11. PRINCIPIOS DEFINITIVOS ============== -->
+<!-- ============== 9. PRINCIPIOS ============== -->
 <section>
-  <h2><span class="num">11</span>5 principios para que el sistema aguante en el tiempo</h2>
+  <h2><span class="num">09</span>5 principios para que el sistema aguante</h2>
   <ol>
-    <li><strong>Una op = una carpeta única.</strong> Nunca duplicada. Cuando cambia de estado, se MUEVE, no se copia.</li>
-    <li><strong>Si no encaja en una caja, no es operativo.</strong> Drafts, borradores, exploración personal van al local de Xavi o a <code>_ARCHIVO/</code>.</li>
+    <li><strong>Una op = una carpeta única.</strong> Cuando cambia de estado, se mueve, no se duplica.</li>
+    <li><strong>"FASE" significa plantillería del servicio, no estado de la op.</strong> El estado vive en <code>00_INFO.md</code> y en Trello.</li>
+    <li><strong>Si no encaja en una caja, no es operativo.</strong> Va a <code>_ARCHIVO/</code>.</li>
     <li><strong>Nada se borra, todo se archiva.</strong> <code>_ARCHIVO/</code> guarda lo que ya no es vivo pero podría tener valor histórico.</li>
-    <li><strong>Trello y Drive se enlazan.</strong> Toda card que genere documento apunta a Drive. Toda subcarpeta importante tiene su <code>00_README.md</code> con link al card.</li>
-    <li><strong>Plantilla antes que excepciones.</strong> Si crees que una op necesita estructura distinta, primero modifica la plantilla. La excepción individual es deuda futura.</li>
+    <li><strong>Plantilla antes que excepciones.</strong> Si crees que una op necesita estructura distinta, primero modifica la plantilla.</li>
   </ol>
 </section>
 
 <!-- ============== FEEDBACK ============== -->
 <div class="delta" style="margin-top:40px;">
   <div class="delta-title">Cómo dar feedback</div>
-  <p>Esta es <strong>v0.1 de COTE IA</strong> — propuesta abierta. Antes de aplicar nada, queremos validación del equipo. Tres preguntas para guiar el feedback:</p>
+  <p>Propuesta v0.2 abierta. Tres preguntas para guiar el feedback antes de aplicar nada:</p>
   <ul style="margin-top:8px;">
-    <li><strong>Dani:</strong> ¿la plantilla nivel 2 (10 carpetas) refleja cómo organizas TDC y cómo te gustaría organizar la próxima op? ¿Falta o sobra alguna?</li>
-    <li><strong>Paco:</strong> ¿la separación 04_EMPRESA (Sociedad + Finanzas + Fiscal Casos) te encaja para gestionar la SL y los modelos?</li>
-    <li><strong>Equipo:</strong> ¿la regla del enlace doble (Trello card ↔ Drive subcarpeta) es viable en el día a día?</li>
+    <li><strong>Dani:</strong> ¿la plantilla nivel 2 (10 carpetas) refleja cómo organizas TDC y cómo organizarías la próxima op? ¿Falta o sobra alguna carpeta?</li>
+    <li><strong>Paco:</strong> ¿la consolidación 04_EMPRESA (Sociedad · Finanzas · Fiscal Casos · Equipo) te encaja para gestionar la SL B26888636 y los modelos trimestrales?</li>
+    <li><strong>Equipo:</strong> ¿la regla "estado de la op en <code>00_INFO.md</code> + Trello, no en el path Drive" os hace la vida más fácil que el pipeline de carpetas <code>01.PRE-ESTUDIO/02.EN ESTUDIO/03.FINALIZADA/</code>?</li>
   </ul>
 </div>
 
-<!-- ============== FOOTER ============== -->
 <footer>
-  <div class="left">COTE IA · Sistema de carpetas CdU · v0.1</div>
-  <div class="right">19 mayo 2026 · Borrador para reunión equipo</div>
+  <div class="left">COTE IA · Sistema de carpetas Drive CdU · v0.2</div>
+  <div>19 mayo 2026 · Borrador para reunión equipo</div>
 </footer>
 
 </body>
