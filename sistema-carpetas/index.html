@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>COTE IA · Modelo de carpetas Drive CdU · v0.6</title>
-<meta name="description" content="Modelo de organización del Shared Drive del proyecto CdU de 0 a Éxito. Tres tipos de operación, flujo visual de transiciones, guía operativa.">
+<title>COTE IA · Modelo de carpetas Drive CdU · v0.7</title>
+<meta name="description" content="Modelo de organización del Shared Drive del proyecto CdU de 0 a Éxito. Estructura, flujo de transiciones y guía operativa.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
@@ -51,7 +51,18 @@ body {
 .brand-tag .brand { font-size: 14px; font-weight: 800; color: var(--ochre); letter-spacing: 0.3px; }
 .brand-tag .sub { font-size: 11px; color: #999; margin-top: 2px; }
 
-section { margin: 40px 0 28px; }
+.toc {
+  background: var(--paper); border: 1.5px solid var(--line); border-radius: 6px;
+  padding: 14px 20px; margin-bottom: 28px; font-size: 12px;
+}
+.toc strong { color: var(--navy); font-weight: 800; text-transform: uppercase; letter-spacing: 0.4px; font-size: 11px; }
+.toc ol { margin: 8px 0 0 0; list-style: none; counter-reset: toc; columns: 2; column-gap: 24px; }
+.toc ol li { counter-increment: toc; padding-left: 22px; position: relative; margin-bottom: 4px; }
+.toc ol li::before { content: counter(toc, decimal-leading-zero); position: absolute; left: 0; top: 0; color: var(--ochre); font-weight: 700; font-family: 'JetBrains Mono', monospace; }
+.toc a { color: var(--navy); text-decoration: none; }
+.toc a:hover { color: var(--ochre); }
+
+section { margin: 44px 0 28px; scroll-margin-top: 20px; }
 section h2 {
   font-size: 19px; font-weight: 800; color: var(--navy);
   margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--navy);
@@ -88,20 +99,23 @@ section strong { color: var(--navy); font-weight: 700; }
   color: var(--navy);
   overflow-x: auto;
 }
+.tree.tree-full {
+  font-size: 11.5px;
+  line-height: 1.7;
+  padding: 22px 26px;
+  border-left-width: 5px;
+}
 .tree .comment { color: var(--muted); font-style: italic; }
 .tree .h { color: var(--ochre); font-weight: 700; }
 .tree .ataj { color: var(--ochre); font-weight: 700; }
+.tree .real { color: var(--blue); font-weight: 700; }
 
-/* === LEYENDA DE ACCIONES === */
 .actions-legend {
   display: flex; gap: 12px; flex-wrap: wrap;
   background: var(--paper); border: 1.5px solid var(--line);
   border-radius: 6px; padding: 14px 18px; margin: 14px 0 22px;
 }
-.actions-legend .item {
-  display: flex; align-items: center; gap: 8px;
-  font-size: 12px;
-}
+.actions-legend .item { display: flex; align-items: center; gap: 8px; font-size: 12px; }
 .action-tag {
   display: inline-block;
   font-family: 'JetBrains Mono', monospace;
@@ -115,7 +129,6 @@ section strong { color: var(--navy); font-weight: 700; }
 .tag-shortcut { background: var(--ochre); }
 .tag-delete-shortcut { background: var(--red); }
 
-/* === BLOQUE FLUJO POR TIPO === */
 .flow-block {
   background: var(--paper);
   border: 1.5px solid var(--line);
@@ -130,7 +143,6 @@ section strong { color: var(--navy); font-weight: 700; }
   margin-bottom: 14px;
 }
 
-/* === TRANSICIÓN INDIVIDUAL === */
 .transition {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -193,10 +205,7 @@ td code {
   background: var(--soft); padding: 1px 5px; border-radius: 2px; color: var(--navy);
 }
 
-.three-cols {
-  display: grid; grid-template-columns: 1fr 1fr 1fr;
-  gap: 14px; margin: 18px 0;
-}
+.three-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin: 18px 0; }
 @media (max-width: 820px) { .three-cols { grid-template-columns: 1fr; } }
 .col-card {
   background: var(--paper); border: 1.5px solid var(--line);
@@ -206,8 +215,7 @@ td code {
 .col-card h4 {
   font-size: 12px; font-weight: 800; text-transform: uppercase;
   letter-spacing: 0.5px; color: var(--navy);
-  margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--line);
-  margin-top: 0;
+  margin: 0 0 8px 0; padding-bottom: 6px; border-bottom: 1px solid var(--line);
 }
 .col-card .note { font-size: 11px; color: var(--muted); margin-top: 8px; line-height: 1.4; }
 
@@ -218,35 +226,11 @@ td code {
 }
 .callout strong { color: var(--navy); }
 
-.steps {
-  background: var(--paper);
-  border: 1.5px solid var(--line);
-  border-radius: 6px;
-  padding: 18px 22px;
-  margin: 14px 0;
-}
+.steps { background: var(--paper); border: 1.5px solid var(--line); border-radius: 6px; padding: 18px 22px; margin: 14px 0; }
 .steps ol { counter-reset: step-counter; list-style: none; margin-left: 0; }
-.steps ol li {
-  counter-increment: step-counter;
-  position: relative;
-  padding-left: 38px;
-  margin-bottom: 12px;
-  font-size: 13px;
-  line-height: 1.55;
-}
-.steps ol li::before {
-  content: counter(step-counter);
-  position: absolute; left: 0; top: 0;
-  background: var(--navy); color: var(--cream);
-  width: 26px; height: 26px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 800; font-size: 12px;
-}
-.steps code {
-  font-family: 'JetBrains Mono', monospace; font-size: 12px;
-  background: var(--soft); padding: 1px 6px; border-radius: 2px; color: var(--navy);
-}
+.steps ol li { counter-increment: step-counter; position: relative; padding-left: 38px; margin-bottom: 12px; font-size: 13px; line-height: 1.55; }
+.steps ol li::before { content: counter(step-counter); position: absolute; left: 0; top: 0; background: var(--navy); color: var(--cream); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px; }
+.steps code { font-family: 'JetBrains Mono', monospace; font-size: 12px; background: var(--soft); padding: 1px 6px; border-radius: 2px; color: var(--navy); }
 
 footer {
   margin-top: 60px; border-top: 2px solid var(--navy);
@@ -260,16 +244,32 @@ footer .left { font-weight: 600; color: var(--navy); }
 
 <div class="header">
   <div>
-    <h1>Modelo de carpetas Drive — CdU<small>Tres tipos de operación · flujo visual · guía operativa</small></h1>
+    <h1>Modelo de carpetas Drive — CdU<small>Estructura, flujo y guía operativa</small></h1>
   </div>
   <div class="brand-tag">
-    <div class="brand">COTE IA · Propuesta v0.6</div>
+    <div class="brand">COTE IA · Propuesta v0.7</div>
     <div class="sub">Shared Drive del equipo</div>
   </div>
 </div>
 
+<div class="toc">
+  <strong>Índice</strong>
+  <ol>
+    <li><a href="#s1">Los 3 tipos de operación</a></li>
+    <li><a href="#s2">Árbol raíz — vista general</a></li>
+    <li><a href="#s3">Árbol detallado de cada carpeta raíz</a></li>
+    <li><a href="#s4">Plantilla interna de cada op</a></li>
+    <li><a href="#s5">Árbol completo expandido</a></li>
+    <li><a href="#s6">Flujo y transiciones</a></li>
+    <li><a href="#s7">Cómo crear un atajo en Drive</a></li>
+    <li><a href="#s8">Convención de nombres</a></li>
+    <li><a href="#s9">Vínculo Drive ↔ Trello</a></li>
+    <li><a href="#s10">5 principios</a></li>
+  </ol>
+</div>
+
 <!-- ============== 1. LOS 3 TIPOS ============== -->
-<section>
+<section id="s1">
   <h2><span class="num">01</span>Los 3 tipos de operación</h2>
   <p>Toda operación pertenece a uno de los 3 tipos. <strong>El tipo determina dónde vive</strong>. Cada uno tiene origen, flujo y entregables distintos.</p>
 
@@ -278,30 +278,243 @@ footer .left { font-weight: 600; color: var(--navy); }
       <h4>① Operación del servicio</h4>
       <p style="font-size:12px;"><strong>El cliente contrata.</strong> Paga F1 (289€). Sigue F2 si continúa.</p>
       <div class="note"><strong>Vive en:</strong> <code>01_OPERACIONES_SERVICIO/</code><br>
-      <strong>Subdivisiones:</strong> F1_DIAGNOSTICO · F2_MAP · F3_EXITO · FINALIZADAS<br>
+      <strong>Sub-cajas:</strong> F1_DIAGNOSTICO · F2_MAP · F3_EXITO · FINALIZADAS<br>
       <strong>Al llegar F3:</strong> se mueve a ③ INICIADAS.</div>
     </div>
     <div class="col-card">
       <h4>② Op fuera del servicio</h4>
       <p style="font-size:12px;"><strong>Viene de proveedor</strong> con comisión. No paga F1.</p>
       <div class="note"><strong>Vive en:</strong> <code>02_OPERACIONES_FUERA_SERVICIO/</code><br>
-      <strong>Subdivisiones:</strong> EN_ANALISIS · DERIVADAS_INBRUTO · DESCARTADAS<br>
-      <strong>Decisión final:</strong> INBRUTO Programa · propia · devolver al proveedor.</div>
+      <strong>Sub-cajas:</strong> EN_ANALISIS · DERIVADAS_INBRUTO · DESCARTADAS<br>
+      <strong>Decisión final:</strong> INBRUTO Programa · propia · devolver.</div>
     </div>
     <div class="col-card">
       <h4>③ Operación iniciada</h4>
       <p style="font-size:12px;"><strong>Ya en ejecución.</strong> Equipo gestiona obra/venta.</p>
       <div class="note"><strong>Vive en:</strong> <code>03_OPERACIONES_INICIADAS/</code><br>
-      <strong>Subdivisiones:</strong> DESDE_SERVICIO · DESDE_FUERA_SERVICIO · FINALIZADAS<br>
+      <strong>Sub-cajas:</strong> DESDE_SERVICIO · DESDE_FUERA_SERVICIO · FINALIZADAS<br>
       <strong>Origen doble</strong> para trazabilidad.</div>
     </div>
   </div>
 </section>
 
-<!-- ============== 2. FLUJO VISUAL ============== -->
-<section>
-  <h2><span class="num">02</span>Flujo y transiciones — qué se mueve, qué se crea, qué es atajo</h2>
-  <p>Cada cambio de estado de una operación tiene <strong>una acción concreta</strong>. Una sola fuente de verdad por carpeta — los atajos son punteros, no copias.</p>
+<!-- ============== 2. ARBOL RAIZ ============== -->
+<section id="s2">
+  <h2><span class="num">02</span>Árbol raíz — vista general</h2>
+  <p>Raíz canónica: <code>CdU DE 0 a ÉXITO</code> (Shared Drive). <strong>7 carpetas raíz</strong>.</p>
+
+<pre class="tree"><span class="h">📁 CdU DE 0 a ÉXITO/</span>
+│
+├── 00_SERVICIO_KIT/                  <span class="comment"># Plantillería del servicio</span>
+├── 01_OPERACIONES_SERVICIO/          <span class="comment"># Ops del servicio en F1, F2 o F3 (atajo)</span>
+├── 02_OPERACIONES_FUERA_SERVICIO/    <span class="comment"># Ops de proveedor</span>
+├── 03_OPERACIONES_INICIADAS/         <span class="comment"># Ops en ejecución (F3 servicio o propias)</span>
+├── 04_EMPRESA/                       <span class="comment"># SL · finanzas · equipo · marketing</span>
+├── 05_NORMATIVA_CCAA/                <span class="comment"># Requisitos urbanísticos por localidades</span>
+└── _ARCHIVO/                         <span class="comment"># Histórico sin actividad</span>
+</pre>
+</section>
+
+<!-- ============== 3. ARBOL POR CARPETA ============== -->
+<section id="s3">
+  <h2><span class="num">03</span>Árbol detallado de cada carpeta raíz</h2>
+
+  <h3>00_SERVICIO_KIT — plantillería del servicio</h3>
+<pre class="tree"><span class="h">00_SERVICIO_KIT/</span>
+├── FASE_1_DIAGNOSTICO/        <span class="comment"># Guion bienvenida + entrega · contrato F1 plantilla</span>
+├── FASE_2_MAP/                <span class="comment"># Negociación · CCP · Fiscal · Comunidad · Obras…</span>
+├── FASE_3_EXITO/              <span class="comment"># Contrato F3 plantilla · materiales comercialización</span>
+├── CONTRACTUAL/                <span class="comment"># Acuerdos colaboración + CCP transversales</span>
+└── CHECKLIST_INTERNO/         <span class="comment"># Trámites registrales · plantilla visita local</span>
+</pre>
+
+  <h3>01_OPERACIONES_SERVICIO — ops del servicio</h3>
+<pre class="tree"><span class="h">01_OPERACIONES_SERVICIO/</span>
+├── _PLANTILLA/                <span class="comment"># Copiar al arrancar nueva op</span>
+├── F1_DIAGNOSTICO/             <span class="comment"># Ops en F1 (carpetas reales)</span>
+├── F2_MAP/                     <span class="comment"># Ops en F2 (carpetas reales)</span>
+├── F3_EXITO/                   <span class="comment"># Ops en F3 (ATAJOS ↗ apuntan a INICIADAS/DESDE_SERVICIO)</span>
+└── FINALIZADAS/                <span class="comment"># Cliente acabó sin escalar a F3</span>
+</pre>
+
+  <h3>02_OPERACIONES_FUERA_SERVICIO — ops de proveedor</h3>
+<pre class="tree"><span class="h">02_OPERACIONES_FUERA_SERVICIO/</span>
+├── _PLANTILLA/                <span class="comment"># Plantilla ligera (sin F1/F2/F3 internas)</span>
+├── EN_ANALISIS/                <span class="comment"># En estudio · decisión pendiente</span>
+├── DERIVADAS_INBRUTO/          <span class="comment"># Presentadas al Programa IN</span>
+└── DESCARTADAS/                <span class="comment"># Devueltas al proveedor</span>
+</pre>
+
+  <h3>03_OPERACIONES_INICIADAS — ops en ejecución</h3>
+<pre class="tree"><span class="h">03_OPERACIONES_INICIADAS/</span>
+├── _PLANTILLA/
+├── DESDE_SERVICIO/             <span class="comment"># Llegaron al alcanzar F3 desde ①</span>
+├── DESDE_FUERA_SERVICIO/       <span class="comment"># Llegaron al quedárnoslas desde ②</span>
+└── FINALIZADAS/                <span class="comment"># Ejecución cerrada</span>
+</pre>
+
+  <h3>04_EMPRESA — todo lo de la SL</h3>
+<pre class="tree"><span class="h">04_EMPRESA/</span>
+├── SOCIEDAD/                  <span class="comment"># Constitución · escrituras · pacto socios · juntas</span>
+├── FINANZAS/                  <span class="comment"># Banca SL · póliza · modelos 303/232 · IVA · IS</span>
+├── FISCAL_CASOS/              <span class="comment"># Casos abiertos AEAT</span>
+├── EQUIPO/                    <span class="comment"># Contratos socios · fichas Xavi/Paco/Dani/arquitectos</span>
+└── MARKETING/                 <span class="comment"># Imagen corp · landings · presentaciones · imágenes/videos</span>
+</pre>
+
+  <h3>05_NORMATIVA_CCAA — requisitos urbanísticos</h3>
+<pre class="tree"><span class="h">05_NORMATIVA_CCAA/</span>
+├── REQUISITOS_POR_LOCALIDADES/
+│     ├── COMUNIDAD_VALENCIANA/
+│     ├── CATALUNYA/
+│     ├── MURCIA/
+│     └── (otras CCAA según necesidad)
+└── PREGUNTAS_AYUNTAMIENTO.pdf
+</pre>
+</section>
+
+<!-- ============== 4. PLANTILLA INTERNA ============== -->
+<section id="s4">
+  <h2><span class="num">04</span>Plantilla interna de cada op</h2>
+  <p>Lo que cambia entre tipos es <strong>si las fases F1/F2/F3 están visibles como subcarpetas dentro de la op</strong>.</p>
+
+  <h3>Tipo ① servicio · y ③ iniciada desde servicio</h3>
+<pre class="tree"><span class="h">📁 {NNN}_{Cliente}_{Ciudad}/</span>
+├── 00_INFO.md                          <span class="comment"># Ficha viva: cliente, dirección, m², estado, link Trello</span>
+│
+├── F1_DIAGNOSTICO/
+│     ├── 01_VIABILIDAD/
+│     │     └── ECONOMICA/  ADMINISTRATIVA/  TECNICA/  JURIDICA/
+│     ├── 02_REUNIONES/                 <span class="comment"># Acta bienvenida + entrega F1</span>
+│     ├── 03_DOCUMENTACION/             <span class="comment"># Nota simple, catastro, comunicaciones</span>
+│     └── 04_INFORME_F1/                <span class="comment"># Entregable final F1</span>
+│
+├── F2_MAP/
+│     ├── 05_NEGOCIACION/
+│     ├── 06_COMPRAVENTA/               <span class="comment"># Arras, escritura</span>
+│     ├── 07_OBRA/                      <span class="comment"># Proyecto técnico, licencia, ejecución</span>
+│     ├── 08_SUMINISTROS/               <span class="comment"># Iberdrola, Aguas, Gas</span>
+│     ├── 09_PARTICIPES_CCP/            <span class="comment"># Si hay CCP/JV/INBRUTO</span>
+│     └── 10_REUNIONES/
+│
+├── F3_EXITO/                           <span class="comment"># Solo activa cuando la op pasa a INICIADAS</span>
+│     ├── 11_COMERCIALIZACION/
+│     ├── 12_VENTA/
+│     └── 13_CIERRE/
+│
+└── 14_FOTOGRAFIAS/                     <span class="comment"># Transversal F1-F3</span>
+      └── ESTADO_ORIGINAL/  AVANCES/  PASO_4_ALQUILER/  PASO_4_VENTA/
+</pre>
+
+  <h3>Tipo ② fuera del servicio — plantilla ligera</h3>
+<pre class="tree"><span class="h">📁 {Ciudad}_{Identificador}/</span>
+├── 00_INFO.md                          <span class="comment"># Proveedor, comisión pactada, decisión final</span>
+├── 01_VIABILIDAD/
+│     └── ECONOMICA/  ADMINISTRATIVA/  TECNICA/  JURIDICA/
+├── 02_DOCUMENTACION/
+│     └── PROVEEDOR/  CONSULTAS/  PRESUPUESTOS/
+└── 03_REUNIONES/
+</pre>
+</section>
+
+<!-- ============== 5. ARBOL COMPLETO EXPANDIDO ============== -->
+<section id="s5">
+  <h2><span class="num">05</span>Árbol completo expandido — todo en una sola vista</h2>
+  <p>Vista panorámica. De un vistazo se ve <strong>dónde va cada cosa</strong>. Incluye ejemplos reales actuales (Pablo Castellón, TDC, ops de proveedor en análisis).</p>
+
+<pre class="tree tree-full"><span class="h">📁 CdU DE 0 a ÉXITO/</span>  <span class="comment">(Shared Drive)</span>
+│
+├── <span class="h">00_SERVICIO_KIT/</span>
+│   ├── FASE_1_DIAGNOSTICO/
+│   ├── FASE_2_MAP/
+│   ├── FASE_3_EXITO/
+│   ├── CONTRACTUAL/
+│   └── CHECKLIST_INTERNO/
+│
+├── <span class="h">01_OPERACIONES_SERVICIO/</span>
+│   ├── _PLANTILLA/
+│   ├── F1_DIAGNOSTICO/
+│   │   └── <span class="real">001_PabloBenitez_Castellon/</span>          <span class="comment">← op real en F1</span>
+│   │       ├── 00_INFO.md
+│   │       ├── F1_DIAGNOSTICO/
+│   │       │   ├── 01_VIABILIDAD/  02_REUNIONES/
+│   │       │   ├── 03_DOCUMENTACION/  04_INFORME_F1/
+│   │       ├── F2_MAP/  (vacío hasta que el cliente pague F2)
+│   │       ├── F3_EXITO/  (vacío hasta que llegue F3)
+│   │       └── 14_FOTOGRAFIAS/
+│   ├── F2_MAP/                                    <span class="comment">(vacío hoy)</span>
+│   ├── F3_EXITO/                                  <span class="comment">(vacío hoy · futuros atajos ↗)</span>
+│   └── FINALIZADAS/                               <span class="comment">(históricas: Elda, Petrel)</span>
+│
+├── <span class="h">02_OPERACIONES_FUERA_SERVICIO/</span>
+│   ├── _PLANTILLA/
+│   ├── EN_ANALISIS/
+│   │   ├── Aspe_AvdaJuanCarlos/
+│   │   ├── Campello_SantPere43/
+│   │   ├── Crevillente_VirgenPilar6_Esther/
+│   │   ├── Crevillente_AvNovelda_Esther/
+│   │   ├── Elche_JuanEspuche/
+│   │   ├── Elche_ManuelLopezQuereda/
+│   │   └── Elche_TorreQuevedo/
+│   │       ├── 00_INFO.md
+│   │       ├── 01_VIABILIDAD/  02_DOCUMENTACION/  03_REUNIONES/
+│   ├── DERIVADAS_INBRUTO/                         <span class="comment">(vacío hoy)</span>
+│   └── DESCARTADAS/                               <span class="comment">(vacío hoy)</span>
+│
+├── <span class="h">03_OPERACIONES_INICIADAS/</span>
+│   ├── _PLANTILLA/
+│   ├── DESDE_SERVICIO/                            <span class="comment">(vacío hoy)</span>
+│   ├── DESDE_FUERA_SERVICIO/
+│   │   └── <span class="real">01_TorresCotillas/</span>                    <span class="comment">← op real en ejecución</span>
+│   │       ├── 00_INFO.md
+│   │       ├── F1_DIAGNOSTICO/
+│   │       │   ├── 01_VIABILIDAD/  02_REUNIONES/
+│   │       │   ├── 03_DOCUMENTACION/  04_INFORME_F1/
+│   │       ├── F2_MAP/
+│   │       │   ├── 05_NEGOCIACION/  06_COMPRAVENTA/  07_OBRA/
+│   │       │   ├── 08_SUMINISTROS/  09_PARTICIPES_CCP/  10_REUNIONES/
+│   │       ├── F3_EXITO/
+│   │       │   └── 11_COMERCIALIZACION/  12_VENTA/  13_CIERRE/
+│   │       └── 14_FOTOGRAFIAS/
+│   └── FINALIZADAS/                               <span class="comment">(vacío hoy)</span>
+│
+├── <span class="h">04_EMPRESA/</span>
+│   ├── SOCIEDAD/
+│   │   ├── CONSTITUCION/
+│   │   └── PRESENTACION_DOCUMENTOS/
+│   ├── FINANZAS/
+│   │   ├── BANCA/  GASTOS/  MODELOS/  POLIZAS/
+│   ├── FISCAL_CASOS/
+│   │   └── sl-cdu/  <span class="comment">(caso FISCUS activo)</span>
+│   ├── EQUIPO/
+│   │   ├── CONTRATOS_SOCIOS/  FICHAS_EQUIPO/
+│   └── MARKETING/
+│       ├── IMAGEN_CORPORATIVA/  LANDINGS/
+│       ├── PRESENTACIONES/  IMAGENES_VIDEOS_OPS/  REUNIONES/
+│
+├── <span class="h">05_NORMATIVA_CCAA/</span>
+│   ├── REQUISITOS_POR_LOCALIDADES/
+│   │   ├── COMUNIDAD_VALENCIANA/
+│   │   │   └── Elche/  Crevillente/  Aspe/  Campello/  …
+│   │   ├── CATALUNYA/
+│   │   ├── MURCIA/
+│   │   └── (otras CCAA según necesidad)
+│   └── PREGUNTAS_AYUNTAMIENTO.pdf
+│
+└── <span class="h">_ARCHIVO/</span>
+    ├── OPS_HISTORICAS/
+    └── MATERIAL_VIEJO/
+
+<span class="comment">Leyenda:</span>
+   <span class="real">────</span>  carpeta real con contenido vivo (op en curso)
+   <span class="ataj">↗</span>     atajo a una carpeta real en otra ubicación
+</pre>
+</section>
+
+<!-- ============== 6. FLUJO Y TRANSICIONES ============== -->
+<section id="s6">
+  <h2><span class="num">06</span>Flujo y transiciones — qué se mueve, qué se crea, qué es atajo</h2>
+  <p>Cada cambio de estado tiene <strong>una acción concreta</strong>. Una sola fuente de verdad por carpeta — los atajos son punteros, no copias.</p>
 
   <div class="actions-legend">
     <div class="item"><span class="action-tag tag-create">CREAR</span> Carpeta nueva</div>
@@ -456,134 +669,14 @@ footer .left { font-weight: 600; color: var(--navy); }
   </div>
 
   <div class="callout">
-    <strong>Regla de oro:</strong> ninguna acción crea una "copia". Solo existen carpetas REALES (única fuente de verdad) y ATAJOS (apuntadores). Si borras un atajo, la carpeta real sobrevive. Si trabajas dentro de un atajo, modificas la carpeta real (no se duplica).
+    <strong>Regla de oro:</strong> ninguna acción crea una "copia". Solo existen carpetas REALES (única fuente de verdad) y ATAJOS (apuntadores). Si borras un atajo, la real sobrevive. Si trabajas dentro de un atajo, modificas la carpeta real.
   </div>
 </section>
 
-<!-- ============== 3. ARBOL RAIZ ============== -->
-<section>
-  <h2><span class="num">03</span>Árbol raíz — vista general</h2>
-  <p>Raíz canónica: <code>CdU DE 0 a ÉXITO</code> (Shared Drive). <strong>7 carpetas raíz</strong>.</p>
-
-<pre class="tree"><span class="h">📁 CdU DE 0 a ÉXITO/</span>
-│
-├── 00_SERVICIO_KIT/                  <span class="comment"># Plantillería del servicio (kit profesional)</span>
-├── 01_OPERACIONES_SERVICIO/          <span class="comment"># Ops del servicio en F1, F2 o F3 (atajo)</span>
-├── 02_OPERACIONES_FUERA_SERVICIO/    <span class="comment"># Ops de proveedor</span>
-├── 03_OPERACIONES_INICIADAS/         <span class="comment"># Ops en ejecución (F3 del servicio o propias)</span>
-├── 04_EMPRESA/                       <span class="comment"># SL · finanzas · equipo · marketing</span>
-├── 05_NORMATIVA_CCAA/                <span class="comment"># Requisitos urbanísticos por localidades</span>
-└── _ARCHIVO/                         <span class="comment"># Histórico sin actividad</span>
-</pre>
-</section>
-
-<!-- ============== 4. ARBOL DETALLADO POR CARPETA ============== -->
-<section>
-  <h2><span class="num">04</span>Árbol detallado de cada carpeta raíz</h2>
-
-  <h3>00_SERVICIO_KIT — plantillería del servicio</h3>
-<pre class="tree"><span class="h">00_SERVICIO_KIT/</span>
-├── FASE_1_DIAGNOSTICO/        <span class="comment"># Guion bienvenida + entrega · contrato F1 plantilla</span>
-├── FASE_2_MAP/                <span class="comment"># Negociación · CCP · Fiscal · Comunidad · Obras…</span>
-├── FASE_3_EXITO/              <span class="comment"># Contrato F3 plantilla · materiales comercialización</span>
-├── CONTRACTUAL/                <span class="comment"># Acuerdos colaboración + CCP transversales</span>
-└── CHECKLIST_INTERNO/         <span class="comment"># Trámites registrales · plantilla visita local</span>
-</pre>
-
-  <h3>01_OPERACIONES_SERVICIO — ops del servicio</h3>
-<pre class="tree"><span class="h">01_OPERACIONES_SERVICIO/</span>
-├── _PLANTILLA/                <span class="comment"># Copiar al arrancar nueva op</span>
-├── F1_DIAGNOSTICO/             <span class="comment"># Ops en F1 (carpetas reales)</span>
-│     └── 001_PabloBenitez_Castellon/
-├── F2_MAP/                     <span class="comment"># Ops en F2 (carpetas reales)</span>
-├── F3_EXITO/                   <span class="comment"># Ops en F3 (ATAJOS ↗ apuntan a INICIADAS/DESDE_SERVICIO)</span>
-└── FINALIZADAS/                <span class="comment"># Cliente acabó sin escalar a F3</span>
-</pre>
-
-  <h3>02_OPERACIONES_FUERA_SERVICIO — ops de proveedor</h3>
-<pre class="tree"><span class="h">02_OPERACIONES_FUERA_SERVICIO/</span>
-├── _PLANTILLA/                <span class="comment"># Plantilla ligera (sin F1/F2/F3 internas)</span>
-├── EN_ANALISIS/                <span class="comment"># En estudio · decisión pendiente</span>
-├── DERIVADAS_INBRUTO/          <span class="comment"># Presentadas al Programa IN</span>
-└── DESCARTADAS/                <span class="comment"># Devueltas al proveedor</span>
-</pre>
-
-  <h3>03_OPERACIONES_INICIADAS — ops en ejecución</h3>
-<pre class="tree"><span class="h">03_OPERACIONES_INICIADAS/</span>
-├── _PLANTILLA/
-├── DESDE_SERVICIO/             <span class="comment"># Llegaron al alcanzar F3 desde ①</span>
-├── DESDE_FUERA_SERVICIO/       <span class="comment"># Llegaron al quedárnoslas desde ②</span>
-│     └── 01_TorresCotillas/
-└── FINALIZADAS/                <span class="comment"># Ejecución cerrada (venta/explotación)</span>
-</pre>
-
-  <h3>04_EMPRESA — todo lo de la SL</h3>
-<pre class="tree"><span class="h">04_EMPRESA/</span>
-├── SOCIEDAD/                  <span class="comment"># Constitución · escrituras · pacto socios · juntas</span>
-├── FINANZAS/                  <span class="comment"># Banca SL · póliza · modelos 303/232 · IVA · IS</span>
-├── FISCAL_CASOS/              <span class="comment"># Casos abiertos AEAT</span>
-├── EQUIPO/                    <span class="comment"># Contratos socios · fichas Xavi/Paco/Dani/arquitectos</span>
-└── MARKETING/                 <span class="comment"># Imagen corp · landings · presentaciones · imágenes/videos ops</span>
-</pre>
-
-  <h3>05_NORMATIVA_CCAA — requisitos urbanísticos</h3>
-<pre class="tree"><span class="h">05_NORMATIVA_CCAA/</span>
-├── REQUISITOS_POR_LOCALIDADES/
-│     ├── COMUNIDAD_VALENCIANA/
-│     ├── CATALUNYA/
-│     ├── MURCIA/
-│     └── (otras CCAA según necesidad)
-└── PREGUNTAS_AYUNTAMIENTO.pdf
-</pre>
-</section>
-
-<!-- ============== 5. PLANTILLA INTERNA ============== -->
-<section>
-  <h2><span class="num">05</span>Plantilla interna de cada op</h2>
-
-  <h3>Tipo ① servicio · y ③ iniciada desde servicio</h3>
-<pre class="tree"><span class="h">📁 {NNN}_{Cliente}_{Ciudad}/</span>
-├── 00_INFO.md                          <span class="comment"># Ficha viva: cliente, dirección, m², estado, link Trello</span>
-│
-├── F1_DIAGNOSTICO/
-│     ├── 01_VIABILIDAD/
-│     │     └── ECONOMICA/  ADMINISTRATIVA/  TECNICA/  JURIDICA/
-│     ├── 02_REUNIONES/                 <span class="comment"># Acta bienvenida + entrega F1</span>
-│     ├── 03_DOCUMENTACION/             <span class="comment"># Nota simple, catastro, comunicaciones</span>
-│     └── 04_INFORME_F1/                <span class="comment"># Entregable final F1</span>
-│
-├── F2_MAP/
-│     ├── 05_NEGOCIACION/
-│     ├── 06_COMPRAVENTA/               <span class="comment"># Arras, escritura</span>
-│     ├── 07_OBRA/                      <span class="comment"># Proyecto técnico, licencia, ejecución</span>
-│     ├── 08_SUMINISTROS/               <span class="comment"># Iberdrola, Aguas, Gas</span>
-│     ├── 09_PARTICIPES_CCP/            <span class="comment"># Si hay CCP/JV/INBRUTO</span>
-│     └── 10_REUNIONES/
-│
-├── F3_EXITO/                           <span class="comment"># Solo activa cuando la op pasa a INICIADAS</span>
-│     ├── 11_COMERCIALIZACION/
-│     ├── 12_VENTA/
-│     └── 13_CIERRE/
-│
-└── 14_FOTOGRAFIAS/                     <span class="comment"># Transversal F1-F3</span>
-      └── ESTADO_ORIGINAL/  AVANCES/  PASO_4_ALQUILER/  PASO_4_VENTA/
-</pre>
-
-  <h3>Tipo ② fuera del servicio — plantilla ligera</h3>
-<pre class="tree"><span class="h">📁 {Ciudad}_{Identificador}/</span>
-├── 00_INFO.md                          <span class="comment"># Proveedor, comisión pactada, decisión final</span>
-├── 01_VIABILIDAD/
-│     └── ECONOMICA/  ADMINISTRATIVA/  TECNICA/  JURIDICA/
-├── 02_DOCUMENTACION/
-│     └── PROVEEDOR/  CONSULTAS/  PRESUPUESTOS/
-└── 03_REUNIONES/
-</pre>
-</section>
-
-<!-- ============== 6. COMO CREAR UN ATAJO ============== -->
-<section>
-  <h2><span class="num">06</span>Cómo crear un atajo en Drive — mini-guía</h2>
-  <p>Un atajo en Drive es un <strong>apuntador a una carpeta real</strong>. Se reconoce por la flechita ↗ en el icono. Sirve para "ver" la misma carpeta desde dos ubicaciones sin duplicarla.</p>
+<!-- ============== 7. COMO CREAR UN ATAJO ============== -->
+<section id="s7">
+  <h2><span class="num">07</span>Cómo crear un atajo en Drive — mini-guía</h2>
+  <p>Un atajo es un <strong>apuntador a una carpeta real</strong>. Se reconoce por la flechita ↗ en el icono.</p>
 
   <h4>Crear el atajo (desde drive.google.com)</h4>
   <div class="steps">
@@ -601,11 +694,11 @@ footer .left { font-weight: 600; color: var(--navy); }
       <tr><th>Acción</th><th>Qué pasa</th></tr>
     </thead>
     <tbody>
-      <tr><td>Subir archivo dentro del atajo</td><td>Se guarda en la carpeta REAL (en INICIADAS). No hay copia.</td></tr>
-      <tr><td>Editar un documento dentro del atajo</td><td>Edita el original. Quien lo abra desde la real o desde el atajo, ve lo mismo.</td></tr>
+      <tr><td>Subir archivo dentro del atajo</td><td>Se guarda en la carpeta REAL. No hay copia.</td></tr>
+      <tr><td>Editar un documento dentro del atajo</td><td>Edita el original. Quien lo abra desde la real o desde el atajo ve lo mismo.</td></tr>
       <tr><td>Borrar el atajo (clic derecho → eliminar)</td><td>Solo desaparece el atajo. <strong>La carpeta real NO se borra</strong>.</td></tr>
-      <tr><td>Borrar la carpeta real</td><td>El atajo queda roto. Por eso siempre operamos sobre la real, nunca borramos la real mientras existe el atajo.</td></tr>
-      <tr><td>Permisos</td><td>El atajo hereda los permisos de la carpeta real. En Shared Drive todos los del equipo ya tienen acceso.</td></tr>
+      <tr><td>Borrar la carpeta real</td><td>El atajo queda roto. Nunca borramos la real mientras existe el atajo.</td></tr>
+      <tr><td>Permisos</td><td>El atajo hereda los permisos de la real. En Shared Drive todos los del equipo ya tienen acceso.</td></tr>
     </tbody>
   </table>
 
@@ -614,9 +707,9 @@ footer .left { font-weight: 600; color: var(--navy); }
   </div>
 </section>
 
-<!-- ============== 7. NAMING ============== -->
-<section>
-  <h2><span class="num">07</span>Convención de nombres</h2>
+<!-- ============== 8. NAMING ============== -->
+<section id="s8">
+  <h2><span class="num">08</span>Convención de nombres</h2>
   <table>
     <thead>
       <tr><th style="width:28%">Tipo</th><th>Formato</th><th>Ejemplo</th></tr>
@@ -630,9 +723,9 @@ footer .left { font-weight: 600; color: var(--navy); }
   </table>
 </section>
 
-<!-- ============== 8. VINCULO DRIVE-TRELLO ============== -->
-<section>
-  <h2><span class="num">08</span>Vínculo Drive ↔ Trello</h2>
+<!-- ============== 9. VINCULO DRIVE-TRELLO ============== -->
+<section id="s9">
+  <h2><span class="num">09</span>Vínculo Drive ↔ Trello</h2>
   <p>Drive almacena, Trello gestiona. Cada zona Drive tiene su tablero correspondiente.</p>
 
   <table>
@@ -654,20 +747,20 @@ footer .left { font-weight: 600; color: var(--navy); }
   </div>
 </section>
 
-<!-- ============== 9. PRINCIPIOS ============== -->
-<section>
-  <h2><span class="num">09</span>5 principios que mantienen el sistema</h2>
+<!-- ============== 10. PRINCIPIOS ============== -->
+<section id="s10">
+  <h2><span class="num">10</span>5 principios que mantienen el sistema</h2>
   <ol>
     <li><strong>Tres tipos, tres carpetas raíz.</strong> Ninguna op vive en dos sitios.</li>
     <li><strong>La fase se ve en el path.</strong> Cambiar de fase = mover la carpeta padre.</li>
     <li><strong>F3 = ejecución → INICIADAS.</strong> Cuando una op del servicio llega a F3, pasa a iniciada + atajo en F3_EXITO para visibilidad.</li>
-    <li><strong>Atajos no duplican.</strong> Una sola fuente de verdad (la carpeta REAL en INICIADAS). El atajo es solo "ventana".</li>
+    <li><strong>Atajos no duplican.</strong> Una sola fuente de verdad (la carpeta REAL). El atajo es solo "ventana".</li>
     <li><strong>Nada se borra, todo se archiva.</strong> Cuando una op cierra, va a FINALIZADAS.</li>
   </ol>
 </section>
 
 <footer>
-  <div class="left">COTE IA · Modelo de carpetas Drive CdU · v0.6</div>
+  <div class="left">COTE IA · Modelo de carpetas Drive CdU · v0.7</div>
   <div>Borrador para reunión equipo</div>
 </footer>
 
