@@ -10,8 +10,12 @@
 html, body {
     margin: 0;
     padding: 0;
-    background: #eceae5;
+    background: #FDFBF7;
     font-family: 'Montserrat', -apple-system, Arial, sans-serif;
+}
+body {
+    max-width: 720px;
+    margin: 0 auto;
 }
 
 .instrucciones {
@@ -43,15 +47,11 @@ html, body {
 }
 .instrucciones button:hover { background: #1da851; }
 
-.spacer { height: 28px; }
+.spacer { height: 14px; }
 
 .email-container {
-    max-width: 700px;
-    margin: 0 auto 40px auto;
     background: #FDFBF7;
-    padding: 36px 38px 42px 38px;
-    border-radius: 6px;
-    box-shadow: 0 4px 20px rgba(22, 61, 96, 0.08);
+    padding: 28px 26px 34px 26px;
     color: #1a1a1a;
     line-height: 1.65;
     font-size: 14.5px;
@@ -261,15 +261,10 @@ hr.divider {
 }
 
 @media screen and (max-width: 640px) {
-    body { padding: 0 !important; background: #FDFBF7 !important; }
+    body { padding: 0 !important; background: #FDFBF7 !important; max-width: 100% !important; }
     .spacer { display: none !important; }
     .email-container {
-        max-width: 100% !important;
-        width: 100% !important;
-        padding: 24px 18px 28px 18px !important;
-        border-radius: 0 !important;
-        margin: 0 !important;
-        box-shadow: none !important;
+        padding: 22px 16px 26px 16px !important;
         font-size: 14px !important;
         line-height: 1.6 !important;
     }
@@ -325,7 +320,7 @@ hr.divider {
 }
 
 @media screen and (max-width: 400px) {
-    .email-container { padding: 20px 14px 24px 14px !important; font-size: 13.5px !important; }
+    .email-container { padding: 18px 13px 22px 13px !important; font-size: 13.5px !important; }
     .email-container h2 { font-size: 14.5px !important; }
     .nota-cierre { padding: 14px 14px !important; font-size: 12.5px !important; }
     .fase2-link { padding: 18px 14px !important; }
