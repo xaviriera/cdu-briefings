@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Email · Cierre Fase 1 · Pablo Benítez + René Campillo</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
@@ -48,7 +49,7 @@ html, body {
     max-width: 700px;
     margin: 0 auto 40px auto;
     background: #FDFBF7;
-    padding: 40px 44px 46px 44px;
+    padding: 36px 38px 42px 38px;
     border-radius: 6px;
     box-shadow: 0 4px 20px rgba(22, 61, 96, 0.08);
     color: #1a1a1a;
@@ -129,6 +130,8 @@ hr.divider {
     max-width: 100%;
     width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto;
     border-radius: 6px;
     box-shadow: 0 3px 14px rgba(22, 61, 96, 0.15);
     border: 1px solid #e0dccf;
@@ -255,6 +258,78 @@ hr.divider {
     color: #999;
     padding: 18px 0;
     letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 640px) {
+    body { padding: 0 !important; background: #FDFBF7 !important; }
+    .spacer { display: none !important; }
+    .email-container {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 24px 18px 28px 18px !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+    }
+    .email-container h2 { font-size: 15px !important; margin-top: 22px !important; margin-bottom: 10px !important; }
+    .email-container h3 { font-size: 13.5px !important; }
+    .nota-cierre {
+        padding: 16px 18px !important;
+        font-size: 13px !important;
+        margin: 20px 0 !important;
+    }
+    .nota-cierre h3 { font-size: 13.5px !important; }
+    .fase2-link {
+        padding: 22px 20px !important;
+        font-size: 13.5px !important;
+        margin: 22px 0 !important;
+    }
+    .fase2-link h3 { font-size: 15px !important; }
+    .fase2-badges { line-height: 2 !important; }
+    .fase2-badges span {
+        font-size: 10.5px !important;
+        padding: 4px 9px !important;
+        margin: 0 2px 2px 0 !important;
+    }
+    .fase2-link a {
+        font-size: 13px !important;
+        padding: 10px 16px !important;
+        display: inline-block !important;
+    }
+    .fase2-descuento {
+        display: block !important;
+        margin-left: 0 !important;
+        margin-top: 10px !important;
+        text-align: center !important;
+    }
+    .urbanismo-imagen { margin: 14px 0 8px 0 !important; }
+    .urbanismo-imagen img { border-radius: 4px !important; }
+    hr.divider { margin: 18px 0 !important; }
+    .list-arrow li, .list-dot li {
+        padding-left: 20px !important;
+        font-size: 13.5px !important;
+    }
+    .firma .nombre { font-size: 14.5px !important; }
+    .instrucciones {
+        padding: 10px 14px !important;
+        font-size: 11.5px !important;
+    }
+    .instrucciones button {
+        margin-left: 8px !important;
+        margin-top: 4px !important;
+        font-size: 11px !important;
+        padding: 6px 12px !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .email-container { padding: 20px 14px 24px 14px !important; font-size: 13.5px !important; }
+    .email-container h2 { font-size: 14.5px !important; }
+    .nota-cierre { padding: 14px 14px !important; font-size: 12.5px !important; }
+    .fase2-link { padding: 18px 14px !important; }
+    .fase2-badges span { font-size: 10px !important; }
 }
 
 @media print {
