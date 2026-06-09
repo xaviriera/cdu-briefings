@@ -3,308 +3,270 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resumen de visita de obra · Las Torres de Cotillas · CdU de 0 a ÉXITO</title>
+<title>Visita de obra · Las Torres de Cotillas · CdU de 0 a ÉXITO</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Montserrat', Arial, sans-serif; background: #FDFBF7; color: #163D60; line-height: 1.55; padding: 24px 16px; }
+.wrap { max-width: 820px; margin: 0 auto; }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+.brand { text-align: center; padding-bottom: 18px; margin-bottom: 22px; border-bottom: 2px solid #E29F34; }
+.brand img { max-width: 200px; height: auto; display: inline-block; }
+.brand .sub { font-size: 10px; color: #E29F34; letter-spacing: 3px; text-transform: uppercase; margin-top: 10px; font-weight: 700; }
 
-html, body {
-    font-family: 'Montserrat', Arial, sans-serif;
-    color: #1a1a1a;
-    -webkit-font-smoothing: antialiased;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-    background: #d9d9d6;
-}
+.title { font-size: 26px; font-weight: 800; color: #163D60; letter-spacing: -0.6px; line-height: 1.2; margin-bottom: 8px; }
+.title span { color: #E29F34; }
+.subtitle { font-size: 14px; color: #163D60; opacity: 0.7; font-weight: 500; margin-bottom: 18px; }
+.lead { font-size: 14px; color: #163D60; line-height: 1.6; margin-bottom: 20px; }
+.lead strong { color: #E29F34; font-weight: 800; }
 
-/* HOJA A4 de flujo (documento) */
-.doc {
-    width: 210mm;
-    min-height: 297mm;
-    margin: 0 auto;
-    background: #fff;
-    padding: 14mm 16mm 12mm;
-    display: flex;
-    flex-direction: column;
-}
+.toc { background: #fff8ea; border-radius: 10px; padding: 16px 20px; margin-bottom: 28px; font-size: 13px; }
+.toc .t { font-size: 10px; font-weight: 800; color: #E29F34; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+.toc ol { margin: 0; padding-left: 18px; color: #163D60; }
+.toc ol li { padding: 2px 0; font-weight: 500; }
 
-/* CABECERA */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #E29F34;
-    margin-bottom: 16px;
-    flex-shrink: 0;
-}
-.header-logo img { display: block; width: 165px; height: auto; }
-.header-meta { text-align: right; font-size: 10.5px; color: #666; line-height: 1.7; }
-.header-meta strong { color: #163D60; font-weight: 700; }
-.header-meta .validez { color: #E29F34; }
+.section-label { font-size: 11px; font-weight: 800; color: #E29F34; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; margin-top: 36px; padding-bottom: 4px; border-bottom: 2px solid rgba(226, 159, 52, 0.25); }
+.section-label .n { background: #E29F34; color: #fff; display: inline-block; width: 20px; height: 20px; border-radius: 50%; text-align: center; line-height: 20px; margin-right: 8px; font-size: 11px; font-weight: 800; }
 
-/* TÍTULO */
-.doc-title { text-align: center; margin-bottom: 14px; }
-.doc-title .eyebrow {
-    display: inline-block; font-size: 10.5px; letter-spacing: 3px;
-    color: #E29F34; font-weight: 700; text-transform: uppercase; margin-bottom: 7px;
-}
-.doc-title h1 { font-size: 22px; color: #163D60; font-weight: 700; line-height: 1.2; }
-.doc-title .subline { margin-top: 7px; font-size: 12.5px; color: #555; font-weight: 400; }
+.intro-text { font-size: 13.5px; color: #163D60; line-height: 1.6; margin-bottom: 14px; opacity: 0.9; }
 
-/* FICHA */
-.ficha {
-    margin: 8px 0 16px 0; background: #FDFBF7; border-left: 4px solid #E29F34;
-    padding: 14px 22px; border-radius: 0 4px 4px 0;
-}
-.ficha-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px; font-size: 12.5px; }
-.ficha-grid .label { color: #888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; font-size: 10px; }
-.ficha-grid .value { color: #163D60; font-weight: 600; margin-bottom: 5px; }
+.inmueble { background: #fff; border-left: 4px solid #E29F34; border-radius: 0 8px 8px 0; padding: 16px 20px; margin-bottom: 8px; }
+.inmueble .row { display: flex; justify-content: space-between; padding: 5px 0; font-size: 13px; border-bottom: 1px dashed rgba(22,61,96,0.15); gap: 16px; }
+.inmueble .row:last-child { border-bottom: none; }
+.inmueble .row .k { color: #163D60; opacity: 0.7; font-weight: 500; }
+.inmueble .row .v { color: #163D60; font-weight: 700; text-align: right; }
 
-/* RESUMEN EJECUTIVO */
-.tldr {
-    background: #163D60; color: #fff; padding: 16px 22px; border-radius: 5px; margin-bottom: 18px;
-}
-.tldr .lead { font-size: 10.5px; letter-spacing: 3px; text-transform: uppercase; color: #E29F34; font-weight: 700; margin-bottom: 9px; }
-.tldr ul { list-style: none; }
-.tldr li { position: relative; padding: 4px 0 4px 18px; font-size: 12.5px; line-height: 1.5; }
-.tldr li::before { content: "▸"; position: absolute; left: 0; color: #E29F34; font-weight: 700; }
-.tldr strong { color: #fff; }
-.tldr .alerta { color: #ffd9a8; font-weight: 700; }
+.block { background: #fff; border-radius: 12px; padding: 20px 22px; margin-bottom: 14px; box-shadow: 0 4px 14px rgba(22, 61, 96, 0.06); }
+.block h3 { font-size: 15px; font-weight: 800; color: #163D60; margin-bottom: 10px; }
+.block .grp { margin-bottom: 12px; }
+.block .grp:last-child { margin-bottom: 0; }
+.block .grp .gt { font-size: 11px; font-weight: 800; color: #E29F34; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+.lst { list-style: none; }
+.lst li { position: relative; padding: 4px 0 4px 18px; font-size: 13px; line-height: 1.5; color: #163D60; }
+.lst li::before { content: "•"; position: absolute; left: 2px; top: 3px; color: #E29F34; font-weight: 800; }
+.lst li strong { color: #163D60; font-weight: 800; }
 
-/* SECCIONES */
-.seccion { margin-bottom: 15px; page-break-inside: avoid; break-inside: avoid; }
-.seccion h2 {
-    color: #163D60; font-size: 13px; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 2px; margin-bottom: 11px; padding-bottom: 7px; border-bottom: 1px solid #e8dfc9;
-}
-.seccion h2 .num {
-    display: inline-block; background: #E29F34; color: #fff; padding: 3px 10px;
-    border-radius: 3px; font-size: 10.5px; margin-right: 10px; letter-spacing: 1px; font-weight: 700;
-}
-.seccion p { font-size: 12.5px; color: #2a2a2a; line-height: 1.6; margin-bottom: 8px; text-align: justify; }
-.seccion p:last-child { margin-bottom: 0; }
-.seccion p strong { color: #163D60; font-weight: 700; }
-.seccion .sub { font-weight: 700; color: #163D60; font-size: 12px; margin: 8px 0 4px; }
+.scenario { background: #fff; border-radius: 12px; padding: 22px 22px 18px; margin-bottom: 16px; box-shadow: 0 4px 14px rgba(22, 61, 96, 0.06); border: 1.5px solid transparent; }
+.scenario.bad { border-color: #ebc9c9; }
+.scenario.good { border-color: #E29F34; }
+.scenario .head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid rgba(22,61,96,0.1); gap: 10px; }
+.scenario .head h3 { font-size: 16px; font-weight: 800; color: #163D60; letter-spacing: -0.2px; }
+.scenario .head h3 .sub { font-size: 12px; font-weight: 500; opacity: 0.7; display: block; margin-top: 2px; }
+.scenario .head .verdict { font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 12px; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
+.scenario.bad .verdict { background: #fdecea; color: #9b3333; }
+.scenario.good .verdict { background: #E29F34; color: #fff; }
 
-.lista { list-style: none; padding: 2px 0 4px 4px; margin: 4px 0 6px; }
-.lista li { position: relative; padding: 3px 0 3px 16px; font-size: 12px; color: #333; line-height: 1.55; }
-.lista li::before { content: "•"; position: absolute; left: 0; top: 1px; color: #E29F34; font-weight: 700; font-size: 13px; }
-.lista li strong { color: #163D60; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+table th { background: #163D60; color: #FDFBF7; padding: 9px 10px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+table th:first-child { border-radius: 6px 0 0 0; }
+table th:last-child { border-radius: 0 6px 0 0; }
+table td { padding: 9px 10px; border-bottom: 1px dashed rgba(22,61,96,0.12); vertical-align: top; line-height: 1.5; }
+table td .dur { font-weight: 800; color: #E29F34; white-space: nowrap; }
+table tr.total td { border-top: 1.5px solid #163D60; font-weight: 800; background: #fdfbf7; }
+table tr.total td .dur { color: #163D60; }
+table.kv td:last-child { text-align: right; font-weight: 800; color: #163D60; white-space: nowrap; }
 
-/* TABLA FASES */
-.tabla { border-collapse: collapse; width: 100%; font-size: 12px; margin-top: 4px; }
-.tabla th { background: #163D60; color: #fff; text-align: left; padding: 8px 11px; font-size: 10px; text-transform: uppercase; letter-spacing: .6px; }
-.tabla td { padding: 8px 11px; border-bottom: 1px solid #e8dfc9; vertical-align: top; line-height: 1.5; }
-.tabla tr:nth-child(even) td { background: #FDFBF7; }
-.tabla .dur { font-weight: 700; color: #E29F34; white-space: nowrap; }
-.tabla .total td { background: #163D60 !important; color: #fff; font-weight: 700; }
-.tabla .total td .dur { color: #fff; }
+.note { background: #fff8ea; border: 1px dashed #E29F34; border-radius: 8px; padding: 12px 14px; font-size: 12.5px; color: #7d6608; line-height: 1.55; margin-top: 14px; }
+.note strong { color: #163D60; }
 
-/* APARTADOS (decisiones) */
-.acc { display: flex; gap: 13px; padding: 9px 0; border-bottom: 1px dotted #e0d9c9; }
-.acc:last-child { border-bottom: none; }
-.acc .who { flex-shrink: 0; width: 84px; background: #FDFBF7; border: 1px solid #e8dfc9; color: #163D60; font-weight: 700; font-size: 10.5px; padding: 4px 8px; border-radius: 5px; text-align: center; height: fit-content; }
-.acc .txt { font-size: 12px; color: #333; line-height: 1.5; }
-.acc .txt strong { color: #163D60; }
-.tag { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 3px; text-transform: uppercase; letter-spacing: .4px; margin-left: 5px; vertical-align: middle; }
-.tag.dec { background: #e4f0e9; color: #2e7d52; }
-.tag.pend { background: #fdf0d8; color: #9a6a12; }
+.callout { background: #163D60; color: #FDFBF7; padding: 18px 22px; border-radius: 10px; margin: 14px 0 18px; }
+.callout .lab { font-size: 10px; color: #E29F34; letter-spacing: 2px; font-weight: 800; text-transform: uppercase; margin-bottom: 6px; }
+.callout .big { font-size: 15px; font-weight: 600; line-height: 1.5; }
+.callout .big strong { color: #E29F34; font-weight: 800; }
 
-/* CAJA ECONÓMICA */
-.eco-box { background: #163D60; color: #fff; padding: 16px 22px; border-radius: 5px; margin: 6px 0 12px; }
-.eco-box .lead { font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase; color: #E29F34; font-weight: 700; margin-bottom: 8px; }
-.eco-box ul { list-style: none; }
-.eco-box li { position: relative; padding: 3px 0 3px 16px; font-size: 12px; line-height: 1.5; }
-.eco-box li::before { content: "–"; position: absolute; left: 0; color: #E29F34; font-weight: 700; }
-.eco-box strong { color: #E29F34; }
-.aviso {
-    background: #fff8e8; border: 1px solid #ecd6a3; border-left: 4px solid #E29F34;
-    border-radius: 0 4px 4px 0; padding: 11px 16px; margin-top: 8px; font-size: 11.5px; color: #6b4a10; line-height: 1.55;
-}
-.aviso strong { color: #163D60; }
+.acc-row { display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px dashed rgba(22,61,96,0.15); }
+.acc-row:last-child { border-bottom: none; }
+.acc-row .who { flex-shrink: 0; width: 92px; font-size: 11px; font-weight: 800; color: #E29F34; letter-spacing: 0.5px; text-transform: uppercase; padding-top: 2px; }
+.acc-row .txt { font-size: 13px; color: #163D60; line-height: 1.5; }
+.acc-row .txt strong { font-weight: 800; }
+.tag { display: inline-block; font-size: 9px; font-weight: 800; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.5px; margin-left: 4px; vertical-align: middle; }
+.tag.dec { background: #e4f0e9; color: #2e7a4d; }
+.tag.pend { background: #fff3d6; color: #8a6a1f; }
 
-/* PENDIENTES */
 .pend { list-style: none; }
-.pend li { position: relative; padding: 6px 0 6px 24px; font-size: 12px; color: #333; line-height: 1.5; border-bottom: 1px dotted #e0d9c9; }
+.pend li { position: relative; padding: 7px 0 7px 26px; font-size: 13px; color: #163D60; line-height: 1.5; border-bottom: 1px dashed rgba(22,61,96,0.15); }
 .pend li:last-child { border-bottom: none; }
-.pend li::before { content: "☐"; position: absolute; left: 2px; top: 5px; color: #E29F34; font-weight: 700; }
+.pend li::before { content: "☐"; position: absolute; left: 2px; top: 6px; color: #E29F34; font-weight: 800; }
+.pend li strong { font-weight: 800; }
 
-/* FIRMA */
-.firma-wrap { margin-top: auto; padding-top: 18px; border-top: 1px solid #e8dfc9; }
-.firma-block .frase { font-size: 12px; color: #666; font-style: italic; margin-bottom: 5px; }
-.firma-block .frase span.b { color: #163D60; font-weight: 700; font-style: normal; }
-.firma-block .frase span.o { color: #E29F34; font-weight: 800; font-style: normal; }
-.firma-block .equipo { font-size: 14px; font-weight: 700; color: #163D60; margin-top: 7px; }
-.firma-block .contacto { font-size: 11px; color: #555; margin-top: 5px; line-height: 1.6; }
-.firma-block .contacto a { color: #163D60; text-decoration: none; font-weight: 600; }
-.footer-legal { margin-top: 14px; padding-top: 10px; border-top: 1px solid #eee; font-size: 9.5px; color: #999; text-align: center; line-height: 1.6; }
+.conclusion { background: #163D60; color: #FDFBF7; border-radius: 12px; padding: 26px 24px; margin-top: 30px; }
+.conclusion .label { font-size: 10px; font-weight: 700; color: #E29F34; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; text-align: center; }
+.conclusion .big { font-size: 19px; font-weight: 800; line-height: 1.35; margin-bottom: 14px; text-align: center; }
+.conclusion .big span { color: #E29F34; }
+.conclusion p { font-size: 13px; line-height: 1.6; opacity: 0.92; text-align: center; }
+.conclusion p strong { color: #E29F34; }
 
-@media screen {
-    body { padding: 24px 0; }
-    .doc { box-shadow: 0 6px 28px rgba(22,61,96,0.18); border-radius: 3px; }
-}
-@page { size: A4; margin: 13mm 15mm; }
-@media print {
-    html, body { background: #fff; }
-    .doc { box-shadow: none; border-radius: 0; width: auto; min-height: 0; padding: 0; margin: 0; }
+.footer { text-align: center; margin-top: 36px; padding-top: 22px; border-top: 1px solid rgba(22,61,96,0.12); font-size: 12px; color: #163D60; }
+.footer strong { color: #E29F34; }
+.footer .team { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #E29F34; font-weight: 700; margin-top: 4px; }
+.disclaimer { font-size: 10.5px; color: #163D60; opacity: 0.6; text-align: center; margin-top: 16px; line-height: 1.5; font-style: italic; }
+
+@media (max-width: 600px) {
+  .title { font-size: 22px; }
+  .acc-row { flex-direction: column; gap: 3px; }
+  .acc-row .who { width: auto; }
 }
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<div class="doc">
+  <div class="brand">
+    <img src="https://xaviriera.github.io/cdu-briefings/assets/logos/LOGO-FINAL-PNG-MEDIANO.png" alt="CdU de 0 a ÉXITO">
+    <div class="sub">Resumen de visita de obra</div>
+  </div>
 
-    <header class="header">
-        <div class="header-logo">
-            <img src="https://assets.cdn.filesafe.space/ybA6CwAZoHGDOhuhyVU8/media/693f127897c023626002d3d2.png" alt="CdU de 0 a ÉXITO">
-        </div>
-        <div class="header-meta">
-            <strong>Resumen de visita de obra</strong><br>
-            Op. Las Torres de Cotillas (Murcia)<br>
-            <strong class="validez">Visita: 21 de mayo de 2026</strong><br>
-            <strong>tucambiodeuso.com</strong>
-        </div>
-    </header>
+  <div class="title">Las Torres de Cotillas · <span>Visita de obra</span></div>
+  <div class="subtitle">Cronología de ejecución y viabilidad económica · 21 de mayo de 2026</div>
 
-    <div class="doc-title">
-        <div class="eyebrow">Documento · Resumen interno de obra</div>
-        <h1>Visita de obra · Las Torres de Cotillas</h1>
-        <div class="subline">Cronología de ejecución y viabilidad económica · Equipo CdU de 0 a ÉXITO</div>
+  <div class="lead">
+    Resumen de la visita técnica a la operación de <strong>Las Torres de Cotillas</strong> (Murcia), un local en cambio de uso a vivienda. Recoge lo que se habló sobre la ejecución de la obra: pasos previos, cronología por fases, detalles técnicos y, sobre todo, el <strong>análisis de viabilidad económica</strong> — donde aparece el punto crítico de la operación. Cifras económicas orientativas, pendientes de cierre.
+  </div>
+
+  <div class="toc">
+    <div class="t">En este documento</div>
+    <ol>
+      <li>La operación, de un vistazo</li>
+      <li>Pasos previos al arranque de obra</li>
+      <li>Cronología de ejecución</li>
+      <li>Detalles técnicos que salieron</li>
+      <li>Viabilidad económica — el tema crítico</li>
+      <li>Decisiones y próximas acciones</li>
+      <li>Pendientes / a confirmar</li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <div class="section-label"><span class="n">1</span>La operación, de un vistazo</div>
+  <div class="inmueble">
+    <div class="row"><span class="k">Operación</span><span class="v">Las Torres de Cotillas (Murcia)</span></div>
+    <div class="row"><span class="k">Tipo</span><span class="v">Local → vivienda (cambio de uso)</span></div>
+    <div class="row"><span class="k">Fecha de la visita</span><span class="v">21 de mayo de 2026</span></div>
+    <div class="row"><span class="k">Equipo en obra</span><span class="v">Dani · María · SPM</span></div>
+    <div class="row"><span class="k">Fuente</span><span class="v">2 audios de la visita</span></div>
+    <div class="row"><span class="k">Estado</span><span class="v">Operación iniciada</span></div>
+  </div>
+
+  <!-- 2 -->
+  <div class="section-label"><span class="n">2</span>Pasos previos al arranque de obra</div>
+  <div class="intro-text">Lo que hay que dejar listo antes de que entre la cuadrilla.</div>
+  <div class="block">
+    <div class="grp">
+      <div class="gt">Suministros y logística</div>
+      <ul class="lst">
+        <li><strong>Altas de luz y agua</strong> — lo primero y básico para poder trabajar.</li>
+        <li><strong>Contenedores y materiales:</strong> ya contactada la empresa de contenedores (la mayor de materiales de la zona, a ~5 km). Pendiente cerrar ficha de materiales.</li>
+        <li><strong>Administración de fincas</strong> a ~20 m del local (la inmobiliaria contigua no es la vendedora).</li>
+      </ul>
     </div>
-
-    <div class="ficha">
-        <div class="ficha-grid">
-            <div><div class="label">Operación</div><div class="value">Las Torres de Cotillas (Murcia)</div></div>
-            <div><div class="label">Tipo</div><div class="value">Local → vivienda (cambio de uso)</div></div>
-            <div><div class="label">Fecha de la visita</div><div class="value">21 de mayo de 2026</div></div>
-            <div><div class="label">Equipo en obra</div><div class="value">Dani · María · SPM</div></div>
-            <div><div class="label">Fuente</div><div class="value">2 audios de la visita</div></div>
-            <div><div class="label">Estado</div><div class="value">Operación iniciada</div></div>
-        </div>
+    <div class="grp">
+      <div class="gt">Licencia</div>
+      <ul class="lst">
+        <li>La obra solo puede empezar <strong>una vez concedida la licencia de cambio de uso</strong>.</li>
+      </ul>
     </div>
-
-    <div class="tldr">
-        <div class="lead">En 30 segundos</div>
-        <ul>
-            <li>Se cerró la <strong>cronología técnica de ejecución</strong>: ~6 semanas de albañilería con solapes, <strong>≈ 2,5 meses solo exterior</strong>, objetivo total <strong>3–4 meses</strong>.</li>
-            <li><span class="alerta">⚠ El presupuesto no cuadra con los tiempos reales.</span> Al precio actual la obra da pérdidas: hay que subir precio, subcontratar a destajo o reducir alcance.</li>
-            <li>Acción inmediata: <strong>Dani pide presupuesto a subcontratas</strong> y se valora subir el precio de obra (~725 €/m²).</li>
-            <li>Para arrancar: <strong>altas de luz y agua</strong>, licencia de cambio de uso y cierre del equipo de oficios.</li>
-        </ul>
+    <div class="grp">
+      <div class="gt">Documentación · gestiona María</div>
+      <ul class="lst">
+        <li>Plan de seguridad y salud · apertura del centro de trabajo · libro de subcontratas.</li>
+        <li>Contrato de oficios (redactado, pendiente de pulir) y contrato de promotor.</li>
+        <li>Información específica de pagos · presupuestos de oficio → <strong>cerrar el equipo de oficios</strong>.</li>
+      </ul>
     </div>
+  </div>
 
-    <div class="seccion">
-        <h2><span class="num">01</span> Objeto de la visita</h2>
-        <p>Visita técnica al inmueble de <strong>Las Torres de Cotillas (Murcia)</strong> para planificar la ejecución de la obra de cambio de uso: se recorrió el local definiendo partidas, plazos por fase y los pasos administrativos previos al arranque. En la segunda parte se hizo un <strong>análisis de viabilidad económica</strong>, contrastando esos tiempos con el presupuesto de obra.</p>
-    </div>
+  <!-- 3 -->
+  <div class="section-label"><span class="n">3</span>Cronología de ejecución</div>
+  <div class="intro-text">Plan de la albañilería propia, con solapes de equipo para comprimir plazos.</div>
+  <table>
+    <tr><th>Fase</th><th>Duración</th><th>Notas</th></tr>
+    <tr><td>Demoliciones / desmonte</td><td><span class="dur">3 sem</span></td><td>Todo el equipo (4 personas). La partida que diferencia esta obra de una reforma estándar; se busca acortarla con refuerzo puntual.</td></tr>
+    <tr><td>Impermeabilización + plancher</td><td><span class="dur">2 sem</span></td><td>Equipo completo: 2 hormigoneras, 2 peones haciendo hormigón sin parar + 2 rastreando.</td></tr>
+    <tr><td>Particiones (tabiquería) y rozas</td><td><span class="dur">~1 sem</span></td><td>~48 m² de tabique del 11. Se solapa con la apertura de huecos de fachada.</td></tr>
+    <tr><td>Huecos + ventanas y puertas</td><td><span class="dur">2 sem</span></td><td>8 ventanas + 3 puertas. Cargaderos → abrir hueco → colocar (método San Vicente: abrir, rematar y colocar de inmediato).</td></tr>
+    <tr><td>Fachada (monocapa raspado)</td><td><span class="dur">3 sem</span></td><td>4 personas. Los 8 huecos la complican. Hay que ir rápido y temprano: con calor el monocapa se seca y se raspa a las ~2 h.</td></tr>
+    <tr class="total"><td>Solo exterior / albañilería</td><td><span class="dur">≈ 2,5 meses</span></td><td>Objetivo de obra completa, con oficios: 3–4 meses.</td></tr>
+  </table>
 
-    <div class="seccion">
-        <h2><span class="num">02</span> Pasos previos al arranque de obra</h2>
-        <div class="sub">Suministros y logística</div>
-        <ul class="lista">
-            <li><strong>Altas de luz y agua</strong> — lo primero y básico para poder trabajar.</li>
-            <li><strong>Contenedores y materiales:</strong> ya contactada la empresa de contenedores (la mayor de materiales de la zona, a ~5 km). Pendiente cerrar ficha de materiales.</li>
-            <li><strong>Administración de fincas</strong> a ~20 m del local (la inmobiliaria contigua no es la vendedora).</li>
-        </ul>
-        <div class="sub">Licencia</div>
-        <p>La obra solo puede empezar <strong>una vez concedida la licencia de cambio de uso</strong>.</p>
-        <div class="sub">Documentación (gestiona María)</div>
-        <ul class="lista">
-            <li>Plan de seguridad y salud · apertura del centro de trabajo · libro de subcontratas.</li>
-            <li>Contrato de oficios (redactado, pendiente de pulir) y contrato de promotor.</li>
-            <li>Información específica de pagos · presupuestos de oficio → <strong>cerrar el equipo de oficios</strong>.</li>
-        </ul>
-    </div>
+  <!-- 4 -->
+  <div class="section-label"><span class="n">4</span>Detalles técnicos que salieron</div>
+  <div class="block">
+    <ul class="lst">
+      <li><strong>Baños:</strong> la albañilería vuelve al final a “matar” los baños y alicatar.</li>
+      <li><strong>Fachada – acabado:</strong> monocapa raspado de arriba abajo (“gota grande” / Gotagran; alternativa: tirolesa). Zócalo a media altura en porcelánico marrón y el resto en blanco.</li>
+      <li><strong>Ventanas:</strong> 8 huecos. Suministro a coordinar con <strong>Álvaro</strong> en fecha cerrada para no frenar la obra.</li>
+      <li><strong>Exterior trasero (zona comunitaria):</strong> el travesaño queda feo → plancher con acera (~80 cm de ancho, ~12 cm de alto, con pendiente y canal). Se ejecuta al final y se comunica al administrador (solo el ancho del local + salida).</li>
+      <li><strong>Solapes de equipo:</strong> con 4–5 operarios se solapan partidas para comprimir plazos.</li>
+      <li><strong>Clima:</strong> Murcia, mucho calor → condiciona los tiempos de fachada (trabajar a primera hora).</li>
+    </ul>
+  </div>
 
-    <div class="seccion">
-        <h2><span class="num">03</span> Cronología de ejecución (albañilería propia)</h2>
-        <table class="tabla">
-            <tr><th>Fase</th><th>Duración</th><th>Notas</th></tr>
-            <tr><td>Demoliciones / desmonte</td><td class="dur">3 semanas</td><td>Todo el equipo (4 personas). Es la partida que diferencia esta obra de una reforma estándar; se busca acortarla con refuerzo puntual.</td></tr>
-            <tr><td>Impermeabilización + plancher</td><td class="dur">2 semanas</td><td>Equipo completo: 2 hormigoneras, 2 peones haciendo hormigón sin parar + 2 rastreando.</td></tr>
-            <tr><td>Particiones (tabiquería) y rozas</td><td class="dur">~1 semana</td><td>~48 m² de tabique del 11. Se solapa con la apertura de huecos de fachada (mientras 2 tabican, otros 2 abren huecos).</td></tr>
-            <tr><td>Apertura de huecos + ventanas y puertas</td><td class="dur">2 semanas</td><td>8 ventanas + 3 puertas. Cargaderos → abrir hueco → colocar. Método San Vicente: abrir, rematar y colocar de inmediato.</td></tr>
-            <tr><td>Fachada (monocapa raspado)</td><td class="dur">3 semanas</td><td>4 personas. Los 8 huecos la complican (cantoneras). Hay que ir rápido y temprano: con calor el monocapa se seca y hay que rasparlo a las ~2 h.</td></tr>
-            <tr class="total"><td>Solo exterior / albañilería</td><td class="dur">≈ 2,5 meses</td><td>Objetivo de obra completa, con oficios: 3–4 meses.</td></tr>
-        </table>
-    </div>
+  <!-- 5 -->
+  <div class="section-label"><span class="n">5</span>Viabilidad económica — el tema crítico</div>
+  <div class="intro-text">El presupuesto se calculó “a ojo” para que cuadrase con la operación. Al contrastarlo con los tiempos reales de ejecución, no sale.</div>
 
-    <div class="seccion">
-        <h2><span class="num">04</span> Detalles técnicos que salieron</h2>
-        <ul class="lista">
-            <li><strong>Baños:</strong> la albañilería vuelve al final a “matar” los baños y alicatar.</li>
-            <li><strong>Fachada – acabado:</strong> mortero monocapa raspado de arriba abajo (“gota grande” / Gotagran; alternativa: tirolesa). Zócalo a media altura en porcelánico marrón y el resto en blanco.</li>
-            <li><strong>Ventanas:</strong> 8 huecos. Suministro a coordinar con <strong>Álvaro</strong> en fecha cerrada para no frenar la obra.</li>
-            <li><strong>Exterior trasero (zona comunitaria):</strong> el travesaño actual queda feo → plancher con acera (~80 cm de ancho, ~12 cm de alto, con pendiente y canal). Se ejecuta al final y se comunica al administrador (solo el ancho del local + salida).</li>
-            <li><strong>Solapes de equipo:</strong> con 4–5 operarios se solapan partidas para comprimir plazos.</li>
-            <li><strong>Clima:</strong> Murcia, mucho calor → condiciona los tiempos de fachada (trabajar a primera hora).</li>
-        </ul>
+  <div class="scenario bad">
+    <div class="head">
+      <h3>Con el precio actual<span class="sub">Presupuesto vs. coste real de ejecución</span></h3>
+      <div class="verdict">No cuadra</div>
     </div>
+    <table class="kv">
+      <tr><td>Precio de obra presupuestado</td><td>~625 €/m²</td></tr>
+      <tr><td>Rango propio de ejecución mencionado</td><td>600–700 €/m²</td></tr>
+      <tr><td>Presupuesto total de obra</td><td>~60–65.000 €</td></tr>
+      <tr><td>Mano de obra (4 pers. × 3 meses, con SS)</td><td>~48.000 €</td></tr>
+      <tr><td>Superficie estimada (deducida)</td><td>≈ 100 m²</td></tr>
+      <tr class="total"><td>Referencia de mercado de una reforma así</td><td>&gt; 1.000 €/m²</td></tr>
+    </table>
+    <div class="note">Solo la mano de obra (~48.000 €) más materiales se come casi todo el presupuesto, <strong>sin contar el resto de oficios</strong>. A 625 €/m², la operación da pérdidas.</div>
+  </div>
 
-    <div class="seccion">
-        <h2><span class="num">05</span> Viabilidad económica — el tema crítico</h2>
-        <p>El presupuesto se calculó “a ojo” para que cuadrase con la operación, pero al contrastarlo con los tiempos reales <strong>da pérdidas</strong>. Cifras del audio (orientativas, pendientes de cerrar):</p>
-        <div class="eco-box">
-            <div class="lead">Lo que se habló</div>
-            <ul>
-                <li>Precio de obra presupuestado: <strong>~625 €/m²</strong> (mencionan un rango propio de ejecución de 600–700 €/m²).</li>
-                <li>Presupuesto total de obra: <strong>~60–65.000 €</strong>.</li>
-                <li>Mano de obra (4 personas × 3 meses, con seguros sociales): <strong>~48.000 €</strong> → con materiales se come casi todo, sin contar el resto de oficios.</li>
-                <li>Superficie de obra estimada: <strong>≈ 100 m²</strong> (deducida: si +100 €/m² ≈ +10.000 €).</li>
-                <li>Referencia de mercado: una reforma así <strong>no baja de ~1.000 €/m²</strong>.</li>
-            </ul>
-        </div>
-        <div class="sub">Palancas sobre la mesa</div>
-        <ul class="lista">
-            <li><strong>Subir el precio de obra</strong> a ~725 €/m² (+100 €/m² ≈ +10.000 €) para al menos empatar.</li>
-            <li><strong>Subcontratar a destajo / precio cerrado</strong> la albañilería, en lugar de equipo propio por horas.</li>
-            <li><strong>Acortar plazos</strong> (sobre todo el desmonte) y/o reducir alcance.</li>
-        </ul>
-        <div class="aviso"><strong>⚠ Cifras a verificar antes de decidir:</strong> los importes salieron de la conversación de obra y se mezclan (€/m², presupuesto total y superficie). <strong>En el audio no se menciona el IVA</strong> — confirmar si el precio por m² es con o sin IVA, la superficie real del local y el presupuesto cerrado antes de tomar la decisión de precio.</div>
-        <p style="margin-top:9px;font-size:11.5px;color:#777;"><strong>Matiz:</strong> al promotor la operación le encaja a un año vista (vender en 8–10 meses es válido), pero mantener equipo propio genera gastos recurrentes. Si se subcontrata por partidas, SPM pasa a <strong>contratista principal</strong> y hay que rehacer la documentación de prevención (coste y tiempo).</p>
-    </div>
+  <div class="callout">
+    <div class="lab">Qué hay que decidir</div>
+    <div class="big">Para que salga: <strong>subir el precio de obra</strong> (objetivo ~725 €/m², +100 €/m² ≈ +10.000 €), <strong>subcontratar a destajo</strong> a precio cerrado, o <strong>acortar plazos y alcance</strong> (sobre todo el desmonte).</div>
+  </div>
 
-    <div class="seccion">
-        <h2><span class="num">06</span> Decisiones y próximas acciones</h2>
-        <div class="acc"><div class="who">Dani</div><div class="txt">Pedir presupuesto a <strong>subcontratas de albañilería</strong> (cuadrilla de Edu / Estafu) a precio cerrado. <span class="tag dec">Decidido</span></div></div>
-        <div class="acc"><div class="who">Obra</div><div class="txt">Reforzar el <strong>desmonte</strong> con 1–2 personas puntuales al destajo para acortar las 3 semanas. <span class="tag dec">Decidido</span></div></div>
-        <div class="acc"><div class="who">Valoración</div><div class="txt">Revisar al alza el <strong>precio de obra</strong> (objetivo ~725 €/m²) y rehacer el encaje con la operación. <span class="tag pend">A decidir</span></div></div>
-        <div class="acc"><div class="who">María</div><div class="txt">Preparar la <strong>documentación de obra</strong> y pulir el contrato de oficios. <span class="tag pend">En curso</span></div></div>
-        <div class="acc"><div class="who">Compras</div><div class="txt">Cerrar <strong>ficha de materiales/contenedores</strong> y fecha de suministro de ventanas con Álvaro. <span class="tag pend">Pendiente</span></div></div>
-        <div class="acc"><div class="who">Agenda</div><div class="txt"><strong>Dani se reincorpora el 23–24 de junio</strong> para arrancar/coordinar. <span class="tag dec">Fijado</span></div></div>
-    </div>
+  <div class="note"><strong>⚠ Cifras a verificar antes de decidir:</strong> los importes salieron de la conversación de obra y se mezclan (€/m², presupuesto total y superficie). <strong>En el audio no se menciona el IVA</strong> — hay que confirmar si el precio por m² es con o sin IVA, la superficie real medida y el presupuesto cerrado antes de tomar la decisión de precio.</div>
 
-    <div class="seccion">
-        <h2><span class="num">07</span> Pendientes / a confirmar</h2>
-        <ul class="pend">
-            <li>Licencia de <strong>cambio de uso</strong> concedida (condición para empezar).</li>
-            <li>Altas de <strong>luz y agua</strong>.</li>
-            <li>Decisión final: <strong>equipo propio vs. subcontrata</strong> (a la espera de los presupuestos de Dani).</li>
-            <li><strong>Cerrar las cifras económicas</strong>: precio/m² (con o sin IVA), superficie real medida, presupuesto cerrado → y reencaje de la operación.</li>
-            <li>Permiso de comunidad para la actuación en la <strong>zona trasera</strong> y apertura de huecos.</li>
-        </ul>
-    </div>
+  <div class="intro-text" style="margin-top:14px;"><strong style="color:#163D60;">Matiz de fondo:</strong> al promotor la operación le encaja a un año vista (vender en 8–10 meses es válido), pero mantener equipo propio genera gastos recurrentes. Si se subcontrata por partidas, SPM pasa a <strong style="color:#163D60;">contratista principal</strong> y hay que rehacer la documentación de prevención (coste y tiempo).</div>
 
-    <div class="seccion">
-        <h2><span class="num">08</span> Idea de mejora del equipo</h2>
-        <p>Que <strong>cada operario grabe un audio diario</strong> de la jornada (qué problemas surgieron y cómo se resolvieron). Transcribir y archivar esos audios construye una <strong>base de acciones mitigantes</strong> reutilizable para las próximas obras. Reto: parte del equipo es de habla china → habría que traducir y transcribir automáticamente.</p>
-    </div>
+  <!-- 6 -->
+  <div class="section-label"><span class="n">6</span>Decisiones y próximas acciones</div>
+  <div class="block">
+    <div class="acc-row"><div class="who">Dani</div><div class="txt">Pedir presupuesto a <strong>subcontratas de albañilería</strong> (cuadrilla de Edu / Estafu) a precio cerrado. <span class="tag dec">Decidido</span></div></div>
+    <div class="acc-row"><div class="who">Obra</div><div class="txt">Reforzar el <strong>desmonte</strong> con 1–2 personas puntuales al destajo para acortar las 3 semanas. <span class="tag dec">Decidido</span></div></div>
+    <div class="acc-row"><div class="who">Valoración</div><div class="txt">Revisar al alza el <strong>precio de obra</strong> (~725 €/m²) y rehacer el encaje con la operación. <span class="tag pend">A decidir</span></div></div>
+    <div class="acc-row"><div class="who">María</div><div class="txt">Preparar la <strong>documentación de obra</strong> y pulir el contrato de oficios. <span class="tag pend">En curso</span></div></div>
+    <div class="acc-row"><div class="who">Compras</div><div class="txt">Cerrar <strong>ficha de materiales/contenedores</strong> y fecha de suministro de ventanas con Álvaro. <span class="tag pend">Pendiente</span></div></div>
+    <div class="acc-row"><div class="who">Agenda</div><div class="txt"><strong>Dani se reincorpora el 23–24 de junio</strong> para arrancar/coordinar. <span class="tag dec">Fijado</span></div></div>
+  </div>
 
-    <div class="firma-wrap">
-        <div class="firma-block">
-            <div class="frase">Primero <span class="b">claridad</span>. Luego <span class="b">plan</span>. Al final, <span class="o">resultado</span>.</div>
-            <div class="equipo">Equipo CdU de 0 a ÉXITO</div>
-            <div class="contacto"><a href="https://tucambiodeuso.com">tucambiodeuso.com</a> · 694 264 027</div>
-        </div>
-        <div class="footer-legal">
-            Resumen interno de la visita de obra de Las Torres de Cotillas (21 de mayo de 2026), elaborado a partir de las grabaciones de la visita.<br>
-            Documento de trabajo del equipo — datos económicos orientativos, pendientes de cierre.
-        </div>
-    </div>
+  <!-- 7 -->
+  <div class="section-label"><span class="n">7</span>Pendientes / a confirmar</div>
+  <ul class="pend">
+    <li>Licencia de <strong>cambio de uso</strong> concedida (condición para empezar).</li>
+    <li>Altas de <strong>luz y agua</strong>.</li>
+    <li>Decisión final: <strong>equipo propio vs. subcontrata</strong> (a la espera de los presupuestos de Dani).</li>
+    <li><strong>Cerrar las cifras económicas</strong>: precio/m² (con o sin IVA), superficie real medida, presupuesto cerrado → y reencaje de la operación.</li>
+    <li>Permiso de comunidad para la actuación en la <strong>zona trasera</strong> y apertura de huecos.</li>
+  </ul>
+
+  <div class="conclusion">
+    <div class="label">En resumen</div>
+    <div class="big">La obra está <span>planificada y es ejecutable</span>.<br>Lo que falta cerrar es el <span>número</span>.</div>
+    <p>Técnicamente el plan está claro: ~2,5 meses de exterior, 3–4 meses en total con oficios. El nudo es económico: <strong>a 625 €/m² no sale</strong>. El siguiente paso es que Dani traiga los <strong>presupuestos de subcontrata</strong> y se decida precio de obra (con el IVA y la superficie reales confirmados) antes de arrancar.</p>
+  </div>
+
+  <div class="footer">
+    <strong>CdU de 0 a ÉXITO</strong> · tucambiodeuso.com<br>
+    <span class="team">Briefing generado por COTE IA · para el equipo CdU</span>
+  </div>
+  <div class="disclaimer">
+    COTE IA · v0.1 — Briefing aterrizado de los 2 audios de la visita de obra (21 de mayo de 2026).<br>
+    Cifras económicas orientativas, pendientes de medición real, confirmación de IVA y cierre de presupuesto.<br>
+    Vosotros decidís → yo ejecuto.
+  </div>
 
 </div>
-
 </body>
 </html>
