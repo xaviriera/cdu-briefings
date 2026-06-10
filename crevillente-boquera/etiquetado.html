@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Etiquetado fotos · Tríplex Crevillente</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Montserrat', sans-serif; background: #f5f3ee; color: #163D60; padding: 16px; }
+.bar { position: sticky; top: 0; background: #163D60; color: #fff; padding: 14px 18px; border-radius: 8px; margin-bottom: 16px; z-index: 100; box-shadow: 0 4px 16px rgba(0,0,0,0.18); display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.bar h1 { font-size: 16px; font-weight: 800; }
+.bar .info { font-size: 12px; opacity: 0.85; }
+.bar button { background: #E29F34; color: #fff; border: none; padding: 10px 18px; border-radius: 6px; font-weight: 800; cursor: pointer; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+.bar button:hover { background: #c98a25; }
+.bar button.secondary { background: rgba(255,255,255,0.15); }
+
+h2 { font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: #E29F34; margin: 28px 0 14px; padding-bottom: 6px; border-bottom: 2px solid rgba(226,159,52,0.3); font-weight: 800; }
+
+/* === ANTES strip === */
+.antes-strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; margin-bottom: 24px; }
+.antes-strip .item { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.antes-strip .item img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.antes-strip .item .name { font-size: 11px; padding: 8px 10px; font-weight: 700; color: #163D60; background: #fff; }
+.antes-strip .item input { width: 100%; padding: 7px 10px; border: 1px solid rgba(22,61,96,0.2); font-family: inherit; font-size: 12px; }
+
+/* === DESPUES grid === */
+.despues-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+.card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 3px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; }
+.card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; cursor: zoom-in; }
+.card .body { padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+.card .name { font-size: 11px; font-weight: 700; color: #163D60; }
+.card label { font-size: 9.5px; font-weight: 700; color: #E29F34; letter-spacing: 1px; text-transform: uppercase; }
+.card input, .card select { width: 100%; padding: 7px 10px; border: 1px solid rgba(22,61,96,0.2); border-radius: 4px; font-family: inherit; font-size: 12px; background: #fff; }
+.card input:focus, .card select:focus { outline: none; border-color: #E29F34; }
+.card.matched { border: 2px solid #2e7a4d; }
+.card.discarded { opacity: 0.28; filter: grayscale(0.9); border: 2px dashed #9b3333; }
+.card.discarded img { cursor: default; }
+.card .pair-thumb { display: inline-block; width: 40px; height: 30px; object-fit: cover; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
+.card .discard-row { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #9b3333; font-weight: 700; cursor: pointer; user-select: none; padding: 4px 0; }
+.card .discard-row input { width: 16px; height: 16px; cursor: pointer; flex: 0 0 16px; padding: 0; }
+
+.antes-strip .item.discarded { opacity: 0.28; filter: grayscale(0.9); border: 2px dashed #9b3333; }
+.antes-strip .item .discard-row { display: flex; align-items: center; gap: 6px; font-size: 10.5px; color: #9b3333; font-weight: 700; cursor: pointer; user-select: none; padding: 6px 10px; background: #f9eded; }
+.antes-strip .item .discard-row input { width: 14px; height: 14px; cursor: pointer; padding: 0; }
+
+.btn-row { display: flex; gap: 8px; align-items: center; }
+.btn-row .counter { font-size: 11px; padding: 6px 10px; background: rgba(255,255,255,0.15); border-radius: 4px; font-weight: 700; }
+.btn-row .counter b { color: #E29F34; }
+.copy { font-size: 10px; padding: 4px 8px; background: rgba(22,61,96,0.08); border: none; border-radius: 4px; cursor: pointer; color: #163D60; }
+
+/* === Lightbox === */
+.lb { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 999; cursor: zoom-out; }
+.lb.show { display: flex; align-items: center; justify-content: center; padding: 30px; }
+.lb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+/* === Espacios sugeridos === */
+.suggestions { font-size: 10px; color: #888; padding: 4px 0; }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div>
+    <h1>Etiquetado fotos · Tríplex Crevillente</h1>
+    <div class="info">Marca el <strong>espacio</strong> de cada foto y, en las DESPUÉS, selecciona la <strong>pareja ANTES</strong>. Al final, click en <strong>Exportar CSV</strong>.</div>
+  </div>
+  <div class="btn-row">
+    <span class="counter" id="counter">Activas: <b>—</b> · Descartadas: <b>—</b></span>
+    <button class="secondary" onclick="discardAll()">Marcar todas descartadas</button>
+    <button class="secondary" onclick="resetDiscards()">Limpiar descarte</button>
+    <button onclick="exportCSV()">📥 Exportar CSV</button>
+  </div>
+</div>
+
+<datalist id="espacios">
+  <option value="salón">
+  <option value="cocina">
+  <option value="salón-cocina">
+  <option value="aseo">
+  <option value="patio">
+  <option value="escalera">
+  <option value="entrada/recibidor">
+  <option value="dormitorio 1">
+  <option value="dormitorio 2">
+  <option value="dormitorio 3">
+  <option value="dormitorio principal">
+  <option value="baño">
+  <option value="pasillo">
+  <option value="estudio">
+  <option value="terraza">
+  <option value="fachada exterior">
+</datalist>
+
+<h2>📷 ANTES (11 fotos) · primero etiqueta estas</h2>
+<div class="antes-strip" id="antes-strip"></div>
+
+<h2>📸 DESPUÉS (60 fotos) · etiqueta espacio + selecciona pareja antes si la hay</h2>
+<div class="despues-grid" id="despues-grid"></div>
+
+<div class="lb" id="lightbox" onclick="this.classList.remove('show')">
+  <img id="lb-img" src="" alt="">
+</div>
+
+<script>
+// === DATA ===
+const ANTES = [
+  { file: 'pb-01.jpg', planta: 'Planta Baja' },
+  { file: 'pb-02.jpg', planta: 'Planta Baja' },
+  { file: 'pb-03.jpg', planta: 'Planta Baja' },
+  { file: 'p1-01.jpg', planta: 'Planta 1' },
+  { file: 'p1-02.jpg', planta: 'Planta 1' },
+  { file: 'p1-03.jpg', planta: 'Planta 1' },
+  { file: 'p1-04.jpg', planta: 'Planta 1' },
+  { file: 'p1-05.jpg', planta: 'Planta 1' },
+  { file: 'p2-01.jpg', planta: 'Planta 2' },
+  { file: 'p2-02.jpg', planta: 'Planta 2' },
+  { file: 'p2-03.jpg', planta: 'Planta 2' },
+];
+
+const DESPUES = [
+  // PB · 1338-1362
+  ...[1338,1339,1340,1341,1342,1343,1344,1345,1346,1347,1348,1349,1350,1351,1352,1353,1354,1355,1356,1359,1360,1362].map(n => ({ file: `pb-${n}.jpg`, planta: 'Planta Baja' })),
+  // P1 · 1363-1380
+  ...[1363,1364,1365,1366,1367,1368,1369,1370,1371,1372,1373,1374,1375,1376,1378,1379,1380].map(n => ({ file: `p1-${n}.jpg`, planta: 'Planta 1' })),
+  // P2 · 1381-1400
+  ...[1381,1382,1383,1384,1385,1386,1387,1388,1389,1390,1391,1392,1393,1394,1395,1396,1397,1398,1399,1400].map(n => ({ file: `p2-${n}.jpg`, planta: 'Planta 2' })),
+];
+
+const EXTERIOR = [
+  { file: 'assets/exterior/fachada.jpg', planta: 'Exterior', label: 'fachada exterior' }
+];
+
+// === RENDER ANTES ===
+const antesStrip = document.getElementById('antes-strip');
+ANTES.forEach((item, idx) => {
+  const div = document.createElement('div');
+  div.className = 'item';
+  div.innerHTML = `
+    <img src="assets/antes/${item.file}" onclick="zoom(this.src)">
+    <div class="name">${item.file} <span style="opacity:0.6">· ${item.planta}</span></div>
+    <input type="text" id="antes-${idx}" list="espacios" placeholder="espacio (ej: salón ladrillo)">
+    <label class="discard-row"><input type="checkbox" id="antes-disc-${idx}" onchange="toggleDiscard(this, 'antes', ${idx})"> Descartar</label>
+  `;
+  antesStrip.appendChild(div);
+});
+
+// === RENDER DESPUES ===
+const despuesGrid = document.getElementById('despues-grid');
+const ALL_AFTER = [...DESPUES, ...EXTERIOR];
+ALL_AFTER.forEach((item, idx) => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  const parejasOptions = ['<option value="">— sin pareja —</option>',
+    ...ANTES.map((a, i) => `<option value="${a.file}">${a.file} (${a.planta})</option>`)
+  ].join('');
+  card.innerHTML = `
+    <img src="${item.file.startsWith('..') ? item.file : 'assets/despues/' + item.file}" onclick="zoom(this.src)">
+    <div class="body">
+      <div class="name">${item.file.split('/').pop()} <span style="opacity:0.6">· ${item.planta}</span></div>
+      <label>Espacio</label>
+      <input type="text" id="esp-${idx}" list="espacios" placeholder="ej: salón, cocina, baño..." value="${item.label || ''}">
+      <label>Pareja ANTES</label>
+      <select id="par-${idx}" onchange="this.parentElement.parentElement.classList.toggle('matched', !!this.value)">
+        ${parejasOptions}
+      </select>
+      <label class="discard-row"><input type="checkbox" id="disc-${idx}" onchange="toggleDiscard(this, 'despues', ${idx})"> Descartar foto</label>
+    </div>
+  `;
+  despuesGrid.appendChild(card);
+});
+
+updateCounter();
+
+// === ZOOM ===
+function zoom(src) {
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lightbox').classList.add('show');
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('show');
+});
+
+// === DISCARD ===
+function toggleDiscard(checkbox, kind, idx) {
+  const card = checkbox.closest(kind === 'antes' ? '.item' : '.card');
+  card.classList.toggle('discarded', checkbox.checked);
+  updateCounter();
+}
+
+function discardAll() {
+  document.querySelectorAll('input[type=checkbox][id^="disc-"], input[type=checkbox][id^="antes-disc-"]').forEach(cb => {
+    cb.checked = true;
+    cb.dispatchEvent(new Event('change'));
+  });
+}
+
+function resetDiscards() {
+  document.querySelectorAll('input[type=checkbox][id^="disc-"], input[type=checkbox][id^="antes-disc-"]').forEach(cb => {
+    cb.checked = false;
+    cb.dispatchEvent(new Event('change'));
+  });
+}
+
+function updateCounter() {
+  const total = ANTES.length + ALL_AFTER.length;
+  const discarded = document.querySelectorAll('.item.discarded, .card.discarded').length;
+  const active = total - discarded;
+  const el = document.getElementById('counter');
+  if (el) el.innerHTML = `Activas: <b>${active}</b> · Descartadas: <b>${discarded}</b> / ${total}`;
+}
+
+// === EXPORT (excluye descartadas) ===
+function exportCSV() {
+  const rows = ['archivo,planta,tipo,espacio,pareja_antes'];
+  let skipped = 0;
+  ANTES.forEach((a, i) => {
+    if (document.getElementById(`antes-disc-${i}`).checked) { skipped++; return; }
+    const esp = (document.getElementById(`antes-${i}`).value || '').trim();
+    rows.push(`${a.file},${a.planta},ANTES,"${esp}",`);
+  });
+  ALL_AFTER.forEach((a, i) => {
+    if (document.getElementById(`disc-${i}`).checked) { skipped++; return; }
+    const esp = (document.getElementById(`esp-${i}`).value || '').trim();
+    const par = (document.getElementById(`par-${i}`).value || '').trim();
+    const filename = a.file.split('/').pop();
+    rows.push(`${filename},${a.planta},DESPUES,"${esp}",${par}`);
+  });
+  const csv = rows.join('\n');
+  navigator.clipboard.writeText(csv).then(() => {
+    alert(`✅ CSV copiado al portapapeles\n\n${rows.length - 1} filas activas\n${skipped} descartadas (no incluidas)\n\nPégamelo en el chat de Claude.`);
+  }).catch(() => {
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'mapping_fotos.csv'; a.click();
+  });
+}
+</script>
+
+</body>
+</html>

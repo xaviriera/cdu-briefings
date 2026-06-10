@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=JetBrains+Mono:wght@600&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#163D60;--ochre:#E29F34;--cream:#FDFBF7;--green:#2c7a3f;--red:#b23b3b;--line:#e6dfd2;}
+body{font-family:'Montserrat',sans-serif;background:#cfd8e0;padding:40px;}
+.card{width:760px;background:var(--cream);border-radius:22px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.22);margin:0 auto;}
+.top{background:var(--navy);color:var(--cream);padding:30px 36px;display:flex;align-items:center;gap:22px;}
+.top .ico{font-size:62px;line-height:1;}
+.top .t-txt h1{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ochre);margin-bottom:4px;}
+.top .t-txt h2{font-size:30px;font-weight:900;letter-spacing:-.5px;line-height:1.05;}
+.body{padding:30px 36px 16px;}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;}
+.box{border-radius:14px;padding:18px 20px;}
+.box.yes{background:#eaf5ee;border:2px solid var(--green);}
+.box.no{background:#fbecec;border:2px solid var(--red);}
+.box .bh{font-size:15px;font-weight:900;letter-spacing:.5px;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.box.yes .bh{color:var(--green);}
+.box.no .bh{color:var(--red);}
+.box ul{list-style:none;}
+.box li{font-size:15px;font-weight:600;color:var(--navy);padding:5px 0 5px 26px;position:relative;line-height:1.35;}
+.box.yes li::before{content:"\2713";position:absolute;left:0;color:var(--green);font-weight:900;}
+.box.no li::before{content:"\2715";position:absolute;left:0;color:var(--red);font-weight:900;}
+.rows{display:flex;flex-direction:column;gap:10px;}
+.row{display:flex;align-items:center;gap:14px;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:13px 18px;}
+.row .lbl{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--ochre);min-width:92px;}
+.row .val{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;color:var(--navy);}
+.row .pill{background:var(--navy);color:var(--cream);font-size:13px;font-weight:800;padding:5px 12px;border-radius:7px;}
+.foot{background:var(--navy);color:#cdd9e3;padding:14px 36px;display:flex;justify-content:space-between;align-items:center;font-size:12px;}
+.foot b{color:var(--ochre);}
+.foot .qr{font-weight:700;color:var(--cream);}
+</style></head><body><div class="card">
+<div class="top"><div class="ico">🏗️</div><div class="t-txt"><h1>Carpeta 03 · Drive CdU</h1><h2>OPERACIONES INICIADAS</h2></div></div>
+<div class="body"><div class="cols">
+<div class="box yes"><div class="bh">✅ AQUÍ VA</div><ul><li>Ops en ejecución: obra o venta</li><li>Desde servicio / desde fuera-servicio</li><li>Las cerradas → FINALIZADAS</li></ul></div>
+<div class="box no"><div class="bh">⛔ AQUÍ NO</div><ul><li>Ops aún en estudio → 01 o 02</li><li>Plantillería → carpeta 00</li></ul></div>
+</div><div class="rows">
+<div class="row"><span class="lbl">Se nombra</span><span class="val">NN_NombreOp</span><span class="val" style="font-size:12px;color:#9a9a9a;">p.ej. 01_TorresCotillas</span></div>
+<div class="row"><span class="lbl">Trello</span><span class="pill">Board propio por op</span><span class="val" style="font-size:13px;color:#6b6b6b;">clon de PLANTILLA</span></div>
+</div></div>
+<div class="foot"><span>📖 Guía completa del sistema → <b>xaviriera.github.io/cdu-briefings/sistema-carpetas</b></span><span class="qr">CdU DE 0 a ÉXITO</span></div>
+</div></body></html>
