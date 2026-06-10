@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reunión CdU · 10 jun 2026 · Resumen y tareas</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Montserrat', Arial, sans-serif; background: #FDFBF7; color: #163D60; line-height: 1.55; padding: 24px 16px; }
+.wrap { max-width: 880px; margin: 0 auto; }
+
+.brand { text-align: center; padding-bottom: 18px; margin-bottom: 22px; border-bottom: 2px solid #E29F34; }
+.brand img { max-width: 200px; height: auto; display: inline-block; }
+.brand .sub { font-size: 10px; color: #E29F34; letter-spacing: 3px; text-transform: uppercase; margin-top: 10px; font-weight: 700; }
+
+.title { font-size: 26px; font-weight: 800; color: #163D60; letter-spacing: -0.6px; line-height: 1.2; margin-bottom: 8px; }
+.title span { color: #E29F34; }
+.subtitle { font-size: 14px; color: #163D60; opacity: 0.7; font-weight: 500; margin-bottom: 18px; }
+
+.meta { background: #fff; border-left: 4px solid #E29F34; border-radius: 0 8px 8px 0; padding: 14px 18px; margin-bottom: 22px; font-size: 12.5px; line-height: 1.6; }
+.meta strong { color: #163D60; font-weight: 800; }
+.meta .warn { color: #7d6608; }
+
+.section-label { font-size: 11px; font-weight: 800; color: #E29F34; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; margin-top: 34px; padding-bottom: 4px; border-bottom: 2px solid rgba(226, 159, 52, 0.25); }
+.section-label .n { background: #E29F34; color: #fff; display: inline-block; width: 20px; height: 20px; border-radius: 50%; text-align: center; line-height: 20px; margin-right: 8px; font-size: 11px; font-weight: 800; }
+
+.lst { list-style: none; }
+.lst li { position: relative; padding: 5px 0 5px 18px; font-size: 13.5px; line-height: 1.55; color: #163D60; }
+.lst li::before { content: "•"; position: absolute; left: 2px; top: 4px; color: #E29F34; font-weight: 800; }
+.lst li strong { color: #163D60; font-weight: 800; }
+
+.op { font-size: 16px; font-weight: 800; color: #163D60; margin: 24px 0 4px; }
+.op .pill { font-size: 10px; font-weight: 700; background: #163D60; color: #FDFBF7; padding: 3px 9px; border-radius: 12px; margin-left: 8px; letter-spacing: 0.5px; vertical-align: middle; }
+.op-sub { font-size: 11.5px; opacity: 0.65; margin-bottom: 8px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-bottom: 6px; }
+table th { background: #163D60; color: #FDFBF7; padding: 8px 9px; text-align: left; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+table th:first-child { border-radius: 6px 0 0 0; }
+table th:last-child { border-radius: 0 6px 0 0; }
+table td { padding: 8px 9px; border-bottom: 1px dashed rgba(22,61,96,0.12); vertical-align: top; line-height: 1.45; }
+table td strong { font-weight: 800; }
+
+.tag { display: inline-block; font-size: 9px; font-weight: 800; padding: 2px 7px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.4px; white-space: nowrap; }
+.tag.ok { background: #e4f0e9; color: #2e7a4d; }
+.tag.pend { background: #fff3d6; color: #8a6a1f; }
+.tag.no { background: #fdecea; color: #9b3333; }
+.tag.new { background: #E29F34; color: #fff; }
+.tag.exist { background: #eef1f4; color: #51637a; }
+
+.gap { background: #fff8ea; border: 1px dashed #E29F34; border-radius: 8px; padding: 14px 16px; font-size: 13px; color: #7d6608; line-height: 1.6; }
+.gap strong { color: #163D60; }
+.closed { background: #fff; border-radius: 10px; padding: 16px 18px; box-shadow: 0 4px 14px rgba(22,61,96,0.06); }
+.closed .lst li::before { content: "—"; }
+
+.footer { text-align: center; margin-top: 36px; padding-top: 22px; border-top: 1px solid rgba(22,61,96,0.12); font-size: 12px; color: #163D60; }
+.footer strong { color: #E29F34; }
+.footer .team { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #E29F34; font-weight: 700; margin-top: 4px; }
+.disclaimer { font-size: 10.5px; color: #163D60; opacity: 0.6; text-align: center; margin-top: 14px; line-height: 1.5; font-style: italic; }
+
+@media (max-width: 620px) { .title { font-size: 21px; } table { font-size: 11.5px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand">
+    <img src="https://xaviriera.github.io/cdu-briefings/assets/logos/LOGO-FINAL-PNG-MEDIANO.png" alt="CdU de 0 a ÉXITO">
+    <div class="sub">Resumen de reunión de equipo</div>
+  </div>
+
+  <div class="title">Reunión CdU · <span>10 de junio de 2026</span></div>
+  <div class="subtitle">Resumen + tareas por operación (asignadas y pendientes de asignar)</div>
+
+  <div class="meta">
+    <strong>Asistentes:</strong> Paco (Francisco Collado) · Dani (Daniel Moreno) · José Manuel "Sabater" (socio de Elche-Juan Espuche) · Xavi (~30 min).<br>
+    <span class="warn"><strong>Nota:</strong> grabado con la cuenta de Paco → la transcripción solo etiqueta "Paco/Xavi"; la atribución de voces no es fiable, se trata como diálogo de equipo.</span>
+  </div>
+
+  <!-- 1 -->
+  <div class="section-label"><span class="n">1</span>Resumen ejecutivo</div>
+  <ul class="lst">
+    <li><strong>TDC — presentación a inversores el 18-jun.</strong> Dosier: IM-PULSO actualizado, diagnóstico Fase 1 maquetado "pro" y cruce del <strong>Paso 4</strong> con IM-PULSO. Aportación por inversor: se trabaja con <strong>30</strong> (vs 35).</li>
+    <li><strong>TDC — firma + licencia.</strong> Carmen fijará fecha de firma; licencia en fase jurídica. Límite: <strong>18-jun o fecha de licencia</strong>, lo que llegue antes. Notarías colapsadas → pedir cita ya (notaría local del registro, vía Antonio).</li>
+    <li><strong>TDC — capital:</strong> <strong>60% inicio / 20% a ~2 meses / 20% final</strong> (último 20% probablemente cubierto por preventas). Con ~150-160k€, primer tramo ≈ 90k€.</li>
+    <li><strong>TDC — ventanas (crítico):</strong> pedido a Álvaro en la <strong>1ª semana de julio</strong> (la fábrica cierra agosto). Triple cristal, fijo + abatible.</li>
+    <li><strong>TDC — logística:</strong> Paco negocia alquiler de local (~3 meses) para los obreros. Confirma mañana.</li>
+    <li><strong>TDC — plataforma inversora:</strong> carpeta pública temporal + "Operaciones Iniciadas / TDC" de consulta + carpeta individual por partícipe (contrato común + anexo privado de afiliación).</li>
+    <li><strong>Entresuelo (Elche-Altabix) — 45 días de viabilidad.</strong> Cuello de botella = <strong>certificado de compatibilidad</strong> + <strong>servidumbre de paso con vecino</strong> (ya delegados a "ella"). Tras compatibilidad → diagnóstico → IM-PULSO → capitalizar → comprar (proyecto por ECUP).</li>
+    <li><strong>Elche-Juan Espuche — op aparte (Sabater/José).</strong> Tema: <strong>licencia pendiente</strong>; sin licencia no se empieza → se valora declaración responsable / vía ECUP. Sabater se encarga de su parte.</li>
+  </ul>
+
+  <!-- 2 -->
+  <div class="section-label"><span class="n">2</span>Tareas por operación</div>
+  <div class="op-sub">
+    <span class="tag ok">Asignado</span> &nbsp; <span class="tag pend">Por confirmar</span> &nbsp; <span class="tag no">Sin asignar</span> &nbsp; · &nbsp; <span class="tag new">Nueva en Trello</span> <span class="tag exist">Ya existe</span>
+  </div>
+
+  <div class="op">🏗️ TDC — Torres de Cotillas <span class="pill">tablero LAS TORRES DE COTILLAS</span></div>
+  <table>
+    <tr><th>Tarea</th><th>Responsable</th><th>Plazo</th><th>Trello</th></tr>
+    <tr><td>IM-PULSO actualizado (30 inv.) + cruce Paso 4 / método Antonio</td><td><span class="tag ok">Xavi</span></td><td>antes 18-jun</td><td><span class="tag new">nueva</span> Comercial/Mkt</td></tr>
+    <tr><td>Maquetar diagnóstico Fase 1 "pro"</td><td><span class="tag ok">Xavi</span></td><td>antes 18-jun</td><td><span class="tag new">nueva</span> Comercial/Mkt</td></tr>
+    <tr><td>Pedir a Antonio contacto notaría local + pedir cita</td><td><span class="tag ok">Xavi</span></td><td>hoy</td><td><span class="tag new">nueva</span> Dir. Técnica</td></tr>
+    <tr><td>Meter a los inversores avisados en el grupo</td><td><span class="tag ok">Xavi</span></td><td>antes 18-jun</td><td><span class="tag new">nueva</span> Comercial</td></tr>
+    <tr><td>Cerrar fecha de firma con Carmen (según licencia)</td><td><span class="tag ok">Paco</span></td><td>18-jun o licencia</td><td><span class="tag exist">existe</span> LICENCIA</td></tr>
+    <tr><td>Pedir ventanas a Álvaro (triple cristal, fijo+abatible)</td><td><span class="tag ok">Paco / Álvaro</span></td><td><strong>1ª sem julio</strong></td><td><span class="tag new">nueva</span> Suministros</td></tr>
+    <tr><td>Confirmar alquiler de local para obreros (3 meses)</td><td><span class="tag ok">Paco</span></td><td>mañana 11-jun</td><td><span class="tag new">nueva</span> Coord. Obras</td></tr>
+    <tr><td>Números finales estructura capital 60/20/20</td><td><span class="tag ok">Paco</span></td><td>antes 18-jun</td><td><span class="tag new">nueva</span> Admin/Fiscal</td></tr>
+    <tr><td>Completar Matriz de Riesgos (ejecución de obra)</td><td><span class="tag ok">Dani / Paco</span></td><td>pendiente</td><td><span class="tag exist">existe</span> Matriz de Riesgo</td></tr>
+    <tr><td>Montar carpetas/plataforma inversores (pública + consulta + anexo individual)</td><td><span class="tag no">Sin asignar</span> ¿Xavi?</td><td>antes 18-jun</td><td><span class="tag new">nueva</span> Comercial/Admin</td></tr>
+  </table>
+
+  <div class="op">🏠 Entresuelo Elche-Altabix <span class="pill">tablero 02 · ANÁLISIS</span></div>
+  <div class="op-sub">Lista ELCHE-ENTRESUELO ALTABIX (hoy solo esqueleto → todo nuevo)</div>
+  <table>
+    <tr><th>Tarea</th><th>Responsable</th><th>Plazo</th><th>Trello</th></tr>
+    <tr><td><strong>Certificado de compatibilidad</strong> (cuello de botella, ~2 sem)</td><td><span class="tag pend">?? "ella"</span> confirmar nombre con Paco</td><td>dentro 45 días</td><td><span class="tag new">nueva</span></td></tr>
+    <tr><td><strong>Servidumbre de paso con vecino</strong> (firmar acuerdo de paso gratuito)</td><td><span class="tag pend">?? "ella"</span></td><td>pendiente</td><td><span class="tag new">nueva</span></td></tr>
+    <tr><td>Consulta a empresa de aguas (contadores/medidas)</td><td><span class="tag ok">Xavi</span></td><td>pendiente</td><td><span class="tag new">nueva</span></td></tr>
+    <tr><td>Contraoferta al vendedor (170k+pilares+servidumbre / ~160k+pilares / 180k aplazado 12-18m)</td><td><span class="tag ok">Paco</span></td><td>a decidir</td><td><span class="tag new">nueva</span></td></tr>
+    <tr><td>Diagnóstico + IM-PULSO (tras compatibilidad)</td><td><span class="tag ok">Xavi</span></td><td>pendiente</td><td><span class="tag new">nueva</span></td></tr>
+    <tr><td>Avisar a Pao + Antonio para medir y arrancar proyecto + meter por ECUP</td><td><span class="tag ok">Paco</span></td><td>tras compatibilidad</td><td><span class="tag new">nueva</span></td></tr>
+  </table>
+
+  <div class="op">🏚️ Elche-Juan Espuche <span class="pill">tablero 02 · ANÁLISIS</span></div>
+  <div class="op-sub">Lista ELCHE-JUAN ESPUCHE 1</div>
+  <table>
+    <tr><th>Tarea</th><th>Responsable</th><th>Plazo</th><th>Trello</th></tr>
+    <tr><td>Su parte de la operación (a concretar con él)</td><td><span class="tag ok">Sabater (José)</span></td><td>—</td><td><span class="tag exist">existe</span> TAREAS</td></tr>
+    <tr><td>Estado de la <strong>licencia</strong> + valorar declaración responsable / vía ECUP para no parar</td><td><span class="tag ok">Paco</span> (+ Sabater)</td><td>pendiente</td><td><span class="tag new">nueva</span> Viabilidad</td></tr>
+  </table>
+
+  <!-- 3 -->
+  <div class="section-label"><span class="n">3</span>Lo que falta por asignar</div>
+  <div class="gap">
+    <ul class="lst">
+      <li><strong>TDC:</strong> montar carpetas/plataforma de inversores.</li>
+      <li><strong>Entresuelo:</strong> certificado de compatibilidad y servidumbre → confirmar con Paco <strong>el nombre de "ella"</strong> (ya lo tiene hablado).</li>
+    </ul>
+  </div>
+
+  <!-- 4 -->
+  <div class="section-label"><span class="n">4</span>Cerrado / fuera de alcance</div>
+  <div class="closed">
+    <ul class="lst">
+      <li><strong>Sesión de servicios del 16-jun:</strong> no da tiempo → parada.</li>
+      <li><strong>"San Vicente"</strong> (obra en curso): operación propia de Paco, fuera del equipo CdU.</li>
+      <li><strong>"Pablo"</strong> = Pablo Segovia, lead muy temprano (una reunión, ni en análisis) → sin tarea por ahora.</li>
+      <li><strong>Suelo de Altavis:</strong> obras a ~4,5 meses (≈ octubre), licencia pendiente → no accionable aún.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <strong>CdU de 0 a ÉXITO</strong> · tucambiodeuso.com<br>
+    <span class="team">Briefing generado por COTE IA · para el equipo CdU</span>
+  </div>
+  <div class="disclaimer">
+    COTE IA · resumen del transcript de la reunión del 10-jun-2026. Tareas pendientes de cargar en Trello con responsable.
+  </div>
+
+</div>
+</body>
+</html>
