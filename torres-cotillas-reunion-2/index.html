@@ -79,12 +79,11 @@ header .intro{font-size:18.5px;color:rgba(253,251,247,.9);margin-top:20px;max-wi
 .banco{margin-top:26px}
 .banco h3{font-size:19px;font-weight:800;color:var(--navy);margin-bottom:4px}
 .banco .sub{font-size:14.5px;color:#41526a;margin-bottom:14px;max-width:760px}
-.banco figure{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;box-shadow:0 1px 5px rgba(22,61,96,.06)}
-.banco img{width:100%;height:auto;display:block;border-radius:8px}
-.banco .ph{aspect-ratio:16/8;border:2px dashed #c4d6e8;border-radius:8px;background:repeating-linear-gradient(45deg,#f4f7fa,#f4f7fa 12px,#eaf1f8 12px,#eaf1f8 24px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#5b7a99}
-.banco .ph b{font-size:15px;color:var(--navy)}
-.banco .ph span{font-size:12.5px}
-.banco figcaption{font-size:12.5px;color:var(--grey);margin-top:10px;text-align:center;font-weight:600}
+.banco .btn{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:var(--cream);text-decoration:none;font-weight:800;font-size:15px;letter-spacing:.3px;padding:14px 26px;border-radius:10px;box-shadow:0 2px 8px rgba(22,61,96,.18);transition:background .15s,transform .15s}
+.banco .btn::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--ochre);flex-shrink:0}
+.banco .btn:hover{background:var(--navy2);transform:translateY(-1px)}
+.banco .btn:focus-visible{outline:3px solid var(--ochre);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.banco .btn{transition:none}.banco .btn:hover{transform:none}}
 
 /* ── CIERRE ── */
 .cierre{text-align:center;padding:70px 0;border:none}
@@ -148,7 +147,7 @@ footer b{color:var(--ochre)}
 
       <div class="h"><span class="tick">✓</span><div>
         <div class="t">Desalojo y vaciado del local<span class="euro ok">0 €</span></div>
-        <p>Era una partida a pagar. Se ha conseguido negociando, sin desembolso.</p></div></div>
+        <p>Era una partida a pagar y se ha resuelto negociando, sin desembolso. El local ya está despejado para poder entrar a trabajar; había tal volumen que queda una última retirada, prevista para la semana que viene.</p></div></div>
 
       <div class="h"><span class="tick">✓</span><div>
         <div class="t">Proyecto de telecomunicaciones<span class="euro">1.452 €</span></div>
@@ -179,7 +178,7 @@ footer b{color:var(--ochre)}
     <div class="mov plus">
       <div class="txt">
         <div class="t">Desalojo y vaciado del local</div>
-        <p>Vaciar un local de 105 m² lleno, con retirada de enseres, contenedores y gestor autorizado de residuos, ronda los <b>1.000 – 2.000 €</b> a precio de mercado<span class="est">estimación</span>. Se ha conseguido negociando, sin desembolso.</p>
+        <p>Vaciar un local de 105 m² lleno, con retirada de enseres, contenedores y gestor autorizado de residuos, ronda los <b>1.000 – 2.000 €</b> a precio de mercado<span class="est">estimación</span>. Se ha resuelto negociando, sin desembolso, incluida la última retirada que queda por hacer.</p>
       </div>
       <div class="amt">0 €</div>
     </div>
@@ -240,14 +239,8 @@ footer b{color:var(--ochre)}
 
     <div class="banco">
       <h3>Los movimientos, uno a uno</h3>
-      <p class="sub">Lo que ha entrado y lo que ha salido de la cuenta de la operación hasta hoy. Paco lo repasa pago por pago.</p>
-      <figure>
-        <div class="ph">
-          <b>Extracto de la cuenta de la operación</b>
-          <span>captura pendiente de insertar</span>
-        </div>
-        <figcaption>Cuenta de la operación · movimientos a 12 de agosto de 2026</figcaption>
-      </figure>
+      <p class="sub">Lo que ha entrado y lo que ha salido de la cuenta de la operación hasta hoy. Lo abrimos aquí mismo y Paco lo repasa pago por pago.</p>
+      <a class="btn" href="https://drive.google.com/open?id=16Y4J6-t02D6z4_JttKFiZ-0iK4DSI5EG&amp;usp=drive_fs" target="_blank" rel="noopener">Abrir los movimientos de la cuenta</a>
     </div>
   </div>
 </section>
